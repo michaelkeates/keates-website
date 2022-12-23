@@ -21,6 +21,7 @@ const LogoBox = styled.span`
   }
 `
 
+
 const Logo = () => {
   const footPrintImg = `/images/signature${useColorModeValue('', '-dark')}.png`
 
