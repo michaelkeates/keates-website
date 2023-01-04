@@ -29,8 +29,6 @@ Keates Portfolio is my personal website that I have been developing over the sum
 </p>
 <br></br>
 <h2 align="left">Description</h1>
-<br></br>
-
 This portfolio website uses the following frameworks to achieve what you see currently. Next.js is a React framework with hybrid static & server rendering, and route pre-fetching, etc. Chakra.UI.js is a simple, modular and accessible component library for React. Three.js is 3D library component for JavaScript that allows models to be rendered within a browser along with animations. Framer Motion is an animation library for React that allows transitions to between loading pages. Finally Appollo is a GraphQL server to fetch data from outside sources such as WordPress posts and Github repositores.
 
 ## Stack
