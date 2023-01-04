@@ -32,7 +32,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
         color={active ? '#a6bbce' : active}
         target={target}
         //borderRadius="full"
-        fontSize="13"
+        fontSize="12"
         {...props}
       >
         {children}
