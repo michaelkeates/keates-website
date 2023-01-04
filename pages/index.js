@@ -77,56 +77,17 @@ const Home = () => (
           </Box>
         </Box>
       </Box>
-
+      <Divider />
       <Section delay={0.1}>
-        <Heading as="h2" size="1xl" fontStyle="italic" textAlign="center" paddingTop="25px">
+        <Heading as="h2" size="1xl" textAlign="center" paddingTop="25px">
           "I am a organised and highly creative individual that thrives on
           working at the utmost level of professionalism."
         </Heading>
         <Section delay={0.1}>
-          <Heading as="h2" size="xs" textAlign="center" fontWeight="thin" paddingTop="35px">
+          <Heading as="h2" size="xs" textAlign="center" paddingTop="35px">
             Welcome to my portfolio website! Hope you like what you see and
             enjoy your visit!
           </Heading>
-          <Divider my={6} />
-          <SimpleGrid columns={[3, 2, 3]} gap={6}>
-            <NextLink href="/about" passHref scroll={false}>
-              <Button
-                rightIcon={<ChevronRightIcon />}
-                //bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                _hover={{ bg: useColorModeValue('#ffffff', '#828282') }}
-                width="100%"
-              >
-                CV
-              </Button>
-            </NextLink>
-            <NextLink href="/repositories" passHref scroll={false}>
-              <Button
-                rightIcon={<ChevronRightIcon />}
-                //bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                _hover={{ bg: useColorModeValue('#ffffff', '#828282') }}
-                width="100%"
-              >
-                Portfolio
-              </Button>
-            </NextLink>
-            <NextLink href="/posts" passHref scroll={false}>
-              <Button
-                rightIcon={<ChevronRightIcon />}
-                //bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                _hover={{ bg: useColorModeValue('#ffffff', '#828282') }}
-                width="100%"
-              >
-                Blog
-              </Button>
-            </NextLink>
-          </SimpleGrid>
         </Section>
       </Section>
     </Container>

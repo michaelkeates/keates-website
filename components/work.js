@@ -50,7 +50,7 @@ export const Blog = ({ children }) => (
 export const Repo = ({ children }) => (
   <Box>
     <NextLink href="/repositories" passHref>
-      <Link>Repositories</Link>
+      <Link>Portfolio</Link>
     </NextLink>
     <span>
       {' '}
