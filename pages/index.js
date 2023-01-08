@@ -79,12 +79,12 @@ const Home = () => (
       </Box>
       <Divider />
       <Section delay={0.1}>
-        <Heading as="h2" size="1xl" textAlign="center" paddingTop="25px">
+        <Heading as="h2" size="1xl" fontWeight={0} textAlign="center" paddingTop="25px">
           "I am a organised and highly creative individual that thrives on
           working at the utmost level of professionalism."
         </Heading>
         <Section delay={0.1}>
-          <Heading as="h2" size="xs" textAlign="center" paddingTop="35px">
+          <Heading as="h2" size="xs" fontWeight={0} textAlign="center" paddingTop="35px">
             Welcome to my portfolio website! Hope you like what you see and
             enjoy your visit!
           </Heading>

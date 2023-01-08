@@ -19,8 +19,11 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem, WorkGridItem } from '../components/grid-item'
 
+import ReactOriginalIcon from 'react-devicons/react/original'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
+
+import { AndroidIcon, CsharpIcon ,ReactIcon, JavascriptIcon } from '../components/devicons'
 
 const Home = () => (
   <Layout>
@@ -81,16 +84,16 @@ const Home = () => (
         </Section>
       </SimpleGrid>
       <Heading
-          as="h3"
-          fontFamily="Roboto"
-          fontWeight="500"
-          fontSize={20}
-          mb={2}
-          marginTop="1rem"
-        >
-          Contact
-        </Heading>
-      <SimpleGrid columns={[2, 3, 3]} gap={2}>
+        as="h3"
+        fontFamily="Roboto"
+        fontWeight="500"
+        fontSize={20}
+        mb={2}
+        marginTop="1rem"
+      >
+        Contact
+      </Heading>
+      <SimpleGrid columns={[2, 2, 2]} gap={2}>
         <Section delay={0.3}>
           <Box
             borderRadius="lg"
@@ -102,10 +105,7 @@ const Home = () => (
             padding="10px;"
           >
             <BioSection>
-              <EmailIcon marginRight="0.5rem" />
-              <a href="mailto: mail@michaelkeates.co.uk">
-                Send Email
-              </a>
+              <a href="mailto: mail@michaelkeates.co.uk">Send Email ✉️</a>
             </BioSection>
           </Box>
         </Section>
@@ -120,24 +120,7 @@ const Home = () => (
             padding="10px;"
           >
             <BioSection>
-              <PhoneIcon marginRight="0.5rem" />
-              <a href="tel:+447495137974">Make a call</a>
-            </BioSection>
-          </Box>
-        </Section>
-        <Section delay={0.3}>
-          <Box
-            borderRadius="lg"
-            mb={1}
-            p={1}
-            textAlign="center"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            css={{ backdropFilter: 'blur(10px)' }}
-            padding="10px;"
-          >
-            <BioSection>
-              <InfoIcon marginRight="0.5rem" />
-              Newport, Wales
+              <a href="tel:+447495137974">Make a call 📱</a>
             </BioSection>
           </Box>
         </Section>
@@ -221,7 +204,7 @@ const Home = () => (
         >
           Skills
         </Heading>
-        <SimpleGrid columns={[2, 2, 4]} gap={1} fontSize="12px;">
+        <SimpleGrid columns={[4, 4, 6]} gap={1} fontSize="12px;">
           <Box
             borderRadius="lg"
             mb={6}
@@ -231,7 +214,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
           >
-            Java
+            <JavascriptIcon />
           </Box>
           <Box
             borderRadius="lg"
@@ -242,7 +225,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
           >
-            Flutter
+            <JavascriptIcon />
           </Box>
           <Box
             borderRadius="lg"
@@ -253,7 +236,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
           >
-            Android
+            <AndroidIcon />
           </Box>
           <Box
             borderRadius="lg"
@@ -286,7 +269,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
           >
-            C#
+            <CsharpIcon />
           </Box>
           <Box
             borderRadius="lg"
@@ -308,7 +291,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
           >
-            ReactJS
+            <ReactIcon />
           </Box>
           <Box
             borderRadius="lg"
