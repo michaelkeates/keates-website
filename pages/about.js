@@ -23,7 +23,24 @@ import ReactOriginalIcon from 'react-devicons/react/original'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
 
-import { AndroidIcon, CsharpIcon ,ReactIcon, JavascriptIcon } from '../components/devicons'
+import {
+  CplusplusIcon,
+  CsharpIcon,
+  Css3Icon,
+  DockerIcon,
+  Html5Icon,
+  JavascriptIcon,
+  KotlinIcon,
+  MySQLIcon,
+  PhpIcon,
+  NextjsIcon,
+  PostgresqlIcon,
+  PythonIcon,
+  ReactIcon,
+  ThreejsIcon,
+  TypescriptIcon,
+  XamarinIcon
+} from '../components/devicons'
 
 const Home = () => (
   <Layout>
@@ -202,9 +219,9 @@ const Home = () => (
           fontSize={20}
           mb={4}
         >
-          Skills
+          Front-End
         </Heading>
-        <SimpleGrid columns={[4, 4, 6]} gap={1} fontSize="12px;">
+        <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
           <Box
             borderRadius="lg"
             mb={6}
@@ -213,6 +230,31 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
+            title="CSS3"
+          >
+            <Css3Icon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="HTML5"
+          >
+            <Html5Icon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="JavaScript"
           >
             <JavascriptIcon />
           </Box>
@@ -224,72 +266,7 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
-          >
-            <JavascriptIcon />
-          </Box>
-          <Box
-            borderRadius="lg"
-            mb={6}
-            p={3}
-            textAlign="center"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            css={{ backdropFilter: 'blur(10px)' }}
-            padding="10px;"
-          >
-            <AndroidIcon />
-          </Box>
-          <Box
-            borderRadius="lg"
-            mb={6}
-            p={3}
-            textAlign="center"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            css={{ backdropFilter: 'blur(10px)' }}
-            padding="10px;"
-          >
-            iOS
-          </Box>
-          <Box
-            borderRadius="lg"
-            mb={6}
-            p={3}
-            textAlign="center"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            css={{ backdropFilter: 'blur(10px)' }}
-            padding="10px;"
-          >
-            Xamarin
-          </Box>
-          <Box
-            borderRadius="lg"
-            mb={6}
-            p={3}
-            textAlign="center"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            css={{ backdropFilter: 'blur(10px)' }}
-            padding="10px;"
-          >
-            <CsharpIcon />
-          </Box>
-          <Box
-            borderRadius="lg"
-            mb={6}
-            p={3}
-            textAlign="center"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            css={{ backdropFilter: 'blur(10px)' }}
-            padding="10px;"
-          >
-            Python
-          </Box>
-          <Box
-            borderRadius="lg"
-            mb={6}
-            p={3}
-            textAlign="center"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            css={{ backdropFilter: 'blur(10px)' }}
-            padding="10px;"
+            title="React"
           >
             <ReactIcon />
           </Box>
@@ -301,8 +278,119 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
+            title="Next.js"
           >
-            Graphic Design
+            <NextjsIcon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="Three.js"
+          >
+            <ThreejsIcon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="Typescript"
+          >
+            <TypescriptIcon />
+          </Box>
+        </SimpleGrid>
+      </Section>
+      <Section delay={0.2}>
+        <Heading
+          as="h3"
+          fontFamily="Roboto"
+          fontWeight="500"
+          fontSize={20}
+          mb={4}
+        >
+          Back-End
+        </Heading>
+        <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="C++"
+          >
+            <CplusplusIcon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="C#"
+          >
+            <CsharpIcon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="mySQL"
+          >
+            <MySQLIcon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="PHP"
+          >
+            <PhpIcon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="PostgreSQL"
+          >
+            <PostgresqlIcon />
+          </Box>
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            href="Typescript"
+            title="Python"
+          >
+            <PythonIcon />
           </Box>
         </SimpleGrid>
       </Section>
