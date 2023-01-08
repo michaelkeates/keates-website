@@ -28,6 +28,8 @@ import { Title, Portfolio, Blog, WorkImage, Meta } from '../../components/work'
 
 import styles from '../../styles/Home.module.css'
 
+import AuthorBio from '../../components/post/author-bio'
+
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
@@ -105,41 +107,7 @@ export default function Post({ post }) {
               </Paragraph>
             </SimpleGrid>
             <Divider my={6} />
-            <Box>
-              <ProfileImage
-                src="/images/mike.jpg"
-                alt="Profile image"
-                borderRadius="full"
-                width="110"
-                height="110"
-              />
-            </Box>
-            <Box display={{ md: 'flex' }} paddingTop="15px">
-              <Box flexGrow={1}>
-                <Heading
-                  as="h2"
-                  variant="page-title"
-                  fontFamily="Roboto"
-                  fontWeight=""
-                >
-                  Michael Keates
-                </Heading>
-              </Box>
-            </Box>
-
-            <Section delay={0.1}>
-              <Paragraph>
-                I am a organised and highly creative individual that thrives on
-                working at the utmost level of professionalism. I will always
-                work to the best of my abilities under any sort of circumstances
-                and under any level of pressure for something that I truly love.
-                I have a strong attention to detail and possess the ability to
-                adapt to situations quickly, efficently and creatively. Click{' '}
-                <Link href="/about">here</Link> if you would like to know more.
-              </Paragraph>
-              <Divider my={6} />
-              <Section delay={0.1}></Section>
-            </Section>
+            <AuthorBio />
             <NextLink href="/posts" passHref scroll={false}>
               <Button
                 rightIcon={<ChevronRightIcon />}
@@ -223,30 +191,30 @@ export async function getStaticPaths() {
 
   const data = await apolloClient.query({
     query: gql`
-    {
-      posts(first: 10000) {
-        edges {
-          node {
-            id
-            title
-            slug
-            date
-            categories {
-              nodes {
-                name
+      {
+        posts(first: 10000) {
+          edges {
+            node {
+              id
+              title
+              slug
+              date
+              categories {
+                nodes {
+                  name
+                }
               }
-            }
-            featuredImage {
-              node {
-                sourceUrl
+              featuredImage {
+                node {
+                  sourceUrl
+                }
               }
+              excerpt(format: RENDERED)
             }
-            excerpt(format: RENDERED)
           }
         }
       }
-    }
-  `
+    `
   })
 
   const posts = data?.data.posts.edges.map(({ node }) => node)

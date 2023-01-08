@@ -24,6 +24,7 @@ import Section from '../../components/section'
 import Image from 'next/image'
 import Layout from '../../components/layouts/article'
 import { getApolloClient } from '../../lib/github'
+import AuthorBio from '../../components/post/author-bio'
 
 import { Title, Portfolio, Repo, WorkImage, Meta } from '../../components/work'
 
@@ -72,83 +73,46 @@ export default function Post({ rep }) {
       <Container>
         <Section delay={0.1}>
           <main className={styles.main}>
-            <Section delay={0.1}>
-              <Box
-                borderRadius="lg"
-                mb={6}
-                p={5}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                paddingBottom="6px"
-                width="100%"
-                marginTop="-4rem"
-              >
-                <Repo>
-                  <div>
-                    {rep.name}{' '}
-                    <Badge
-                      bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
-                      color=""
-                    >
-                      {dayMonth(rep.updatedAt)}
-                    </Badge>
-                  </div>
-                </Repo>
-              </Box>
-              <SimpleGrid paddingTop="25px" paddingBottom="25px">
-                <Divider my={1} />
-                <Paragraph>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: rep.object.text
-                    }}
-                  />
-                </Paragraph>
-                <br></br>
-                <Paragraph>
-                  To view this repository on Github please click{' '}
-                  <Link href={rep.url}>here</Link>.
-                </Paragraph>
-              </SimpleGrid>
-              <Divider my={6} />
-              <Box>
-                <Center>
-                  <ProfileImage
-                    src="/images/mike.jpg"
-                    alt="Profile image"
-                    borderRadius="full"
-                    width="110"
-                    height="110"
-                  />
-                </Center>
-              </Box>
-              <Box display={{ md: 'flex' }} paddingTop="15px">
-                <Box flexGrow={1}>
-                  <Center>
-                    <Heading
-                      as="h2"
-                      variant="page-title"
-                      fontFamily="Roboto"
-                      fontWeight=""
-                    >
-                      Michael Keates
-                    </Heading>
-                  </Center>
-                </Box>
-              </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={5}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              paddingBottom="6px"
+              width="100%"
+              marginTop="-4rem"
+            >
+              <Repo>
+                <div>
+                  {rep.name}{' '}
+                  <Badge
+                    bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    color=""
+                  >
+                    {dayMonth(rep.updatedAt)}
+                  </Badge>
+                </div>
+              </Repo>
+            </Box>
+            <SimpleGrid paddingTop="25px" paddingBottom="25px">
+              <Divider my={1} />
               <Paragraph>
-                I am a organised and highly creative individual that thrives on
-                working at the utmost level of professionalism. I will always
-                work to the best of my abilities under any sort of circumstances
-                and under any level of pressure for something that I truly love.
-                I have a strong attention to detail and possess the ability to
-                adapt to situations quickly, efficently and creatively. Click{' '}
-                <Link href="/about">here</Link> if you would like to know more.
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: rep.object.text
+                  }}
+                />
               </Paragraph>
-              <Divider my={6} />
-              <Section delay={0.1}></Section>
-            </Section>
+              <br></br>
+              <Paragraph>
+                To view this repository on Github please click{' '}
+                <Link href={rep.url}>here</Link>.
+              </Paragraph>
+            </SimpleGrid>
+            <Divider my={6} />
+            <AuthorBio />
             <NextLink href="/repositories" passHref scroll={false}>
               <Button
                 rightIcon={<ChevronRightIcon />}
