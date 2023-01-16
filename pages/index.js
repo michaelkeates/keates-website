@@ -39,7 +39,7 @@ const Home = () => (
         Hi! I&apos;m a developer and designer based in South Wales! 🏴󠁧󠁢󠁷󠁬󠁳󠁿
       </Box>
 
-      <Box display={{ md: 'flex' }} paddingTop="25px">
+      <Box display={{ md: 'flex' }} paddingTop="25px" paddingBottom="25px">
         <Box flexGrow={1}>
           <Heading
             as="h2"
