@@ -183,7 +183,7 @@ const Home = () => (
         <Section delay={0.3}>
           <Box
             borderRadius="lg"
-            mb={6}
+            mb={0}
             p={4}
             textAlign="center"
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
@@ -201,7 +201,7 @@ const Home = () => (
         <Section delay={0.3}>
           <Box
             borderRadius="lg"
-            mb={6}
+            mb={0}
             p={4}
             textAlign="center"
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
