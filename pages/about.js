@@ -133,7 +133,7 @@ const Home = () => (
       >
         Contact
       </Heading>
-      <SimpleGrid columns={[2, 2, 2]} gap={2}>
+      <SimpleGrid columns={[1, 1, 2]} gap={2}>
         <Section delay={0.3}>
           <Box
             borderRadius="lg"
@@ -162,7 +162,7 @@ const Home = () => (
             padding="10px;"
           >
             <BioSection>
-              <a href="tel:+447495137974">📱 +44 4495 137 974</a>
+              <a href="tel:+447495137974">📱 +44 7495 137 974</a>
             </BioSection>
           </Box>
         </Section>
