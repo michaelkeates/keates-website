@@ -5,7 +5,9 @@ import {
   Button,
   Box,
   SimpleGrid,
-  useColorModeValue
+  useColorModeValue,
+  chakra,
+  Divider
 } from '@chakra-ui/react'
 import {
   ChevronRightIcon,
@@ -18,7 +20,7 @@ import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem, WorkGridItem } from '../components/grid-item'
-
+import Image from 'next/image'
 import ReactOriginalIcon from 'react-devicons/react/original'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
@@ -42,6 +44,10 @@ import {
   XamarinIcon
 } from '../components/devicons'
 
+const ProfileImage = chakra(Image, {
+  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
+})
+
 const Home = () => (
   <Layout>
     <Container>
@@ -56,27 +62,44 @@ const Home = () => (
       >
         Check out my qualifications and skills! 🧍
       </Box>
-      <Box display={{ md: 'flex' }}>
+      <Box display={{ md: 'flex' }} paddingTop="25px">
         <Box flexGrow={1}>
           <Heading
-            as="h3"
+            as="h2"
             variant="page-title"
             fontFamily="Roboto"
-            fontWeight="500"
-            marginTop="1rem"
-            marginBottom="2rem"
+            fontWeight=""
           >
             Michael Keates
           </Heading>
+          <p>Developer / Designer</p>
         </Box>
         <Box
           flexShrink={0}
           mt={{ base: 4, md: 0 }}
-          ml={{ md: 1 }}
+          ml={{ md: 6 }}
           textAlign="center"
-        ></Box>
+        >
+          <Box
+            borderColor="whiteAlpha.800"
+            borderWidth={2}
+            borderStyle="solid"
+            w="100px"
+            h="100px"
+            display="inline-block"
+            borderRadius="full"
+            overflow="hidden"
+          >
+            <ProfileImage
+              src="/images/mike.jpg"
+              alt="Profile image"
+              borderRadius="full"
+              width="100"
+              height="100"
+            />
+          </Box>
+        </Box>
       </Box>
-
       <SimpleGrid colums={[1, 1, 2]} gap={2}>
         <Section delay={0.1}>
           <Heading
@@ -89,14 +112,14 @@ const Home = () => (
             Background
           </Heading>
           <Paragraph>
-            I am a organised and highly creative individual that thrives on
-            working at the utmost level of professionalism. I will always work
-            to the best of my abilities under any sort of circumstances and
-            under any level of pressure for something that I truly love. I am an
-            ambitious individual with a strong attention to detail and possess
-            the ability to adapt to situations quickly, efficently and
-            creatively. I am currently in my third year of studying BSc (Hons)
-            Applied Computing at the University of South Wales.
+            I am a dedicated and hardworking individual with a strong background
+            in all things computing and technology. I have a passion for
+            learning and developing new skills, a strong attention to detail and
+            I am always looking for new opportunities to expand my knowledge and
+            experience as well as honing my ability to create efficient and
+            effective solutions for various requirements. I am currently
+            studying for a BSc (Hons) Applied Computing degree at the University
+            of South Wales.
           </Paragraph>
         </Section>
       </SimpleGrid>
@@ -122,7 +145,9 @@ const Home = () => (
             padding="10px;"
           >
             <BioSection>
-              <a href="mailto: mail@michaelkeates.co.uk">Send Email ✉️</a>
+              <a href="mailto: mail@michaelkeates.co.uk">
+                ✉️ mail@michaelkeates.co.uk
+              </a>
             </BioSection>
           </Box>
         </Section>
@@ -137,7 +162,7 @@ const Home = () => (
             padding="10px;"
           >
             <BioSection>
-              <a href="tel:+447495137974">Make a call 📱</a>
+              <a href="tel:+447495137974">📱 +44 4495 137 974</a>
             </BioSection>
           </Box>
         </Section>
@@ -163,7 +188,6 @@ const Home = () => (
             textAlign="center"
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
-            opacity="20%"
           >
             <WorkGridItem
               id="uswapplied"

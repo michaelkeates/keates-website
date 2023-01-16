@@ -30,10 +30,7 @@ const ProfileImage = chakra(Image, {
 
 const AuthorBio = () => (
   <Section>
-    <Box
-      flexShrink={0}
-      align="center"
-    >
+    <Box flexShrink={0} align="center">
       <ProfileImage
         src="/images/mike.jpg"
         alt="Profile image"
@@ -58,13 +55,14 @@ const AuthorBio = () => (
 
     <Section delay={0.1}>
       <Paragraph>
-        I am a organised and highly creative individual that thrives on working
-        at the utmost level of professionalism. I will always work to the best
-        of my abilities under any sort of circumstances and under any level of
-        pressure for something that I truly love. I have a strong attention to
-        detail and possess the ability to adapt to situations quickly,
-        efficently and creatively. Click <Link href="/about">here</Link> if you
-        would like to know more.
+        I am a dedicated and hardworking individual with a strong background in
+        all things computing and technology. I have a passion for learning and
+        developing new skills, a strong attention to detail and I am always
+        looking for new opportunities to expand my knowledge and experience as
+        well as honing my ability to create efficient and effective solutions
+        for various requirements. I am currently studying for a BSc (Hons)
+        Applied Computing degree at the University of South Wales. Click{' '}
+        <Link href="/about">here</Link> if you would like to know more.
       </Paragraph>
     </Section>
   </Section>

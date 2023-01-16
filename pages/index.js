@@ -50,6 +50,15 @@ const Home = () => (
             Michael Keates
           </Heading>
           <p>Developer / Designer</p>
+          <Heading
+          as="h2"
+          size="1xl"
+          fontWeight={0}
+          paddingTop="25px"
+        >
+          "I am a dedicated and hardworking individual with a strong background
+          in all things computing and technology."
+        </Heading>
         </Box>
         <Box
           flexShrink={0}
@@ -79,12 +88,14 @@ const Home = () => (
       </Box>
       <Divider />
       <Section delay={0.1}>
-        <Heading as="h2" size="1xl" fontWeight={0} textAlign="center" paddingTop="25px">
-          "I am a organised and highly creative individual that thrives on
-          working at the utmost level of professionalism."
-        </Heading>
         <Section delay={0.1}>
-          <Heading as="h2" size="xs" fontWeight={0} textAlign="center" paddingTop="35px">
+          <Heading
+            as="h2"
+            size="xs"
+            fontWeight={0}
+            textAlign="center"
+            paddingTop="35px"
+          >
             Welcome to my portfolio website! Hope you like what you see and
             enjoy your visit!
           </Heading>
