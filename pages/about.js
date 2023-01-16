@@ -243,7 +243,7 @@ const Home = () => (
           fontSize={20}
           mb={4}
         >
-          Front-End
+          Front-End Skills
         </Heading>
         <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
           <Box
@@ -340,7 +340,7 @@ const Home = () => (
           fontSize={20}
           mb={4}
         >
-          Back-End
+          Back-End Skills
         </Heading>
         <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
           <Box
