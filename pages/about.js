@@ -32,6 +32,7 @@ import {
   DockerIcon,
   Html5Icon,
   JavascriptIcon,
+  GraphQlIcon,
   KotlinIcon,
   MySQLIcon,
   PhpIcon,
@@ -176,7 +177,7 @@ const Home = () => (
         mb={4}
         marginTop="1rem"
       >
-        Qualifications
+        Education
       </Heading>
 
       <SimpleGrid columns={[2, 2, 3]} gap={2}>
@@ -329,6 +330,31 @@ const Home = () => (
             title="Typescript"
           >
             <TypescriptIcon />
+          </Box>
+        </SimpleGrid>
+      </Section>
+      <Section delay={0.2}>
+        <Heading
+          as="h3"
+          fontFamily="Roboto"
+          fontWeight="500"
+          fontSize={20}
+          mb={4}
+        >
+          Middleware Skills
+        </Heading>
+        <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding="10px;"
+            title="GraphQL"
+          >
+            <GraphQlIcon />
           </Box>
         </SimpleGrid>
       </Section>

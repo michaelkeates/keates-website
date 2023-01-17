@@ -5,7 +5,7 @@ import DockerOriginalIcon from 'react-devicons/docker/original'
 import DotNetOriginalIcon from 'react-devicons/dot-net/original'
 import DotnetcoreOriginalIcon from 'react-devicons/dotnetcore/original'
 import GithubOriginalIcon from 'react-devicons/github/original'
-//import GraphQLOriginalIcon from 'react-devicons/graphql/original'
+import GraphQLOriginalIcon from 'react-devicons/graphql/plain'
 import Html5OriginalIcon from 'react-devicons/html5/original'
 import ReactOriginalIcon from 'react-devicons/react/original'
 import JavascriptOriginalIcon from 'react-devicons/javascript/original'
@@ -48,9 +48,9 @@ export const GithubIcon = () => (
   <GithubOriginalIcon className="my-class" size="100%" />
 )
 
-//export const GraphQlIcon = () => (
-//  <GraphQLOriginalIcon className="my-class" size="100%" />
-//)
+export const GraphQlIcon = () => (
+  <GraphQLOriginalIcon className="my-class" size="100%" />
+)
 
 export const Html5Icon = () => (
   <Html5OriginalIcon className="my-class" size="100%" />
@@ -109,6 +109,7 @@ export const Devicons = () => (
     <DotNetIcon />
     <DotnetcoreIcon />
     <GithubIcon />
+    <GraphQlIcon />
     <Html5Icon />
     <JavascriptIcon />
     <KotlinIcon />
