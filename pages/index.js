@@ -50,15 +50,10 @@ const Home = () => (
             Michael Keates
           </Heading>
           <p>Developer / Designer</p>
-          <Heading
-          as="h2"
-          size="1xl"
-          fontWeight={0}
-          paddingTop="25px"
-        >
-          "I am a dedicated and hardworking individual with a strong background
-          in all things computing and technology."
-        </Heading>
+          <Heading as="h2" size="1xl" fontWeight={0} paddingTop="25px">
+            "I am a dedicated and hardworking individual with a strong
+            background in all things computing and technology."
+          </Heading>
         </Box>
         <Box
           flexShrink={0}
@@ -106,4 +101,10 @@ const Home = () => (
 )
 
 export default Home
-export { getServerSideProps } from '../components/chakra'
+export async function getStaticProps() {
+  return {
+    props: {
+      title: 'Home'
+    }
+  }
+}
