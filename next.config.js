@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ['blog.michaelkeates.co.uk','avatars.githubusercontent.com','repository-images.githubusercontent.com'],
+    domains: ['blog.michaelkeates.co.uk','avatars.githubusercontent.com','repository-images.githubusercontent.com', 'opengraph.githubassets.com'],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
