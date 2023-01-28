@@ -52,7 +52,7 @@ const Model = () => {
 
       var loader = new GLTFLoader();
       
-      loader.load( '/models/avatar.glb', function ( gltf ) {
+      loader.load( '/models/test.glb', function ( gltf ) {
         scene.add( gltf.scene );
         mixer = new THREE.AnimationMixer( gltf.scene );
         
@@ -67,10 +67,12 @@ const Model = () => {
       renderer.setSize(scW, scH)
       renderer.physicallyCorrectLights = true
       renderer.toneMapping = THREE.ACESFilmicToneMapping
-      renderer.toneMappingExposure = 2.9
-      renderer.outputEncoding = THREE.sRGBEncoding
+      renderer.toneMappingExposure = 2.7
       renderer.shadowMap.enabled = true
       renderer.shadowMap.type = THREE.PCFSoftShadowMap
+      renderer.castShadow = true
+      renderer.outputEncoding = THREE.sRGBEncoding
+
       container.appendChild(renderer.domElement)
       setRenderer(renderer)
 
@@ -89,9 +91,15 @@ const Model = () => {
       camera.lookAt(target)
       setCamera(camera)
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
+      //const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
 
-      scene.add(ambientLight)
+      //scene.add(ambientLight)
+
+      let light = new THREE.DirectionalLight(0xffffff, 1)
+      light.position.set(20, 100, 10)
+      light.target.position.set(100, 100, 100)
+      light.castShadow = true
+      scene.add(light)
 
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
