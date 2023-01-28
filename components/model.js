@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
+import { HemisphereLight } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { ModelSpinner, ModelContainer } from './model-loader'
@@ -45,22 +46,29 @@ const Model = () => {
 
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
-        alpha: true,
+        alpha: true
       })
 
-      clock = new THREE.Clock();
+      clock = new THREE.Clock()
 
-      var loader = new GLTFLoader();
-      
-      loader.load( '/models/avatar.glb', function ( gltf ) {
-        mixer = new THREE.AnimationMixer( gltf.scene );
-        
-        gltf.animations.forEach( ( clip ) => {
-            mixer.clipAction( clip ).play();
-            animate()
-            setLoading(false)
-      })
-      scene.add( gltf.scene );
+      var loader = new GLTFLoader()
+
+      loader.load('/models/test.glb', function (gltf) {
+        let model = gltf.scene
+        mixer = new THREE.AnimationMixer(gltf.scene)
+
+        gltf.animations.forEach(clip => {
+          mixer.clipAction(clip).play()
+          animate()
+          setLoading(false)
+        })
+
+        model.traverse(function (node) {
+          if (node.isMesh) {
+            node.castShadow = true
+          }
+        })
+        scene.add(gltf.scene)
       })
 
       renderer.setPixelRatio(window.devicePixelRatio)
@@ -71,6 +79,7 @@ const Model = () => {
       renderer.outputEncoding = THREE.sRGBEncoding
       renderer.shadowMap.enabled = true
       renderer.shadowMap.type = THREE.PCFSoftShadowMap
+      renderer.setClearColor(0x000000, 0)
 
       container.appendChild(renderer.domElement)
       setRenderer(renderer)
@@ -94,25 +103,28 @@ const Model = () => {
 
       //scene.add(ambientLight)
 
-      let light = new THREE.DirectionalLight(0xffffff, 1)
-      light.position.set(0, 1, 0)
-      light.castShadow = true
-      light.shadow.mapSize.width = 512
-      light.shadow.mapSize.height = 512
-      light.shadow.camera.near = 0.5
-      light.shadow.camera.far = 500
-      scene.add(light)
+      const geometry = new THREE.PlaneGeometry(6, 6, 32)
+      geometry.rotateX(-Math.PI / 2)
+      const material = new THREE.ShadowMaterial()
+      material.opacity = 0.2
+      const plane = new THREE.Mesh(geometry, material)
+      plane.receiveShadow = true
+      scene.add(plane)
 
-      //let planeGeometry = new THREE.PlaneGeometry(6, 6, 6, 6)
-      //let planeMaterial = new THREE.MeshStandardMaterial({
-      //  color: 0x00ff00,
-      //  side: THREE.DoubleSide,
-      //})
-      //let plane = new THREE.Mesh(planeGeometry, planeMaterial)
-      //plane.receiveShadow = true
-      //plane.rotation.x = Math.PI / 2
-      //plane.position.y = 0.1
-      //scene.add(plane)
+      // DIRECTIONAL LIGHT
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+      directionalLight.position.x += 20
+      directionalLight.position.y += 20
+      directionalLight.position.z += 20
+      directionalLight.castShadow = true
+      directionalLight.shadow.mapSize.width = 4096
+      directionalLight.shadow.mapSize.height = 4096
+      const d = 25
+      directionalLight.shadow.camera.left = -d
+      directionalLight.shadow.camera.right = d
+      directionalLight.shadow.camera.top = d
+      directionalLight.shadow.camera.bottom = -d
+      scene.add(directionalLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
@@ -126,8 +138,8 @@ const Model = () => {
         req = requestAnimationFrame(animate)
 
         var delta = clock.getDelta()
-  
-        if ( mixer ) mixer.update( delta )
+
+        if (mixer) mixer.update(delta)
 
         frame = frame <= 100 ? frame + 1 : frame
 
