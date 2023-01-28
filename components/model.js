@@ -45,15 +45,14 @@ const Model = () => {
 
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
-        alpha: true
+        alpha: true,
       })
 
       clock = new THREE.Clock();
 
       var loader = new GLTFLoader();
       
-      loader.load( '/models/test.glb', function ( gltf ) {
-        scene.add( gltf.scene );
+      loader.load( '/models/avatar.glb', function ( gltf ) {
         mixer = new THREE.AnimationMixer( gltf.scene );
         
         gltf.animations.forEach( ( clip ) => {
@@ -61,17 +60,17 @@ const Model = () => {
             animate()
             setLoading(false)
       })
+      scene.add( gltf.scene );
       })
 
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(scW, scH)
       renderer.physicallyCorrectLights = true
       renderer.toneMapping = THREE.ACESFilmicToneMapping
-      renderer.toneMappingExposure = 2.7
+      renderer.toneMappingExposure = 3.8
+      renderer.outputEncoding = THREE.sRGBEncoding
       renderer.shadowMap.enabled = true
       renderer.shadowMap.type = THREE.PCFSoftShadowMap
-      renderer.castShadow = true
-      renderer.outputEncoding = THREE.sRGBEncoding
 
       container.appendChild(renderer.domElement)
       setRenderer(renderer)
@@ -96,10 +95,24 @@ const Model = () => {
       //scene.add(ambientLight)
 
       let light = new THREE.DirectionalLight(0xffffff, 1)
-      light.position.set(20, 100, 10)
-      light.target.position.set(100, 100, 100)
+      light.position.set(0, 1, 0)
       light.castShadow = true
+      light.shadow.mapSize.width = 512
+      light.shadow.mapSize.height = 512
+      light.shadow.camera.near = 0.5
+      light.shadow.camera.far = 500
       scene.add(light)
+
+      //let planeGeometry = new THREE.PlaneGeometry(6, 6, 6, 6)
+      //let planeMaterial = new THREE.MeshStandardMaterial({
+      //  color: 0x00ff00,
+      //  side: THREE.DoubleSide,
+      //})
+      //let plane = new THREE.Mesh(planeGeometry, planeMaterial)
+      //plane.receiveShadow = true
+      //plane.rotation.x = Math.PI / 2
+      //plane.position.y = 0.1
+      //scene.add(plane)
 
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
