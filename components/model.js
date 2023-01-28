@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
-import { HemisphereLight } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { ModelSpinner, ModelContainer } from './model-loader'
@@ -53,7 +52,7 @@ const Model = () => {
 
       var loader = new GLTFLoader()
 
-      loader.load('/models/test.glb', function (gltf) {
+      loader.load('/models/avatar.glb', function (gltf) {
         let model = gltf.scene
         mixer = new THREE.AnimationMixer(gltf.scene)
 
@@ -79,7 +78,6 @@ const Model = () => {
       renderer.outputEncoding = THREE.sRGBEncoding
       renderer.shadowMap.enabled = true
       renderer.shadowMap.type = THREE.PCFSoftShadowMap
-      renderer.setClearColor(0x000000, 0)
 
       container.appendChild(renderer.domElement)
       setRenderer(renderer)
@@ -103,7 +101,7 @@ const Model = () => {
 
       //scene.add(ambientLight)
 
-      const geometry = new THREE.PlaneGeometry(6, 6, 32)
+      const geometry = new THREE.PlaneGeometry(6, 6)
       geometry.rotateX(-Math.PI / 2)
       const material = new THREE.ShadowMaterial()
       material.opacity = 0.2
@@ -113,7 +111,7 @@ const Model = () => {
 
       // DIRECTIONAL LIGHT
       const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
-      directionalLight.position.x += 20
+      directionalLight.position.x += 5
       directionalLight.position.y += 20
       directionalLight.position.z += 20
       directionalLight.castShadow = true
