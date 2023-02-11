@@ -74,7 +74,7 @@ const Model = () => {
       renderer.setSize(scW, scH)
       renderer.physicallyCorrectLights = true
       renderer.toneMapping = THREE.ACESFilmicToneMapping
-      renderer.toneMappingExposure = 3.8
+      renderer.toneMappingExposure = 4.8
       renderer.outputEncoding = THREE.sRGBEncoding
       renderer.shadowMap.enabled = true
       renderer.shadowMap.type = THREE.PCFSoftShadowMap

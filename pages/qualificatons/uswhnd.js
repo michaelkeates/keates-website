@@ -24,6 +24,7 @@ const Work = () => (
         paddingTop="25px;"
         paddingBottom="7px;"
         marginBottom="2rem"
+        boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
       >
         <Title>
           HND Computing{' '}
@@ -127,4 +128,4 @@ const Work = () => (
 )
 
 export default Work
-export { getServerSideProps } from '../../components/chakra'
+//export { getServerSideProps } from '../../components/chakra'

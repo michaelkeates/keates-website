@@ -74,6 +74,7 @@ export default function Home({ repository }) {
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           css={{ backdropFilter: 'blur(10px)' }}
           padding="15px;"
+          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
         >
           Check out my current and past projects! 🚀
         </Box>
@@ -91,6 +92,7 @@ export default function Home({ repository }) {
                   textAlign="center"
                   bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                   css={{ backdropFilter: 'blur(10px)' }}
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
                 >
                   <GridItem
                     id={github}

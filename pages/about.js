@@ -60,6 +60,7 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
         padding="15px;"
+        boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
       >
         Check out my qualifications and skills! 🧍
       </Box>
@@ -144,6 +145,7 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <BioSection>
               <a href="mailto: mail@michaelkeates.co.uk">
@@ -161,6 +163,7 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <BioSection>
               <a href="tel:+447495137974">📱 +44 7495 137 974</a>
@@ -189,6 +192,7 @@ const Home = () => (
             textAlign="center"
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <WorkGridItem
               id="uswapplied"
@@ -207,6 +211,7 @@ const Home = () => (
             textAlign="center"
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <WorkGridItem
               id="uswhnd"
@@ -225,6 +230,7 @@ const Home = () => (
             textAlign="center"
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <WorkGridItem
               id="coleggwentbtec"
@@ -256,6 +262,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="CSS3"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <Css3Icon />
           </Box>
@@ -268,6 +275,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="HTML5"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <Html5Icon />
           </Box>
@@ -280,6 +288,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="JavaScript"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <JavascriptIcon />
           </Box>
@@ -292,6 +301,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="React"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <ReactIcon />
           </Box>
@@ -304,6 +314,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="Next.js"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <NextjsIcon />
           </Box>
@@ -316,6 +327,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="Three.js"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <ThreejsIcon />
           </Box>
@@ -328,6 +340,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="Typescript"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <TypescriptIcon />
           </Box>
@@ -353,6 +366,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="GraphQL"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <GraphQlIcon />
           </Box>
@@ -378,6 +392,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="C++"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <CplusplusIcon />
           </Box>
@@ -390,6 +405,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="C#"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <CsharpIcon />
           </Box>
@@ -402,6 +418,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="mySQL"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <MySQLIcon />
           </Box>
@@ -414,6 +431,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="PHP"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <PhpIcon />
           </Box>
@@ -426,6 +444,7 @@ const Home = () => (
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
             title="PostgreSQL"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <PostgresqlIcon />
           </Box>
@@ -439,6 +458,7 @@ const Home = () => (
             padding="10px;"
             href="Typescript"
             title="Python"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             <PythonIcon />
           </Box>
@@ -463,6 +483,7 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             Coding 👨🏾‍💻
           </Box>
@@ -474,6 +495,7 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             Photography 📷
           </Box>
@@ -485,6 +507,7 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             Travelling 🧳
           </Box>
@@ -496,6 +519,7 @@ const Home = () => (
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             css={{ backdropFilter: 'blur(10px)' }}
             padding="10px;"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             Gym 💪
           </Box>
