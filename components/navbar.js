@@ -1,5 +1,6 @@
 import Logo from './logo'
 import NextLink from 'next/link'
+import React, { useState } from 'react'
 import {
   Container,
   Box,
@@ -15,6 +16,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import SearchToggleButton from './search-toggle-button'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoFacebook } from 'react-icons/io5'
 import { IoLogoInstagram } from 'react-icons/io5'
@@ -49,8 +51,11 @@ const Navbar = props => {
       position="fixed"
       as="nav"
       w="100%"
-      //bg={useColorModeValue('#ffffff40', '#20202380')}
-      css={{ backdropFilter: 'blur(10px)' }}
+      bg={useColorModeValue('#ffffff40', '#20202380')}
+      css={{
+        backdropFilter: 'blur(10px)',
+        transition: 'backdrop-filter 0.3s ease-out'
+      }}
       zIndex={999}
       {...props}
     >
@@ -101,8 +106,11 @@ const Navbar = props => {
           </LinkItem>
         </Stack>
 
-        <Box flex={1} align="right">
-          <ThemeToggleButton />
+        <Box flex={1} ml={1} align="right">
+
+          <Box ml={2} display={{ base: 'inline-block' }}>
+            <ThemeToggleButton />
+          </Box>
 
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy id="navbar-menu">
@@ -115,7 +123,7 @@ const Navbar = props => {
               />
               <MenuList
                 bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
-                css={{ backdropFilter: 'blur(10px)'}}
+                css={{ backdropFilter: 'blur(10px)' }}
               >
                 <NextLink href="/about" passHref>
                   <MenuItem
