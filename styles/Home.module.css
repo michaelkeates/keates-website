@@ -168,6 +168,8 @@
   /* border-radius: 5px; */
   width: auto;
   padding-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .logo {
