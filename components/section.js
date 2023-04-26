@@ -13,6 +13,10 @@ const Section = ({ children, delay = 0 }) => (
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.8, delay }}
     mb={6}
+    css={{
+      backdropFilter: 'blur(10px)',
+      transition: 'backdrop-filter 0.3s ease-out'
+    }}
   >
     {children}
   </StyledDiv>

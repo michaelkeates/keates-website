@@ -33,7 +33,9 @@ const Home = () => (
         p={3}
         textAlign="center"
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-        css={{ backdropFilter: 'blur(10px)' }}
+        css={{
+          backdropFilter: 'blur(10px)',
+        }}
         padding="15px;"
         boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
       >

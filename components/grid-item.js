@@ -17,7 +17,9 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
         loading="lazy"
       />
       <LinkOverlay href={href} target="_blank">
-        <Text fontSize={18} mt={2}>{title}</Text>
+        <Text fontSize={18} mt={2}>
+          {title}
+        </Text>
       </LinkOverlay>
       <Text fontSize={11}>{children}</Text>
     </LinkBox>
@@ -76,6 +78,7 @@ export const GridItemStyle = () => (
       .grid-item-thumbnail {
         border-radius: 12px;
         align-item: center;
+        filter: 'blur(10px)';
       }
     `}
   />

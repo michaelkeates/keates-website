@@ -17,7 +17,11 @@ const Layout = ({ children, title }) => {
       exit="exit"
       variants={variants}
       transition={{ duration: 0.4, type: 'easeInOut' }}
-      style={{ position: 'relative' }}
+      style={{
+        position: 'relative',
+        backdropFilter: 'blur(10px)',
+        transition: 'backdrop-filter 0.3s ease-out'
+      }}
     >
       <>
         {title && (
