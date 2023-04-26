@@ -11,6 +11,7 @@ if (typeof window !== 'undefined') {
 function Website({ Component, pageProps, router }) {
   return (
     <Chakra cookies={pageProps.cookies}>
+      <Fonts />
       <Layout router={router}>
         <AnimatePresence
           mode="wait"
