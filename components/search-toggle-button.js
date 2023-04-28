@@ -46,7 +46,7 @@ const SearchBar = () => {
                 position: 'absolute',
                 top: '5px',
                 right: 0,
-                left: 0,
+                left: 450,
                 width: '20%',
                 justifyContent: 'space-between',
                 alignItems: 'center'
