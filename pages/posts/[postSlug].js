@@ -36,6 +36,8 @@ const ProfileImage = chakra(Image, {
 
 function dayMonth(data) {
   const monthNames = [
+    //why do i have to include null?
+    'null',
     'January',
     'Febuary',
     'March',

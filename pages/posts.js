@@ -24,6 +24,7 @@ import styles from '../styles/Home.module.css'
 
 function dayMonth(data) {
   const monthNames = [
+    //why do i have to include null?
     'null',
     'January',
     'Febuary',
