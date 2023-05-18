@@ -60,8 +60,7 @@ const AuthorBio = () => (
         developing new skills, a strong attention to detail and I am always
         looking for new opportunities to expand my knowledge and experience as
         well as honing my ability to create efficient and effective solutions
-        for various requirements. I am currently studying for a BSc (Hons)
-        Applied Computing degree at the University of South Wales. Click{' '}
+        for various requirements. Click{' '}
         <Link href="/about">here</Link> if you would like to know more.
       </Paragraph>
     </Section>
