@@ -119,9 +119,7 @@ const Home = () => (
             learning and developing new skills, a strong attention to detail and
             I am always looking for new opportunities to expand my knowledge and
             experience as well as honing my ability to create efficient and
-            effective solutions for various requirements. I am currently
-            studying for a BSc (Hons) Applied Computing degree at the University
-            of South Wales.
+            effective solutions for various requirements.
           </Paragraph>
         </Section>
       </SimpleGrid>
