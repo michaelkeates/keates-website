@@ -1,8 +1,6 @@
-import fs from 'fs';
-import path from 'path';
 import puppeteer from 'puppeteer';
 
-async function generatePDF() {
+export default async function handler(req, res) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -28,10 +26,11 @@ async function generatePDF() {
 
   await browser.close();
 
-  // Save the PDF to the public folder
-  const publicPath = path.join(process.cwd(), 'public');
-  const filePath = path.join(publicPath, 'cv.pdf');
-  fs.writeFileSync(filePath, pdfBuffer);
+  // Set response headers for file download
+  //res.setHeader('Content-Type', 'application/pdf');
+  //res.setHeader('Content-Disposition', 'attachment; filename=cv.pdf');
+  //res.setHeader('Content-Length', pdfBuffer.length);
 
-  return filePath;
+  // Stream the PDF buffer to the client for download
+  res.send(pdfBuffer);
 }
