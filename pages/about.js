@@ -73,25 +73,14 @@ const Home = () => {
     }
   }
 
-  const handleDownloadClick = async () => {
-    setIsDownloading(true)
-
-    try {
-      const response = await fetch('/api/generatepdf')
-      const pdfBlob = await response.blob()
-      const downloadUrl = URL.createObjectURL(pdfBlob)
-
-      const link = document.createElement('a')
-      link.href = downloadUrl
-      link.download = 'cv.pdf'
-      link.click()
-
-      setIsDownloading(false)
-    } catch (error) {
-      console.error('Error generating PDF:', error)
-      setIsDownloading(false)
-    }
-  }
+  const handleDownloadClick = () => {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = '/cv.pdf'; // Set the path to the PDF file
+    downloadLink.download = 'cv.pdf'; // Set the desired filename
+    downloadLink.target = '_blank';
+    downloadLink.rel = 'noopener noreferrer';
+    downloadLink.click();
+  };
 
   return (
     <Layout>
