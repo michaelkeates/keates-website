@@ -31,6 +31,8 @@ async function generatePDF() {
     // Replace the selector with the appropriate one for the grid block
     const gridBlock = document.querySelector('.css-gzapkn')
 
+    const customGridElements = document.querySelectorAll('.css-9t4bud, .chakra-heading.css-kowkqe')
+
     gridElement.forEach(gridElement => {
       // Modify the grid template columns property to have 7 columns
       gridElement.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))'
@@ -78,6 +80,12 @@ async function generatePDF() {
     const unwantedElements = document.querySelectorAll(
       '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .css-ctnmuq, .css-13hhjt6, .custom-grid'
     )
+
+    customGridElements.forEach(element => {
+      // Add custom styles to remove padding/margin below each element
+      element.style.marginBottom = '0' // Set margin-bottom to 0
+      element.style.paddingBottom = '0' // Set padding-bottom to 0
+    })
 
     unwantedElements.forEach(element => {
       element.remove()
