@@ -569,16 +569,13 @@ const Home = () => {
           <Button
             isLoading={isDownloading}
             loadingText="Downloading..."
-            onClick={handleDownloadClick} // Update the function call here
             colorScheme="blue"
             variant="solid"
           >
-            Download CV
-          </Button>
           <a href="/cv.pdf" download>
-  Download CV
-</a>
-
+            Download CV
+          </a>
+          </Button>
         </Section>
       </Container>
     </Layout>
