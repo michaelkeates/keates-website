@@ -5,6 +5,7 @@ import puppeteer from 'puppeteer'
 async function generatePDF() {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
+  await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
 
   const url = 'http://www.michaelkeates.co.uk/about' // Replace with the URL of the about page
 
@@ -105,7 +106,6 @@ async function generatePDF() {
     printBackground: true,
     preferCSSPageSize: true,
     quality: 100,
-    dpi: 600 // Adjust the DPI value as needed
   })
 
   await browser.close()
