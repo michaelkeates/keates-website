@@ -475,65 +475,67 @@ const Home = () => {
           </SimpleGrid>
         </Section>
         <Section delay={0.2}>
-          <Heading
-            as="h3"
-            fontFamily="Roboto"
-            fontWeight="500"
-            fontSize={20}
-            mb={4}
-          >
-            Interests
-          </Heading>
-          <SimpleGrid columns={[2, 2, 4]} gap={1} fontSize="12px;">
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+          <div className="custom-grid">
+            <Heading
+              as="h3"
+              fontFamily="Roboto"
+              fontWeight="500"
+              fontSize={20}
+              mb={4}
             >
-              Coding 👨🏾‍💻
-            </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              Photography 📷
-            </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              Travelling 🧳
-            </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              Gym 💪
-            </Box>
-          </SimpleGrid>
+              Interests
+            </Heading>
+            <SimpleGrid columns={[2, 2, 4]} gap={1} fontSize="12px;">
+              <Box
+                borderRadius="lg"
+                mb={6}
+                p={3}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                Coding 👨🏾‍💻
+              </Box>
+              <Box
+                borderRadius="lg"
+                mb={6}
+                p={3}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                Photography 📷
+              </Box>
+              <Box
+                borderRadius="lg"
+                mb={6}
+                p={3}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                Travelling 🧳
+              </Box>
+              <Box
+                borderRadius="lg"
+                mb={6}
+                p={3}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                Gym 💪
+              </Box>
+            </SimpleGrid>
+          </div>
           <Button
             isLoading={isDownloading}
             loadingText="Downloading..."

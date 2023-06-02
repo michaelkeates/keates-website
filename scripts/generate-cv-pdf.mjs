@@ -27,6 +27,7 @@ async function generatePDF() {
     const textColors = document.querySelectorAll(
       '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2'
     )
+    const imageSize = document.querySelectorAll('.grid-item-thumbnail')
     // Replace the selector with the appropriate one for the grid block
     const gridBlock = document.querySelector('.css-gzapkn')
 
@@ -65,21 +66,26 @@ async function generatePDF() {
       textColor.style.color = '#000000' // Replace '#000000' with your desired font color
     })
 
-    // Replace the selector with the appropriate one for the elements you want to remove
+    imageSize.forEach(imageSize => {
+      imageSize.style.width = '100px' // Replace '100px' with your desired image width
+      imageSize.style.height = '100px' // Replace '100px' with your desired image height
+    })
+
+    // Replace the selector with the appropriate one for the elements to remove from the pdf
     const unwantedElements = document.querySelectorAll(
-      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a'
+      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .css-ctnmuq, .css-13hhjt6, .custom-grid'
     )
 
     unwantedElements.forEach(element => {
       element.remove()
     })
 
-    if (gridBlock) {
-      // Apply a page break before the grid block
-      gridBlock.style.pageBreakBefore = 'always'
-      // Adjust the margin-top property to move the block further down
-      gridBlock.style.marginTop = '100px' // Adjust the value as needed
-    }
+    //if (gridBlock) {
+    // Apply a page break before the grid block
+    //  gridBlock.style.pageBreakBefore = 'always'
+    // Adjust the margin-top property to move the block further down
+    //  gridBlock.style.marginTop = '100px' // Adjust the value as needed
+    //}
   })
 
   // Generate PDF with modified print settings
