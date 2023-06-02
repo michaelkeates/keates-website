@@ -5,12 +5,12 @@ export default async function handler(req, res) {
   const page = await browser.newPage();
 
   // Set the page content to your Next.js CV page URL
-  await page.goto('http://localhost:3000/about'); // Replace with the actual URL of your CV page
+  await page.goto('http://www.michaelkeates.co.uk/about'); //replace with the actual URL of your CV page
 
   // Replace images with text
   await page.$$eval('img', (images) => {
     images.forEach((image) => {
-      const textNode = document.createTextNode('Image Placeholder'); // Replace with the desired text
+      const textNode = document.createTextNode('Image Placeholder'); //replace with the desired text
       image.parentNode.replaceChild(textNode, image);
     });
   });
