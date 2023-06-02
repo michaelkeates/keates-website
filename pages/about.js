@@ -590,8 +590,13 @@ const Home = () => {
             isLoading={isDownloading}
             loadingText="Downloading..."
             onClick={handleDownload} // Update the function call here
-            colorScheme="blue"
-            variant="solid"
+            bg={useColorModeValue(
+              'whiteAlpha.500',
+              'whiteAlpha.200'
+            )}
+            _hover={{
+              bg: useColorModeValue('#ffffff', '#828282')
+            }}
           >
             Download CV
           </Button>
