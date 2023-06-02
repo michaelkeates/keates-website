@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import puppeteer from 'puppeteer';
 
 export default async function handler(req, res) {
@@ -25,11 +27,23 @@ export default async function handler(req, res) {
 
   await browser.close();
 
+  // Create a temporary file path
+  const filePath = path.join('/tmp', 'cv.pdf');
+
+  // Write the PDF buffer to the temporary file
+  fs.writeFileSync(filePath, pdfBuffer);
+
   // Set response headers for file download
   res.setHeader('Content-Type', 'application/pdf');
   res.setHeader('Content-Disposition', 'attachment; filename=cv.pdf');
-  res.setHeader('Content-Length', pdfBuffer.length);
+  res.setHeader('Content-Length', fs.statSync(filePath).size);
 
-  // Send the PDF buffer as the response
-  res.send(pdfBuffer);
+  // Stream the file to the client for download
+  const fileStream = fs.createReadStream(filePath);
+  fileStream.pipe(res);
+
+  // Remove the temporary file after streaming
+  fileStream.on('end', () => {
+    fs.unlinkSync(filePath);
+  });
 }
