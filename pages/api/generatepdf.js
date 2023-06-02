@@ -6,17 +6,18 @@ export default async function handler(req, res) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  // Set the page content to your Next.js CV page URL
-  await page.goto('http://www.michaelkeates.co.uk/about'); // Replace with the actual URL of your CV page
+  // Set the HTML content for the PDF
+  const htmlContent = `
+    <html>
+      <body>
+        <h1>Hello, World!</h1>
+        <p>This is a sample PDF generated from custom content.</p>
+      </body>
+    </html>
+  `;
 
-  // Modify font color for the Paragraph component
-  await page.addStyleTag({
-    content: `
-      .chakra-ui-paragraph {
-        color: #000000 !important;
-      }
-    `,
-  });
+  // Set the page content to the custom HTML
+  await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
 
   // Generate PDF with modified print settings
   const pdfBuffer = await page.pdf({
