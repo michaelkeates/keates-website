@@ -5,15 +5,7 @@ export default async function handler(req, res) {
   const page = await browser.newPage();
 
   // Set the page content to your Next.js CV page URL
-  await page.goto('http://www.michaelkeates.co.uk/about'); //replace with the actual URL of your CV page
-
-  // Replace images with text
-  await page.$$eval('img', (images) => {
-    images.forEach((image) => {
-      const textNode = document.createTextNode('Image Placeholder'); //replace with the desired text
-      image.parentNode.replaceChild(textNode, image);
-    });
-  });
+  await page.goto('http://www.michaelkeates.co.uk/about'); // Replace with the actual URL of your CV page
 
   // Generate PDF as a buffer
   const pdfBuffer = await page.pdf({ format: 'A4' });
