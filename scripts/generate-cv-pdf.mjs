@@ -20,7 +20,8 @@ async function generatePDF() {
     const gridElement = document.querySelectorAll('.css-85h89v, .css-481av6')
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelector('.css-vqf3rg')
-    const text = document.querySelectorAll('.css-1oo097b');
+    const textSize = document.querySelectorAll('.css-1oo097b');
+    const textColors = document.querySelectorAll('.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-linkbox__overlay.css-1hnz6hu, .chakra-heading.css-kx7ixn, .css-1jzpmk, chakra-text.css-9c7r58');
 
     gridElement.forEach((gridElement) => {
       // Modify the grid template columns property to have 7 columns
@@ -35,11 +36,14 @@ async function generatePDF() {
     if (gridElement3) {
       // Modify the grid template columns property to have 4 columns
       gridElement3.style.gridTemplateColumns = 'repeat(2, minmax(0, 1fr))';
-      element.style.color = '#000000'; // Replace '#000000' with your desired color (black)
     }
 
-    text.forEach((text) => {
-      text.style.fontSize = '12px'; // Replace '12px' with your desired font size
+    textSize.forEach((textSize) => {
+      textSize.style.fontSize = '12px'; // Replace '12px' with your desired font size
+    });
+
+    textColors.forEach((textColor) => {
+      textColor.style.color = '#000000'; // Replace '#000000' with your desired font color
     });
 
     // Replace the selector with the appropriate one for the elements you want to remove
