@@ -73,6 +73,26 @@ const Home = () => {
     }
   }
 
+  const handleDownloadClick = async () => {
+    setIsDownloading(true);
+  
+    try {
+      const response = await fetch('/api/generatepdf');
+      const pdfBlob = await response.blob();
+      const downloadUrl = URL.createObjectURL(pdfBlob);
+  
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = 'cv.pdf';
+      link.click();
+  
+      setIsDownloading(false);
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      setIsDownloading(false);
+    }
+  };
+
   return (
     <Layout>
       <Container>
@@ -549,6 +569,15 @@ const Home = () => {
           <button onClick={handleDownload} disabled={isDownloading}>
         {isDownloading ? 'Downloading...' : 'Download CV'}
       </button>
+      <Button
+      isLoading={isDownloading}
+      loadingText="Downloading..."
+      onClick={handleDownloadClick} // Update the function call here
+      colorScheme="blue"
+      variant="solid"
+    >
+      Download CV
+    </Button>
         </Section>
       </Container>
     </Layout>
