@@ -1,21 +1,30 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer'
 
 export default async function handler(req, res) {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  const browser = await puppeteer.launch()
+  const page = await browser.newPage()
 
   // Set the page content to your Next.js CV page URL
-  await page.goto('http://www.michaelkeates.co.uk/about'); // Replace with the actual URL of your CV page
+  await page.goto('http://www.michaelkeates.co.uk/about') // Replace with the actual URL of your CV page
+
+  // Modify font color for the Paragraph component
+  await page.addStyleTag({
+    content: `
+      .chakra-ui-paragraph {
+        color: #000000 !important;
+      }
+    `,
+  });
 
   // Generate PDF as a buffer
-  const pdfBuffer = await page.pdf({ format: 'A4' });
+  const pdfBuffer = await page.pdf({ format: 'A4' })
 
-  await browser.close();
+  await browser.close()
 
   // Set response headers for file download
-  res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', 'attachment; filename=cv.pdf');
+  res.setHeader('Content-Type', 'application/pdf')
+  res.setHeader('Content-Disposition', 'attachment; filename=cv.pdf')
 
   // Send the PDF buffer as the response
-  res.send(pdfBuffer);
+  res.send(pdfBuffer)
 }
