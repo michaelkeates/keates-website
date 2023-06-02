@@ -76,7 +76,9 @@ async function generatePDF() {
 
     if (gridBlock) {
       // Apply a page break before the grid block
-      gridBlock.style.pageBreakBefore = 'always';
+      gridBlock.style.pageBreakBefore = 'always'
+      // Adjust the margin-top property to move the block further down
+      gridBlock.style.marginTop = '100px' // Adjust the value as needed
     }
   })
 
@@ -86,7 +88,7 @@ async function generatePDF() {
     printBackground: true,
     preferCSSPageSize: true,
     quality: 100,
-    dpi: 300 // Adjust the DPI value as needed
+    dpi: 600 // Adjust the DPI value as needed
   })
 
   await browser.close()
