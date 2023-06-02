@@ -158,7 +158,7 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <BioSection>
-                <a href="www.michaelkeates.co.uk">
+                <a href="https://www.michaelkeates.co.uk">
                   www.michaelkeates.co.uk
                 </a>
               </BioSection>
