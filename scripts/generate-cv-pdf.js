@@ -1,40 +1,40 @@
-//import fs from 'react/fs'
-//import puppeteer from 'react/puppeteer'
+import fs from 'fs';
+import path from 'path';
+import puppeteer from 'puppeteer';
 
-//const fs = require('fs')
-//const puppeteer = require('puppeteer')
+async function generatePDF() {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
 
-;(async () => {
-  const HTMLcontent = fs.readFileSync('.next/server/pages/about.js', 'utf8')
-  const CSSpath = '.next/static/css/'
-  const CSSfiles = fs.readdirSync(CSSpath).filter((fn) => fn.endsWith('.css'))
-  const CSScontent = fs.readFileSync(CSSpath + CSSfiles[0], 'utf8')
+  // Set the HTML content for the PDF
+  const htmlContent = `
+    <html>
+      <body>
+        <h1>Hello, World!</h1>
+        <p>This is a sample PDF generated from custom content.</p>
+      </body>
+    </html>
+  `;
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--font-render-hinting=none',
-    ],
-  })
-  const page = await browser.newPage()
-  await page.setContent(HTMLcontent, {
-    waitUntil: ['networkidle0'],
-  })
-  await page.addStyleTag({ content: CSScontent })
-  await page.evaluateHandle('document.fonts.ready')
+  // Set the page content to the custom HTML
+  await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
 
-  await page.pdf({
-    path: 'public/about.pdf',
+  // Generate PDF with modified print settings
+  const pdfBuffer = await page.pdf({
     format: 'A4',
-    scale: 0.67,
-    margin: {
-      top: '10mm',
-      left: '10mm',
-      right: '10mm',
-      bottom: '10mm',
-    },
-  })
-  await browser.close()
-})()
+    printBackground: true,
+    preferCSSPageSize: true,
+  });
+
+  await browser.close();
+
+  // Save the PDF to the public folder
+  const publicPath = path.join(process.cwd(), 'public');
+  const filePath = path.join(publicPath, 'cv.pdf');
+  fs.writeFileSync(filePath, pdfBuffer);
+}
+
+generatePDF().catch((error) => {
+  console.error('Error generating PDF:', error);
+  process.exit(1);
+});
