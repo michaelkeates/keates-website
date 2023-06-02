@@ -86,7 +86,8 @@ const Home = () => {
             >
               Michael Keates
             </Heading>
-            <p>Developer / Designer</p>
+            <p>Software Developer</p>
+            <a href="www.michaelkeates.co.uk">www.michaelkeates.co.uk</a>
           </Box>
           <Box
             flexShrink={0}

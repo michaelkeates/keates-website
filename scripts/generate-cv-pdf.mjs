@@ -33,7 +33,7 @@ async function generatePDF() {
 
     gridElement.forEach(gridElement => {
       // Modify the grid template columns property to have 7 columns
-      gridElement.style.gridTemplateColumns = 'repeat(4, minmax(0, 1fr))'
+      gridElement.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))'
     })
 
     gridElement2.forEach(gridElement2 => {
@@ -69,6 +69,9 @@ async function generatePDF() {
     imageSize.forEach(imageSize => {
       imageSize.style.width = '100px' // Replace '100px' with your desired image width
       imageSize.style.height = '100px' // Replace '100px' with your desired image height
+      //center image
+      imageSize.style.marginLeft = 'auto'
+      imageSize.style.marginRight = 'auto'
     })
 
     // Replace the selector with the appropriate one for the elements to remove from the pdf
