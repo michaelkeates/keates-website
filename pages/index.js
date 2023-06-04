@@ -1,21 +1,11 @@
-import NextLink from 'next/link'
 import {
   Container,
   Heading,
   Box,
-  SimpleGrid,
-  Button,
   useColorModeValue,
   chakra,
   Divider
 } from '@chakra-ui/react'
-import {
-  ChevronRightIcon,
-  InfoIcon,
-  StarIcon,
-  ViewIcon
-} from '@chakra-ui/icons'
-import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
