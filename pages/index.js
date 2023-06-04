@@ -45,7 +45,7 @@ const Home = () => (
           <p>Software Developer</p>
           <Heading as="h2" size="1xl" fontWeight={0} paddingTop="25px">
             "I am a dedicated and hardworking individual with a strong
-            background in all things computing and technology."
+            background in all things computing and technology." Hello
           </Heading>
         </Box>
         <Box
