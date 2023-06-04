@@ -52,7 +52,7 @@ const Model = () => {
 
       var loader = new GLTFLoader()
 
-      loader.load('/models/avatar2.glb', function (gltf) {
+      loader.load('/models/avatar.glb', function (gltf) {
         let model = gltf.scene
         mixer = new THREE.AnimationMixer(gltf.scene)
 
