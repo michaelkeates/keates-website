@@ -2,7 +2,6 @@ import NextLink from 'next/link'
 import Section from '../components/section'
 import {
   Box,
-  Heading,
   Text,
   Container,
   Divider,
