@@ -1,33 +1,13 @@
 //import Head from 'next/head'
 import { gql } from '@apollo/client'
-import { Heading, SimpleGrid, Box, Badge } from '@chakra-ui/react'
+import { SimpleGrid, Box, Badge } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem, PortfolioGridItem } from '../components/grid-item'
+import { GridItem } from '../components/grid-item'
 import NextLink from 'next/link'
-import {
-  ChevronRightIcon,
-  PhoneIcon,
-  EmailIcon,
-  InfoIcon
-} from '@chakra-ui/icons'
-import {
-  //Link,
-  //Box,
-  Button,
-  //  List,
-  //  ListItem,
-  useColorModeValue,
-  Container
-  //chakra
-} from '@chakra-ui/react'
-import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import { Button, useColorModeValue, Container } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
-import thumbusw from '../public/images/works/usw_logo.png'
-import thumbcc from '../public/images/works/cc_logo.png'
-import styles from '../styles/Home.module.css'
-import { IoLogoGithub } from 'react-icons/io5'
 
 function dayMonth(data) {
   const monthNames = [
@@ -142,7 +122,10 @@ export async function getStaticProps() {
     query: gql`
       {
         user(login: "michaelkeates") {
-          repositories(first: 10, orderBy: {field: PUSHED_AT, direction: DESC}) {
+          repositories(
+            first: 10
+            orderBy: { field: PUSHED_AT, direction: DESC }
+          ) {
             edges {
               node {
                 id
