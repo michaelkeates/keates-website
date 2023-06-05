@@ -121,6 +121,7 @@ export default function Home({ posts }) {
                           _hover={{
                             bg: useColorModeValue('#ffffff', '#828282')
                           }}
+                          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
                         >
                           Read More
                         </Button>
