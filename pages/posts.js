@@ -74,9 +74,9 @@ export default function Home({ posts }) {
           padding="10px"
           boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
         >
-          <a className={styles2.emailLink}>
+          <a className={styles2.emailTitleLink}>
             View the latest posts that I have written!
-            <span className={styles2.emoji} style={{ marginLeft: '8px' }}>
+            <span className={styles2.emojiTitle} style={{ marginLeft: '8px' }}>
               📃
             </span>
           </a>

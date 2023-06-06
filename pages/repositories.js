@@ -60,9 +60,9 @@ export default function Home({ repository }) {
           padding="10px"
           boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
         >
-          <a className={styles.emailLink}>
+          <a className={styles.emailTitleLink}>
             Check out my current and past projects!
-            <span className={styles.emoji} style={{ marginLeft: '8px' }}>
+            <span className={styles.emojiTitle} style={{ marginLeft: '8px' }}>
               🚀
             </span>
           </a>

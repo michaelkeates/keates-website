@@ -1,19 +1,39 @@
 .emailLink {
-    display: flex;
-    align-items: center;
-  }
-  
-  .emoji {
-    font-size: 32px; /* Adjust the font size as desired */
-    margin-right: 7px; /* Adjust the margin value to move the emoji */
-    margin-bottom: 3px;
-  }
+  display: flex;
+  align-items: center;
+}
 
-  .textalign {
-    text-align: center;
-  }
+.emoji {
+  font-size: 32px; /* Adjust the font size as desired */
+  margin-right: 7px; /* Adjust the margin value to move the emoji */
+  margin-bottom: 3px;
+}
 
-  .hackymargin {
-    margin-bottom: 15px;
+.textalign {
+  text-align: center;
+}
+
+.hackymargin {
+  margin-bottom: 15px;
+}
+
+.emailTitleLink {
+  display: flex;
+  align-items: center;
+}
+
+.emojiTitle {
+  font-size: 32px; /* Adjust the font size as desired */
+  margin-right: 7px; /* Adjust the margin value to move the emoji */
+  margin-bottom: 3px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .emailTitleLink {
+    font-size: 12px;
   }
-  
+  .emojiTitle {
+    font-size: 24px; /* Adjust the font size for mobile devices */
+  }
+}

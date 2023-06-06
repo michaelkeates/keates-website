@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Button
 } from '@chakra-ui/react'
+import styles from '../styles/emoji.module.css'
 
 const NotFound = () => {
   return (
@@ -18,13 +19,21 @@ const NotFound = () => {
           mb={6}
           p={3}
           textAlign="center"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           css={{ backdropFilter: 'blur(10px)' }}
-          padding="15px;"
+          padding="10px"
+          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
         >
-          Sorry! 🤦‍♂️
+          <a className={styles.emailTitleLink}>
+            Sorry!
+            <span className={styles.emojiTitle} style={{ marginLeft: '8px' }}>
+              🤦‍♂️
+            </span>
+          </a>
         </Box>
-
         <Text align="center" paddingTop="7px">
           The page you&apos;re looking for was not found.
         </Text>
