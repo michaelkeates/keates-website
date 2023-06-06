@@ -142,7 +142,7 @@ const Home = () => {
         >
           Contact
         </Heading>
-        <div className="hackymargin">
+        <div className={styles.hackymargin}>
           <SimpleGrid columns={[1, 1, 2]} gap={2}>
             <Section delay={0.3}>
               <Box
