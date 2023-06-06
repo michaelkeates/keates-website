@@ -17,7 +17,8 @@ import PostgresqlOriginalIcon from 'react-devicons/postgresql/original'
 import PythonOriginalIcon from 'react-devicons/python/original'
 import ThreejsOriginalIcon from 'react-devicons/threejs/original'
 import TypescriptOriginalIcon from 'react-devicons/typescript/original'
-//import XamarinOriginalIcon from 'react-devicons/xamarin/original'
+import XamarinOriginalIcon from 'react-devicons/visualstudio/plain'
+import OracleOriginalIcon from 'react-devicons/oracle/original'
 import { Global } from '@emotion/react'
 
 export const CplusplusIcon = () => (
@@ -96,9 +97,13 @@ export const TypescriptIcon = () => (
   <TypescriptOriginalIcon className="my-class" size="100%" />
 )
 
-//export const XamarinIcon = () => (
-//  <XamarinOriginalIcon className="my-class" size="100%" />
-//)
+export const XamarinIcon = () => (
+  <XamarinOriginalIcon className="my-class" size="100%" />
+)
+
+export const OracleIcon = () => (
+  <OracleOriginalIcon className="my-class" size="100%" />
+)
 
 export const Devicons = () => (
   <Global>
@@ -122,6 +127,8 @@ export const Devicons = () => (
     <NextjsIcon />
     <ThreejsIcon />
     <TypescriptIcon />
+    <XamarinIcon />
+    <OracleIcon />
   </Global>
 )
 
