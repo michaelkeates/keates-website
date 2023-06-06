@@ -635,8 +635,7 @@ const Home = () => {
             <SimpleGrid colums={[1, 1, 1]} gap={2} marginTop="1rem">
               <Section delay={0.1}>
                 <Box textAlign="center" fontSize={12}>
-                  Generate and download the most up to date version of my CV by
-                  clicking the button below.
+                  View the most update to date version of my CV!
                 </Box>
                 <Box borderRadius="lg" textAlign="center">
                   <Button
@@ -649,7 +648,7 @@ const Home = () => {
                     textAlign={'center'}
                     rightIcon={<ChevronRightIcon />}
                   >
-                    Download CV
+                    View CV
                   </Button>
                 </Box>
               </Section>

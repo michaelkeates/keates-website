@@ -30,7 +30,7 @@ async function generatePDF() {
       '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr'
     )
     const borderColor = document.querySelectorAll('.css-svjswr')
-    const shadows = document.querySelectorAll('.css-h47psn')
+    const shadows = document.querySelectorAll('.css-9t4bud, .css-o75elv')
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
     // Replace the selector with the appropriate one for the grid block
     const gridBlock = document.querySelector('.css-gzapkn')
