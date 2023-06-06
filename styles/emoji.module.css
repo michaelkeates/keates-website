@@ -36,4 +36,10 @@
   .emojiTitle {
     font-size: 24px; /* Adjust the font size for mobile devices */
   }
+  .emailLink {
+    font-size: 11px;
+  }
+  .emoji {
+    font-size: 16px; /* Adjust the font size for mobile devices */
+  }
 }

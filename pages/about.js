@@ -148,7 +148,7 @@ const Home = () => {
           Contact
         </Heading>
         <div className={styles.hackymargin}>
-          <SimpleGrid columns={[1, 1, 2]} gap={2}>
+          <SimpleGrid columns={[2, 1, 2]} gap={2}>
             <Section delay={0.3}>
               <Box
                 borderRadius="lg"
@@ -592,7 +592,7 @@ const Home = () => {
             >
               Interests
             </Heading>
-            <SimpleGrid columns={[1, 1, 2]} gap={2}>
+            <SimpleGrid columns={[2, 1, 2]} gap={2}>
               <Section delay={0.3}>
                 <Box
                   borderRadius="lg"
