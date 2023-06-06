@@ -29,11 +29,12 @@ async function generatePDF() {
     const textColors = document.querySelectorAll(
       '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr'
     )
+    const borderColor = document.querySelectorAll('.css-svjswr')
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
     // Replace the selector with the appropriate one for the grid block
     const gridBlock = document.querySelector('.css-gzapkn')
 
-    const customGridElements = document.querySelectorAll('.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6')
+    const customGridElements = document.querySelectorAll('.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu')
     const customGridElements2 = document.querySelectorAll('.chakra-heading.css-kowkqe')
 
     gridElement.forEach(gridElement => {
@@ -54,52 +55,53 @@ async function generatePDF() {
     }
 
     textSize.forEach(textSize => {
-      textSize.style.fontSize = '12px' // Replace '12px' with your desired font size
+      textSize.style.fontSize = '12px'
     })
 
     textSize2.forEach(textSize2 => {
-      textSize2.style.fontSize = '9px' // Replace '12px' with your desired font size
+      textSize2.style.fontSize = '9px'
     })
 
     textSize3.forEach(textSize3 => {
-      textSize3.style.fontSize = '8px' // Replace '12px' with your desired font size
+      textSize3.style.fontSize = '8px'
     })
 
     textSize4.forEach(textSize4 => {
-      textSize4.style.fontSize = '6px' // Replace '12px' with your desired font size
+      textSize4.style.fontSize = '6px'
     })
 
     textSize5.forEach(textSize5 => {
-      textSize5.style.fontSize = '16px' // Replace '12px' with your desired font size
+      textSize5.style.fontSize = '16px'
     })
 
     textColors.forEach(textColor => {
-      textColor.style.color = '#000000' // Replace '#000000' with your desired font color
+      textColor.style.color = '#000000'
     })
 
+    borderColor.forEach(borderColor => {
+      borderColor.style.borderColor = 'rgba(0, 0, 0, 0.1)';
+    });    
+
     imageSize.forEach(imageSize => {
-      imageSize.style.width = '100px' // Replace '100px' with your desired image width
-      imageSize.style.height = '100px' // Replace '100px' with your desired image height
+      imageSize.style.width = '100px'
+      imageSize.style.height = '100px'
       //center image
       imageSize.style.marginLeft = 'auto'
       imageSize.style.marginRight = 'auto'
     })
 
-    // Replace the selector with the appropriate one for the elements to remove from the pdf
     const unwantedElements = document.querySelectorAll(
       '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .css-ctnmuq, .custom-grid'
     )
 
     customGridElements.forEach(element => {
-      // Add custom styles to remove padding/margin below each element
-      element.style.marginBottom = '0' // Set margin-bottom to 0
-      element.style.paddingBottom = '-10px' // Set padding-bottom to 0
+      element.style.marginBottom = '0'
+      element.style.paddingBottom = '-10px'
     })
 
     customGridElements2.forEach(element => {
-      // Add custom styles to remove padding/margin below each element
-      element.style.marginBottom = '0' // Set margin-bottom to 0
-      element.style.marginBottom = '-30px' // Set padding-bottom to 0
+      element.style.marginBottom = '0'
+      element.style.marginBottom = '-12px'
     })
 
     unwantedElements.forEach(element => {

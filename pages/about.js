@@ -142,95 +142,97 @@ const Home = () => {
         >
           Contact
         </Heading>
-        <SimpleGrid columns={[1, 1, 2]} gap={2}>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={1}
-              p={1}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <BioSection>
-                <a
-                  href="https://www.michaelkeates.co.uk"
-                  className={styles.emailLink}
-                >
-                  <span className={styles.emoji}>👉🏼</span>{' '}
-                  www.michaelkeates.co.uk
-                </a>
-              </BioSection>
-            </Box>
-          </Section>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={1}
-              p={1}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <BioSection>
-                <a
-                  href="https://github.com/michaelkeates"
-                  className={styles.emailLink}
-                >
-                  <span className={styles.emoji}>🚀</span>{' '}
-                  github.com/michaelkeates
-                </a>
-              </BioSection>
-            </Box>
-          </Section>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={1}
-              p={1}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <BioSection>
-                <a
-                  href="mailto:mail@michaelkeates.co.uk"
-                  className={styles.emailLink}
-                >
-                  <span className={styles.emoji}>✉️</span>{' '}
-                  mail@michaelkeates.co.uk
-                </a>
-              </BioSection>
-            </Box>
-          </Section>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={1}
-              p={1}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <BioSection>
-                <a
-                  href="mailto:mail@michaelkeates.co.uk"
-                  className={styles.emailLink}
-                >
-                  <span className={styles.emoji}>📱</span> +44 7495 137 974
-                </a>
-              </BioSection>
-            </Box>
-          </Section>
-        </SimpleGrid>
+        <div className="hackymargin">
+          <SimpleGrid columns={[1, 1, 2]} gap={2}>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a
+                    href="https://www.michaelkeates.co.uk"
+                    className={styles.emailLink}
+                  >
+                    <span className={styles.emoji}>👉🏼</span>{' '}
+                    www.michaelkeates.co.uk
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a
+                    href="https://github.com/michaelkeates"
+                    className={styles.emailLink}
+                  >
+                    <span className={styles.emoji}>🚀</span>{' '}
+                    github.com/michaelkeates
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a
+                    href="mailto:mail@michaelkeates.co.uk"
+                    className={styles.emailLink}
+                  >
+                    <span className={styles.emoji}>✉️</span>{' '}
+                    mail@michaelkeates.co.uk
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a
+                    href="mailto:mail@michaelkeates.co.uk"
+                    className={styles.emailLink}
+                  >
+                    <span className={styles.emoji}>📱</span> +44 7495 137 974
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+          </SimpleGrid>
+        </div>
         <Divider />
         <Heading
           as="h3"
