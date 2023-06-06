@@ -13,6 +13,7 @@ import {
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Lightbox from '../components/galleries/photography'
+import styles from '../styles/emoji.module.css'
 
 const Photography = () => (
   <Layout title="Photography">
@@ -23,15 +24,22 @@ const Photography = () => (
           mb={6}
           p={3}
           textAlign="center"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           css={{ backdropFilter: 'blur(10px)' }}
-          padding="15px;"
-          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+          padding="10px"
+          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
         >
-          Below are some of my photos. All Rights Reserved. 📷
+          <a className={styles.emailLink}>
+            Check out some of my photos!
+            <span className={styles.emoji} style={{ marginLeft: '8px' }}>
+              📷
+            </span>
+          </a>
         </Box>
-        <Lightbox
-        />
+        <Lightbox />
       </Section>
     </Container>
   </Layout>

@@ -9,6 +9,7 @@ import {
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
+import styles from '../styles/emoji.module.css'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -19,17 +20,21 @@ const Home = () => (
     <Container>
       <Box
         borderRadius="lg"
-        mb={6}
-        p={3}
         textAlign="center"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-        css={{
-          backdropFilter: 'blur(10px)',
-        }}
-        padding="15px;"
-        boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+        css={{ backdropFilter: 'blur(10px)' }}
+        padding="10px"
+        boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
       >
-        Hi! I&apos;m a developer and designer based in South Wales! 🏴󠁧󠁢󠁷󠁬󠁳󠁿
+        <a className={styles.emailLink}>
+          Hi! I&apos;m a developer and designer based in South Wales!
+          <span className={styles.emoji} style={{ marginLeft: '8px' }}>
+            🏴󠁧󠁢󠁷󠁬󠁳󠁿
+          </span>
+        </a>
       </Box>
 
       <Box display={{ md: 'flex' }} paddingTop="25px" paddingBottom="25px">

@@ -38,7 +38,7 @@ import {
   ThreejsIcon,
   TypescriptIcon,
   XamarinIcon,
-  OracleIcon,
+  OracleIcon
 } from '../components/devicons'
 
 const ProfileImage = chakra(Image, {
@@ -52,23 +52,29 @@ const Home = () => {
     const fileUrl = '/cv.pdf'
     window.open(fileUrl, '_blank')
   }
-  
 
   return (
     <Layout>
       <Container>
         <Box
           borderRadius="lg"
-          mb={6}
-          p={3}
           textAlign="center"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           css={{ backdropFilter: 'blur(10px)' }}
-          padding="15px;"
-          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+          padding="10px"
+          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
         >
-          Check out my qualifications and skills! 🧍
+          <a className={styles.emailLink}>
+            Check out my qualifications and skills!
+            <span className={styles.emoji} style={{ marginLeft: '8px' }}>
+              🧍
+            </span>
+          </a>
         </Box>
+
         <Box display={{ md: 'flex' }} paddingTop="25px">
           <Box flexGrow={1}>
             <Heading

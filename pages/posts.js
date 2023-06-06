@@ -21,6 +21,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import { getApolloClient } from '../lib/wordpress'
 
 import styles from '../styles/Home.module.css'
+import styles2 from '../styles/emoji.module.css'
 
 function dayMonth(data) {
   const monthNames = [
@@ -65,12 +66,20 @@ export default function Home({ posts }) {
           mb={6}
           p={3}
           textAlign="center"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           css={{ backdropFilter: 'blur(10px)' }}
-          padding="15px;"
-          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+          padding="10px"
+          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
         >
-          View the latest posts from me! 📃
+          <a className={styles2.emailLink}>
+            View the latest posts that I have written!
+            <span className={styles2.emoji} style={{ marginLeft: '8px' }}>
+              📃
+            </span>
+          </a>
         </Box>
         <Section delay={0.2}>
           <SimpleGrid columns={[2, 2, 2]} gap={4}>
@@ -138,7 +147,6 @@ export default function Home({ posts }) {
     </Layout>
   )
 }
-
 
 export async function getStaticProps() {
   const apolloClient = getApolloClient()
