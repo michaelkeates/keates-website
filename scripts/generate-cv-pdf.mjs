@@ -22,18 +22,18 @@ async function generatePDF() {
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelector('.css-vqf3rg')
     const textSize = document.querySelectorAll('.css-1oo097b')
-    const textSize2 = document.querySelectorAll('.css-14rgeuu')
+    const textSize2 = document.querySelectorAll('.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O')
     const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k')
     const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58')
-    const textSize5 = document.querySelectorAll('.chakra-heading.css-17cjct2, chakra-heading.css-9n0xbk, chakra-heading.css-kx7ixn')
+    const textSize5 = document.querySelectorAll('.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy')
     const textColors = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, emoji_emailLink__rvK9O'
+      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr'
     )
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
     // Replace the selector with the appropriate one for the grid block
     const gridBlock = document.querySelector('.css-gzapkn')
 
-    const customGridElements = document.querySelectorAll('.css-9t4bud, .chakra-heading.css-kowkqe')
+    const customGridElements = document.querySelectorAll('.css-9t4bud, .chakra-heading.css-kowkqe, .css-o75elv, .css-1id2kv5, .css-gzapkn')
 
     gridElement.forEach(gridElement => {
       // Modify the grid template columns property to have 7 columns
@@ -43,8 +43,8 @@ async function generatePDF() {
     gridElement2.forEach(gridElement2 => {
       // Modify the grid template columns property to have 7 columns
       gridElement2.style.gridTemplateColumns = 'repeat(7, minmax(0, 1fr))'
-      gridElement2.style.width = '50%' // Replace '100px' with your desired image width
-      gridElement2.style.height = '50%' // Replace '100px' with your desired image height
+      gridElement2.style.width = '70%' // Replace '100px' with your desired image width
+      gridElement2.style.height = '70%' // Replace '100px' with your desired image height
     })
 
     if (gridElement3) {
@@ -69,7 +69,7 @@ async function generatePDF() {
     })
 
     textSize5.forEach(textSize5 => {
-      textSize5.style.fontSize = '12px' // Replace '12px' with your desired font size
+      textSize5.style.fontSize = '16px' // Replace '12px' with your desired font size
     })
 
     textColors.forEach(textColor => {
