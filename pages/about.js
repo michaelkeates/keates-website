@@ -250,7 +250,7 @@ const Home = () => {
           Education
         </Heading>
 
-        <SimpleGrid columns={[2, 2, 3]} gap={2}>
+        <SimpleGrid columns={[3, 2, 3]} gap={2}>
           <Section delay={0.3}>
             <Box
               borderRadius="lg"

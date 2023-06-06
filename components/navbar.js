@@ -107,7 +107,6 @@ const Navbar = props => {
         </Stack>
 
         <Box flex={1} ml={1} align="right">
-
           <Box ml={2} display={{ base: 'inline-block' }}>
             <ThemeToggleButton />
           </Box>
@@ -127,6 +126,7 @@ const Navbar = props => {
               >
                 <NextLink href="/about" passHref>
                   <MenuItem
+                    bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
                     py={2}
                     transition="all 0.2s"
@@ -142,6 +142,7 @@ const Navbar = props => {
                 </NextLink>
                 <NextLink href="/repositories" passHref>
                   <MenuItem
+                    bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
                     py={2}
                     transition="all 0.2s"
@@ -157,6 +158,7 @@ const Navbar = props => {
                 </NextLink>
                 <NextLink href="/photography" passHref>
                   <MenuItem
+                    bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
                     py={2}
                     transition="all 0.2s"
@@ -172,6 +174,7 @@ const Navbar = props => {
                 </NextLink>
                 <NextLink href="/posts" passHref>
                   <MenuItem
+                    bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
                     py={2}
                     transition="all 0.2s"
