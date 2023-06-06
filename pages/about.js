@@ -542,118 +542,120 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </Section>
-        <Divider />
-        <Section delay={0.2}>
-          <Heading
-            as="h3"
-            fontFamily="Roboto"
-            fontWeight="500"
-            fontSize={20}
-            mb={4}
-            marginTop="1rem"
-          >
-            Interests
-          </Heading>
-          <SimpleGrid columns={[1, 1, 2]} gap={2}>
-            <Section delay={0.3}>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>👨🏾‍💻</span> Coding
-                  </a>
-                </BioSection>
-              </Box>
-            </Section>
-            <Section delay={0.3}>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>📷</span> Photography
-                  </a>
-                </BioSection>
-              </Box>
-            </Section>
-            <Section delay={0.3}>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>🧳</span> Travelling
-                  </a>
-                </BioSection>
-              </Box>
-            </Section>
-            <Section delay={0.3}>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>💪</span> Gym
-                  </a>
-                </BioSection>
-              </Box>
-            </Section>
-          </SimpleGrid>
+        <div className="custom-grid">
           <Divider />
-          <SimpleGrid colums={[1, 1, 1]} gap={2} marginTop="1rem">
-            <Section delay={0.1}>
-              <Box textAlign="center" fontSize={12}>
-                Generate and download the most up to date version of my CV by
-                clicking the button below.
-              </Box>
-              <Box borderRadius="lg" textAlign="center">
-                <Button
-                  isLoading={isDownloading}
-                  loadingText="Downloading..."
-                  onClick={handleDownload} // Update the function call here
+          <Section delay={0.2}>
+            <Heading
+              as="h3"
+              fontFamily="Roboto"
+              fontWeight="500"
+              fontSize={20}
+              mb={4}
+              marginTop="1rem"
+            >
+              Interests
+            </Heading>
+            <SimpleGrid columns={[1, 1, 2]} gap={2}>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
                   bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                  _hover={{
-                    bg: useColorModeValue('#ffffff', '#828282')
-                  }}
-                  marginTop="1.2rem"
-                  textAlign={'center'}
-                  rightIcon={<ChevronRightIcon />}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
                 >
-                  Download CV
-                </Button>
-              </Box>
-            </Section>
-          </SimpleGrid>
-        </Section>
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>👨🏾‍💻</span> Coding
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>📷</span> Photography
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>🧳</span> Travelling
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>💪</span> Gym
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+            </SimpleGrid>
+            <Divider />
+            <SimpleGrid colums={[1, 1, 1]} gap={2} marginTop="1rem">
+              <Section delay={0.1}>
+                <Box textAlign="center" fontSize={12}>
+                  Generate and download the most up to date version of my CV by
+                  clicking the button below.
+                </Box>
+                <Box borderRadius="lg" textAlign="center">
+                  <Button
+                    isLoading={isDownloading}
+                    loadingText="Downloading..."
+                    onClick={handleDownload} // Update the function call here
+                    bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                    _hover={{
+                      bg: useColorModeValue('#ffffff', '#828282')
+                    }}
+                    marginTop="1.2rem"
+                    textAlign={'center'}
+                    rightIcon={<ChevronRightIcon />}
+                  >
+                    Download CV
+                  </Button>
+                </Box>
+              </Section>
+            </SimpleGrid>
+          </Section>
+        </div>
       </Container>
     </Layout>
   )

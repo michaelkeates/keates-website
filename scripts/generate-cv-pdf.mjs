@@ -27,7 +27,7 @@ async function generatePDF() {
     const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58')
     const textSize5 = document.querySelectorAll('.chakra-heading.css-17cjct2, chakra-heading.css-9n0xbk, chakra-heading.css-kx7ixn')
     const textColors = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2'
+      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, emoji_emailLink__rvK9O'
     )
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
     // Replace the selector with the appropriate one for the grid block
