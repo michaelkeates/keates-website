@@ -47,13 +47,11 @@ const ProfileImage = chakra(Image, {
 const Home = () => {
   const [isDownloading, setIsDownloading] = useState(false)
 
-  function handleDownload() {
+  function handleOpenInNewTab() {
     const fileUrl = '/cv.pdf'
-    const a = document.createElement('a')
-    a.href = fileUrl
-    a.download = 'cv.pdf'
-    a.click()
+    window.open(fileUrl, '_blank')
   }
+  
 
   return (
     <Layout>
@@ -642,9 +640,7 @@ const Home = () => {
                 </Box>
                 <Box borderRadius="lg" textAlign="center">
                   <Button
-                    isLoading={isDownloading}
-                    loadingText="Downloading..."
-                    onClick={handleDownload} // Update the function call here
+                    onClick={handleOpenInNewTab}
                     bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                     _hover={{
                       bg: useColorModeValue('#ffffff', '#828282')
