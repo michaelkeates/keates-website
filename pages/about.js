@@ -80,7 +80,9 @@ const Home = () => {
             >
               Michael Keates
             </Heading>
-            <p>Software Developer</p>
+            <div className="custom-grid">
+              <p>Software Developer</p>
+            </div>
           </Box>
           <Box
             flexShrink={0}

@@ -25,7 +25,7 @@ async function generatePDF() {
     const textSize2 = document.querySelectorAll('.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O')
     const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k')
     const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58')
-    const textSize5 = document.querySelectorAll('.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy')
+    const textSize5 = document.querySelectorAll('.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd')
     const textColors = document.querySelectorAll(
       '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr'
     )
@@ -33,7 +33,8 @@ async function generatePDF() {
     // Replace the selector with the appropriate one for the grid block
     const gridBlock = document.querySelector('.css-gzapkn')
 
-    const customGridElements = document.querySelectorAll('.css-9t4bud, .chakra-heading.css-kowkqe, .css-o75elv, .css-1id2kv5, .css-gzapkn')
+    const customGridElements = document.querySelectorAll('.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6')
+    const customGridElements2 = document.querySelectorAll('.chakra-heading.css-kowkqe')
 
     gridElement.forEach(gridElement => {
       // Modify the grid template columns property to have 7 columns
@@ -86,13 +87,19 @@ async function generatePDF() {
 
     // Replace the selector with the appropriate one for the elements to remove from the pdf
     const unwantedElements = document.querySelectorAll(
-      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .css-ctnmuq, .css-13hhjt6, .custom-grid'
+      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .css-ctnmuq, .custom-grid'
     )
 
     customGridElements.forEach(element => {
       // Add custom styles to remove padding/margin below each element
       element.style.marginBottom = '0' // Set margin-bottom to 0
       element.style.paddingBottom = '-10px' // Set padding-bottom to 0
+    })
+
+    customGridElements2.forEach(element => {
+      // Add custom styles to remove padding/margin below each element
+      element.style.marginBottom = '0' // Set margin-bottom to 0
+      element.style.marginBottom = '-30px' // Set padding-bottom to 0
     })
 
     unwantedElements.forEach(element => {
