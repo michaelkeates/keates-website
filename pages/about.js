@@ -1,4 +1,3 @@
-import NextLink from 'next/link'
 import {
   Container,
   Heading,
@@ -9,22 +8,17 @@ import {
   chakra,
   Divider
 } from '@chakra-ui/react'
-import {
-  ChevronRightIcon,
-  PhoneIcon,
-  EmailIcon,
-  InfoIcon
-} from '@chakra-ui/icons'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem, WorkGridItem } from '../components/grid-item'
+import { WorkGridItem } from '../components/grid-item'
 import Image from 'next/image'
-import ReactOriginalIcon from 'react-devicons/react/original'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
 import React, { useState } from 'react'
+import styles from '../styles/emoji.module.css'
 
 import {
   CplusplusIcon,
@@ -135,6 +129,7 @@ const Home = () => {
             </Paragraph>
           </Section>
         </SimpleGrid>
+        <Divider />
         <Heading
           as="h3"
           fontFamily="Roboto"
@@ -146,7 +141,7 @@ const Home = () => {
           Contact
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={2}>
-        <Section delay={0.3}>
+          <Section delay={0.3}>
             <Box
               borderRadius="lg"
               mb={1}
@@ -158,7 +153,11 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <BioSection>
-                <a href="https://www.michaelkeates.co.uk">
+                <a
+                  href="https://www.michaelkeates.co.uk"
+                  className={styles.emailLink}
+                >
+                  <span className={styles.emoji}>👉🏼</span>{' '}
                   www.michaelkeates.co.uk
                 </a>
               </BioSection>
@@ -176,7 +175,11 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <BioSection>
-                <a href="https://github.com/michaelkeates">
+                <a
+                  href="https://github.com/michaelkeates"
+                  className={styles.emailLink}
+                >
+                  <span className={styles.emoji}>🚀</span>{' '}
                   github.com/michaelkeates
                 </a>
               </BioSection>
@@ -194,8 +197,12 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <BioSection>
-                <a href="mailto: mail@michaelkeates.co.uk">
-                  ✉️ mail@michaelkeates.co.uk
+                <a
+                  href="mailto:mail@michaelkeates.co.uk"
+                  className={styles.emailLink}
+                >
+                  <span className={styles.emoji}>✉️</span>{' '}
+                  mail@michaelkeates.co.uk
                 </a>
               </BioSection>
             </Box>
@@ -212,12 +219,17 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <BioSection>
-                <a href="tel:+447495137974">📱 +44 7495 137 974</a>
+                <a
+                  href="mailto:mail@michaelkeates.co.uk"
+                  className={styles.emailLink}
+                >
+                  <span className={styles.emoji}>📱</span> +44 7495 137 974
+                </a>
               </BioSection>
             </Box>
           </Section>
         </SimpleGrid>
-
+        <Divider />
         <Heading
           as="h3"
           fontFamily="Roboto"
@@ -288,6 +300,7 @@ const Home = () => {
             </Box>
           </Section>
         </SimpleGrid>
+        <Divider />
         <Section delay={0.2}>
           <Heading
             as="h3"
@@ -295,6 +308,7 @@ const Home = () => {
             fontWeight="500"
             fontSize={20}
             mb={4}
+            marginTop="1rem"
           >
             Front-End Skills
           </Heading>
@@ -392,6 +406,7 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </Section>
+        <Divider />
         <Section delay={0.2}>
           <Heading
             as="h3"
@@ -399,6 +414,7 @@ const Home = () => {
             fontWeight="500"
             fontSize={20}
             mb={4}
+            marginTop="1rem"
           >
             Middleware Skills
           </Heading>
@@ -418,6 +434,7 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </Section>
+        <Divider />
         <Section delay={0.2}>
           <Heading
             as="h3"
@@ -425,6 +442,7 @@ const Home = () => {
             fontWeight="500"
             fontSize={20}
             mb={4}
+            marginTop="1rem"
           >
             Back-End Skills
           </Heading>
@@ -524,82 +542,117 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </Section>
+        <Divider />
         <Section delay={0.2}>
-          <div className="custom-grid">
-            <Heading
-              as="h3"
-              fontFamily="Roboto"
-              fontWeight="500"
-              fontSize={20}
-              mb={4}
-            >
-              Interests
-            </Heading>
-            <SimpleGrid columns={[2, 2, 4]} gap={1} fontSize="12px;">
-              <Box
-                borderRadius="lg"
-                mb={6}
-                p={3}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                Coding 👨🏾‍💻
-              </Box>
-              <Box
-                borderRadius="lg"
-                mb={6}
-                p={3}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                Photography 📷
-              </Box>
-              <Box
-                borderRadius="lg"
-                mb={6}
-                p={3}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                Travelling 🧳
-              </Box>
-              <Box
-                borderRadius="lg"
-                mb={6}
-                p={3}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                Gym 💪
-              </Box>
-            </SimpleGrid>
-          </div>
-          <Button
-            isLoading={isDownloading}
-            loadingText="Downloading..."
-            onClick={handleDownload} // Update the function call here
-            bg={useColorModeValue(
-              'whiteAlpha.500',
-              'whiteAlpha.200'
-            )}
-            _hover={{
-              bg: useColorModeValue('#ffffff', '#828282')
-            }}
+          <Heading
+            as="h3"
+            fontFamily="Roboto"
+            fontWeight="500"
+            fontSize={20}
+            mb={4}
+            marginTop="1rem"
           >
-            Download CV
-          </Button>
+            Interests
+          </Heading>
+          <SimpleGrid columns={[1, 1, 2]} gap={2}>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a className={styles.emailLink}>
+                    <span className={styles.emoji}>👨🏾‍💻</span> Coding
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a className={styles.emailLink}>
+                    <span className={styles.emoji}>📷</span> Photography
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a className={styles.emailLink}>
+                    <span className={styles.emoji}>🧳</span> Travelling
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a className={styles.emailLink}>
+                    <span className={styles.emoji}>💪</span> Gym
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+          </SimpleGrid>
+          <Divider />
+          <SimpleGrid colums={[1, 1, 1]} gap={2} marginTop="1rem">
+            <Section delay={0.1}>
+              <Box textAlign="center" fontSize={12}>
+                Generate and download the most up to date version of my CV by
+                clicking the button below.
+              </Box>
+              <Box borderRadius="lg" textAlign="center">
+                <Button
+                  isLoading={isDownloading}
+                  loadingText="Downloading..."
+                  onClick={handleDownload} // Update the function call here
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  _hover={{
+                    bg: useColorModeValue('#ffffff', '#828282')
+                  }}
+                  marginTop="1.2rem"
+                  textAlign={'center'}
+                  rightIcon={<ChevronRightIcon />}
+                >
+                  Download CV
+                </Button>
+              </Box>
+            </Section>
+          </SimpleGrid>
         </Section>
       </Container>
     </Layout>

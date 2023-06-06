@@ -1,0 +1,15 @@
+.emailLink {
+    display: flex;
+    align-items: center;
+  }
+  
+  .emoji {
+    font-size: 32px; /* Adjust the font size as desired */
+    margin-right: 7px; /* Adjust the margin value to move the emoji */
+    margin-bottom: 3px;
+  }
+
+  .textalign {
+    text-align: center;
+  }
+  

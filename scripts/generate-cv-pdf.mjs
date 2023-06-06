@@ -25,8 +25,9 @@ async function generatePDF() {
     const textSize2 = document.querySelectorAll('.css-14rgeuu')
     const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k')
     const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58')
+    const textSize5 = document.querySelectorAll('.chakra-heading.css-17cjct2, chakra-heading.css-9n0xbk, chakra-heading.css-kx7ixn')
     const textColors = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2'
+      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2'
     )
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
     // Replace the selector with the appropriate one for the grid block
@@ -42,6 +43,8 @@ async function generatePDF() {
     gridElement2.forEach(gridElement2 => {
       // Modify the grid template columns property to have 7 columns
       gridElement2.style.gridTemplateColumns = 'repeat(7, minmax(0, 1fr))'
+      gridElement2.style.width = '50%' // Replace '100px' with your desired image width
+      gridElement2.style.height = '50%' // Replace '100px' with your desired image height
     })
 
     if (gridElement3) {
@@ -65,6 +68,10 @@ async function generatePDF() {
       textSize4.style.fontSize = '6px' // Replace '12px' with your desired font size
     })
 
+    textSize5.forEach(textSize5 => {
+      textSize5.style.fontSize = '12px' // Replace '12px' with your desired font size
+    })
+
     textColors.forEach(textColor => {
       textColor.style.color = '#000000' // Replace '#000000' with your desired font color
     })
@@ -85,7 +92,7 @@ async function generatePDF() {
     customGridElements.forEach(element => {
       // Add custom styles to remove padding/margin below each element
       element.style.marginBottom = '0' // Set margin-bottom to 0
-      element.style.paddingBottom = '0' // Set padding-bottom to 0
+      element.style.paddingBottom = '-10px' // Set padding-bottom to 0
     })
 
     unwantedElements.forEach(element => {

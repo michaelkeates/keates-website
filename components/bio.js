@@ -2,8 +2,9 @@ import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 export const BioSection = styled(Box)`
-  padding-left: 3.4em;
-  text-indent: -3.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 12px;
 `
 
