@@ -108,7 +108,7 @@ export default function Post({ rep }) {
               </Paragraph>
               <br></br>
               <Paragraph>
-                To view this repository on Github please click{' '}
+                To view this repository on Github, please click{' '}
                 <Link href={rep.url}>here</Link>.
               </Paragraph>
             </SimpleGrid>
