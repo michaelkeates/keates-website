@@ -45,7 +45,7 @@ async function generatePDF() {
 
     gridElement2.forEach(gridElement2 => {
       // Modify the grid template columns property to have 7 columns
-      gridElement2.style.gridTemplateColumns = 'repeat(7, minmax(0, 1fr))'
+      gridElement2.style.gridTemplateColumns = 'repeat(8, minmax(0, 1fr))'
       gridElement2.style.width = '70%' // Replace '100px' with your desired image width
       gridElement2.style.height = '70%' // Replace '100px' with your desired image height
     })
