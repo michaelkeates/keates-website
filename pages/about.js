@@ -230,7 +230,7 @@ const Home = () => {
               >
                 <BioSection>
                   <a
-                    href="mailto:mail@michaelkeates.co.uk"
+                    href="tel:+447495137974"
                     className={styles.emailLink}
                   >
                     <span className={styles.emoji}>📱</span> +44 7495 137 974
