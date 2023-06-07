@@ -30,7 +30,7 @@ const Home = () => (
         boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
       >
         <a className={styles.emailTitleLink}>
-          Hi! I&apos;m a developer and designer based in South Wales!
+          Hi! I&apos;m a software developer based in South Wales!
           <span className={styles.emojiTitle} style={{ marginLeft: '8px' }}>
             🏴󠁧󠁢󠁷󠁬󠁳󠁿
           </span>
