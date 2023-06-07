@@ -38,7 +38,8 @@ import {
   ThreejsIcon,
   TypescriptIcon,
   XamarinIcon,
-  OracleIcon
+  OracleIcon,
+  JQueryIcon
 } from '../components/devicons'
 
 const ProfileImage = chakra(Image, {
@@ -47,6 +48,7 @@ const ProfileImage = chakra(Image, {
 
 const Home = () => {
   const [isDownloading, setIsDownloading] = useState(false)
+  const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Qgis-icon-3.0.png';
 
   function handleOpenInNewTab() {
     const fileUrl = '/cv.pdf'
@@ -369,6 +371,19 @@ const Home = () => {
               bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
               css={{ backdropFilter: 'blur(10px)' }}
               padding="10px;"
+              title="JavaScript"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <JQueryIcon />
+            </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
               title="Typescript"
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
@@ -508,6 +523,20 @@ const Home = () => {
             >
               <OracleIcon />
             </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Kotlin"
+              title="Kotlin"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <KotlinIcon />
+            </Box>
           </SimpleGrid>
         </Section>
         <Divider />
@@ -558,10 +587,10 @@ const Home = () => {
               css={{ backdropFilter: 'blur(10px)' }}
               padding="10px;"
               href="Kotlin"
-              title="Kotlin"
+              title="Xamarin"
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
-              <KotlinIcon />
+              <XamarinIcon />
             </Box>
             <Box
               borderRadius="lg"
@@ -572,10 +601,13 @@ const Home = () => {
               css={{ backdropFilter: 'blur(10px)' }}
               padding="10px;"
               href="Kotlin"
-              title="Xamarin"
+              title="QGIS"
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              backgroundImage={`url(${imageUrl})`}
+              backgroundSize="70% 70%"
+              backgroundPosition="center"
+              backgroundRepeat="no-repeat"
             >
-              <XamarinIcon />
             </Box>
           </SimpleGrid>
         </Section>
