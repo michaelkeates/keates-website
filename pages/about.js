@@ -292,7 +292,7 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Produced Accurate Transport Plan Drawings using both Adobe
+                      Produced accurate transport plan drawings using both Adobe
                       Photopshop & Illustrator
                     </li>
                     <li>

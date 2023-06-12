@@ -67,6 +67,8 @@ async function generatePDF() {
 
     const fontweight = document.querySelectorAll('.chakra-heading.css-1dilgbf')
 
+    const padding = document.querySelectorAll('.css-o7muvo')
+
     //next section
 
     gridElement.forEach(gridElement => {
@@ -182,6 +184,10 @@ async function generatePDF() {
 
     fontweight.forEach(fontweight => {
       fontweight.style.fontWeight = '400'
+    })
+
+    padding.forEach(element => {
+      element.style.padding = '0' // Remove the padding
     })
   })
 
