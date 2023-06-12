@@ -7,7 +7,8 @@ import {
   useColorModeValue,
   chakra,
   Divider,
-  Text
+  Badge,
+  Grid
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -18,6 +19,7 @@ import { WorkGridItem } from '../components/grid-item'
 import Image from 'next/image'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
+import thumbkenfreight from '../public/images/works/kenfreight.png'
 import React, { useState } from 'react'
 import styles from '../styles/emoji.module.css'
 
@@ -48,8 +50,6 @@ const ProfileImage = chakra(Image, {
 })
 
 const Home = () => {
-  const [isDownloading, setIsDownloading] = useState(false)
-
   function handleOpenInNewTab() {
     const fileUrl = '/cv.pdf'
     window.open(fileUrl, '_blank')
@@ -238,76 +238,65 @@ const Home = () => {
           </SimpleGrid>
         </div>
         <Divider />
-        <Heading
-          as="h3"
-          fontFamily="Roboto"
-          fontWeight="500"
-          fontSize={20}
-          mb={4}
-          marginTop="1rem"
-        >
-          Education
-        </Heading>
-
-        <SimpleGrid columns={[3, 2, 3]} gap={2}>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={0}
-              p={4}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <WorkGridItem
-                id="uswapplied"
-                thumbnail={thumbusw}
-                title="BSc (Hons) Applied Computing"
-              >
-                University of South Wales (2022-2023)
-              </WorkGridItem>
-            </Box>
-          </Section>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={0}
-              p={4}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <WorkGridItem
-                id="uswhnd"
-                thumbnail={thumbusw}
-                title="HND Computing"
-              >
-                University of South Wales (2020-2022)
-              </WorkGridItem>
-            </Box>
-          </Section>
-          <Section delay={0.3}>
+        <Section delay={0.2}>
+          <Heading
+            as="h3"
+            fontFamily="Roboto"
+            fontWeight="500"
+            fontSize={20}
+            mb={4}
+            marginTop="1rem"
+          >
+            Experience
+          </Heading>
+          <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
             <Box
               borderRadius="lg"
               mb={6}
-              p={4}
+              p={3}
               textAlign="center"
               bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
               css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              padding="10px"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+              paddingTop="1rem"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
             >
-              <WorkGridItem
-                id="coleggwentbtec"
-                thumbnail={thumbcc}
-                title="BTEC Computing"
-              >
-                Coleg Gwent (2019-2020)
-              </WorkGridItem>
+              <Box display="flex" alignItems="center">
+                <Box marginRight={4} marginTop="-2px">
+                  <Image src={thumbkenfreight} width={30} />
+                </Box>
+                <Box marginRight={4}>
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="600"
+                    fontSize={13}
+                    textAlign="left"
+                    marginRight={14}
+                  >
+                    Kenfreight East Africa Limited - Graphic Designer
+                  </Heading>
+                </Box>
+                <Box marginTop="-5px">
+                  {' '}
+                  <Badge colorScheme="grey">2017 - 2019</Badge>
+                </Box>
+              </Box>
+              <Divider marginTop={3} marginBottom={1} />
+              <Box marginTop={3}>
+                <Box textAlign="left" fontSize={12} padding={2}>
+                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                    <li>Produced Accurate Transport Plan Drawings using both Adobe Photopshop & Illustrator</li>
+                    <li>Designed the sister company Heavy Lift Logistics East Africa Limited Logo</li>
+                  </ul>
+                </Box>
+              </Box>
             </Box>
-          </Section>
-        </SimpleGrid>
+          </SimpleGrid>
+        </Section>
         <Divider />
         <Section delay={0.2}>
           <Heading
@@ -318,7 +307,7 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Programming
+            Programming Skills
           </Heading>
           <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
@@ -604,6 +593,78 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </Section>
+        <Divider />
+        <Heading
+          as="h3"
+          fontFamily="Roboto"
+          fontWeight="500"
+          fontSize={20}
+          mb={4}
+          marginTop="1rem"
+        >
+          Education
+        </Heading>
+
+        <SimpleGrid columns={[3, 2, 3]} gap={2}>
+          <Section delay={0.3}>
+            <Box
+              borderRadius="lg"
+              mb={0}
+              p={4}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <WorkGridItem
+                id="uswapplied"
+                thumbnail={thumbusw}
+                title="BSc (Hons) Applied Computing"
+              >
+                University of South Wales (2022-2023)
+              </WorkGridItem>
+            </Box>
+          </Section>
+          <Section delay={0.3}>
+            <Box
+              borderRadius="lg"
+              mb={0}
+              p={4}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <WorkGridItem
+                id="uswhnd"
+                thumbnail={thumbusw}
+                title="HND Computing"
+              >
+                University of South Wales (2020-2022)
+              </WorkGridItem>
+            </Box>
+          </Section>
+          <Section delay={0.3}>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={4}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <WorkGridItem
+                id="coleggwentbtec"
+                thumbnail={thumbcc}
+                title="BTEC Computing"
+              >
+                Coleg Gwent (2019-2020)
+              </WorkGridItem>
+            </Box>
+          </Section>
+        </SimpleGrid>
+        <Divider />
         <div className="custom-grid">
           <Divider />
           <Section delay={0.2}>
