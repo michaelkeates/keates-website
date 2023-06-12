@@ -16,8 +16,7 @@ async function generatePDF() {
 
   //evaluate the page and remove unwanted elements
   await page.evaluate(() => {
-    document.body.style.backgroundColor = '#ffffff' // Set the background color to white (#ffffff)
-    //replace the selector with the appropriate one for the Chakra Grid
+    document.body.style.backgroundColor = '#ffffff'
     const gridElement = document.querySelectorAll('.css-85h89v, .css-481av6')
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelector('.css-vqf3rg')
@@ -61,9 +60,14 @@ async function generatePDF() {
 
     const badgeElement = document.querySelector('.chakra-badge.css-1ajj9qg')
 
+    //remove anything with img tag
     const linkBoxElements = document.querySelectorAll(
-      '.chakra-linkbox.css-16kwgao'
+      '.chakra-linkbox.css-16kwgao, .css-19v23ry'
     )
+
+    const fontweight = document.querySelectorAll('.chakra-heading.css-1dilgbf')
+
+    //next section
 
     gridElement.forEach(gridElement => {
       //modify the grid template columns property to have 7 columns
@@ -176,12 +180,9 @@ async function generatePDF() {
       linkBoxElement.style.marginTop = '-25px' // Adjust the value as needed
     })
 
-    //if (gridBlock) {
-    // Apply a page break before the grid block
-    //  gridBlock.style.pageBreakBefore = 'always'
-    // Adjust the margin-top property to move the block further down
-    //  gridBlock.style.marginTop = '100px' // Adjust the value as needed
-    //}
+    fontweight.forEach(fontweight => {
+      fontweight.style.fontWeight = '400'
+    })
   })
 
   // Generate PDF with modified print settings
