@@ -187,7 +187,7 @@ async function generatePDF() {
     })
 
     padding.forEach(element => {
-      element.style.padding = '0' // Remove the padding
+      element.style.padding = '0' //remove the padding
     })
   })
 
