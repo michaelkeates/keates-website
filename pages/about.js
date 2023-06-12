@@ -257,15 +257,14 @@ const Home = () => {
               textAlign="center"
               bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
               css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px"
+              padding={4}
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
               paddingTop="1rem"
-              display="flex"
               flexDirection="column"
               alignItems="center"
             >
               <Box display="flex" alignItems="center">
-                <Box marginRight={4} marginTop="-2px">
+                <Box marginRight={4} marginTop="-2px" align="center">
                   <Image src={thumbkenfreight} width={30} />
                 </Box>
                 <Box marginRight={4}>
@@ -275,13 +274,16 @@ const Home = () => {
                     fontWeight="600"
                     fontSize={13}
                     textAlign="left"
-                    marginRight={14}
                   >
                     Kenfreight East Africa Limited - Graphic Designer
                   </Heading>
                 </Box>
-                <Box marginTop="-5px">
-                  {' '}
+                <Box
+                  marginTop="-5px"
+                  display="flex"
+                  justifyContent="flex-end"
+                  flex="1"
+                >
                   <Badge colorScheme="grey">2017 - 2019</Badge>
                 </Box>
               </Box>
@@ -289,8 +291,14 @@ const Home = () => {
               <Box marginTop={3}>
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-                    <li>Produced Accurate Transport Plan Drawings using both Adobe Photopshop & Illustrator</li>
-                    <li>Designed the sister company Heavy Lift Logistics East Africa Limited Logo</li>
+                    <li>
+                      Produced Accurate Transport Plan Drawings using both Adobe
+                      Photopshop & Illustrator
+                    </li>
+                    <li>
+                      Designed the sister company Heavy Lift Logistics East
+                      Africa Limited Logo
+                    </li>
                   </ul>
                 </Box>
               </Box>
