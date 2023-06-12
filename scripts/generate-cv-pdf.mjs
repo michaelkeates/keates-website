@@ -47,10 +47,12 @@ async function generatePDF() {
     )
 
     const boxElements = document.querySelectorAll(
-      '.css-1jzpmk, .css-o75elv, .css-1a0pxu'
+      '.css-1jzpmk, .css-o75elv, .css-1a0pxu, .css-n1k3mh'
     )
 
-    const boxElement = document.querySelectorAll('.css-fzwid6, .css-1a0pxu, .css-98n5v3, .css-19iosgf, .css-qt4sqs')
+    const boxElement = document.querySelectorAll(
+      '.css-fzwid6, .css-1a0pxu, .css-98n5v3, .css-19iosgf, .css-qt4sqs'
+    )
 
     gridElement.forEach(gridElement => {
       // Modify the grid template columns property to have 7 columns
@@ -59,7 +61,7 @@ async function generatePDF() {
 
     gridElement2.forEach(gridElement2 => {
       // Modify the grid template columns property to have 7 columns
-      gridElement2.style.gridTemplateColumns = 'repeat(8, minmax(0, 1fr))'
+      gridElement2.style.gridTemplateColumns = 'repeat(9, minmax(0, 1fr))'
       //gridElement2.style.width = '70%' // Replace '100px' with your desired image width
       //gridElement2.style.height = '70%' // Replace '100px' with your desired image height
     })
@@ -130,12 +132,7 @@ async function generatePDF() {
     })
 
     boxElements.forEach(boxElement => {
-      const iconElement = boxElement.querySelector('svg')
       const title = boxElement.getAttribute('title')
-
-      if (iconElement) {
-        iconElement.remove()
-      }
 
       if (title) {
         boxElement.textContent = title

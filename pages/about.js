@@ -49,8 +49,6 @@ const ProfileImage = chakra(Image, {
 
 const Home = () => {
   const [isDownloading, setIsDownloading] = useState(false)
-  const imageUrl =
-    'https://upload.wikimedia.org/wikipedia/commons/9/91/QGIS_logo_new.svg'
 
   function handleOpenInNewTab() {
     const fileUrl = '/cv.pdf'
@@ -549,6 +547,20 @@ const Home = () => {
             >
               <OracleIcon />
             </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Typescript"
+              title="Docker"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <DockerIcon />
+            </Box>
           </SimpleGrid>
         </Section>
         <Divider />
@@ -590,21 +602,6 @@ const Home = () => {
             >
               <XamarinIcon />
             </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              title="QGIS"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              backgroundImage={`url(${imageUrl})`}
-              backgroundSize="70% 70%"
-              backgroundPosition="center"
-              backgroundRepeat="no-repeat"
-            ></Box>
           </SimpleGrid>
         </Section>
         <div className="custom-grid">
