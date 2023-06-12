@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer'
 async function generatePDF() {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
-  await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
+  await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 })
 
   const url = 'http://www.michaelkeates.co.uk/about' // Replace with the URL of the about page
 
@@ -22,21 +22,35 @@ async function generatePDF() {
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelector('.css-vqf3rg')
     const textSize = document.querySelectorAll('.css-1oo097b')
-    const textSize2 = document.querySelectorAll('.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O')
+    const textSize2 = document.querySelectorAll(
+      '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O'
+    )
     const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k')
     const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58')
-    const textSize5 = document.querySelectorAll('.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd')
+    const textSize5 = document.querySelectorAll(
+      '.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd'
+    )
     const textColors = document.querySelectorAll(
       '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr'
     )
     const borderColor = document.querySelectorAll('.css-svjswr')
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
-    // Replace the selector with the appropriate one for the grid block
-    const gridBlock = document.querySelector('.css-gzapkn')
 
-    const customGridElements = document.querySelectorAll('.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu')
-    const customGridElements2 = document.querySelectorAll('.chakra-heading.css-kowkqe')
-    const customGridElements3 = document.querySelectorAll('.css-1k7klv9, .css-1oo097b, .css-13hhjt6')
+    const customGridElements = document.querySelectorAll(
+      '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu'
+    )
+    const customGridElements2 = document.querySelectorAll(
+      '.chakra-heading.css-kowkqe'
+    )
+    const customGridElements3 = document.querySelectorAll(
+      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6'
+    )
+
+    const boxElements = document.querySelectorAll(
+      '.css-1jzpmk, .css-o75elv, .css-1a0pxu'
+    )
+
+    const boxElement = document.querySelectorAll('.css-fzwid6, .css-1a0pxu, .css-98n5v3, .css-19iosgf, .css-qt4sqs')
 
     gridElement.forEach(gridElement => {
       // Modify the grid template columns property to have 7 columns
@@ -46,8 +60,8 @@ async function generatePDF() {
     gridElement2.forEach(gridElement2 => {
       // Modify the grid template columns property to have 7 columns
       gridElement2.style.gridTemplateColumns = 'repeat(8, minmax(0, 1fr))'
-      gridElement2.style.width = '70%' // Replace '100px' with your desired image width
-      gridElement2.style.height = '70%' // Replace '100px' with your desired image height
+      //gridElement2.style.width = '70%' // Replace '100px' with your desired image width
+      //gridElement2.style.height = '70%' // Replace '100px' with your desired image height
     })
 
     if (gridElement3) {
@@ -98,6 +112,8 @@ async function generatePDF() {
     customGridElements.forEach(element => {
       element.style.marginBottom = '0'
       element.style.paddingBottom = '-10px'
+      element.style.background = 'transparent'
+      element.style.boxShadow = 'none'
     })
 
     customGridElements2.forEach(element => {
@@ -107,11 +123,33 @@ async function generatePDF() {
     customGridElements3.forEach(element => {
       element.style.marginBottom = '2px'
       element.style.paddingBottom = '2px'
-
     })
 
     unwantedElements.forEach(element => {
       element.remove()
+    })
+
+    boxElements.forEach(boxElement => {
+      const iconElement = boxElement.querySelector('svg')
+      const title = boxElement.getAttribute('title')
+
+      if (iconElement) {
+        iconElement.remove()
+      }
+
+      if (title) {
+        boxElement.textContent = title
+        boxElement.style.fontSize = '10px'
+        boxElement.style.background = 'transparent'
+        boxElement.style.boxShadow = 'none'
+        boxElement.style.width = '100%'
+        boxElement.style.padding = '0'
+      }
+    })
+
+    boxElement.forEach(element => {
+      element.style.background = 'transparent'
+      element.style.boxShadow = 'none'
     })
 
     //if (gridBlock) {
@@ -127,7 +165,7 @@ async function generatePDF() {
     format: 'A4',
     printBackground: true,
     preferCSSPageSize: true,
-    quality: 100,
+    quality: 100
   })
 
   await browser.close()

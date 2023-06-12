@@ -6,7 +6,8 @@ import {
   SimpleGrid,
   useColorModeValue,
   chakra,
-  Divider
+  Divider,
+  Text
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -48,7 +49,8 @@ const ProfileImage = chakra(Image, {
 
 const Home = () => {
   const [isDownloading, setIsDownloading] = useState(false)
-  const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Qgis-icon-3.0.png';
+  const imageUrl =
+    'https://upload.wikimedia.org/wikipedia/commons/9/91/QGIS_logo_new.svg'
 
   function handleOpenInNewTab() {
     const fileUrl = '/cv.pdf'
@@ -229,10 +231,7 @@ const Home = () => {
                 boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
               >
                 <BioSection>
-                  <a
-                    href="tel:+447495137974"
-                    className={styles.emailLink}
-                  >
+                  <a href="tel:+447495137974" className={styles.emailLink}>
                     <span className={styles.emoji}>📱</span> +44 7495 137 974
                   </a>
                 </BioSection>
@@ -321,9 +320,35 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Front-End Skills
+            Programming
           </Heading>
           <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              title="C++"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <CplusplusIcon />
+            </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              title="C#"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <CsharpIcon />
+            </Box>
             <Box
               borderRadius="lg"
               mb={6}
@@ -384,6 +409,62 @@ const Home = () => {
               bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
               css={{ backdropFilter: 'blur(10px)' }}
               padding="10px;"
+              title="PHP"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <PhpIcon />
+            </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Kotlin"
+              title="Kotlin"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <KotlinIcon />
+            </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Typescript"
+              title="Python"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <PythonIcon />
+            </Box>
+          </SimpleGrid>
+        </Section>
+        <Divider />
+        <Section delay={0.2}>
+          <Heading
+            as="h3"
+            fontFamily="Roboto"
+            fontWeight="500"
+            fontSize={20}
+            mb={4}
+            marginTop="1rem"
+          >
+            Platforms
+          </Heading>
+          <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
               title="Typescript"
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
@@ -415,21 +496,6 @@ const Home = () => {
             >
               <NextjsIcon />
             </Box>
-          </SimpleGrid>
-        </Section>
-        <Divider />
-        <Section delay={0.2}>
-          <Heading
-            as="h3"
-            fontFamily="Roboto"
-            fontWeight="500"
-            fontSize={20}
-            mb={4}
-            marginTop="1rem"
-          >
-            Back-End Skills
-          </Heading>
-          <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
               borderRadius="lg"
               mb={6}
@@ -438,23 +504,10 @@ const Home = () => {
               bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
               css={{ backdropFilter: 'blur(10px)' }}
               padding="10px;"
-              title="C++"
+              title="GraphQL"
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
-              <CplusplusIcon />
-            </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              title="C#"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <CsharpIcon />
+              <GraphQlIcon />
             </Box>
             <Box
               borderRadius="lg"
@@ -468,19 +521,6 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <MySQLIcon />
-            </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              title="PHP"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <PhpIcon />
             </Box>
             <Box
               borderRadius="lg"
@@ -504,38 +544,10 @@ const Home = () => {
               css={{ backdropFilter: 'blur(10px)' }}
               padding="10px;"
               href="Typescript"
-              title="Python"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <PythonIcon />
-            </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              href="Typescript"
               title="PL/SQL"
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <OracleIcon />
-            </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              href="Kotlin"
-              title="Kotlin"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <KotlinIcon />
             </Box>
           </SimpleGrid>
         </Section>
@@ -552,19 +564,6 @@ const Home = () => {
             Other Skills
           </Heading>
           <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              title="GraphQL"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <GraphQlIcon />
-            </Box>
             <Box
               borderRadius="lg"
               mb={6}
@@ -605,8 +604,7 @@ const Home = () => {
               backgroundSize="70% 70%"
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
-            >
-            </Box>
+            ></Box>
           </SimpleGrid>
         </Section>
         <div className="custom-grid">
