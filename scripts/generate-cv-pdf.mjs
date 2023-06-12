@@ -11,18 +11,18 @@ async function generatePDF() {
 
   await page.goto(url)
 
-  // Or, add a delay before generating the PDF (in milliseconds)
+  //or, add a delay before generating the PDF (in milliseconds)
   await page.waitForTimeout(2000) // Adjust the delay as needed
 
-  // Evaluate the page and remove unwanted elements
+  //evaluate the page and remove unwanted elements
   await page.evaluate(() => {
     document.body.style.backgroundColor = '#ffffff' // Set the background color to white (#ffffff)
-    // Replace the selector with the appropriate one for the Chakra Grid
+    //replace the selector with the appropriate one for the Chakra Grid
     const gridElement = document.querySelectorAll('.css-85h89v, .css-481av6')
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelector('.css-vqf3rg')
     const textSize = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg'
+      '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg, .chakra-heading.css-1dilgbf'
     )
     const textSize2 = document.querySelectorAll(
       '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O, .css-1dsdcac'
@@ -33,9 +33,11 @@ async function generatePDF() {
       '.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd'
     )
     const textColors = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg, .css-1dsdcac'
+      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg, .css-1dsdcac, .chakra-heading.css-1dilgbf'
     )
-    const borderColor = document.querySelectorAll('.css-svjswr, .chakra-divider.css-mzlxjy')
+    const borderColor = document.querySelectorAll(
+      '.css-svjswr, .chakra-divider.css-mzlxjy'
+    )
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
 
     const customGridElements = document.querySelectorAll(
@@ -52,26 +54,31 @@ async function generatePDF() {
       '.css-1jzpmk, .css-o75elv, .css-1a0pxu, .css-n1k3mh'
     )
 
+    //remove background and shadow
     const boxElement = document.querySelectorAll(
-      '.css-fzwid6, .css-1a0pxu, .css-98n5v3, .css-19iosgf, .css-qt4sqs, .css-siq2cg'
+      '.css-fzwid6, .css-1a0pxu, .css-98n5v3, .css-19iosgf, .css-qt4sqs, .css-siq2cg, .css-o7muvo'
     )
 
-    const badgeElement = document.querySelector('.chakra-badge.css-1ajj9qg');
+    const badgeElement = document.querySelector('.chakra-badge.css-1ajj9qg')
+
+    const linkBoxElements = document.querySelectorAll(
+      '.chakra-linkbox.css-16kwgao'
+    )
 
     gridElement.forEach(gridElement => {
-      // Modify the grid template columns property to have 7 columns
+      //modify the grid template columns property to have 7 columns
       gridElement.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))'
     })
 
     gridElement2.forEach(gridElement2 => {
-      // Modify the grid template columns property to have 7 columns
+      //modify the grid template columns property to have 7 columns
       gridElement2.style.gridTemplateColumns = 'repeat(9, minmax(0, 1fr))'
       //gridElement2.style.width = '70%' // Replace '100px' with your desired image width
       //gridElement2.style.height = '70%' // Replace '100px' with your desired image height
     })
 
     if (gridElement3) {
-      // Modify the grid template columns property to have 4 columns
+      //modify the grid template columns property to have 4 columns
       gridElement3.style.gridTemplateColumns = 'repeat(2, minmax(0, 1fr))'
     }
 
@@ -84,11 +91,11 @@ async function generatePDF() {
     })
 
     textSize3.forEach(textSize3 => {
-      textSize3.style.fontSize = '8px'
+      textSize3.style.fontSize = '10px'
     })
 
     textSize4.forEach(textSize4 => {
-      textSize4.style.fontSize = '6px'
+      textSize4.style.fontSize = '7px'
     })
 
     textSize5.forEach(textSize5 => {
@@ -154,9 +161,20 @@ async function generatePDF() {
     })
 
     if (badgeElement) {
-      // Remove the background by setting the CSS variable '--badge-bg' to 'transparent'
-      badgeElement.style.setProperty('--badge-bg', 'transparent');
+      //remove the background by setting the CSS variable '--badge-bg' to 'transparent'
+      badgeElement.style.setProperty('--badge-bg', 'transparent')
     }
+
+    linkBoxElements.forEach(linkBoxElement => {
+      // Remove the <img> element inside the link box
+      const imgElement = linkBoxElement.querySelector('img')
+      if (imgElement) {
+        imgElement.remove()
+      }
+
+      // Apply a negative margin to move the element up
+      linkBoxElement.style.marginTop = '-25px' // Adjust the value as needed
+    })
 
     //if (gridBlock) {
     // Apply a page break before the grid block
