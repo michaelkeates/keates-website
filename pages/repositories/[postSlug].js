@@ -26,7 +26,7 @@ import Layout from '../../components/layouts/article'
 import { getApolloClient } from '../../lib/github'
 import AuthorBio from '../../components/post/author-bio'
 
-import { Repo, WorkImage, Meta } from '../../components/work'
+import { Repo } from '../../components/work'
 
 import styles from '../../styles/Home.module.css'
 
