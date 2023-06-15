@@ -161,9 +161,30 @@
   width: 100%;
   align-items: center;
   justify-content: center;
+  display: flex;
+  gap: 10px;
+}
+
+.main .Home_main__nLjiQ.img {
+  align-items: center;
+  /* border-radius: 5px; */
+  width: auto;
+  padding-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
 }
 
 .main img {
+  align-items: center;
+  /* border-radius: 5px; */
+  width: auto;
+  padding-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.main .badge {
   align-items: center;
   /* border-radius: 5px; */
   width: auto;
@@ -276,3 +297,9 @@
 .devicon-devicon-plain path {
   fill: #4691f6;
 }
+
+.main .badgesWrapper {
+  display: flex;
+}
+
+
