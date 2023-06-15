@@ -109,7 +109,7 @@ export default function Post({ rep }) {
               <br></br>
               <Paragraph>
                 To view this repository on Github, please click{' '}
-                <Link href={rep.url}>here</Link>.
+                <Link href={rep.url}>here</Link>
               </Paragraph>
             </SimpleGrid>
             <Divider my={6} />
