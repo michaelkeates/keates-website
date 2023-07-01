@@ -284,7 +284,7 @@ const Home = () => {
                   justifyContent="flex-end"
                   flex="1"
                 >
-                  <Badge colorScheme="grey">2017 - 2019</Badge>
+                  <Badge colorScheme="grey">2017 - 2018</Badge>
                 </Box>
               </Box>
               <Divider marginTop={3} marginBottom={1} />
