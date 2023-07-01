@@ -275,7 +275,7 @@ const Home = () => {
                     fontSize={13}
                     textAlign="left"
                   >
-                    Kenfreight East Africa Limited - Graphic Designer
+                    Kenfreight East Africa Limited - Graphic Designer (Remote)
                   </Heading>
                 </Box>
                 <Box
