@@ -1,3 +1,5 @@
+// puppeteer.config.js
+
 const os = require('os');
 const path = require('path');
 
@@ -7,7 +9,7 @@ module.exports = {
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
-      `--disk-cache-dir=${path.join(os.tmpdir(), '/vercel/.cache/puppeteer')}`, // Set the cache directory
+      `--disk-cache-dir=${path.join(os.homedir(), '.cache', 'puppeteer')}`, // Set the cache directory
     ],
   },
   browserContext: 'default',
