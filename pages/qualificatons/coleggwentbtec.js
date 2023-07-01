@@ -6,7 +6,17 @@ import {
   ListItem,
   SimpleGrid,
   useColorModeValue,
-  Heading
+  Heading,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+  Divider
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
@@ -16,7 +26,7 @@ import P from '../../components/paragraph'
 const Work = () => (
   <Layout title="BTEC Computing">
     <Container>
-    <Box
+      <Box
         borderRadius="lg"
         textAlign="center"
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
@@ -27,7 +37,7 @@ const Work = () => (
         boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
       >
         <Title>
-        BTEC Computing{' '}
+          BTEC Computing{' '}
           <Badge
             bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
             color=""
@@ -58,41 +68,67 @@ const Work = () => (
         Distinction.
       </P>
 
-      <SimpleGrid olumns={[1, 1, 1]} gap={2} paddingTop="25px">
+      <SimpleGrid columns={[1, 1, 1]} gap={2} paddingTop="25px">
         <SimpleGrid>
-          <Heading as="h3" variant="section-title" fontWeight="">
-            Grades
+          <Heading
+            as="h3"
+            fontFamily="Roboto"
+            fontWeight="500"
+            fontSize={20}
+            mb={2}
+          >
+            BTEC Performance
           </Heading>
-          <List my={1}>
-            <ListItem>
-              <Meta>Overall</Meta>
-              <span>Distinction</span>
-            </ListItem>
-            <ListItem>
-              <Meta>Principles of Computer Science</Meta>
-              <span>Pass</span>
-            </ListItem>
-            <ListItem>
-              <Meta>Fundamentals of Computer Systems</Meta>
-              <span>Pass</span>
-            </ListItem>
-            <ListItem>
-              <Meta>IT Systems Security and Encryption</Meta>
-              <span>Distinction</span>
-            </ListItem>
-            <ListItem>
-              <Meta>Business Applications of Social Media</Meta>
-              <span>Distinction</span>
-            </ListItem>
-            <ListItem>
-              <Meta>Computer Games Development</Meta>
-              <span>Distinction</span>
-            </ListItem>
-            <ListItem>
-              <Meta>Mobile Apps Development</Meta>
-              <span>Distinction</span>
-            </ListItem>
-          </List>
+          <Divider />
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Modules</Th>
+                  <Th>Grade</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Principles of Computer Science</Td>
+                  <Td>Pass</Td>
+                </Tr>
+                <Tr>
+                  <Td>Fundementals of Computer Systems</Td>
+                  <Td>Pass</Td>
+                </Tr>
+                <Tr>
+                  <Td>IT Systems Security and Encryption</Td>
+                  <Td>Distinction</Td>
+                </Tr>
+                <Tr>
+                  <Td>Business Applications of Social Media</Td>
+                  <Td>Distinction</Td>
+                </Tr>
+                <Tr>
+                  <Td>Computer Games Development</Td>
+                  <Td>Distinction</Td>
+                </Tr>
+                <Tr>
+                  <Td>Mobile Apps Development</Td>
+                  <Td>Distinction</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot>
+                <Tr></Tr>
+              </Tfoot>
+            </Table>
+          </TableContainer>
+          <Divider marginTop="30px" marginBottom="60px" />
         </SimpleGrid>
       </SimpleGrid>
     </Container>

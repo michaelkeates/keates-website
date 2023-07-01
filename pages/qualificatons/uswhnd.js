@@ -6,7 +6,17 @@ import {
   ListItem,
   SimpleGrid,
   useColorModeValue,
-  Heading
+  Heading,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+  Divider
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
@@ -46,81 +56,760 @@ const Work = () => (
         which my confirmed grades for both years below showcases. I achieved a
         first for both years.
       </P>
-
-      <SimpleGrid olumns={[1, 1, 1]} gap={2} paddingTop="25px">
+      <SimpleGrid columns={[1, 1, 1]} gap={2} paddingTop="25px">
         <SimpleGrid>
-          <Heading as="h3" variant="section-title" fontWeight="">
-            Year 1
+          <Heading
+            as="h3"
+            fontFamily="Roboto"
+            fontWeight="500"
+            fontSize={20}
+            mb={2}
+          >
+            Year 1 Performance
           </Heading>
-          <List my={1}>
+          <Divider />
+          <List marginTop="15px">
             <ListItem>
-              <Meta>Overall</Meta>
-              <span>78%</span>
+              <Meta>Title</Meta>
+              <span>Professional Practice in Computing</span>
             </ListItem>
             <ListItem>
-              <Meta>Computer Systems and Networks</Meta>
-              <span>85%</span>
+              <Meta>Module</Meta>
+              <span>IS1H422</span>
             </ListItem>
             <ListItem>
-              <Meta>Software Development</Meta>
-              <span>75%</span>
-            </ListItem>
-            <ListItem>
-              <Meta>Professional Practice</Meta>
+              <Meta>Result</Meta>
               <span>72%</span>
             </ListItem>
             <ListItem>
-              <Meta>Programming 1</Meta>
-              <span>97%</span>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Oral Assessment</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>65</Td>
+                </Tr>
+                <Tr>
+                  <Td>Portfolio 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>79</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot>
+                <Tr></Tr>
+              </Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Software Development</span>
             </ListItem>
             <ListItem>
-              <Meta>Web Development</Meta>
-              <span>71%</span>
+              <Meta>Module</Meta>
+              <span>IS1H428</span>
             </ListItem>
             <ListItem>
-              <Meta>ISAD 1</Meta>
+              <Meta>Result</Meta>
               <span>75%</span>
             </ListItem>
             <ListItem>
-              <Meta>Problem Solving</Meta>
-              <span>73%</span>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
             </ListItem>
           </List>
-        </SimpleGrid>
-        <SimpleGrid>
-          <Heading as="h3" variant="section-title" fontWeight="">
-            Year 2
-          </Heading>
-          <List my={1}>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Practical Coursework 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>1</Td>
+                  <Td isNumeric>75</Td>
+                </Tr>
+                <Tr>
+                  <Td></Td>
+                  <Td></Td>
+                  <Td isNumeric></Td>
+                  <Td isNumeric></Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
             <ListItem>
-              <Meta>Overall</Meta>
-              <span>80%</span>
+              <Meta>Title</Meta>
+              <span>Information Systems Analysis and Design 1</span>
             </ListItem>
             <ListItem>
-              <Meta>Individual Project</Meta>
-              <span>82%</span>
+              <Meta>Module</Meta>
+              <span>IS1S451</span>
             </ListItem>
             <ListItem>
-              <Meta>Programming 2</Meta>
-              <span>92%</span>
+              <Meta>Result</Meta>
+              <span>75%</span>
             </ListItem>
             <ListItem>
-              <Meta>Responsive Web Development</Meta>
-              <span>86%</span>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Portfolio 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.4</Td>
+                  <Td isNumeric>70</Td>
+                </Tr>
+                <Tr>
+                  <Td>Practical Coursework 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.6</Td>
+                  <Td isNumeric>79</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Computer Systems and Networks</span>
             </ListItem>
             <ListItem>
-              <Meta>ISAD 2</Meta>
+              <Meta>Module</Meta>
+              <span>IS1S454</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
+              <span>85%</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>MCQ Exercise</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>97</Td>
+                </Tr>
+                <Tr>
+                  <Td>Report 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>72</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Computer Programming 1</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>IS1S455</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
+              <span>97%</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Portfolio 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>98</Td>
+                </Tr>
+                <Tr>
+                  <Td>Practical Coursework 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>95</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Web Development</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>IS1S456</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
               <span>71%</span>
             </ListItem>
             <ListItem>
-              <Meta>Security</Meta>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Portfolio 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>60</Td>
+                </Tr>
+                <Tr>
+                  <Td>Practical Coursework 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>82</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Problem Solving for Computing</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>MS1S463</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
               <span>73%</span>
             </ListItem>
             <ListItem>
-              <Meta>Architecture</Meta>
-              <span>77%</span>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
             </ListItem>
           </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="10px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Set Tasks - not-time constrained 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>79</Td>
+                </Tr>
+                <Tr>
+                  <Td>Time Constrained Assessment 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>66</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+          <Divider marginTop="30px" marginBottom="60px" />
+        </SimpleGrid>
+        <SimpleGrid>
+          <Heading
+            as="h3"
+            fontFamily="Roboto"
+            fontWeight="500"
+            fontSize={20}
+            mb={2}
+          >
+            Year 2 Performance
+          </Heading>
+          <Divider />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Information Systems Analysis and Design 2</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>IS2S551</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
+              <span>71%</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="10px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Portfolio 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>69</Td>
+                </Tr>
+                <Tr>
+                  <Td>Practical Coursework 1 (Asynch)</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>75</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot>
+                <Tr></Tr>
+              </Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>HND Individual Project</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>IS2S552</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
+              <span>82%</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Oral Assessment 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.2</Td>
+                  <Td isNumeric>88</Td>
+                </Tr>
+                <Tr>
+                  <Td>Portfolio 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.7</Td>
+                  <Td isNumeric>80</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Systems Architecture and Modelling</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>IS2S554</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
+              <span>77%</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="12px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Report 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>72</Td>
+                </Tr>
+                <Tr>
+                  <Td>Report 2</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>81</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Computer Programming 2</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>IS2S555</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
+              <span>92%</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="11px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Portfolio 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.4</Td>
+                  <Td isNumeric>90</Td>
+                </Tr>
+                <Tr>
+                  <Td>Practical Coursework 1 (Asynch)</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.6</Td>
+                  <Td isNumeric>93</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Responsive Web Development</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>IS2S556</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
+              <span>86%</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="11px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Practical Coursework 1 (Asynch)</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>86</Td>
+                </Tr>
+                <Tr>
+                  <Td>Practical Coursework 2 (Asynch)</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>86</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+
+          <Divider marginTop="30px" />
+          <List marginTop="15px">
+            <ListItem>
+              <Meta>Title</Meta>
+              <span>Computer Systems Security</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Module</Meta>
+              <span>IY2S521B</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Result</Meta>
+              <span>73%</span>
+            </ListItem>
+            <ListItem>
+              <Meta>Grade</Meta>
+              <span>DIST</span>
+            </ListItem>
+          </List>
+          <TableContainer
+            marginTop="25px"
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            fontSize="10px"
+          >
+            <Table
+              variant="striped"
+              borderRadius="lg"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              size="md"
+            >
+              <Thead>
+                <Tr>
+                  <Th>Assessment</Th>
+                  <Th>Out of</Th>
+                  <Th isNumeric>Weight</Th>
+                  <Th isNumeric>Module Mark</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Practical Written Work 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>67</Td>
+                </Tr>
+                <Tr>
+                  <Td>Set Tasks - not-time constrained 1</Td>
+                  <Td>100</Td>
+                  <Td isNumeric>0.5</Td>
+                  <Td isNumeric>79</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot></Tfoot>
+            </Table>
+          </TableContainer>
+          <Divider marginTop="30px" />
         </SimpleGrid>
       </SimpleGrid>
     </Container>
