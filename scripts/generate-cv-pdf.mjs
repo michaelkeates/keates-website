@@ -3,7 +3,12 @@ import path from 'path'
 import puppeteer from 'puppeteer'
 
 async function generatePDF() {
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    // `headless: true` (default) enables old Headless;
+    // `headless: 'new'` enables new Headless;
+    // `headless: false` enables “headful” mode.
+  });
   const page = await browser.newPage()
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 })
 
@@ -21,7 +26,7 @@ async function generatePDF() {
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelector('.css-vqf3rg')
     const textSize = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg, .chakra-heading.css-1dilgbf'
+      '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-g6xq4p, .chakra-heading.css-1dilgbf'
     )
     const textSize2 = document.querySelectorAll(
       '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O, .css-1dsdcac'
