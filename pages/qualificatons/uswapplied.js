@@ -47,19 +47,19 @@ const Work = () => (
         </Title>
       </Box>
       <P>
-        Have been accepted to study the BSc Applied Computing course that is
-        offered by the University of South Wales. The course offers a thorough
-        grounding in the necessary skills to open up a flexible career in
-        computing working in different roles. This suits my skillset perfectly
-        as I have experience and skills in different sectors of the IT industry.
+        I got accepted to study the BSc Applied Computing course that is offered
+        by the University of South Wales. The course offers a thorough grounding
+        in the necessary skills to open up a flexible career in computing
+        working in different roles. This suits my skillset perfectly as I have
+        experience and skills in different sectors of the IT industry.
       </P>
       <P>
         The year brought many challenges that included University strikes
         initiated by the UCU where a large amount of lectures were cancelled, as
-        well as the Rail Strikes which made it difficult and times impossible to
-        attent lectures due to being based in Newport and the campus in
-        Treforest. So a majority of the work was done remotely without assistant
-        from a number of lecturers.
+        well as the Rail Strikes which made it difficult and at times impossible
+        to attend lectures due to being based in Newport and the campus where
+        the lectures were taken place in Treforest. So a majority of the work
+        was done remotely without guidance from a number of lecturers.
       </P>
       <P>
         I still worked to the best of my abilities to achieve a overall grade of
