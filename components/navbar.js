@@ -87,9 +87,6 @@ const Navbar = props => {
           <LinkItem href="/repositories" path={path}>
             Portfolio
           </LinkItem>
-          <LinkItem href="/photography" path={path}>
-            Photography
-          </LinkItem>
           <LinkItem href="/posts" path={path}>
             Blog
           </LinkItem>
@@ -154,22 +151,6 @@ const Navbar = props => {
                     as={Link}
                   >
                     Portfolio
-                  </MenuItem>
-                </NextLink>
-                <NextLink href="/photography" passHref>
-                  <MenuItem
-                    bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
-                    px={4}
-                    py={2}
-                    transition="all 0.2s"
-                    _hover={{
-                      bg: useColorModeValue('whiteAlpha.600', 'whiteAlpha.300')
-                    }}
-                    _expanded={{ bg: 'blue.400' }}
-                    _focus={{ boxShadow: 'none' }}
-                    as={Link}
-                  >
-                    Photography
                   </MenuItem>
                 </NextLink>
                 <NextLink href="/posts" passHref>
