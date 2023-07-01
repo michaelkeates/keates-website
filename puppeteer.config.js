@@ -1,16 +1,9 @@
-// puppeteer.config.js
+const { join } = require('path');
 
-const os = require('os');
-const path = require('path');
-
+/**
+ * @type {import("puppeteer").Configuration}
+ */
 module.exports = {
-  launch: {
-    headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      `--disk-cache-dir=${path.join(os.homedir(), '.cache', 'puppeteer')}`, // Set the cache directory
-    ],
-  },
-  browserContext: 'default',
+  // Changes the cache location for Puppeteer.
+  cacheDirectory: join(__dirname, '.cache', 'puppeteer'),
 };
