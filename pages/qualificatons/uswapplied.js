@@ -62,11 +62,8 @@ const Work = () => (
         was done remotely without guidance from a number of lecturers.
       </P>
       <P>
-        I still worked to the best of my abilities to achieve a overall grade of
-        First, however at this time the overall grade does not reflect this due
-        to the Marking and Assessment boycott and still awaiting results for an
-        assigment that has not been marked. Currently have passed the course
-        with a Pass Degree which is not reflective of my results.
+        However, I still worked to the best of my abilities to achieve First
+        Class Honours.
       </P>
       <SimpleGrid columns={[1, 1, 1]} gap={2} paddingTop="25px">
         <SimpleGrid>
@@ -205,19 +202,13 @@ const Work = () => (
             </ListItem>
             <ListItem>
               <Meta>Result</Meta>
-              <span>PENDING</span>
+              <span>83%</span>
             </ListItem>
             <ListItem>
               <Meta>Grade</Meta>
-              <span>PENDING</span>
+              <span>DIST</span>
             </ListItem>
           </List>
-          <P>
-            {' '}
-            Due to the Marking and Assessment boycott set by the UCU, result for
-            this module is not avaliable. However, I am predicted a first for
-            this module.
-          </P>
           <TableContainer
             marginTop="25px"
             boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
@@ -248,7 +239,7 @@ const Work = () => (
                   <Td>Practical Coursework 2 (Asynch)</Td>
                   <Td>100</Td>
                   <Td isNumeric>0.5</Td>
-                  <Td isNumeric></Td>
+                  <Td isNumeric>89</Td>
                 </Tr>
               </Tbody>
               <Tfoot></Tfoot>
