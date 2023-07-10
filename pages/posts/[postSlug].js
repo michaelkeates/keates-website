@@ -17,7 +17,7 @@ import {
   chakra,
   Badge
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, CopyIcon } from '@chakra-ui/icons'
 import Paragraph from '../../components/paragraph'
 import Section from '../../components/section'
 import Image from 'next/image'
@@ -31,6 +31,10 @@ import styles from '../../styles/Home.module.css'
 import AuthorBio from '../../components/post/author-bio'
 
 import { GET_POST_BY_SLUG, GET_ALL_POSTS } from '../../lib/queries'
+
+import { useEffect, useRef } from 'react'
+import ReactDOM from 'react-dom'
+
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -71,6 +75,57 @@ function dayMonth(data) {
 }
 
 export default function Post({ post }) {
+  const blockquoteRefs = useRef([])
+  const isMounted = useRef(false)
+
+  useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+      const blockquotes = Array.from(blockquoteRefs.current.querySelectorAll('.wp-block-code'));
+      blockquotes.forEach((blockquote) => {
+        if (!blockquote.querySelector('.copy-btn')) {
+          const quoteText = blockquote.textContent;
+          const copyButton = document.createElement('div');
+          copyButton.style.position = 'absolute';
+          copyButton.style.top = '0';
+          copyButton.style.right = '0';
+          copyButton.style.padding = '7px';
+          copyButton.style.opacity = '0';
+
+          ReactDOM.render(
+            <Button
+              className="copy-btn"
+              onClick={() => {
+                navigator.clipboard.writeText(quoteText);
+              }}
+              onMouseOver={() => {
+                copyButton.style.opacity = '1';
+              }}
+              onMouseOut={() => {
+                copyButton.style.opacity = '0';
+              }}
+              leftIcon={<CopyIcon />}
+            >
+            </Button>,
+            copyButton
+          );
+
+          blockquote.addEventListener('mouseover', () => {
+            copyButton.style.opacity = '1';
+          });
+          blockquote.addEventListener('mouseout', () => {
+            copyButton.style.opacity = '0';
+          });
+
+          blockquote.style.position = 'relative';
+          blockquote.style.display = 'inline-block';
+          blockquote.style.paddingTop = '25px';
+          blockquote.appendChild(copyButton);
+        }
+      });
+    }
+  }, []);
+
   return (
     <Layout>
       <Container>
@@ -104,11 +159,12 @@ export default function Post({ post }) {
             <SimpleGrid paddingTop="25px" paddingBottom="25px">
               <Divider my={1} />
               <Paragraph>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: post.content
-                  }}
-                />
+                <div className="post-content">
+                  <div
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                    ref={el => (blockquoteRefs.current = el)}
+                  />
+                </div>
               </Paragraph>
             </SimpleGrid>
             <Divider my={6} />
