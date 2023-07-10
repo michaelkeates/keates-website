@@ -91,6 +91,7 @@ export default function Post({ post }) {
           copyButton.style.right = '0';
           copyButton.style.padding = '7px';
           copyButton.style.opacity = '0';
+          copyButton.style.transition = 'opacity 0.3s ease-in-out';
 
           ReactDOM.render(
             <Button
