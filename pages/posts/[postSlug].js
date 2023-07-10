@@ -32,7 +32,7 @@ import AuthorBio from '../../components/post/author-bio'
 
 import { GET_POST_BY_SLUG, GET_ALL_POSTS } from '../../lib/queries'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom'
 
 
@@ -75,8 +75,8 @@ function dayMonth(data) {
 }
 
 export default function Post({ post }) {
-  const blockquoteRefs = useRef([])
-  const isMounted = useRef(false)
+  const blockquoteRefs = useRef([]);
+  const isMounted = useRef(false);
 
   useEffect(() => {
     if (!isMounted.current) {
