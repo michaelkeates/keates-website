@@ -102,7 +102,6 @@ export default function Post({ rep }) {
               </Repo>
             </Box>
             <SimpleGrid paddingTop="25px" paddingBottom="25px">
-              <Divider my={1} />
               <Paragraph>
                 <div
                   dangerouslySetInnerHTML={{
