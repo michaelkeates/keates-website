@@ -30,6 +30,8 @@ import styles from '../../styles/Home.module.css'
 
 import AuthorBio from '../../components/post/author-bio'
 
+import { GET_POST_BY_SLUG, GET_ALL_POSTS } from '../../lib/queries'
+
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
@@ -132,44 +134,7 @@ export async function getStaticProps({ params = {} } = {}) {
   const apolloClient = getApolloClient()
 
   const data = await apolloClient.query({
-    query: gql`
-      query PostBySlug($slug: String!) {
-        generalSettings {
-          title
-        }
-        postBy(slug: $slug) {
-          id
-          content
-          title
-          slug
-          date
-          featuredImage {
-            node {
-              sourceUrl
-            }
-          }
-          author {
-            node {
-              firstName
-              lastName
-            }
-          }
-          categories {
-            nodes {
-              name
-            }
-          }
-          tags {
-            edges {
-              node {
-                name
-              }
-            }
-          }
-          modified
-        }
-      }
-    `,
+    query: GET_POST_BY_SLUG,
     variables: {
       slug: postSlug
     }
@@ -193,31 +158,7 @@ export async function getStaticPaths() {
   const apolloClient = getApolloClient()
 
   const data = await apolloClient.query({
-    query: gql`
-      {
-        posts(first: 10000) {
-          edges {
-            node {
-              id
-              title
-              slug
-              date
-              categories {
-                nodes {
-                  name
-                }
-              }
-              featuredImage {
-                node {
-                  sourceUrl
-                }
-              }
-              excerpt(format: RENDERED)
-            }
-          }
-        }
-      }
-    `
+    query: GET_ALL_POSTS
   })
 
   const posts = data?.data.posts.edges.map(({ node }) => node)

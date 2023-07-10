@@ -10,6 +10,8 @@ import { Button, useColorModeValue, Container } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
 import styles from '../styles/emoji.module.css'
 
+import { GET_USER_REPOSITORIES } from '../lib/queries'
+
 function dayMonth(data) {
   const monthNames = [
     'null',
@@ -129,39 +131,7 @@ export async function getStaticProps() {
   const apolloClient = getApolloClient()
 
   const { data } = await apolloClient.query({
-    query: gql`
-      {
-        user(login: "michaelkeates") {
-          repositories(
-            first: 10
-            orderBy: { field: PUSHED_AT, direction: DESC }
-          ) {
-            edges {
-              node {
-                id
-                name
-                object(expression: "HEAD:README.md") {
-                  ... on Blob {
-                    text
-                  }
-                }
-                openGraphImageUrl
-                url
-                description
-                languages(first: 10) {
-                  nodes {
-                    id
-                    name
-                  }
-                  totalSize
-                }
-                updatedAt
-              }
-            }
-          }
-        }
-      }
-    `
+    query: GET_USER_REPOSITORIES
   })
 
   const repository = data?.user.repositories.edges

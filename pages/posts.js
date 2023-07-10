@@ -6,7 +6,7 @@ import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { Title, Portfolio, Blog, WorkImage, Meta } from '../components/work'
+import { GET_ALL_POSTS } from '../lib/queries';
 
 import {
   //Link,
@@ -149,39 +149,11 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const apolloClient = getApolloClient()
+  const apolloClient = getApolloClient();
 
   const data = await apolloClient.query({
-    query: gql`
-      {
-        generalSettings {
-          title
-          description
-        }
-        posts(first: 10000) {
-          edges {
-            node {
-              id
-              title
-              slug
-              date
-              categories {
-                nodes {
-                  name
-                }
-              }
-              featuredImage {
-                node {
-                  sourceUrl
-                }
-              }
-              excerpt(format: RENDERED)
-            }
-          }
-        }
-      }
-    `
-  })
+    query: GET_ALL_POSTS
+  });
 
   const posts = data?.data.posts.edges
     .map(({ node }) => node)
@@ -189,12 +161,12 @@ export async function getStaticProps() {
       return {
         ...post,
         path: `/posts/${post.slug}`
-      }
-    })
+      };
+    });
 
   return {
     props: {
       posts
     }
-  }
+  };
 }

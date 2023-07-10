@@ -25,6 +25,10 @@ import Image from 'next/image'
 import Layout from '../../components/layouts/article'
 import { getApolloClient } from '../../lib/github'
 import AuthorBio from '../../components/post/author-bio'
+import {
+  GET_REPOSITORY_BY_NAME,
+  GET_USER_REPOSITORIES
+} from '../../lib/queries'
 
 import { Repo } from '../../components/work'
 
@@ -135,31 +139,7 @@ export async function getStaticProps({ params = {} } = {}) {
   const apolloClient = getApolloClient()
 
   const data = await apolloClient.query({
-    query: gql`
-      query RepositoriesByName($name: String!) {
-        repository(name: $name, owner: "michaelkeates") {
-          id
-          name
-          object(expression: "HEAD:README.md") {
-            ... on Blob {
-              text
-            }
-          }
-          url
-          openGraphImageUrl
-          languages(first: 10) {
-            edges {
-              node {
-                name
-                id
-              }
-            }
-            totalSize
-          }
-          updatedAt
-        }
-      }
-    `,
+    query: GET_REPOSITORY_BY_NAME,
     variables: {
       name: postSlug
     }
@@ -178,36 +158,7 @@ export async function getStaticPaths() {
   const apolloClient = getApolloClient()
 
   const data = await apolloClient.query({
-    query: gql`
-      {
-        user(login: "michaelkeates") {
-          repositories(first: 10) {
-            edges {
-              node {
-                id
-                name
-                object(expression: "HEAD:README.md") {
-                  ... on Blob {
-                    text
-                  }
-                }
-                openGraphImageUrl
-                url
-                description
-                languages(first: 10) {
-                  nodes {
-                    id
-                    name
-                  }
-                  totalSize
-                }
-                updatedAt
-              }
-            }
-          }
-        }
-      }
-    `
+    query: GET_USER_REPOSITORIES
   })
 
   const rep = data?.data.user.repositories.edges.map(({ node }) => node)
