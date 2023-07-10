@@ -32,7 +32,7 @@ import AuthorBio from '../../components/post/author-bio'
 
 import { GET_POST_BY_SLUG, GET_ALL_POSTS } from '../../lib/queries'
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom'
 
 
@@ -77,6 +77,7 @@ function dayMonth(data) {
 export default function Post({ post }) {
   const blockquoteRefs = useRef([]);
   const isMounted = useRef(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -93,20 +94,26 @@ export default function Post({ post }) {
           copyButton.style.opacity = '0';
           copyButton.style.transition = 'opacity 0.3s ease-in-out';
 
+          const handleClick = () => {
+            navigator.clipboard.writeText(quoteText);
+            setIsCopied(true);
+            setTimeout(() => {
+              setIsCopied(false);
+            }, 2000); // Change the duration here (in milliseconds)
+          };
+
           ReactDOM.render(
             <Button
               className="copy-btn"
-              onClick={() => {
-                navigator.clipboard.writeText(quoteText);
-              }}
+              onClick={handleClick}
               onMouseOver={() => {
                 copyButton.style.opacity = '1';
               }}
               onMouseOut={() => {
                 copyButton.style.opacity = '0';
               }}
-              leftIcon={<CopyIcon />}
             >
+              <CopyIcon />
             </Button>,
             copyButton
           );
@@ -125,7 +132,7 @@ export default function Post({ post }) {
         }
       });
     }
-  }, []);
+  }, [isCopied]);
 
   return (
     <Layout>

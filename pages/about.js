@@ -22,6 +22,7 @@ import thumbcc from '../public/images/works/cc_logo.png'
 import thumbkenfreight from '../public/images/works/kenfreight.png'
 import React, { useState } from 'react'
 import styles from '../styles/emoji.module.css'
+import Bubble from '../components/bubbleheader'
 
 import {
   CplusplusIcon,
@@ -59,25 +60,7 @@ const Home = () => {
   return (
     <Layout>
       <Container>
-        <Box
-          borderRadius="lg"
-          textAlign="center"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-          css={{ backdropFilter: 'blur(10px)' }}
-          padding="10px"
-          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
-        >
-          <a className={styles.emailTitleLink}>
-            Check out my qualifications and skills!
-            <span className={styles.emojiTitle} style={{ marginLeft: '8px' }}>
-              🧍
-            </span>
-          </a>
-        </Box>
-
+        <Bubble text="Check out my qualifications and skills!" emoji="🧍" />
         <Box display={{ md: 'flex' }} paddingTop="25px">
           <Box flexGrow={1}>
             <Heading

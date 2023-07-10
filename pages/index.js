@@ -10,6 +10,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
 import styles from '../styles/emoji.module.css'
+import Bubble from '../components/bubbleheader'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -18,25 +19,10 @@ const ProfileImage = chakra(Image, {
 const Home = () => (
   <Layout>
     <Container>
-      <Box
-        borderRadius="lg"
-        textAlign="center"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-        css={{ backdropFilter: 'blur(10px)' }}
-        padding="10px"
-        boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
-      >
-        <a className={styles.emailTitleLink}>
-          Hi! I&apos;m a software developer based in South Wales!
-          <span className={styles.emojiTitle} style={{ marginLeft: '8px' }}>
-            🏴󠁧󠁢󠁷󠁬󠁳󠁿
-          </span>
-        </a>
-      </Box>
-
+      <Bubble
+        text="Hi! I'm a software developer based in South Wales!"
+        emoji="🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+      />
       <Box display={{ md: 'flex' }} paddingTop="25px" paddingBottom="25px">
         <Box flexGrow={1}>
           <Heading

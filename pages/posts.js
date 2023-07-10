@@ -6,7 +6,8 @@ import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { GET_ALL_POSTS } from '../lib/queries';
+import { GET_ALL_POSTS } from '../lib/queries'
+import Bubble from '../components/bubbleheader'
 
 import {
   //Link,
@@ -61,26 +62,7 @@ export default function Home({ posts }) {
   return (
     <Layout title="Portfolio">
       <Container>
-        <Box
-          borderRadius="lg"
-          mb={6}
-          p={3}
-          textAlign="center"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-          css={{ backdropFilter: 'blur(10px)' }}
-          padding="10px"
-          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
-        >
-          <a className={styles2.emailTitleLink}>
-            View the latest posts that I have written!
-            <span className={styles2.emojiTitle} style={{ marginLeft: '8px' }}>
-              📃
-            </span>
-          </a>
-        </Box>
+        <Bubble text="View the latest posts that I have written!" emoji="📃" />
         <Section delay={0.2}>
           <SimpleGrid columns={[2, 2, 2]} gap={4}>
             {posts &&
@@ -149,11 +131,11 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const apolloClient = getApolloClient();
+  const apolloClient = getApolloClient()
 
   const data = await apolloClient.query({
     query: GET_ALL_POSTS
-  });
+  })
 
   const posts = data?.data.posts.edges
     .map(({ node }) => node)
@@ -161,12 +143,12 @@ export async function getStaticProps() {
       return {
         ...post,
         path: `/posts/${post.slug}`
-      };
-    });
+      }
+    })
 
   return {
     props: {
       posts
     }
-  };
+  }
 }

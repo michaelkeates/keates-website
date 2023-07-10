@@ -9,6 +9,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Button, useColorModeValue, Container } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
 import styles from '../styles/emoji.module.css'
+import Bubble from '../components/bubbleheader'
 
 import { GET_USER_REPOSITORIES } from '../lib/queries'
 
@@ -49,27 +50,7 @@ export default function Home({ repository }) {
   return (
     <Layout>
       <Container>
-        <Box
-          borderRadius="lg"
-          mb={6}
-          p={3}
-          textAlign="center"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-          css={{ backdropFilter: 'blur(10px)' }}
-          padding="10px"
-          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
-        >
-          <a className={styles.emailTitleLink}>
-            Check out my current and past projects!
-            <span className={styles.emojiTitle} style={{ marginLeft: '8px' }}>
-              🚀
-            </span>
-          </a>
-        </Box>
-
+        <Bubble text="Check out my current and past projects!" emoji="🚀" />
         <SimpleGrid columns={[2, 2, 2]} gap={4}>
           {repository.map(item => {
             const thumb = item.openGraphImageUrl
