@@ -32,9 +32,8 @@ import AuthorBio from '../../components/post/author-bio'
 
 import { GET_POST_BY_SLUG, GET_ALL_POSTS } from '../../lib/queries'
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
-
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -75,64 +74,66 @@ function dayMonth(data) {
 }
 
 export default function Post({ post }) {
-  const blockquoteRefs = useRef([]);
-  const isMounted = useRef(false);
-  const [isCopied, setIsCopied] = useState(false);
+  const blockquoteRefs = useRef([])
+  const isMounted = useRef(false)
+  const [isCopied, setIsCopied] = useState(false)
 
   useEffect(() => {
     if (!isMounted.current) {
-      isMounted.current = true;
-      const blockquotes = Array.from(blockquoteRefs.current.querySelectorAll('.wp-block-code'));
-      blockquotes.forEach((blockquote) => {
+      isMounted.current = true
+      const blockquotes = Array.from(
+        blockquoteRefs.current.querySelectorAll('.wp-block-code')
+      )
+      blockquotes.forEach(blockquote => {
         if (!blockquote.querySelector('.copy-btn')) {
-          const quoteText = blockquote.textContent;
-          const copyButton = document.createElement('div');
-          copyButton.style.position = 'absolute';
-          copyButton.style.top = '0';
-          copyButton.style.right = '0';
-          copyButton.style.padding = '7px';
-          copyButton.style.opacity = '0';
-          copyButton.style.transition = 'opacity 0.3s ease-in-out';
+          const quoteText = blockquote.textContent
+          const copyButton = document.createElement('div')
+          copyButton.style.position = 'absolute'
+          copyButton.style.top = '0'
+          copyButton.style.right = '0'
+          copyButton.style.padding = '7px'
+          copyButton.style.opacity = '0'
+          copyButton.style.transition = 'opacity 0.3s ease-in-out'
 
           const handleClick = () => {
-            navigator.clipboard.writeText(quoteText);
-            setIsCopied(true);
+            navigator.clipboard.writeText(quoteText)
+            setIsCopied(true)
             setTimeout(() => {
-              setIsCopied(false);
-            }, 2000); // Change the duration here (in milliseconds)
-          };
+              setIsCopied(false)
+            }, 2000) // Change the duration here (in milliseconds)
+          }
 
           ReactDOM.render(
             <Button
               className="copy-btn"
               onClick={handleClick}
               onMouseOver={() => {
-                copyButton.style.opacity = '1';
+                copyButton.style.opacity = '1'
               }}
               onMouseOut={() => {
-                copyButton.style.opacity = '0';
+                copyButton.style.opacity = '0'
               }}
             >
               <CopyIcon />
             </Button>,
             copyButton
-          );
+          )
 
           blockquote.addEventListener('mouseover', () => {
-            copyButton.style.opacity = '1';
-          });
+            copyButton.style.opacity = '1'
+          })
           blockquote.addEventListener('mouseout', () => {
-            copyButton.style.opacity = '0';
-          });
+            copyButton.style.opacity = '0'
+          })
 
-          blockquote.style.position = 'relative';
-          blockquote.style.display = 'inline-block';
-          blockquote.style.paddingTop = '25px';
-          blockquote.appendChild(copyButton);
+          blockquote.style.position = 'relative'
+          blockquote.style.display = 'inline-block'
+          blockquote.style.paddingTop = '25px'
+          blockquote.appendChild(copyButton)
         }
-      });
+      })
     }
-  }, [isCopied]);
+  }, [isCopied])
 
   return (
     <Layout>
@@ -192,49 +193,41 @@ export default function Post({ post }) {
   )
 }
 
-export async function getStaticProps({ params = {} } = {}) {
+export async function getServerSideProps({ params, req }) {
   const { postSlug } = params
 
   const apolloClient = getApolloClient()
 
-  const data = await apolloClient.query({
+  const postData = await apolloClient.query({
     query: GET_POST_BY_SLUG,
     variables: {
       slug: postSlug
     }
   })
 
-  const post = data?.data.postBy
-
+  const post = postData?.data.postBy
   const site = {
-    ...data?.data.generalSettings
+    ...postData?.data.generalSettings
   }
+
+  const postsData = await apolloClient.query({
+    query: GET_ALL_POSTS
+  })
+
+  const posts = postsData?.data.posts.edges.map(({ node }) => node)
+
+  const paths = posts.map(({ slug }) => ({
+    params: {
+      postSlug: slug
+    }
+  }))
 
   return {
     props: {
       post,
-      site
+      site,
+      paths,
+      cookies: req.headers.cookie ?? ''
     }
-  }
-}
-
-export async function getStaticPaths() {
-  const apolloClient = getApolloClient()
-
-  const data = await apolloClient.query({
-    query: GET_ALL_POSTS
-  })
-
-  const posts = data?.data.posts.edges.map(({ node }) => node)
-
-  return {
-    paths: posts.map(({ slug }) => {
-      return {
-        params: {
-          postSlug: slug
-        }
-      }
-    }),
-    fallback: false
   }
 }

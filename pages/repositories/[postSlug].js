@@ -132,28 +132,7 @@ export default function Post({ rep }) {
   )
 }
 
-export async function getStaticProps({ params = {} } = {}) {
-  const { postSlug } = params
-
-  const apolloClient = getApolloClient()
-
-  const data = await apolloClient.query({
-    query: GET_REPOSITORY_BY_NAME,
-    variables: {
-      name: postSlug
-    }
-  })
-
-  const rep = data?.data.repository
-
-  return {
-    props: {
-      rep
-    }
-  }
-}
-
-export async function getStaticPaths() {
+export async function getServerSideProps({ params, req }) {
   const apolloClient = getApolloClient()
 
   const data = await apolloClient.query({
@@ -161,15 +140,28 @@ export async function getStaticPaths() {
   })
 
   const rep = data?.data.user.repositories.edges.map(({ node }) => node)
+  const paths = rep.map(({ name }) => ({
+    params: {
+      postSlug: name
+    }
+  }))
+
+  const { postSlug } = params
+
+  const repoData = await apolloClient.query({
+    query: GET_REPOSITORY_BY_NAME,
+    variables: {
+      name: postSlug
+    }
+  })
+
+  const repData = repoData?.data.repository
 
   return {
-    paths: rep.map(({ name }) => {
-      return {
-        params: {
-          postSlug: name
-        }
-      }
-    }),
-    fallback: false
+    props: {
+      rep: repData,
+      paths,
+      cookies: req.headers.cookie ?? ''
+    }
   }
 }

@@ -158,7 +158,7 @@ export default function Home({ repository }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps({ req }) {
   const apolloClient = getApolloClient()
 
   const { data } = await apolloClient.query({
@@ -167,16 +167,15 @@ export async function getStaticProps() {
 
   const repository = data?.user.repositories.edges
     .map(({ node }) => node)
-    .map(rep => {
-      return {
-        ...rep,
-        path: `/repositories/${rep.name}`
-      }
-    })
+    .map(rep => ({
+      ...rep,
+      path: `/repositories/${rep.name}`
+    }))
 
   return {
     props: {
-      repository
+      repository,
+      cookies: req.headers.cookie ?? ''
     }
   }
 }

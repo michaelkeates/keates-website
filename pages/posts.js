@@ -172,25 +172,24 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps({ req }) {
   const apolloClient = getApolloClient()
 
-  const data = await apolloClient.query({
+  const { data } = await apolloClient.query({
     query: GET_ALL_POSTS
   })
 
-  const posts = data?.data.posts.edges
+  const posts = data?.posts.edges
     .map(({ node }) => node)
-    .map(post => {
-      return {
-        ...post,
-        path: `/posts/${post.slug}`
-      }
-    })
+    .map(post => ({
+      ...post,
+      path: `/posts/${post.slug}`
+    }))
 
   return {
     props: {
-      posts
+      posts,
+      cookies: req.headers.cookie ?? ''
     }
   }
 }

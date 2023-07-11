@@ -51,3 +51,11 @@ const NotFound = () => {
 }
 
 export default NotFound
+
+export async function getServerSideProps({ req }) {
+  return {
+    props: {
+      cookies: req.headers.cookie ?? ''
+    },
+  };
+}
