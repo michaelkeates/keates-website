@@ -817,4 +817,11 @@ const Work = () => (
 )
 
 export default Work
-//export { getServerSideProps } from '../../components/chakra'
+
+export async function getServerSideProps({ req }) {
+  return {
+    props: {
+      cookies: req.headers.cookie ?? ''
+    },
+  };
+}
