@@ -1,4 +1,5 @@
 //import Head from 'next/head'
+import { useState } from 'react'
 import { gql } from '@apollo/client'
 import { Heading, SimpleGrid, Box, Badge, Container } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
@@ -18,7 +19,7 @@ import {
   useColorModeValue
   //chakra
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import { getApolloClient } from '../lib/wordpress'
 
 import styles from '../styles/Home.module.css'
@@ -59,72 +60,113 @@ function dayMonth(data) {
 }
 
 export default function Home({ posts }) {
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 6
+
+  const startIndex = (currentPage - 1) * postsPerPage
+  const endIndex = startIndex + postsPerPage
+  const postsToDisplay = posts.slice(startIndex, endIndex)
+
+  const totalPages = Math.ceil(posts.length / postsPerPage)
+
+  const goToNextPage = () => {
+    setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages))
+  }
+
+  const goToPreviousPage = () => {
+    setCurrentPage(prevPage => Math.max(prevPage - 1, 1))
+  }
+
+  const isBeginning = currentPage === 1
+  const isEnd = currentPage === totalPages
   return (
     <Layout title="Portfolio">
       <Container>
         <Bubble text="View the latest posts that I have written!" emoji="📃" />
         <Section delay={0.2}>
           <SimpleGrid columns={[2, 2, 2]} gap={4}>
-            {posts &&
-              posts.length > 0 &&
-              posts.map(post => {
-                const thumb = post.featuredImage.node.sourceUrl
-                return (
-                  <Section delay={0.1}>
-                    <Box
-                      borderRadius="lg"
-                      textAlign="center"
-                      mb={-1}
-                      p={4}
+            {postsToDisplay.map(post => (
+              <Section delay={0.1} key={post.slug}>
+                <Box
+                  borderRadius="lg"
+                  textAlign="center"
+                  mb={-1}
+                  p={4}
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="15px"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <GridItem
+                    thumbnail={post.featuredImage.node.sourceUrl}
+                    title={post.title}
+                  >
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: post.excerpt
+                      }}
+                    />
+                    <br />
+                    <Badge
+                      bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                      color=""
+                      whiteSpace="normal"
+                    >
+                      🗓️ {dayMonth(post.date)}
+                    </Badge>
+                  </GridItem>
+                  <br />
+                  <NextLink href={post.path} passHref scroll={false}>
+                    <Button
+                      width="100%"
+                      alignItems="center"
+                      rightIcon={<ChevronRightIcon />}
                       bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                      css={{ backdropFilter: 'blur(10px)' }}
-                      padding="15px"
+                      _hover={{
+                        bg: useColorModeValue('#ffffff', '#828282')
+                      }}
                       boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
                     >
-                      <GridItem thumbnail={thumb} title={post.title}>
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: post.excerpt
-                          }}
-                        />
-                        <br></br>
-                        <Badge
-                          bg={useColorModeValue(
-                            'whiteAlpha.100',
-                            'whiteAlpha.000'
-                          )}
-                          color=""
-                          whiteSpace="normal"
-                        >
-                          🗓️ {dayMonth(post.date)}
-                        </Badge>
-                      </GridItem>
-                      <br></br>
-                      <NextLink href={post.path} passHref scroll={false}>
-                        <Button
-                          width="100%"
-                          alignItems="center"
-                          rightIcon={<ChevronRightIcon />}
-                          bg={useColorModeValue(
-                            'whiteAlpha.500',
-                            'whiteAlpha.200'
-                          )}
-                          _hover={{
-                            bg: useColorModeValue('#ffffff', '#828282')
-                          }}
-                          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-                        >
-                          Read More
-                        </Button>
-                      </NextLink>
-                    </Box>
-                  </Section>
-                )
-              })}
-
-            {!posts || (posts.length === 0 && <li>Oops, no posts found!</li>)}
+                      Read More
+                    </Button>
+                  </NextLink>
+                </Box>
+              </Section>
+            ))}
+            {!postsToDisplay ||
+              (postsToDisplay.length === 0 && <li>Oops, no posts found!</li>)}
           </SimpleGrid>
         </Section>
+        <SimpleGrid columns={[1, 1, 2]} gap={4}>
+          <Button
+            onClick={goToPreviousPage}
+            disabled={isBeginning}
+            opacity={isBeginning ? 0.5 : 1}
+            style={{ pointerEvents: isBeginning ? 'none' : 'auto' }}
+            leftIcon={<ChevronLeftIcon />}
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            _hover={{
+              bg: useColorModeValue('#ffffff', '#828282')
+            }}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+          >
+            Previous
+          </Button>
+          <Button
+            onClick={goToNextPage}
+            disabled={isEnd}
+            opacity={isEnd ? 0.5 : 1}
+            style={{ pointerEvents: isEnd ? 'none' : 'auto' }}
+            rightIcon={<ChevronRightIcon />}
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            _hover={{
+              bg: useColorModeValue('#ffffff', '#828282')
+            }}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+          >
+            Next
+          </Button>
+        </SimpleGrid>
       </Container>
     </Layout>
   )

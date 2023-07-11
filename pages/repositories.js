@@ -1,14 +1,13 @@
-//import Head from 'next/head'
+import { useState } from 'react'
 import { gql } from '@apollo/client'
 import { SimpleGrid, Box, Badge } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 import NextLink from 'next/link'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import { Button, useColorModeValue, Container } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
-import styles from '../styles/emoji.module.css'
 import Bubble from '../components/bubbleheader'
 
 import { GET_USER_REPOSITORIES } from '../lib/queries'
@@ -17,7 +16,7 @@ function dayMonth(data) {
   const monthNames = [
     'null',
     'January',
-    'Febuary',
+    'February',
     'March',
     'April',
     'May',
@@ -35,8 +34,8 @@ function dayMonth(data) {
   var day = data.slice(8, 10)
   var year = data.slice(0, 4)
 
-  //remove 0 from 02, 03 etc ... until 10
-  if (day[0] == '0') {
+  //remove 0 from 02, 03, etc. until 10
+  if (day[0] === '0') {
     day = day.slice(1, 2)
   }
 
@@ -47,16 +46,37 @@ function dayMonth(data) {
 }
 
 export default function Home({ repository }) {
+  const [currentPage, setCurrentPage] = useState(1)
+  const repositoriesPerPage = 6
+
+  const startIndex = (currentPage - 1) * repositoriesPerPage
+  const endIndex = startIndex + repositoriesPerPage
+  const repositoriesToDisplay = repository.slice(startIndex, endIndex)
+
+  const totalPages = Math.ceil(repository.length / repositoriesPerPage)
+
+  const goToNextPage = () => {
+    setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages))
+  }
+
+  const goToPreviousPage = () => {
+    setCurrentPage(prevPage => Math.max(prevPage - 1, 1))
+  }
+
+  const isBeginning = currentPage === 1
+  const isEnd = currentPage === totalPages
+
   return (
     <Layout>
       <Container>
         <Bubble text="Check out my current and past projects!" emoji="🚀" />
         <SimpleGrid columns={[2, 2, 2]} gap={4}>
-          {repository.map(item => {
+          {repositoriesToDisplay.map((item, index) => {
             const thumb = item.openGraphImageUrl
             const github = item.url
+
             return (
-              <Section delay={0.3}>
+              <Section key={item.name}>
                 <Box
                   borderRadius="lg"
                   mb={-1}
@@ -102,6 +122,36 @@ export default function Home({ repository }) {
               </Section>
             )
           })}
+        </SimpleGrid>
+        <SimpleGrid columns={[1, 1, 2]} gap={4}>
+          <Button
+            onClick={goToPreviousPage}
+            disabled={isBeginning}
+            opacity={isBeginning ? 0.5 : 1}
+            style={{ pointerEvents: isBeginning ? 'none' : 'auto' }}
+            leftIcon={<ChevronLeftIcon />}
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            _hover={{
+              bg: useColorModeValue('#ffffff', '#828282')
+            }}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+          >
+            Previous
+          </Button>
+          <Button
+            onClick={goToNextPage}
+            disabled={isEnd}
+            opacity={isEnd ? 0.5 : 1}
+            style={{ pointerEvents: isEnd ? 'none' : 'auto' }}
+            rightIcon={<ChevronRightIcon />}
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            _hover={{
+              bg: useColorModeValue('#ffffff', '#828282')
+            }}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+          >
+            Next
+          </Button>
         </SimpleGrid>
       </Container>
     </Layout>
