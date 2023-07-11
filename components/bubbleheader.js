@@ -23,7 +23,7 @@ const CustomBox = ({ text, emoji }) => {
         </span>
       </a>
     </Box>
-  );
-};
+  )
+}
 
-export default CustomBox;
+export default CustomBox

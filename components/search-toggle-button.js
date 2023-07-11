@@ -27,14 +27,7 @@ const SearchBar = () => {
         icon={<SearchIcon />}
         onClick={handleToggle}
       />
-      <Container
-        display="flex"
-        p={2}
-        maxW="container.md"
-        wrap="wrap"
-        align="center"
-        justify="space-between"
-      >
+      <Container>
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -44,10 +37,8 @@ const SearchBar = () => {
               transition={{ duration: 0.2 }}
               style={{
                 position: 'absolute',
-                top: '5px',
-                right: 0,
-                left: 450,
-                width: '20%',
+                top: 0,
+                width: '100%',
                 justifyContent: 'space-between',
                 alignItems: 'center'
               }}
