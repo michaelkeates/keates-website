@@ -71,7 +71,7 @@ function dayMonth(data) {
   return formatted
 }
 
-export default function Post({ rep }) {
+export default function Post({ params, rep }) {
   return (
     <Layout>
       <Container>
@@ -132,36 +132,37 @@ export default function Post({ rep }) {
   )
 }
 
-export async function getServerSideProps({ params, req }) {
-  const apolloClient = getApolloClient()
+export async function getStaticPaths() {
+  const apolloClient = getApolloClient();
 
-  const data = await apolloClient.query({
-    query: GET_USER_REPOSITORIES
-  })
+  const { data } = await apolloClient.query({
+    query: GET_USER_REPOSITORIES,
+  });
 
-  const rep = data?.data.user.repositories.edges.map(({ node }) => node)
-  const paths = rep.map(({ name }) => ({
-    params: {
-      postSlug: name
-    }
-  }))
+  const paths = data?.user.repositories.edges.map(({ node }) => ({
+    params: { postSlug: node.name },
+  }));
 
-  const { postSlug } = params
+  return {
+    paths,
+    fallback: false, // or true if you want to enable fallback behavior
+  };
+}
 
-  const repoData = await apolloClient.query({
+export async function getStaticProps({ params }) {
+  const apolloClient = getApolloClient();
+
+  // Fetch the specific repository data using the postSlug (params.postSlug)
+  const { data } = await apolloClient.query({
     query: GET_REPOSITORY_BY_NAME,
-    variables: {
-      name: postSlug
-    }
-  })
+    variables: { name: params.postSlug },
+  });
 
-  const repData = repoData?.data.repository
+  const rep = data?.repository;
 
   return {
     props: {
-      rep: repData,
-      paths,
-      cookies: req.headers.cookie ?? ''
-    }
-  }
+      rep,
+    },
+  };
 }

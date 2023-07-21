@@ -158,7 +158,8 @@ export default function Home({ repository }) {
   )
 }
 
-export async function getServerSideProps({ req }) {
+// Add the getStaticProps function to fetch the specific post data
+export async function getStaticProps() {
   const apolloClient = getApolloClient()
 
   const { data } = await apolloClient.query({
@@ -167,15 +168,16 @@ export async function getServerSideProps({ req }) {
 
   const repository = data?.user.repositories.edges
     .map(({ node }) => node)
-    .map(rep => ({
-      ...rep,
-      path: `/repositories/${rep.name}`
-    }))
+    .map(rep => {
+      return {
+        ...rep,
+        path: `/repositories/${rep.name}`
+      }
+    })
 
   return {
     props: {
-      repository,
-      cookies: req.headers.cookie ?? ''
+      repository
     }
   }
 }

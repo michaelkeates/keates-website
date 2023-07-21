@@ -193,41 +193,51 @@ export default function Post({ post }) {
   )
 }
 
-export async function getServerSideProps({ params, req }) {
-  const { postSlug } = params
-
-  const apolloClient = getApolloClient()
+// Add the getStaticProps function to fetch the specific post data
+export async function getStaticProps({ params }) {
+  const apolloClient = getApolloClient();
 
   const postData = await apolloClient.query({
     query: GET_POST_BY_SLUG,
     variables: {
-      slug: postSlug
-    }
-  })
+      slug: params.postSlug,
+    },
+  });
 
-  const post = postData?.data.postBy
-  const site = {
-    ...postData?.data.generalSettings
-  }
-
-  const postsData = await apolloClient.query({
-    query: GET_ALL_POSTS
-  })
-
-  const posts = postsData?.data.posts.edges.map(({ node }) => node)
-
-  const paths = posts.map(({ slug }) => ({
-    params: {
-      postSlug: slug
-    }
-  }))
+  const post = postData?.data.postBy;
 
   return {
     props: {
       post,
-      site,
-      paths,
-      cookies: req.headers.cookie ?? ''
-    }
+    },
+  };
+}
+
+// Add the getStaticPaths function to specify the dynamic paths
+export async function getStaticPaths() {
+  const apolloClient = getApolloClient();
+
+  const allPostsData = await apolloClient.query({
+    query: GET_ALL_POSTS,
+  });
+
+  const posts = allPostsData?.data?.posts?.nodes;
+
+  // Check if posts is defined before mapping over it
+  if (!posts) {
+    return {
+      paths: [],
+      fallback: false,
+    };
   }
+
+  // Create the array of paths with the `params` object containing the dynamic part (postSlug)
+  const paths = posts.map((post) => ({
+    params: { postSlug: post.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false, // or true if you want to enable fallback behavior
+  };
 }

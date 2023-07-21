@@ -85,11 +85,3 @@ const Home = () => (
 )
 
 export default Home
-
-export async function getServerSideProps({ req }) {
-  return {
-    props: {
-      cookies: req.headers.cookie ?? ''
-    },
-  };
-}
