@@ -9,6 +9,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import { Button, useColorModeValue, Container } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
 import Bubble from '../components/bubbleheader'
+import { useRouter } from 'next/router'; // Add this import
 
 import { GET_USER_REPOSITORIES } from '../lib/queries'
 

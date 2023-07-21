@@ -105,7 +105,7 @@ export default function Post({ params, rep }) {
                   }}
                 />
               </Paragraph>
-              test
+              {/* Remove the "test" text, or use it for other purposes */}
               <br></br>
               <Paragraph>
                 To view this repository on Github, please click{' '}
@@ -129,37 +129,44 @@ export default function Post({ params, rep }) {
   )
 }
 
-export async function getStaticPaths() {
-  const apolloClient = getApolloClient();
+export async function getStaticProps({ params = {} } = {}) {
+  const { postSlug } = params
 
-  const { data } = await apolloClient.query({
-    query: GET_USER_REPOSITORIES,
-  });
+  const apolloClient = getApolloClient()
 
-  const paths = data?.user.repositories.edges.map(({ node }) => ({
-    params: { postSlug: node.name },
-  }));
-
-  return {
-    paths,
-    fallback: false, // or true if you want to enable fallback behavior
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const apolloClient = getApolloClient();
-
-  // Fetch the specific repository data using the postSlug (params.postSlug)
-  const { data } = await apolloClient.query({
+  const data = await apolloClient.query({
     query: GET_REPOSITORY_BY_NAME,
-    variables: { name: params.postSlug },
-  });
+    variables: {
+      name: postSlug
+    }
+  })
 
-  const rep = data?.repository;
+  const rep = data?.data.repository
 
   return {
     props: {
-      rep,
-    },
-  };
+      rep
+    }
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = getApolloClient()
+
+  const data = await apolloClient.query({
+    query: GET_USER_REPOSITORIES
+  })
+
+  const rep = data?.data.user.repositories.edges.map(({ node }) => node)
+
+  return {
+    paths: rep.map(({ name }) => {
+      return {
+        params: {
+          postSlug: name
+        }
+      }
+    }),
+    fallback: false
+  }
 }
