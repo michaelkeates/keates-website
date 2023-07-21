@@ -123,7 +123,7 @@ export default function Home({ repository }) {
             )
           })}
         </SimpleGrid>
-        <SimpleGrid columns={[2, 2, 2]} gap={4}>
+        <SimpleGrid columns={[1, 1, 2]} gap={4}>
           <Button
             onClick={goToPreviousPage}
             disabled={isBeginning}
