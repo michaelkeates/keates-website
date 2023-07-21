@@ -11,9 +11,6 @@ import {
   SimpleGrid,
   Button,
   Divider,
-  List,
-  ListItem,
-  Center,
   useColorModeValue,
   chakra,
   Badge
