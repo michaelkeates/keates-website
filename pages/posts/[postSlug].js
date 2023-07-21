@@ -1,4 +1,4 @@
-//import Head from 'next/head'
+import Head from 'next/head'
 import NextLink from 'next/link'
 //import Image from 'next/image'
 import { gql } from '@apollo/client'
@@ -204,7 +204,7 @@ export async function getStaticProps({ params }) {
     },
   });
 
-  const post = postData?.data.postBy;
+  const post = postData?.data?.postBy;
 
   return {
     props: {
@@ -221,7 +221,7 @@ export async function getStaticPaths() {
     query: GET_ALL_POSTS,
   });
 
-  const posts = allPostsData?.data?.posts?.nodes;
+  const posts = allPostsData?.data?.posts?.edges;
 
   // Check if posts is defined before mapping over it
   if (!posts) {
@@ -232,12 +232,12 @@ export async function getStaticPaths() {
   }
 
   // Create the array of paths with the `params` object containing the dynamic part (postSlug)
-  const paths = posts.map((post) => ({
-    params: { postSlug: post.slug },
+  const paths = posts.map(({ node }) => ({
+    params: { postSlug: node.slug },
   }));
 
   return {
     paths,
-    fallback: false, // or true if you want to enable fallback behavior
+    fallback: false,
   };
 }
