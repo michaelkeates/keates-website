@@ -6,7 +6,6 @@ import { gql } from '@apollo/client'
 import {
   Link,
   Container,
-  Heading,
   Box,
   SimpleGrid,
   Button,
