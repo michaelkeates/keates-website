@@ -32,9 +32,12 @@ async function generatePDF() {
       '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O, .css-1dsdcac'
     )
     const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k')
-    const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58')
+    const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58, .chakra-text.css-1bgxado')
     const textSize5 = document.querySelectorAll(
       '.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd'
+    )
+    const textSize6 = document.querySelectorAll(
+      '.chakra-text.css-p23alj'
     )
     const textColors = document.querySelectorAll(
       '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg, .css-1dsdcac, .chakra-heading.css-1dilgbf'
@@ -113,6 +116,10 @@ async function generatePDF() {
       textSize5.style.fontSize = '16px'
     })
 
+    textSize6.forEach(textSize5 => {
+      textSize5.style.fontSize = '12px'
+    })
+
     textColors.forEach(textColor => {
       textColor.style.color = '#000000'
     })
@@ -130,7 +137,7 @@ async function generatePDF() {
     })
 
     const unwantedElements = document.querySelectorAll(
-      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .chakra-heading.css-17wi6zd, .css-3isgxm'
+      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .chakra-heading.css-17wi6zd, .css-3isgxm, .css-kjxakp'
     )
 
     customGridElements.forEach(element => {
