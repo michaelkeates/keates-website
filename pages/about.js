@@ -608,7 +608,7 @@ const Home = () => {
               css={{ backdropFilter: 'blur(10px)' }}
               padding="10px;"
               href="Typescript"
-              title="Adobe Photoshop"
+              title="Photoshop"
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <PhotoshopIcon />
