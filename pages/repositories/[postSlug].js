@@ -164,17 +164,12 @@ export default function Post({ params, rep }) {
             <SimpleGrid paddingTop="25px" paddingBottom="25px">
               <Paragraph>
                 <div
-                  dangerouslySetInnerHTML={{
-                    __html: rep.object.text
-                  }}
+                  dangerouslySetInnerHTML={{ __html: rep.object.text }}
+                  ref={el => (blockquoteRefs.current = el)}
                 />
               </Paragraph>
               {/* Remove the "test" text, or use it for other purposes */}
               <br></br>
-              <div
-                dangerouslySetInnerHTML={{ __html: rep.object.text }}
-                ref={el => (blockquoteRefs.current = el)}
-              />
             </SimpleGrid>
             <Divider my={6} />
             <AuthorBio />
