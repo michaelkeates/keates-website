@@ -57,10 +57,11 @@ const AuthorBio = () => (
       <Paragraph>
         I am a dedicated and hardworking individual with a strong background in
         all things computing and technology. I have a passion for learning and
-        developing new skills, a strong attention to detail and I am always
-        looking for new opportunities to expand my knowledge and experience as
-        well as honing my ability to create efficient and effective solutions
-        for various requirements.
+        developing new skills, a strong attention to detail, excellent verbal,
+        written and communication skills and I am always looking for new
+        challenges to expand my knowledge and experience as well as improving my
+        abilities to create efficient and effective solutions for various
+        requirements.
       </Paragraph>
     </Section>
   </Section>
