@@ -21,6 +21,7 @@ import XamarinOriginalIcon from 'react-devicons/visualstudio/plain'
 import OracleOriginalIcon from 'react-devicons/oracle/original'
 import JQueryOriginalIcon from 'react-devicons/jquery/original'
 import GitOriginalIcon from 'react-devicons/git/original'
+import PhotoshopOriginalIcon from 'react-devicons/photoshop/plain'
 import { Global } from '@emotion/react'
 
 export const CplusplusIcon = () => (
@@ -115,6 +116,10 @@ export const GitIcon = () => (
   <GitOriginalIcon className="my-class" size="100%" />
 )
 
+export const PhotoshopIcon = () => (
+  <PhotoshopOriginalIcon className="my-class" size="100%" />
+)
+
 export const Devicons = () => (
   <Global>
     <CplusplusIcon />
@@ -141,6 +146,7 @@ export const Devicons = () => (
     <OracleIcon />
     <JQueryIcon />
     <GitIcon />
+    <PhotoshopIcon />
   </Global>
 )
 

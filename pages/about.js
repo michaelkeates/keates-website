@@ -44,7 +44,8 @@ import {
   XamarinIcon,
   OracleIcon,
   JQueryIcon,
-  GitIcon
+  GitIcon,
+  PhotoshopIcon
 } from '../components/devicons'
 
 const ProfileImage = chakra(Image, {
@@ -116,9 +117,10 @@ const Home = () => {
               I am a dedicated and hardworking individual with a strong
               background in all things computing and technology. I have a
               passion for learning and developing new skills, a strong attention
-              to detail and I am always looking for new opportunities to expand
-              my knowledge and experience as well as honing my ability to create
-              efficient and effective solutions for various requirements.
+              to detail, excellent verbal, written and communication skills and
+              I am always looking for new challenges to expand my knowledge and
+              experience as well as improving my abilities to create efficient
+              and effective solutions for various requirements.
             </Paragraph>
           </Section>
         </SimpleGrid>
@@ -596,6 +598,20 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <GitIcon />
+            </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Typescript"
+              title="Adobe Photoshop"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <PhotoshopIcon />
             </Box>
           </SimpleGrid>
         </Section>
