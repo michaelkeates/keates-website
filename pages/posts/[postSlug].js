@@ -35,6 +35,8 @@ import { GET_POST_BY_SLUG, GET_ALL_POSTS } from '../../lib/queries'
 import { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 
+//autowinscripts update
+
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
