@@ -2,6 +2,7 @@ import NextLink from 'next/link'
 import Image from 'next/image'
 import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
+import React from 'react';
 
 export const GridItem = ({ children, href, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
@@ -34,20 +35,24 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           src={thumbnail}
           alt={title}
           className="grid-item-thumbnail"
-          //placeholder="blur"
           height="256"
           width="256"
         />
         <LinkOverlay href={`/qualificatons/${id}`}>
-          <Text mt={2} fontSize={14}>
+          <Text mt={2} fontSize={15}>
             {title}
           </Text>
         </LinkOverlay>
-        <Text fontSize={10}>{children}</Text>
+        {/* Render all the children */}
+        {React.Children.map(children, (child, index) => (
+          <Text key={index} fontSize={9}>
+            {child}
+          </Text>
+        ))}
       </LinkBox>
     </NextLink>
   </Box>
-)
+);
 
 export const PortfolioGridItem = ({ children, id, title, thumbnail }) => (
   <Box w="100%" textAlign="center">

@@ -627,7 +627,10 @@ const Home = () => {
                 thumbnail={thumbusw}
                 title="BSc (Hons) Applied Computing"
               >
-                University of South Wales (2022-2023)
+                {[
+                  'University of South Wales (2022-2023)',
+                  'Grade: First Class Honours'
+                ]}
               </WorkGridItem>
             </Box>
           </Section>
@@ -646,7 +649,10 @@ const Home = () => {
                 thumbnail={thumbusw}
                 title="HND Computing"
               >
-                University of South Wales (2020-2022)
+                {[
+                  'University of South Wales (2020-2022)',
+                  'Grade: Distinction'
+                ]}
               </WorkGridItem>
             </Box>
           </Section>
@@ -665,7 +671,10 @@ const Home = () => {
                 thumbnail={thumbcc}
                 title="BTEC Computing"
               >
-                Coleg Gwent (2019-2020)
+                {[
+                  'University of South Wales (2019-2020)',
+                  'Grade: Distinction'
+                ]}
               </WorkGridItem>
             </Box>
           </Section>
