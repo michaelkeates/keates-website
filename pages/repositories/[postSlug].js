@@ -14,7 +14,7 @@ import {
   chakra,
   Badge
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, CopyIcon } from '@chakra-ui/icons'
 import Paragraph from '../../components/paragraph'
 import Section from '../../components/section'
 import Image from 'next/image'
@@ -29,6 +29,9 @@ import {
 import { Repo } from '../../components/work'
 
 import styles from '../../styles/Home.module.css'
+
+import { useEffect, useRef, useState } from 'react'
+import ReactDOM from 'react-dom'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -68,6 +71,67 @@ function dayMonth(data) {
 }
 
 export default function Post({ params, rep }) {
+  const blockquoteRefs = useRef([])
+  const isMounted = useRef(false)
+  const [isCopied, setIsCopied] = useState(false)
+
+  useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true
+      const blockquotes = Array.from(
+        blockquoteRefs.current.querySelectorAll('.gitcode')
+      )
+      blockquotes.forEach(blockquote => {
+        if (!blockquote.querySelector('.copy-btn')) {
+          const quoteText = blockquote.textContent
+          const copyButton = document.createElement('div')
+          copyButton.style.position = 'absolute'
+          copyButton.style.top = '0'
+          copyButton.style.right = '0'
+          copyButton.style.padding = '7px'
+          copyButton.style.opacity = '0'
+          copyButton.style.transition = 'opacity 0.3s ease-in-out'
+
+          const handleClick = () => {
+            navigator.clipboard.writeText(quoteText)
+            setIsCopied(true)
+            setTimeout(() => {
+              setIsCopied(false)
+            }, 2000) // Change the duration here (in milliseconds)
+          }
+
+          ReactDOM.render(
+            <Button
+              className="copy-btn"
+              onClick={handleClick}
+              onMouseOver={() => {
+                copyButton.style.opacity = '1'
+              }}
+              onMouseOut={() => {
+                copyButton.style.opacity = '0'
+              }}
+            >
+              <CopyIcon />
+            </Button>,
+            copyButton
+          )
+
+          blockquote.addEventListener('mouseover', () => {
+            copyButton.style.opacity = '1'
+          })
+          blockquote.addEventListener('mouseout', () => {
+            copyButton.style.opacity = '0'
+          })
+
+          blockquote.style.position = 'relative'
+          blockquote.style.display = 'inline-block'
+          blockquote.style.paddingTop = '25px'
+          blockquote.appendChild(copyButton)
+        }
+      })
+    }
+  }, [isCopied])
+
   return (
     <Layout>
       <Container>
@@ -107,10 +171,10 @@ export default function Post({ params, rep }) {
               </Paragraph>
               {/* Remove the "test" text, or use it for other purposes */}
               <br></br>
-              <Paragraph>
-                To view this repository on Github, please click{' '}
-                <Link href={rep.url}>here</Link>
-              </Paragraph>
+              <div
+                dangerouslySetInnerHTML={{ __html: rep.object.text }}
+                ref={el => (blockquoteRefs.current = el)}
+              />
             </SimpleGrid>
             <Divider my={6} />
             <AuthorBio />
