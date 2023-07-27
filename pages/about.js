@@ -688,7 +688,7 @@ const Home = () => {
                 title="BTEC Computing"
               >
                 {[
-                  'University of South Wales (2019-2020)',
+                  'Coleg Gwent (2019-2020)',
                   'Grade: Distinction'
                 ]}
               </WorkGridItem>
