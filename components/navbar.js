@@ -123,7 +123,7 @@ const Navbar = props => {
                 bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                 css={{ backdropFilter: 'blur(10px)' }}
               >
-                <NextLink href="/about" passHref>
+                <LoadingLink href="/about" passHref>
                   <MenuItem
                     bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
@@ -138,8 +138,8 @@ const Navbar = props => {
                   >
                     About
                   </MenuItem>
-                </NextLink>
-                <NextLink href="/repositories" passHref>
+                </LoadingLink>
+                <LoadingLink href="/repositories" passHref>
                   <MenuItem
                     bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
@@ -154,8 +154,8 @@ const Navbar = props => {
                   >
                     Portfolio
                   </MenuItem>
-                </NextLink>
-                <NextLink href="/posts" passHref>
+                </LoadingLink>
+                <LoadingLink href="/posts" passHref>
                   <MenuItem
                     bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
@@ -170,7 +170,7 @@ const Navbar = props => {
                   >
                     Blog
                   </MenuItem>
-                </NextLink>
+                </LoadingLink>
               </MenuList>
             </Menu>
           </Box>
