@@ -83,43 +83,47 @@ export default function Post({ post }) {
   const isMounted = useRef(false)
   const [isCopied, setIsCopied] = useState(false)
 
-  console.log('Post ID:', post.databaseId);
+  console.log('Post ID:', post.databaseId)
 
-  const [newComment, setNewComment] = useState('')
-  const [authorName, setAuthorName] = useState('')
+  const [newComment, setNewComment] = useState('');
+  const [authorName, setAuthorName] = useState('');
   const [createCommentMutation, { loading, error, data }] =
-    useCreateCommentMutation()
+    useCreateCommentMutation();
 
     const handleCommentSubmit = async () => {
+      // Check if newComment and authorName have valid values
+      if (!newComment || !authorName) {
+        console.error('Please enter both comment and author name.');
+        return;
+      }
+    
       try {
-        const { data, errors } = await createCommentMutation({
+        const { data } = await createCommentMutation({
           variables: {
             input: {
               content: newComment,
               commentOn: post.databaseId,
-              author: authorName
-            }
-          }
+              author: authorName,
+            },
+          },
         });
     
-        if (errors) {
-          console.error('GraphQL Errors:', errors);
-          // Handle GraphQL errors, show an error message, or perform other error handling
-          return;
-        }
+        console.log('Response Data:', data); // Log the entire response data
     
-        if (data && data.createComment && data.createComment.comment) {
+        // Check if the comment object exists before accessing its properties
+        if (data.createComment && data.createComment.comment) {
           console.log('Comment created:', data.createComment.comment.content);
-          // Handle success, show a notification, or perform other actions
+          // Optionally, you can reset the comment and authorName inputs after successful submission
+          setNewComment('');
+          setAuthorName('');
         } else {
-          console.error('Error creating comment: Invalid response data');
-          // Handle error, show an error message, or perform other error handling
+          console.error('Failed to create comment. Response data:', data);
         }
       } catch (error) {
         console.error('Error creating comment:', error.message);
-        // Handle error, show an error message, or perform other error handling
       }
     };
+    
 
   useEffect(() => {
     if (!isMounted.current) {
