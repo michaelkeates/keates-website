@@ -92,10 +92,10 @@ export default function Post({ post }) {
 
   const handleCommentSubmit = async () => {
     // Check if newComment and authorName have valid values
-    if (!newComment || !authorName || !email) {
-      console.error('Please enter both comment and author name.')
-      return
-    }
+    //if (!newComment || !authorName || !email) {
+    //  console.error('Please enter both comment and author name.')
+    //  return
+    //}
 
     try {
       const { data } = await createCommentMutation({

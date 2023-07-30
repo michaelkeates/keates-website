@@ -23,12 +23,12 @@ const LogoBox = styled.span`
 
 
 const Logo = () => {
-  const footPrintImg = `/images/signature${useColorModeValue('', '-dark')}.png`
+  const sitelogo = `/images/signature${useColorModeValue('', '-dark')}.png`
 
   return (
     <Link href="/" scroll={false}>
         <LogoBox>
-          <Image src={footPrintImg} width={28} height={28} alt="logo" />
+          <Image src={sitelogo} width={28} height={28} alt="logo" />
         </LogoBox>
     </Link>
   )
