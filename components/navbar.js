@@ -13,7 +13,8 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Spinner
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import SearchToggleButton from './search-toggle-button'
@@ -45,6 +46,15 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
 
 const Navbar = props => {
   const { path } = props
+  const [loading, setLoading] = useState(false)
+
+  const handleLinkClick = () => {
+    setLoading(true)
+  }
+
+  const handleLinkLoaded = () => {
+    setLoading(false)
+  }
 
   return (
     <Box
@@ -102,6 +112,18 @@ const Navbar = props => {
             <IoLogoGithub />
           </LinkItem>
         </Stack>
+
+        {loading && (
+          <Box
+            position="absolute"
+            top="50%"
+            left="50%"
+            transform="translate(-50%, -50%)"
+          >
+            {/* Use the Chakra UI Spinner component */}
+            <Spinner color="blue.500" size="xl" />
+          </Box>
+        )}
 
         <Box flex={1} ml={1} align="right">
           <Box ml={2} display={{ base: 'inline-block' }}>
