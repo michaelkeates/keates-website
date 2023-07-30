@@ -42,7 +42,7 @@ const AuthorBio = () => (
     <Box display={{ md: 'flex' }}>
       <Box flexGrow={1}>
         <Heading
-          as="h2"
+          as="h3"
           variant="page-title"
           fontFamily="Roboto"
           fontWeight=""
