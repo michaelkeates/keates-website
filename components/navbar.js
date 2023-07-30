@@ -1,6 +1,5 @@
 import Logo from './logo'
-import NextLink from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Container,
   Box,
@@ -14,13 +13,10 @@ import {
   MenuButton,
   IconButton,
   useColorModeValue,
-  Spinner
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import SearchToggleButton from './search-toggle-button'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoFacebook } from 'react-icons/io5'
-import { IoLogoInstagram } from 'react-icons/io5'
 import { IoLogoGithub } from 'react-icons/io5'
 import LoadingLink from './loadinglink';
 
