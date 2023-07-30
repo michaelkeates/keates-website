@@ -82,6 +82,7 @@ export default function Post({ post }) {
   const blockquoteRefs = useRef([])
   const isMounted = useRef(false)
   const [isCopied, setIsCopied] = useState(false)
+  const [isPageReloading, setIsPageReloading] = useState(false);
 
   const [newComment, setNewComment] = useState('')
   const [authorName, setAuthorName] = useState('')
@@ -130,7 +131,7 @@ export default function Post({ post }) {
           </Box>
         )
       })
-
+      setIsPageReloading(true)
       // Reload the page after successful submission
       window.location.reload()
     } catch (error) {
@@ -139,6 +140,30 @@ export default function Post({ post }) {
   }
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch the updated post data using the slug
+        const apolloClient = getApolloClient();
+        const postData = await apolloClient.query({
+          query: GET_POST_BY_SLUG,
+          variables: {
+            slug: post.slug,
+          },
+        });
+  
+        const updatedPost = postData?.data?.postBy;
+  
+        // TODO: Set the updatedPost to the component state or wherever you need it
+      } catch (error) {
+        console.error('Error fetching updated post data:', error.message);
+      }
+    };
+  
+    const fetchUpdatedPostData = () => {
+      if (isCopied) {
+        fetchData(); // Fetch the updated post data when isCopied changes (i.e., after the user submits a comment and the page reloads)
+      }
+    };
     if (!isMounted.current) {
       isMounted.current = true
       const blockquotes = Array.from(
@@ -192,8 +217,10 @@ export default function Post({ post }) {
           blockquote.appendChild(copyButton)
         }
       })
+      fetchData()
     }
-  }, [isCopied])
+    fetchUpdatedPostData()
+  }, [isCopied, post.slug])
 
   return (
     <Layout>
