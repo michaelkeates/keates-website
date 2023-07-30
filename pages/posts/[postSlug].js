@@ -85,28 +85,28 @@ export default function Post({ post }) {
   const [isCopied, setIsCopied] = useState(false)
 
   const [newComment, setNewComment] = useState('')
-  const [authorName, setAuthorName] = useState('');
+  const [authorName, setAuthorName] = useState('')
   const [createCommentMutation, { loading, error, data }] =
     useCreateCommentMutation()
 
-    const handleCommentSubmit = async () => {
-      try {
-        const { data } = await createCommentMutation({
-          variables: {
-            input: {
-              content: "Another comment",
-              commentOn: post.id,
-              author: authorName
-            }
+  const handleCommentSubmit = async () => {
+    try {
+      const { data } = await createCommentMutation({
+        variables: {
+          input: {
+            content: setNewComment,
+            commentOn: post.id,
+            author: authorName
           }
-        });
-        console.log("Comment created:", data.createComment.comment.content);
-        // Handle success, show a notification, or perform other actions
-      } catch (error) {
-        console.error("Error creating comment:", error.message);
-        // Handle error, show an error message, or perform other error handling
-      }
+        }
+      })
+      console.log('Comment created:', data.createComment.comment.content)
+      // Handle success, show a notification, or perform other actions
+    } catch (error) {
+      console.error('Error creating comment:', error.message)
+      // Handle error, show an error message, or perform other error handling
     }
+  }
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -207,7 +207,7 @@ export default function Post({ post }) {
               </Paragraph>
             </SimpleGrid>
             <Divider my={6} />
-            <div style={{ marginBottom: '-30px' }}>
+            <div style={{ marginBottom: '-7rem' }}>
               <AuthorBio />
             </div>
           </main>
@@ -261,43 +261,51 @@ export default function Post({ post }) {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
               position="relative"
             >
-    <Flex
-      flexDirection="column"
-      alignItems="flex-start"
-      justifyContent="space-between"
-      height="100%"
-    >
-      {/* Input box for author name */}
-      <Input
-        placeholder="Enter your name"
-        size="md"
-        value={authorName}
-        onChange={(e) => setAuthorName(e.target.value)}
-        marginBottom="10px" // Add some spacing between the input and the textarea
-      />
+              <Flex
+                flexDirection="column"
+                alignItems="flex-start"
+                justifyContent="space-between"
+                height="100%"
+              >
+                {/* Input box for author name */}
+                <Input
+                  placeholder="Enter your name"
+                  size="md"
+                  value={authorName}
+                  onChange={e => setAuthorName(e.target.value)}
+                  marginBottom="10px" // Add some spacing between the input and the textarea
+                />
 
-      <Textarea
-        placeholder="Enter your comment"
-        size="md"
-        flex="1"
-        value={newComment}
-        onChange={(e) => setNewComment(e.target.value)}
-      />
-      <Button
-        colorScheme="green"
-        position="flex"
-        bottom="5px"
-        right="5px"
-        marginTop="5px"
-        ml="auto"
-        mt={4}
-        onClick={handleCommentSubmit}
-      >
-        Submit
-      </Button>
-    </Flex>
+                <Textarea
+                  placeholder="Enter your comment"
+                  size="md"
+                  flex="1"
+                  value={newComment}
+                  onChange={e => setNewComment(e.target.value)}
+                />
+                <Button
+                  colorScheme="green"
+                  position="flex"
+                  bottom="5px"
+                  right="5px"
+                  marginTop="5px"
+                  ml="auto"
+                  mt={4}
+                  onClick={handleCommentSubmit}
+                >
+                  Submit
+                </Button>
+              </Flex>
             </Box>
           </div>
+          <NextLink href="/posts" passHref scroll={false}>
+            <Button
+              rightIcon={<ChevronRightIcon />}
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            >
+              Go Back
+            </Button>
+          </NextLink>
         </Section>
       </Container>
     </Layout>
