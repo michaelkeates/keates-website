@@ -171,8 +171,8 @@ export default function Home({ posts }) {
   )
 }
 
-// Add the getStaticProps function to fetch the specific post data
-export async function getStaticProps() {
+// Change 'getStaticProps' to 'getServerSideProps'
+export async function getServerSideProps() {
   const apolloClient = getApolloClient()
 
   const postData = await apolloClient.query({

@@ -11,7 +11,7 @@ import {
   Button,
   Divider,
   Input,
-  //  ListItem,
+  useToast,
   useColorModeValue,
   chakra,
   Badge
@@ -79,51 +79,65 @@ function dayMonth(data) {
 }
 
 export default function Post({ post }) {
+  const toast = useToast()
   const blockquoteRefs = useRef([])
   const isMounted = useRef(false)
   const [isCopied, setIsCopied] = useState(false)
 
   console.log('Post ID:', post.databaseId)
 
-  const [newComment, setNewComment] = useState('');
-  const [authorName, setAuthorName] = useState('');
+  const [newComment, setNewComment] = useState('')
+  const [authorName, setAuthorName] = useState('')
   const [createCommentMutation, { loading, error, data }] =
-    useCreateCommentMutation();
+    useCreateCommentMutation()
 
-    const handleCommentSubmit = async () => {
-      // Check if newComment and authorName have valid values
-      if (!newComment || !authorName) {
-        console.error('Please enter both comment and author name.');
-        return;
-      }
-    
-      try {
-        const { data } = await createCommentMutation({
-          variables: {
-            input: {
-              content: newComment,
-              commentOn: post.databaseId,
-              author: authorName,
-            },
-          },
-        });
-    
-        console.log('Response Data:', data); // Log the entire response data
-    
-        // Check if the comment object exists before accessing its properties
-        if (data.createComment && data.createComment.comment) {
-          console.log('Comment created:', data.createComment.comment.content);
-          // Optionally, you can reset the comment and authorName inputs after successful submission
-          setNewComment('');
-          setAuthorName('');
-        } else {
-          console.error('Failed to create comment. Response data:', data);
+  const handleCommentSubmit = async () => {
+    // Check if newComment and authorName have valid values
+    if (!newComment || !authorName) {
+      console.error('Please enter both comment and author name.')
+      return
+    }
+
+    try {
+      const { data } = await createCommentMutation({
+        variables: {
+          input: {
+            content: newComment,
+            commentOn: post.databaseId,
+            author: authorName
+          }
         }
-      } catch (error) {
-        console.error('Error creating comment:', error.message);
-      }
-    };
-    
+      })
+
+      // Show success toast notification
+      toast({
+        title: 'Comment added!',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+        position: 'bottom',
+        render: () => (
+          <Box
+            color="white"
+            p={3}
+            bg="green.500"
+            borderRadius="md"
+            boxShadow="md"
+            zIndex="9999"
+            // Customize the bottom spacing as needed
+            css={{ marginBottom: '50px' }}
+          >
+            Comment added successfully!
+          </Box>
+        )
+      })
+
+      // Reload the page after successful submission
+      window.location.reload()
+    } catch (error) {
+      console.error('Error creating comment:', error.message)
+    }
+  }
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -224,7 +238,7 @@ export default function Post({ post }) {
               </Paragraph>
             </SimpleGrid>
             <Divider my={6} />
-            <div style={{ marginBottom: '-7rem' }}>
+            <div style={{ marginBottom: '-5rem' }}>
               <AuthorBio />
             </div>
           </main>
@@ -258,7 +272,7 @@ export default function Post({ post }) {
                   )}
                   <div style={{ marginLeft: '10px' }}>
                     <div>{comment.author.node.name}</div>
-                    <div>{comment.date}</div>
+                    <div style={{ fontSize: '11px' }}>{comment.date}</div>
                   </div>
                 </Flex>
                 <div
@@ -330,7 +344,7 @@ export default function Post({ post }) {
 }
 
 // Add the getStaticProps function to fetch the specific post data
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const apolloClient = getApolloClient()
 
   const postData = await apolloClient.query({
@@ -346,34 +360,5 @@ export async function getStaticProps({ params }) {
     props: {
       post
     }
-  }
-}
-
-// Add the getStaticPaths function to specify the dynamic paths
-export async function getStaticPaths() {
-  const apolloClient = getApolloClient()
-
-  const allPostsData = await apolloClient.query({
-    query: GET_ALL_POSTS
-  })
-
-  const posts = allPostsData?.data?.posts?.edges
-
-  // Check if posts is defined before mapping over it
-  if (!posts) {
-    return {
-      paths: [],
-      fallback: false
-    }
-  }
-
-  // Create the array of paths with the `params` object containing the dynamic part (postSlug)
-  const paths = posts.map(({ node }) => ({
-    params: { postSlug: node.slug }
-  }))
-
-  return {
-    paths,
-    fallback: false
   }
 }
