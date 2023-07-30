@@ -9,6 +9,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import { Button, useColorModeValue, Container } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
 import Bubble from '../components/bubbleheader'
+import LoadingLink from '../components/loadinglink'
 import { useRouter } from 'next/router'; // Add this import
 
 import { GET_USER_REPOSITORIES } from '../lib/queries'
@@ -105,7 +106,7 @@ export default function Home({ repository }) {
                     </Badge>
                   </GridItem>
                   <br></br>
-                  <NextLink href={item.path} passHref scroll={false}>
+                  <LoadingLink href={item.path} passHref scroll={false}>
                     <Button
                       width="100%"
                       alignItems="center"
@@ -118,7 +119,7 @@ export default function Home({ repository }) {
                     >
                       Read More
                     </Button>
-                  </NextLink>
+                  </LoadingLink>
                 </Box>
               </Section>
             )
