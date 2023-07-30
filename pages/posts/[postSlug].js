@@ -301,6 +301,7 @@ export default function Post({ post }) {
                     <div style={{ fontSize: '11px' }}>{comment.date}</div>
                   </div>
                 </Flex>
+                <Divider my={1} />
                 <div
                   dangerouslySetInnerHTML={{ __html: comment.content }}
                   style={{ fontSize: '14px', marginLeft: '10px' }}
