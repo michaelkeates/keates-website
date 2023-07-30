@@ -84,6 +84,8 @@ export default function Post({ post }) {
   const isMounted = useRef(false)
   const [isCopied, setIsCopied] = useState(false)
 
+  console.log('Post ID:', post.databaseId);
+
   const [newComment, setNewComment] = useState('')
   const [authorName, setAuthorName] = useState('')
   const [createCommentMutation, { loading, error, data }] =
@@ -95,7 +97,7 @@ export default function Post({ post }) {
         variables: {
           input: {
             content: setNewComment,
-            commentOn: post.id,
+            commentOn: post.databaseId,
             author: authorName
           }
         }
