@@ -1,6 +1,5 @@
 //import Head from 'next/head'
 import { useState } from 'react'
-import { gql } from '@apollo/client'
 import { Heading, SimpleGrid, Box, Badge, Container } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'

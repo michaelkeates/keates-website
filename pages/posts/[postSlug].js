@@ -22,7 +22,6 @@ import Section from '../../components/section'
 import Image from 'next/image'
 import Layout from '../../components/layouts/article'
 import { getApolloClient } from '../../lib/wordpress'
-import { useMutation } from '@apollo/client'
 
 import { Title, Portfolio, Blog, WorkImage, Meta } from '../../components/work'
 
@@ -91,24 +90,36 @@ export default function Post({ post }) {
   const [createCommentMutation, { loading, error, data }] =
     useCreateCommentMutation()
 
-  const handleCommentSubmit = async () => {
-    try {
-      const { data } = await createCommentMutation({
-        variables: {
-          input: {
-            content: newComment,
-            commentOn: post.databaseId,
-            author: authorName
+    const handleCommentSubmit = async () => {
+      try {
+        const { data, errors } = await createCommentMutation({
+          variables: {
+            input: {
+              content: newComment,
+              commentOn: post.databaseId,
+              author: authorName
+            }
           }
+        });
+    
+        if (errors) {
+          console.error('GraphQL Errors:', errors);
+          // Handle GraphQL errors, show an error message, or perform other error handling
+          return;
         }
-      })
-      console.log('Comment created:', data.createComment.comment.content)
-      // Handle success, show a notification, or perform other actions
-    } catch (error) {
-      console.error('Error creating comment:', error.message)
-      // Handle error, show an error message, or perform other error handling
-    }
-  }
+    
+        if (data && data.createComment && data.createComment.comment) {
+          console.log('Comment created:', data.createComment.comment.content);
+          // Handle success, show a notification, or perform other actions
+        } else {
+          console.error('Error creating comment: Invalid response data');
+          // Handle error, show an error message, or perform other error handling
+        }
+      } catch (error) {
+        console.error('Error creating comment:', error.message);
+        // Handle error, show an error message, or perform other error handling
+      }
+    };
 
   useEffect(() => {
     if (!isMounted.current) {
