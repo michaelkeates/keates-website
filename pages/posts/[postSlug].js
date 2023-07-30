@@ -186,6 +186,14 @@ export default function Post({ post }) {
             setTimeout(() => {
               setIsCopied(false)
             }, 2000) // Change the duration here (in milliseconds)
+            toast({
+              title: 'Text Copied',
+              description: 'The text has been copied to the clipboard.',
+              status: 'success',
+              position: 'top-right',
+              duration: 2000, // Change the duration here (in milliseconds)
+              isClosable: true,
+            });
           }
 
           ReactDOM.render(

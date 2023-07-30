@@ -4,7 +4,7 @@ import NextLink from 'next/link'
 import { gql } from '@apollo/client'
 
 import {
-  Link,
+  useToast,
   Container,
   Box,
   SimpleGrid,
@@ -71,6 +71,7 @@ function dayMonth(data) {
 }
 
 export default function Post({ params, rep }) {
+  const toast = useToast()
   const blockquoteRefs = useRef([])
   const isMounted = useRef(false)
   const [isCopied, setIsCopied] = useState(false)
@@ -98,6 +99,14 @@ export default function Post({ params, rep }) {
             setTimeout(() => {
               setIsCopied(false)
             }, 2000) // Change the duration here (in milliseconds)
+            toast({
+              title: 'Text Copied',
+              description: 'The text has been copied to the clipboard.',
+              status: 'success',
+              position: 'top-right',
+              duration: 2000, // Change the duration here (in milliseconds)
+              isClosable: true,
+            });
           }
 
           ReactDOM.render(
