@@ -357,7 +357,7 @@ export default function Post({ post }) {
                   mt={4}
                   onClick={handleCommentSubmit}
                 >
-                  Submit
+                  Comment
                 </Button>
               </Flex>
             </Box>
