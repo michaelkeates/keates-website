@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
-//import Image from 'next/image'
 
 import {
   Textarea,
@@ -84,16 +83,15 @@ export default function Post({ post }) {
   const isMounted = useRef(false)
   const [isCopied, setIsCopied] = useState(false)
 
-  console.log('Post ID:', post.databaseId)
-
   const [newComment, setNewComment] = useState('')
   const [authorName, setAuthorName] = useState('')
+  const [email, setEmail] = useState('')
   const [createCommentMutation, { loading, error, data }] =
     useCreateCommentMutation()
 
   const handleCommentSubmit = async () => {
     // Check if newComment and authorName have valid values
-    if (!newComment || !authorName) {
+    if (!newComment || !authorName || !email) {
       console.error('Please enter both comment and author name.')
       return
     }
@@ -104,7 +102,8 @@ export default function Post({ post }) {
           input: {
             content: newComment,
             commentOn: post.databaseId,
-            author: authorName
+            author: authorName,
+            authorEmail: email
           }
         }
       })
@@ -306,7 +305,13 @@ export default function Post({ post }) {
                   onChange={e => setAuthorName(e.target.value)}
                   marginBottom="10px" // Add some spacing between the input and the textarea
                 />
-
+                <Input
+                  placeholder="Enter your email"
+                  size="md"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  marginBottom="10px" // Add some spacing between the input and the textarea
+                />
                 <Textarea
                   placeholder="Enter your comment"
                   size="md"
