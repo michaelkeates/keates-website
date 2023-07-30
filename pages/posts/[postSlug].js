@@ -96,7 +96,7 @@ export default function Post({ post }) {
       const { data } = await createCommentMutation({
         variables: {
           input: {
-            content: setNewComment,
+            content: newComment,
             commentOn: post.databaseId,
             author: authorName
           }
