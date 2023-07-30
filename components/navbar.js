@@ -22,6 +22,7 @@ import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoFacebook } from 'react-icons/io5'
 import { IoLogoInstagram } from 'react-icons/io5'
 import { IoLogoGithub } from 'react-icons/io5'
+import LoadingLink from './loadinglink';
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -45,16 +46,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
 }
 
 const Navbar = props => {
-  const { path } = props
-  const [loading, setLoading] = useState(false)
-
-  const handleLinkClick = () => {
-    setLoading(true)
-  }
-
-  const handleLinkLoaded = () => {
-    setLoading(false)
-  }
+  const { path } = props;
 
   return (
     <Box
@@ -91,16 +83,16 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/about" path={path}>
+          <LoadingLink href="/about" path={path}>
             About
-          </LinkItem>
-          <LinkItem href="/repositories" path={path}>
+          </LoadingLink>
+          <LoadingLink href="/repositories" path={path}>
             Portfolio
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
+          </LoadingLink>
+          <LoadingLink href="/posts" path={path}>
             Blog
-          </LinkItem>
-          <LinkItem
+          </LoadingLink>
+          <LoadingLink
             target="_blank"
             href="https://github.com/michaelkeates"
             path={path}
@@ -110,20 +102,8 @@ const Navbar = props => {
             pl={2}
           >
             <IoLogoGithub />
-          </LinkItem>
+          </LoadingLink>
         </Stack>
-
-        {loading && (
-          <Box
-            position="absolute"
-            top="50%"
-            left="50%"
-            transform="translate(-50%, -50%)"
-          >
-            {/* Use the Chakra UI Spinner component */}
-            <Spinner color="blue.500" size="xl" />
-          </Box>
-        )}
 
         <Box flex={1} ml={1} align="right">
           <Box ml={2} display={{ base: 'inline-block' }}>
