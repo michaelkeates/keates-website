@@ -51,7 +51,7 @@ async function generatePDF() {
       '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu'
     )
     const customGridElements2 = document.querySelectorAll(
-      '.chakra-heading.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn'
+      '.chakra-heading.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn'
     )
     const customGridElements3 = document.querySelectorAll(
       '.css-1k7klv9, .css-1oo097b, .css-13hhjt6'
@@ -113,11 +113,11 @@ async function generatePDF() {
     })
 
     textSize5.forEach(textSize5 => {
-      textSize5.style.fontSize = '16px'
+      textSize5.style.fontSize = '14px'
     })
 
     textSize6.forEach(textSize5 => {
-      textSize5.style.fontSize = '12px'
+      textSize5.style.fontSize = '9px'
     })
 
     textColors.forEach(textColor => {
