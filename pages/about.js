@@ -19,7 +19,7 @@ import { WorkGridItem } from '../components/grid-item'
 import Image from 'next/image'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
-import thumbkenfreight from '../public/images/works/kenfreight.png'
+import thumbkenfreight from '../public/images/works/hllea.jpg'
 import wordicon from '../public/images/works/microsoft_word.png'
 import excelicon from '../public/images/works/microsoft_excel.png'
 import React, { useState } from 'react'
@@ -254,7 +254,7 @@ const Home = () => {
             >
               <Box display="flex" alignItems="center">
                 <Box marginRight={4} marginTop="-2px" align="center">
-                  <Image src={thumbkenfreight} width={30} />
+                  <Image src={thumbkenfreight} width={100} />
                 </Box>
                 <Box marginRight={4}>
                   <Heading
@@ -264,7 +264,7 @@ const Home = () => {
                     fontSize={13}
                     textAlign="left"
                   >
-                    Kenfreight East Africa Limited - Graphic Designer (Remote)
+                    Heavy Lift Logistics East Africa Limited - Graphic Designer (Remote)
                   </Heading>
                 </Box>
                 <Box
@@ -273,7 +273,7 @@ const Home = () => {
                   justifyContent="flex-end"
                   flex="1"
                 >
-                  <Badge colorScheme="grey">2017 - 2018</Badge>
+                  <Badge colorScheme="grey">2018 - 2020</Badge>
                 </Box>
               </Box>
               <Divider marginTop={3} marginBottom={1} />
@@ -289,11 +289,10 @@ const Home = () => {
                       Photopshop & Illustrator
                     </li>
                     <li>
-                      Designed the sister company Heavy Lift Logistics East
-                      Africa Limited Logo
+                      Designed the company Logo
                     </li>
                     <li>
-                      Built my confidence and proud of being part of a number of
+                      Increased my confidence and proud of being part of a number of
                       heavy lift projects across East Africa
                     </li>
                   </ul>
