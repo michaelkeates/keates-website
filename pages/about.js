@@ -20,6 +20,8 @@ import Image from 'next/image'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
 import thumbkenfreight from '../public/images/works/kenfreight.png'
+import wordicon from '../public/images/works/microsoft_word.png'
+import excelicon from '../public/images/works/microsoft_excel.png'
 import React, { useState } from 'react'
 import styles from '../styles/emoji.module.css'
 import Bubble from '../components/bubbleheader'
@@ -278,7 +280,11 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Produced accurate transport plan drawings using both Adobe
+                      Communicated with clients to understand requirements for new
+                      sister company
+                    </li>
+                    <li>
+                      Produced accurate transport plans using both Adobe
                       Photopshop & Illustrator
                     </li>
                     <li>
@@ -613,6 +619,34 @@ const Home = () => {
             >
               <PhotoshopIcon />
             </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Typescript"
+              title="Word"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <Image src={wordicon} width={100} />
+            </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Typescript"
+              title="Excel"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <Image src={excelicon} width={100} />
+            </Box>
           </SimpleGrid>
         </Section>
         <Divider />
@@ -687,10 +721,7 @@ const Home = () => {
                 thumbnail={thumbcc}
                 title="BTEC Computing"
               >
-                {[
-                  'Coleg Gwent (2019-2020)',
-                  'Grade: Distinction'
-                ]}
+                {['Coleg Gwent (2019-2020)', 'Grade: Distinction']}
               </WorkGridItem>
             </Box>
           </Section>
