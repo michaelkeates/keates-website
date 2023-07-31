@@ -784,7 +784,7 @@ const Home = () => {
             >
               Interests
             </Heading>
-            <SimpleGrid columns={[2, 1, 2]} gap={2}>
+            <SimpleGrid columns={[2, 1, 3]} gap={2}>
               <Section delay={0.3}>
                 <Box
                   borderRadius="lg"
@@ -853,6 +853,24 @@ const Home = () => {
                   <BioSection>
                     <a className={styles.emailLink}>
                       <span className={styles.emoji}>💪</span> Gym
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>📝</span> Blogging
                     </a>
                   </BioSection>
                 </Box>
