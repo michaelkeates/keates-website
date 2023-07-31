@@ -82,7 +82,7 @@ export default function Home({ posts }) {
   return (
     <Layout title="Portfolio">
       <Container>
-        <Bubble text="View the latest posts that I have written!" emoji="📃" />
+        <Bubble text="View the latest posts that I have written!" emoji="📝" />
         <Section delay={0.2}>
           <SimpleGrid columns={[2, 2, 2]} gap={4}>
             {postsToDisplay.map(post => (
