@@ -292,6 +292,10 @@ const Home = () => {
                       Designed the sister company Heavy Lift Logistics East
                       Africa Limited Logo
                     </li>
+                    <li>
+                      Built my confidence and proud of being part of a number of
+                      heavy lift projects across East Africa
+                    </li>
                   </ul>
                 </Box>
               </Box>
@@ -752,7 +756,7 @@ const Home = () => {
           >
             Interests
           </Heading>
-          <SimpleGrid columns={[3, 1, 3]} gap={2}>
+          <SimpleGrid columns={[4, 1, 4]} gap={2}>
             <Section delay={0.3}>
               <Box
                 borderRadius="lg"
