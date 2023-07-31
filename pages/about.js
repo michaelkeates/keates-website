@@ -47,7 +47,8 @@ import {
   OracleIcon,
   JQueryIcon,
   GitIcon,
-  PhotoshopIcon
+  PhotoshopIcon,
+  GithubIcon
 } from '../components/devicons'
 
 const ProfileImage = chakra(Image, {
@@ -280,8 +281,8 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Communicated with clients to understand requirements for new
-                      sister company
+                      Communicated with clients to understand requirements for
+                      new sister company
                     </li>
                     <li>
                       Produced accurate transport plans using both Adobe
@@ -307,7 +308,7 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Programming Skills
+            Languages
           </Heading>
           <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
@@ -441,7 +442,7 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Platforms
+            Frameworks
           </Heading>
           <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
@@ -496,6 +497,21 @@ const Home = () => {
             >
               <GraphQlIcon />
             </Box>
+          </SimpleGrid>
+        </Section>
+        <Divider />
+        <Section delay={0.2}>
+          <Heading
+            as="h3"
+            fontFamily="Roboto"
+            fontWeight="500"
+            fontSize={20}
+            mb={4}
+            marginTop="1rem"
+          >
+            Databases
+          </Heading>
+          <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
               borderRadius="lg"
               mb={6}
@@ -536,6 +552,21 @@ const Home = () => {
             >
               <OracleIcon />
             </Box>
+          </SimpleGrid>
+        </Section>
+        <Divider />
+        <Section delay={0.2}>
+          <Heading
+            as="h3"
+            fontFamily="Roboto"
+            fontWeight="500"
+            fontSize={20}
+            mb={4}
+            marginTop="1rem"
+          >
+            Version Control
+          </Heading>
+          <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
               borderRadius="lg"
               mb={6}
@@ -545,10 +576,24 @@ const Home = () => {
               css={{ backdropFilter: 'blur(10px)' }}
               padding="10px;"
               href="Typescript"
-              title="Docker"
+              title="Git"
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
-              <DockerIcon />
+              <GitIcon />
+            </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Typescript"
+              title="Git"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <GithubIcon />
             </Box>
           </SimpleGrid>
         </Section>
@@ -565,6 +610,20 @@ const Home = () => {
             Other Skills
           </Heading>
           <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              href="Typescript"
+              title="Docker"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <DockerIcon />
+            </Box>
             <Box
               borderRadius="lg"
               mb={6}
@@ -590,20 +649,6 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <XamarinIcon />
-            </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              href="Typescript"
-              title="Git"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <GitIcon />
             </Box>
             <Box
               borderRadius="lg"
@@ -660,7 +705,6 @@ const Home = () => {
         >
           Education
         </Heading>
-
         <SimpleGrid columns={[3, 2, 3]} gap={2}>
           <Section delay={0.3}>
             <Box
@@ -812,6 +856,22 @@ const Home = () => {
                     </a>
                   </BioSection>
                 </Box>
+              </Section>
+            </SimpleGrid>
+            <Divider />
+            <Heading
+              as="h3"
+              fontFamily="Roboto"
+              fontWeight="500"
+              fontSize={20}
+              mb={4}
+              marginTop="1rem"
+            >
+              References
+            </Heading>
+            <SimpleGrid colums={[1, 1, 2]} gap={2}>
+              <Section delay={0.1}>
+                <Paragraph>References available on request.</Paragraph>
               </Section>
             </SimpleGrid>
             <Divider />
