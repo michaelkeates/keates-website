@@ -576,7 +576,6 @@ const Home = () => {
           </SimpleGrid>
         </Section>
         <Divider />
-        <SimpleGrid columns={[1, 1, 2]} gap={1} fontSize="12px;">
         <Section delay={0.2}>
           <Heading
             as="h3"
@@ -588,7 +587,7 @@ const Home = () => {
           >
             Databases
           </Heading>
-          <SimpleGrid columns={[4, 4, 4]} gap={1} fontSize="12px;">
+          <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
               borderRadius="lg"
               mb={6}
@@ -631,6 +630,7 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </Section>
+        <Divider />
         <Section delay={0.2}>
           <Heading
             as="h3"
@@ -642,7 +642,7 @@ const Home = () => {
           >
             Version Control
           </Heading>
-          <SimpleGrid columns={[4, 4, 4]} gap={1} fontSize="12px;">
+          <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
               borderRadius="lg"
               mb={6}
@@ -673,7 +673,6 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </Section>
-        </SimpleGrid>
         <Divider />
         <Section delay={0.2}>
           <Heading
