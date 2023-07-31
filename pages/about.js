@@ -744,6 +744,7 @@ const Home = () => {
           </SimpleGrid>
         </Section>
         <Divider />
+        <div className="custom-grid">
         <Section delay={0.2}>
           <Heading
             as="h3"
@@ -830,6 +831,9 @@ const Home = () => {
             </Section>
           </SimpleGrid>
           <Divider />
+          </Section>
+          </div>
+          <Section delay={0.2}>
           <Heading
             as="h3"
             fontFamily="Roboto"

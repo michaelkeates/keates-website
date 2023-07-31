@@ -1,4 +1,5 @@
 import Logo from './logo'
+import NextLink from 'next/link'
 import React from 'react'
 import {
   Container,

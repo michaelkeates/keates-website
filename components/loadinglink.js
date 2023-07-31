@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NextLink from 'next/link';
-import { Box, Link, Spinner } from '@chakra-ui/react';
+import { Box, Link, Spinner, useColorModeValue } from '@chakra-ui/react';
+import { IoLogoGithub } from 'react-icons/io5';
 
 const LoadingLink = ({ href, path, children, ...props }) => {
   const [loading, setLoading] = useState(false);
@@ -17,6 +18,8 @@ const LoadingLink = ({ href, path, children, ...props }) => {
     setLoading(false); // Set loading to false when the page is fully loaded
   };
 
+  const linkColor = useColorModeValue('black.500', '#ffff');
+
   return (
     <>
       {loading && (
@@ -26,13 +29,13 @@ const LoadingLink = ({ href, path, children, ...props }) => {
           right="2rem" // Adjust this value to change the distance from the right
           zIndex="9999"
         >
-          <Spinner color="black.500" size="md" /> {/* Adjust the size with "size" prop */}
+          <Spinner color={linkColor} size="md" /> {/* Use the linkColor variable */}
         </Box>
       )}
       <NextLink href={href} passHref scroll={false}>
         <Link
           p={2}
-          color={path === href ? '#a6bbce' : '#000'}
+          color={path === href ? '#a6bbce' : linkColor}
           target="_blank"
           fontSize="12"
           onClick={handleClick}
