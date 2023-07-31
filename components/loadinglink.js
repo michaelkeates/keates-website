@@ -34,7 +34,6 @@ const LoadingLink = ({ href, path, children, ...props }) => {
       )}
       <NextLink href={href} passHref scroll={false}>
         <Link
-          p={2}
           color={path === href ? '#a6bbce' : linkColor}
           target="_blank"
           fontSize="12"

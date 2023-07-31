@@ -1,6 +1,6 @@
 import Logo from './logo'
 import NextLink from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Container,
   Box,
@@ -13,16 +13,16 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue,
+  useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import SearchToggleButton from './search-toggle-button'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
-import LoadingLink from './loadinglink';
+import LoadingLink from './loadinglink'
 
 const Navbar = props => {
-  const { path } = props;
+  const { path } = props
 
   return (
     <Box
@@ -58,14 +58,15 @@ const Navbar = props => {
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
+          p={2}
         >
-          <LoadingLink href="/about" path={path}>
+          <LoadingLink p={2} href="/about" path={path}>
             About
           </LoadingLink>
-          <LoadingLink href="/repositories" path={path}>
+          <LoadingLink p={2} href="/repositories" path={path}>
             Portfolio
           </LoadingLink>
-          <LoadingLink href="/posts" path={path}>
+          <LoadingLink p={2} href="/posts" path={path}>
             Blog
           </LoadingLink>
           <LoadingLink
@@ -76,6 +77,7 @@ const Navbar = props => {
             alignItems="center"
             style={{ gap: 4 }}
             pl={2}
+            p={2}
           >
             <IoLogoGithub />
           </LoadingLink>

@@ -118,6 +118,7 @@ export default function Home({ posts }) {
                   <br />
                   <LoadingLink href={post.path} passHref scroll={false}>
                     <Button
+                    
                       width="100%"
                       alignItems="center"
                       rightIcon={<ChevronRightIcon />}
