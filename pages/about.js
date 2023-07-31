@@ -518,7 +518,7 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Frameworks
+            Frameworks & Databases
           </Heading>
           <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
@@ -560,34 +560,6 @@ const Home = () => {
             >
               <NextjsIcon />
             </Box>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={3}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              padding="10px;"
-              title="GraphQL"
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <GraphQlIcon />
-            </Box>
-          </SimpleGrid>
-        </Section>
-        <Divider />
-        <Section delay={0.2}>
-          <Heading
-            as="h3"
-            fontFamily="Roboto"
-            fontWeight="500"
-            fontSize={20}
-            mb={4}
-            marginTop="1rem"
-          >
-            Databases
-          </Heading>
-          <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
               borderRadius="lg"
               mb={6}
@@ -640,7 +612,7 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Version Control
+            Other Skills
           </Heading>
           <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
@@ -671,21 +643,6 @@ const Home = () => {
             >
               <GithubIcon />
             </Box>
-          </SimpleGrid>
-        </Section>
-        <Divider />
-        <Section delay={0.2}>
-          <Heading
-            as="h3"
-            fontFamily="Roboto"
-            fontWeight="500"
-            fontSize={20}
-            mb={4}
-            marginTop="1rem"
-          >
-            Other Skills
-          </Heading>
-          <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
             <Box
               borderRadius="lg"
               mb={6}
@@ -699,6 +656,19 @@ const Home = () => {
               boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
             >
               <DockerIcon />
+            </Box>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding="10px;"
+              title="GraphQL"
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <GraphQlIcon />
             </Box>
             <Box
               borderRadius="lg"
@@ -771,8 +741,6 @@ const Home = () => {
           </SimpleGrid>
         </Section>
         <Divider />
-        <div className="custom-grid">
-          <Divider />
           <Section delay={0.2}>
             <Heading
               as="h3"
@@ -893,6 +861,7 @@ const Home = () => {
               </Section>
             </SimpleGrid>
             <Divider />
+            <div className="custom-grid">
             <SimpleGrid colums={[1, 1, 1]} gap={2} marginTop="1rem">
               <Section delay={0.1}>
                 <Box textAlign="center" fontSize={12}>
@@ -914,8 +883,8 @@ const Home = () => {
                 </Box>
               </Section>
             </SimpleGrid>
+            </div>
           </Section>
-        </div>
       </Container>
     </Layout>
   )
