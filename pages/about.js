@@ -756,7 +756,7 @@ const Home = () => {
           >
             Interests
           </Heading>
-          <SimpleGrid columns={[4, 1, 4]} gap={2}>
+          <SimpleGrid columns={[4, 1, 4]} gap={1}>
             <Section delay={0.3}>
               <Box
                 borderRadius="lg"
