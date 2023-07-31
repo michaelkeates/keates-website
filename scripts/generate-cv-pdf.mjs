@@ -51,7 +51,7 @@ async function generatePDF() {
       '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu'
     )
     const customGridElements2 = document.querySelectorAll(
-      '.chakra-heading.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk'
+      '.chakra-heading.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn'
     )
     const customGridElements3 = document.querySelectorAll(
       '.css-1k7klv9, .css-1oo097b, .css-13hhjt6'

@@ -299,6 +299,82 @@ const Home = () => {
           </SimpleGrid>
         </Section>
         <Divider />
+        <Heading
+          as="h3"
+          fontFamily="Roboto"
+          fontWeight="500"
+          fontSize={20}
+          mb={4}
+          marginTop="1rem"
+        >
+          Education
+        </Heading>
+        <SimpleGrid columns={[3, 2, 3]} gap={2}>
+          <Section delay={0.3}>
+            <Box
+              borderRadius="lg"
+              mb={0}
+              p={4}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <WorkGridItem
+                id="uswapplied"
+                thumbnail={thumbusw}
+                title="BSc (Hons) Applied Computing"
+              >
+                {[
+                  'University of South Wales (2022-2023)',
+                  'Grade: First Class Honours'
+                ]}
+              </WorkGridItem>
+            </Box>
+          </Section>
+          <Section delay={0.3}>
+            <Box
+              borderRadius="lg"
+              mb={0}
+              p={4}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <WorkGridItem
+                id="uswhnd"
+                thumbnail={thumbusw}
+                title="HND Computing"
+              >
+                {[
+                  'University of South Wales (2020-2022)',
+                  'Grade: Distinction'
+                ]}
+              </WorkGridItem>
+            </Box>
+          </Section>
+          <Section delay={0.3}>
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={4}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+            >
+              <WorkGridItem
+                id="coleggwentbtec"
+                thumbnail={thumbcc}
+                title="BTEC Computing"
+              >
+                {['Coleg Gwent (2019-2020)', 'Grade: Distinction']}
+              </WorkGridItem>
+            </Box>
+          </Section>
+        </SimpleGrid>
+        <Divider />
         <Section delay={0.2}>
           <Heading
             as="h3"
@@ -694,82 +770,6 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </Section>
-        <Divider />
-        <Heading
-          as="h3"
-          fontFamily="Roboto"
-          fontWeight="500"
-          fontSize={20}
-          mb={4}
-          marginTop="1rem"
-        >
-          Education
-        </Heading>
-        <SimpleGrid columns={[3, 2, 3]} gap={2}>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={0}
-              p={4}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <WorkGridItem
-                id="uswapplied"
-                thumbnail={thumbusw}
-                title="BSc (Hons) Applied Computing"
-              >
-                {[
-                  'University of South Wales (2022-2023)',
-                  'Grade: First Class Honours'
-                ]}
-              </WorkGridItem>
-            </Box>
-          </Section>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={0}
-              p={4}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <WorkGridItem
-                id="uswhnd"
-                thumbnail={thumbusw}
-                title="HND Computing"
-              >
-                {[
-                  'University of South Wales (2020-2022)',
-                  'Grade: Distinction'
-                ]}
-              </WorkGridItem>
-            </Box>
-          </Section>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={4}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <WorkGridItem
-                id="coleggwentbtec"
-                thumbnail={thumbcc}
-                title="BTEC Computing"
-              >
-                {['Coleg Gwent (2019-2020)', 'Grade: Distinction']}
-              </WorkGridItem>
-            </Box>
-          </Section>
-        </SimpleGrid>
         <Divider />
         <div className="custom-grid">
           <Divider />
