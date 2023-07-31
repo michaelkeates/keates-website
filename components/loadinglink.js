@@ -45,6 +45,16 @@ const LoadingLink = ({ href, path, children, ...props }) => {
           {children}
         </Link>
       </NextLink>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            // This script listens for the page load event and hides the spinner
+            window.addEventListener("load", function() {
+              document.getElementById("loading-spinner").style.display = "none";
+            });
+          `,
+        }}
+      />
     </>
   );
 };
