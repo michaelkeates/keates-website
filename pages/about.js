@@ -456,7 +456,6 @@ const Home = () => {
                   <li>
                     Got highest overall grade in recent history
                   </li>
-                  <li>Something 2</li>
                   <li>
                     Accomplished communication skills, both written and
                     verbally, developed through essays and presentations
