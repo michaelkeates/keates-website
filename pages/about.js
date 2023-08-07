@@ -477,6 +477,7 @@ const Home = () => {
           </Box>
         </SimpleGrid>
 
+        <div class='another-custom-grid'>
         <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
           <Box
             borderRadius="lg"
@@ -554,6 +555,7 @@ const Home = () => {
             </Box>
           </Box>
         </SimpleGrid>
+        </div>
         <Divider />
         <Section delay={0.2}>
           <Heading

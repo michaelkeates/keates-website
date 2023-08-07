@@ -26,13 +26,13 @@ async function generatePDF() {
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelector('.css-vqf3rg')
     const textSize = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-g6xq4p, .chakra-heading.css-1dilgbf'
+      '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-g6xq4p, .chakra-heading.css-1dilgbf, .chakra-heading.css-5cq7sr'
     )
     const textSize2 = document.querySelectorAll(
       '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O, .css-1dsdcac'
     )
     const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k')
-    const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58, .chakra-text.css-1bgxado')
+    const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58, .chakra-text.css-1bgxado, .chakra-heading.css-1x30byp')
     const textSize5 = document.querySelectorAll(
       '.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd'
     )
@@ -51,10 +51,14 @@ async function generatePDF() {
       '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu, .css-jt83u2'
     )
     const customGridElements2 = document.querySelectorAll(
-      '.chakra-heading.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn'
+      '.chakra-heading.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .chakra-divider.css-mzlxjy'
     )
     const customGridElements3 = document.querySelectorAll(
-      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6'
+      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6, .chakra-divider.css-mzlxjy, .chakra-heading.css-17cjct2'
+    )
+
+    const customGridElements4 = document.querySelectorAll(
+      '.another-custom-grid'
     )
 
     const boxElements = document.querySelectorAll(
@@ -154,6 +158,10 @@ async function generatePDF() {
     customGridElements3.forEach(element => {
       element.style.marginBottom = '2px'
       element.style.paddingBottom = '2px'
+    })
+
+    customGridElements4.forEach(element => {
+      element.style.marginBottom = '20px'
     })
 
     unwantedElements.forEach(element => {
