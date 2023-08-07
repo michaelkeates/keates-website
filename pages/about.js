@@ -478,85 +478,85 @@ const Home = () => {
         </SimpleGrid>
 
         <div className="another-custom-grid">
-        <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
-          <Box
-            borderRadius="lg"
-            mb={6}
-            p={3}
-            textAlign="center"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            css={{ backdropFilter: 'blur(10px)' }}
-            padding={4}
-            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
-            paddingTop="1rem"
-            flexDirection="column"
-            alignItems="center"
-          >
-            <Box display="flex" alignItems="center">
-              <Box marginRight={4} marginTop="-2px" align="center">
-                <Image src={thumbcc} width={100} />
-              </Box>
-              <Box marginRight={4}>
-                <NextLink
-                  href="qualificatons/coleggwentbtec"
-                  passHref
-                  scroll={false}
-                >
+          <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding={4}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+              paddingTop="1rem"
+              flexDirection="column"
+              alignItems="center"
+            >
+              <Box display="flex" alignItems="center">
+                <Box marginRight={4} marginTop="-2px" align="center">
+                  <Image src={thumbcc} width={100} />
+                </Box>
+                <Box marginRight={4}>
+                  <NextLink
+                    href="qualificatons/coleggwentbtec"
+                    passHref
+                    scroll={false}
+                  >
+                    <Heading
+                      as="h2"
+                      fontFamily="Roboto"
+                      fontWeight="600"
+                      fontSize={13}
+                      textAlign="left"
+                      marginBottom="2px"
+                    >
+                      Coleg Gwent
+                    </Heading>
+                  </NextLink>
                   <Heading
                     as="h2"
                     fontFamily="Roboto"
-                    fontWeight="600"
-                    fontSize={13}
+                    fontWeight="400"
+                    fontSize={11}
                     textAlign="left"
-                    marginBottom="2px"
                   >
-                    Coleg Gwent
+                    Distinction - BTEC Computing
                   </Heading>
-                </NextLink>
-                <Heading
-                  as="h2"
-                  fontFamily="Roboto"
-                  fontWeight="400"
-                  fontSize={11}
-                  textAlign="left"
+                </Box>
+                <Box
+                  marginTop="-5px"
+                  display="flex"
+                  justifyContent="flex-end"
+                  flex="1"
                 >
-                  Distinction - BTEC Computing
-                </Heading>
+                  <Badge colorScheme="grey">2019 - 2020</Badge>
+                </Box>
               </Box>
-              <Box
-                marginTop="-5px"
-                display="flex"
-                justifyContent="flex-end"
-                flex="1"
-              >
-                <Badge colorScheme="grey">2019 - 2020</Badge>
-              </Box>
-            </Box>
-            <Divider marginTop={3} marginBottom={1} />
-            <Box marginTop={3}>
-              <Box textAlign="left" fontSize={12} padding={2}>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-                  <li>
-                    Proficiency in all areas of Microsoft Office, including
-                    Access, Excel, Word and Powerpoint
-                  </li>
-                  <li>
-                    Reached the semi finals of the AWS Project Competition
-                  </li>
-                </ul>
-                <Divider marginTop={3} marginBottom={3} />
-                <div>
-                  Notable Modules - Principles of Computer Science, Fundementals
-                  of Computer Systems, IT Systems Security & Encryption,
-                  Business Applications of Social Media, Computer Games
-                  Development, Mobile Apps Development
-                </div>
+              <Divider marginTop={3} marginBottom={1} />
+              <Box marginTop={3}>
+                <Box textAlign="left" fontSize={12} padding={2}>
+                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                    <li>
+                      Proficiency in all areas of Microsoft Office, including
+                      Access, Excel, Word and Powerpoint
+                    </li>
+                    <li>
+                      Reached the semi finals of the AWS Project Competition
+                    </li>
+                  </ul>
+                  <Divider marginTop={3} marginBottom={3} />
+                  <div>
+                    Notable Modules - Principles of Computer Science,
+                    Fundementals of Computer Systems, IT Systems Security &
+                    Encryption, Business Applications of Social Media, Computer
+                    Games Development, Mobile Apps Development
+                  </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </SimpleGrid>
+          </SimpleGrid>
+          <Divider />
         </div>
-        <Divider />
         <Section delay={0.2}>
           <Heading
             as="h3"

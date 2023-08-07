@@ -105,7 +105,7 @@ async function generatePDF() {
     })
 
     textSize2.forEach(textSize2 => {
-      textSize2.style.fontSize = '9px'
+      textSize2.style.fontSize = '8px'
     })
 
     textSize3.forEach(textSize3 => {
@@ -161,7 +161,7 @@ async function generatePDF() {
     })
 
     customGridElements4.forEach(element => {
-      element.style.marginBottom = '20'
+      element.style.marginBottom = '20px'
     })
 
     unwantedElements.forEach(element => {
@@ -211,16 +211,27 @@ async function generatePDF() {
     })
   })
 
+  // Add a pseudo-element to the body to create the gap on every page
   await page.evaluate(() => {
-    const customCSS = `
-      .chakra-heading.css-5cq7sr {
-        font-weight: normal !important; /* Remove bold font weight */
-      }
-    `;
-    const styleElement = document.createElement('style');
-    styleElement.textContent = customCSS;
-    document.head.appendChild(styleElement);
-  });
+    const style = document.createElement('style')
+    style.textContent = `
+        @media print {
+          body::before {
+            content: '';
+            display: block;
+            height: 10px; /* Adjust the height as needed */
+            page-break-before: always;
+          }
+          .chakra-divider.css-mzlxjy {
+            margin: 0 !important; /* Override existing margin with !important */
+          }
+          .chakra-heading.css-5cq7sr {
+            font-weight: normal !important; /* Remove bold font weight */
+          }
+        }
+      `
+    document.head.appendChild(style)
+  })
 
   // Generate PDF with modified print settings
   const pdfBuffer = await page.pdf({
