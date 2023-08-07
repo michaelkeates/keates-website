@@ -25,6 +25,7 @@ import excelicon from '../public/images/works/microsoft_excel.png'
 import React, { useState } from 'react'
 import styles from '../styles/emoji.module.css'
 import Bubble from '../components/bubbleheader'
+import NextLink from 'next/link'
 
 import {
   CplusplusIcon,
@@ -264,7 +265,8 @@ const Home = () => {
                     fontSize={13}
                     textAlign="left"
                   >
-                    Heavy Lift Logistics East Africa Limited - Graphic Designer (Remote)
+                    Heavy Lift Logistics East Africa Limited - Graphic Designer
+                    (Remote)
                   </Heading>
                 </Box>
                 <Box
@@ -288,12 +290,10 @@ const Home = () => {
                       Produced accurate transport plans using both Adobe
                       Photopshop & Illustrator
                     </li>
+                    <li>Designed the company Logo</li>
                     <li>
-                      Designed the company Logo
-                    </li>
-                    <li>
-                      Increased my confidence and proud of being part of a number of
-                      heavy lift projects across East Africa
+                      Increased my confidence and proud of being part of a
+                      number of heavy lift projects across East Africa
                     </li>
                   </ul>
                 </Box>
@@ -312,70 +312,247 @@ const Home = () => {
         >
           Education
         </Heading>
-        <SimpleGrid columns={[3, 2, 3]} gap={2}>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={0}
-              p={4}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <WorkGridItem
-                id="uswapplied"
-                thumbnail={thumbusw}
-                title="BSc (Hons) Applied Computing"
+        <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding={4}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            paddingTop="1rem"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Box display="flex" alignItems="center">
+              <Box marginRight={4} marginTop="-2px" align="center">
+                <Image src={thumbusw} width={100} />
+              </Box>
+              <Box marginRight={4}>
+                <NextLink
+                  href="qualificatons/uswapplied"
+                  passHref
+                  scroll={false}
+                >
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="600"
+                    fontSize={13}
+                    textAlign="left"
+                    marginBottom="2px"
+                  >
+                    University of South Wales
+                  </Heading>
+                </NextLink>
+                <Heading
+                  as="h2"
+                  fontFamily="Roboto"
+                  fontWeight="400"
+                  fontSize={11}
+                  textAlign="left"
+                >
+                  First Class Honours - BSc (Hons) Applied Computing
+                </Heading>
+              </Box>
+              <Box
+                marginTop="-5px"
+                display="flex"
+                justifyContent="flex-end"
+                flex="1"
               >
-                {[
-                  'University of South Wales (2022-2023)',
-                  'Grade: First Class Honours'
-                ]}
-              </WorkGridItem>
+                <Badge colorScheme="grey">2022 - 2023</Badge>
+              </Box>
             </Box>
-          </Section>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={0}
-              p={4}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <WorkGridItem
-                id="uswhnd"
-                thumbnail={thumbusw}
-                title="HND Computing"
+            <Divider marginTop={3} marginBottom={1} />
+            <Box marginTop={3}>
+              <Box textAlign="left" fontSize={12} padding={2}>
+                <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                  <li>
+                    Analytical and conceptual thinking, with a consecientious
+                    approach to managing workloads.
+                  </li>
+                  <li>
+                    Ability to handle, analyse and interpret large, complex data
+                    and processing to be used
+                  </li>
+                  <li>Advanced problem solving and numeracy skills</li>
+                  <li>
+                    Developed a Web app that allows individuals to use a
+                    Operating System on their browser for Individual Project
+                  </li>
+                  <li>
+                    Offered to do my Phd by professor after recieving a First
+                    across all modules
+                  </li>
+                </ul>
+                <Divider marginTop={3} marginBottom={3} />
+                <div>
+                  Notable Modules - Advanced Internet & Computing, Advanced
+                  Databases & Modelling, GIS and the Spatial Web, The Computing
+                  Professional in Practice
+                </div>
+              </Box>
+            </Box>
+          </Box>
+        </SimpleGrid>
+
+        <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding={4}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            paddingTop="1rem"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Box display="flex" alignItems="center">
+              <Box marginRight={4} marginTop="-2px" align="center">
+                <Image src={thumbusw} width={100} />
+              </Box>
+              <Box marginRight={4}>
+                <NextLink href="qualificatons/uswhnd" passHref scroll={false}>
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="600"
+                    fontSize={13}
+                    textAlign="left"
+                    marginBottom="2px"
+                  >
+                    University of South Wales
+                  </Heading>
+                </NextLink>
+                <Heading
+                  as="h2"
+                  fontFamily="Roboto"
+                  fontWeight="400"
+                  fontSize={11}
+                  textAlign="left"
+                >
+                  Distinction - Higher National Diploma (HND) Computing
+                </Heading>
+              </Box>
+              <Box
+                marginTop="-5px"
+                display="flex"
+                justifyContent="flex-end"
+                flex="1"
               >
-                {[
-                  'University of South Wales (2020-2022)',
-                  'Grade: Distinction'
-                ]}
-              </WorkGridItem>
+                <Badge colorScheme="grey">2020 - 2022</Badge>
+              </Box>
             </Box>
-          </Section>
-          <Section delay={0.3}>
-            <Box
-              borderRadius="lg"
-              mb={6}
-              p={4}
-              textAlign="center"
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              css={{ backdropFilter: 'blur(10px)' }}
-              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-            >
-              <WorkGridItem
-                id="coleggwentbtec"
-                thumbnail={thumbcc}
-                title="BTEC Computing"
+            <Divider marginTop={3} marginBottom={1} />
+            <Box marginTop={3}>
+              <Box textAlign="left" fontSize={12} padding={2}>
+                <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                  <li>
+                    Got highest overall grade and highest in recent history
+                  </li>
+                  <li>Something 2</li>
+                  <li>
+                    Accomplished communication skills, both written and
+                    verbally, developed through essays and presentations
+                  </li>
+                  <li>
+                    Developed a Crime Alert/Tracking Mobile App for both iOS &
+                    Android for Individual Project
+                  </li>
+                </ul>
+                <Divider marginTop={3} marginBottom={3} />
+                <div>
+                  Notable Modules - Information Systems Analysis & Design,
+                  Computer Programming, Responsive Web Development, Computer
+                  Systems Security, Systems Architecture and Modelling
+                </div>
+              </Box>
+            </Box>
+          </Box>
+        </SimpleGrid>
+
+        <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
+          <Box
+            borderRadius="lg"
+            mb={6}
+            p={3}
+            textAlign="center"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            padding={4}
+            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+            paddingTop="1rem"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Box display="flex" alignItems="center">
+              <Box marginRight={4} marginTop="-2px" align="center">
+                <Image src={thumbcc} width={100} />
+              </Box>
+              <Box marginRight={4}>
+                <NextLink
+                  href="qualificatons/coleggwentbtec"
+                  passHref
+                  scroll={false}
+                >
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="600"
+                    fontSize={13}
+                    textAlign="left"
+                    marginBottom="2px"
+                  >
+                    Coleg Gwent
+                  </Heading>
+                </NextLink>
+                <Heading
+                  as="h2"
+                  fontFamily="Roboto"
+                  fontWeight="400"
+                  fontSize={11}
+                  textAlign="left"
+                >
+                  Distinction - BTEC Computing
+                </Heading>
+              </Box>
+              <Box
+                marginTop="-5px"
+                display="flex"
+                justifyContent="flex-end"
+                flex="1"
               >
-                {['Coleg Gwent (2019-2020)', 'Grade: Distinction']}
-              </WorkGridItem>
+                <Badge colorScheme="grey">2019 - 2020</Badge>
+              </Box>
             </Box>
-          </Section>
+            <Divider marginTop={3} marginBottom={1} />
+            <Box marginTop={3}>
+              <Box textAlign="left" fontSize={12} padding={2}>
+                <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                  <li>
+                    Proficiency in all areas of Microsoft Office, including
+                    Access, Excel, Word and Powerpoint
+                  </li>
+                  <li>
+                    Reached the semi finals of the AWS Project Competition
+                  </li>
+                </ul>
+                <Divider marginTop={3} marginBottom={3} />
+                <div>
+                  Notable Modules - Principles of Computer Science, Fundementals
+                  of Computer Systems, IT Systems Security & Encryption,
+                  Business Applications of Social Media, Computer Games
+                  Development, Mobile Apps Development
+                </div>
+              </Box>
+            </Box>
+          </Box>
         </SimpleGrid>
         <Divider />
         <Section delay={0.2}>
@@ -745,95 +922,95 @@ const Home = () => {
         </Section>
         <Divider />
         <div className="custom-grid">
-        <Section delay={0.2}>
-          <Heading
-            as="h3"
-            fontFamily="Roboto"
-            fontWeight="500"
-            fontSize={20}
-            mb={4}
-            marginTop="1rem"
-          >
-            Interests
-          </Heading>
-          <SimpleGrid columns={[4, 1, 4]} gap={1}>
-            <Section delay={0.3}>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>👨🏾‍💻</span> Coding
-                  </a>
-                </BioSection>
-              </Box>
-            </Section>
-            <Section delay={0.3}>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>📷</span> Photography
-                  </a>
-                </BioSection>
-              </Box>
-            </Section>
-            <Section delay={0.3}>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>💪</span> Gym
-                  </a>
-                </BioSection>
-              </Box>
-            </Section>
-            <Section delay={0.3}>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>📝</span> Blogging
-                  </a>
-                </BioSection>
-              </Box>
-            </Section>
-          </SimpleGrid>
-          <Divider />
-          </Section>
-          </div>
           <Section delay={0.2}>
+            <Heading
+              as="h3"
+              fontFamily="Roboto"
+              fontWeight="500"
+              fontSize={20}
+              mb={4}
+              marginTop="1rem"
+            >
+              Interests
+            </Heading>
+            <SimpleGrid columns={[4, 1, 4]} gap={1}>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>👨🏾‍💻</span> Coding
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>📷</span> Photography
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>💪</span> Gym
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+              <Section delay={0.3}>
+                <Box
+                  borderRadius="lg"
+                  mb={1}
+                  p={1}
+                  textAlign="center"
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  padding="10px;"
+                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                >
+                  <BioSection>
+                    <a className={styles.emailLink}>
+                      <span className={styles.emoji}>📝</span> Blogging
+                    </a>
+                  </BioSection>
+                </Box>
+              </Section>
+            </SimpleGrid>
+            <Divider />
+          </Section>
+        </div>
+        <Section delay={0.2}>
           <Heading
             as="h3"
             fontFamily="Roboto"
