@@ -87,9 +87,7 @@ const Home = () => {
             textAlign="center"
           >
             <Box
-              borderColor="whiteAlpha.800"
-              borderWidth={2}
-              borderStyle="solid"
+              boxShadow="0px 0px 2px 2px rgba(0,0,0,0.1)"
               w="100px"
               h="100px"
               display="inline-block"
