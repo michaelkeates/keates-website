@@ -275,7 +275,12 @@ const Home = () => {
                   justifyContent="flex-end"
                   flex="1"
                 >
-                  <Badge colorScheme="grey">2018 - 2020</Badge>
+                  <Badge
+                    bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    color=""
+                  >
+                    2018 - 2020
+                  </Badge>
                 </Box>
               </Box>
               <Divider marginTop={3} marginBottom={1} />
@@ -363,7 +368,12 @@ const Home = () => {
                 justifyContent="flex-end"
                 flex="1"
               >
-                <Badge colorScheme="grey">2022 - 2023</Badge>
+                <Badge
+                  bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                  color=""
+                >
+                  2022 - 2023
+                </Badge>
               </Box>
             </Box>
             <Divider marginTop={3} marginBottom={1} />
@@ -446,16 +456,19 @@ const Home = () => {
                 justifyContent="flex-end"
                 flex="1"
               >
-                <Badge colorScheme="grey">2020 - 2022</Badge>
+                <Badge
+                  bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                  color=""
+                >
+                  2020 - 2022
+                </Badge>
               </Box>
             </Box>
             <Divider marginTop={3} marginBottom={1} />
             <Box marginTop={3}>
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-                  <li>
-                    Got highest overall grade in recent history
-                  </li>
+                  <li>Got highest overall grade in recent history</li>
                   <li>
                     Accomplished communication skills, both written and
                     verbally, developed through essays and presentations
@@ -528,7 +541,12 @@ const Home = () => {
                   justifyContent="flex-end"
                   flex="1"
                 >
-                  <Badge colorScheme="grey">2019 - 2020</Badge>
+                  <Badge
+                    bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    color=""
+                  >
+                    2019 - 2020
+                  </Badge>
                 </Box>
               </Box>
               <Divider marginTop={3} marginBottom={1} />
