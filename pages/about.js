@@ -237,7 +237,7 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Experience
+            Work Experience
           </Heading>
           <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
             <Box
@@ -1026,7 +1026,7 @@ const Home = () => {
             </Heading>
             <SimpleGrid colums={[1, 1, 2]} gap={2}>
               <Section delay={0.1}>
-                <Paragraph>References available on request.</Paragraph>
+                <Paragraph>References are available on request.</Paragraph>
               </Section>
             </SimpleGrid>
             <Divider />
