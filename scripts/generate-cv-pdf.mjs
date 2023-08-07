@@ -40,7 +40,7 @@ async function generatePDF() {
     )
     const textSize6 = document.querySelectorAll('.chakra-text.css-p23alj')
     const textColors = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg, .css-1dsdcac, .chakra-heading.css-1dilgbf'
+      '.css-1oo097b, .css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg, .css-1dsdcac, .chakra-heading.css-1dilgbf'
     )
     const borderColor = document.querySelectorAll(
       '.css-svjswr, .chakra-divider.css-mzlxjy'
@@ -51,7 +51,7 @@ async function generatePDF() {
       '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu, .css-jt83u2, .chakra-divider.css-mzlxjy'
     )
     const customGridElements2 = document.querySelectorAll(
-      '.chakra-heading.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .chakra-divider.css-mzlxjy'
+      '.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .chakra-divider.css-mzlxjy'
     )
     const customGridElements3 = document.querySelectorAll(
       '.css-1k7klv9, .css-1oo097b, .css-13hhjt6, .chakra-divider.css-mzlxjy, .chakra-heading.css-17cjct2'
@@ -105,7 +105,7 @@ async function generatePDF() {
     }
 
     textSize.forEach(textSize => {
-      textSize.style.fontSize = '10px'
+      textSize.style.fontSize = '9px'
     })
 
     textSize2.forEach(textSize2 => {
@@ -125,7 +125,7 @@ async function generatePDF() {
     })
 
     textSize6.forEach(textSize5 => {
-      textSize5.style.fontSize = '9px'
+      textSize5.style.fontSize = '8px'
     })
 
     textColors.forEach(textColor => {
@@ -170,7 +170,8 @@ async function generatePDF() {
 
     customGridElements5.forEach(element => {
       //inctease margin top by 50
-      element.style.marginTop = '50px'
+      element.style.marginTop = '40px'
+      element.style.paddingTop = '40px'
     })
 
     unwantedElements.forEach(element => {
@@ -224,13 +225,6 @@ async function generatePDF() {
   await page.evaluate(() => {
     const style = document.createElement('style')
     style.textContent = `
-        @media print {
-          body::before {
-            content: '';
-            display: block;
-            height: 10px; /* Adjust the height as needed */
-            page-break-before: always;
-          }
           .chakra-divider.css-mzlxjy {
             margin: 0 !important; /* Override existing margin with !important */
           }

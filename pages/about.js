@@ -454,7 +454,7 @@ const Home = () => {
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                   <li>
-                    Got highest overall grade and highest in recent history
+                    Got highest overall grade in recent history
                   </li>
                   <li>Something 2</li>
                   <li>
