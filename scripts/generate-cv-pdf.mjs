@@ -61,6 +61,10 @@ async function generatePDF() {
       '.another-custom-grid'
     )
 
+    const customGridElements5 = document.querySelectorAll(
+      '.yet-another-custom-grid'
+    )
+
     const boxElements = document.querySelectorAll(
       '.css-1jzpmk, .css-o75elv, .css-1a0pxu, .css-n1k3mh'
     )
@@ -161,7 +165,12 @@ async function generatePDF() {
     })
 
     customGridElements4.forEach(element => {
-      element.style.marginBottom = '20px'
+      element.style.marginBottom = '100px'
+    })
+
+    customGridElements5.forEach(element => {
+      //inctease margin top by 50
+      element.style.marginTop = '50px'
     })
 
     unwantedElements.forEach(element => {
