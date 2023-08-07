@@ -477,7 +477,7 @@ const Home = () => {
           </Box>
         </SimpleGrid>
 
-        <div class='another-custom-grid'>
+        <div className="another-custom-grid">
         <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
           <Box
             borderRadius="lg"

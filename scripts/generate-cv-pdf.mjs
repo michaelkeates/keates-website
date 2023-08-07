@@ -4,11 +4,11 @@ import puppeteer from 'puppeteer'
 
 async function generatePDF() {
   const browser = await puppeteer.launch({
-    headless: 'new',
+    headless: 'new'
     // `headless: true` (default) enables old Headless;
     // `headless: 'new'` enables new Headless;
     // `headless: false` enables “headful” mode.
-  });
+  })
   const page = await browser.newPage()
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 })
 
@@ -29,16 +29,16 @@ async function generatePDF() {
       '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-g6xq4p, .chakra-heading.css-1dilgbf, .chakra-heading.css-5cq7sr'
     )
     const textSize2 = document.querySelectorAll(
-      '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O, .css-1dsdcac'
+      '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O, .css-1dsdcac, .chakra-heading.css-1x30byp'
     )
     const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k')
-    const textSize4 = document.querySelectorAll('.chakra-text.css-9c7r58, .chakra-text.css-1bgxado, .chakra-heading.css-1x30byp')
+    const textSize4 = document.querySelectorAll(
+      '.chakra-text.css-9c7r58, .chakra-text.css-1bgxado'
+    )
     const textSize5 = document.querySelectorAll(
       '.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd'
     )
-    const textSize6 = document.querySelectorAll(
-      '.chakra-text.css-p23alj'
-    )
+    const textSize6 = document.querySelectorAll('.chakra-text.css-p23alj')
     const textColors = document.querySelectorAll(
       '.css-1oo097b, .chakra-heading.css-kowkqe, .chakra-heading.css-17wi6zd, .css-14rgeuu, .chakra-text.css-5m355k, .chakra-heading.css-kx7ixn, .css-1jzpmk, .chakra-text.css-9c7r58, .chakra-heading.css-9n0xbk, .chakra-heading.css-17cjct2, .emoji_emailLink__rvK9O, .css-9zshpp, .chakra-divider.css-svjswr, .chakra-heading.css-1vukcke, .chakra-badge.css-1ajj9qg, .css-1dsdcac, .chakra-heading.css-1dilgbf'
     )
@@ -48,7 +48,7 @@ async function generatePDF() {
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
 
     const customGridElements = document.querySelectorAll(
-      '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu, .css-jt83u2'
+      '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu, .css-jt83u2, .chakra-divider.css-mzlxjy'
     )
     const customGridElements2 = document.querySelectorAll(
       '.chakra-heading.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .chakra-divider.css-mzlxjy'
@@ -161,7 +161,7 @@ async function generatePDF() {
     })
 
     customGridElements4.forEach(element => {
-      element.style.marginBottom = '20px'
+      element.style.marginBottom = '20'
     })
 
     unwantedElements.forEach(element => {
@@ -210,6 +210,17 @@ async function generatePDF() {
       element.style.padding = '0' //remove the padding
     })
   })
+
+  await page.evaluate(() => {
+    const customCSS = `
+      .chakra-heading.css-5cq7sr {
+        font-weight: normal !important; /* Remove bold font weight */
+      }
+    `;
+    const styleElement = document.createElement('style');
+    styleElement.textContent = customCSS;
+    document.head.appendChild(styleElement);
+  });
 
   // Generate PDF with modified print settings
   const pdfBuffer = await page.pdf({
