@@ -174,7 +174,31 @@ export default function Home({ posts }) {
 }
 
 // Change 'getStaticProps' to 'getServerSideProps'
-export async function getServerSideProps() {
+//export async function getServerSideProps() {
+//  const apolloClient = getApolloClient()
+
+//  const postData = await apolloClient.query({
+//    query: GET_ALL_POSTS
+//  })
+
+//  const posts = postData?.data.posts.edges
+//    .map(({ node }) => node)
+//    .map(post => {
+//      return {
+//        ...post,
+//        path: `/posts/${post.slug}`
+//      }
+//    })
+
+//  return {
+//    props: {
+//      posts
+//    }
+//  }
+//}
+
+//change getServersideProps to getStaticProps
+export async function getStaticProps() {
   const apolloClient = getApolloClient()
 
   const postData = await apolloClient.query({
