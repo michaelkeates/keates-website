@@ -51,10 +51,10 @@ async function generatePDF() {
       '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu, .css-jt83u2, .chakra-divider.css-mzlxjy'
     )
     const customGridElements2 = document.querySelectorAll(
-      '.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .chakra-divider.css-mzlxjy'
+      '.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .chakra-divider.css-mzlxjy, .css-p77vvx'
     )
     const customGridElements3 = document.querySelectorAll(
-      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6, .chakra-divider.css-mzlxjy, .chakra-heading.css-17cjct2, .chakra-divider.css-svjswr'
+      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6, .chakra-divider.css-mzlxjy, .chakra-heading.css-17cjct2, .chakra-divider.css-svjswr, .css-1art13b, .css-1dsdcac'
     )
 
     const customGridElements4 = document.querySelectorAll(
@@ -84,6 +84,8 @@ async function generatePDF() {
     const fontweight = document.querySelectorAll('.chakra-heading.css-1dilgbf')
 
     const padding = document.querySelectorAll('.css-o7muvo')
+
+    const profileimage = document.querySelectorAll('.css-s37q7k')
 
     //next section
 
@@ -150,6 +152,16 @@ async function generatePDF() {
       imageSize.style.marginRight = 'auto'
     })
 
+    profileimage.forEach(profileimage => {
+      profileimage.style.width = '80px'
+      profileimage.style.height = '80px'
+      //center image
+      profileimage.style.marginLeft = 'auto'
+      profileimage.style.marginRight = 'auto'
+      //make image round
+      profileimage.style.borderRadius = '50%'
+    })
+
     const unwantedElements = document.querySelectorAll(
       '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .chakra-heading.css-17wi6zd, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy'
     )
@@ -166,8 +178,9 @@ async function generatePDF() {
     })
 
     customGridElements3.forEach(element => {
-      element.style.marginBottom = '2px'
-      element.style.paddingBottom = '2px'
+      element.style.marginTop = '4px'
+      element.style.marginBottom = '4px'
+      element.style.paddingBottom = '0px'
     })
 
     customGridElements4.forEach(element => {
@@ -194,6 +207,7 @@ async function generatePDF() {
         boxElement.style.boxShadow = 'none'
         boxElement.style.width = '100%'
         boxElement.style.padding = '0'
+        boxElement.style.marginLeft = '-5px'
       }
     })
 
