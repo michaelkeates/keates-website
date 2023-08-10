@@ -24,7 +24,7 @@ async function generatePDF() {
     document.body.style.backgroundColor = '#ffffff'
     const gridElement = document.querySelectorAll('.css-85h89v, .css-481av6')
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
-    const gridElement3 = document.querySelector('.css-vqf3rg')
+    const gridElement3 = document.querySelectorAll('.css-vqf3rg, .css-1fj31y')
     const textSize = document.querySelectorAll(
       '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-g6xq4p, .chakra-heading.css-1dilgbf, .chakra-heading.css-5cq7sr, .chakra-badge.css-ujcih5, .css-p6ed0u'
     )
@@ -99,10 +99,10 @@ async function generatePDF() {
       //gridElement2.style.height = '70%' // Replace '100px' with your desired image height
     })
 
-    if (gridElement3) {
+    gridElement3.forEach(gridElement3 => {
       //modify the grid template columns property to have 4 columns
-      gridElement3.style.gridTemplateColumns = 'repeat(2, minmax(0, 1fr))'
-    }
+      gridElement3.style.gridTemplateColumns = 'repeat(4, minmax(0, 1fr))'
+    })
 
     textSize.forEach(textSize => {
       if (textSize.classList.contains('chakra-badge')) {
@@ -151,7 +151,7 @@ async function generatePDF() {
     })
 
     const unwantedElements = document.querySelectorAll(
-      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .chakra-heading.css-17wi6zd, .css-3isgxm, .css-kjxakp'
+      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .chakra-heading.css-17wi6zd, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy'
     )
 
     customGridElements.forEach(element => {
@@ -171,13 +171,13 @@ async function generatePDF() {
     })
 
     customGridElements4.forEach(element => {
-      element.style.marginBottom = '100px'
+      element.style.marginBottom = '0px'
     })
 
     customGridElements5.forEach(element => {
       //inctease margin top by 50
-      element.style.marginTop = '40px'
-      element.style.paddingTop = '40px'
+      //element.style.marginTop = '40px'
+      //element.style.paddingTop = '40px'
     })
 
     unwantedElements.forEach(element => {
@@ -189,7 +189,7 @@ async function generatePDF() {
 
       if (title) {
         boxElement.textContent = title
-        boxElement.style.fontSize = '10px'
+        boxElement.style.fontSize = '8px'
         boxElement.style.background = 'transparent'
         boxElement.style.boxShadow = 'none'
         boxElement.style.width = '100%'

@@ -470,7 +470,6 @@ const Home = () => {
             <Box marginTop={3}>
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-                  <li>Got highest overall grade in recent history for HND</li>
                   <li>
                     Accomplished communication skills, both written and
                     verbally, developed through essays and presentations
