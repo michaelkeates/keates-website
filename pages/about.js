@@ -116,13 +116,14 @@ const Home = () => {
               Background
             </Heading>
             <Paragraph>
-              I am a dedicated and hardworking individual with a strong
-              background in all things computing and technology. I have a
-              passion for learning and developing new skills, a strong attention
-              to detail, excellent verbal, written and communication skills and
-              I am always looking for new challenges to expand my knowledge and
-              experience as well as improving my abilities to create efficient
-              and effective solutions for various requirements.
+              I am a recent graduate and a dedicated, hardworking individual
+              with a robust background in all things related to computing and
+              technology. I possess a passion for learning and developing new
+              skills, a strong attention to detail, excellent verbal and written
+              communication abilities. I am constantly seeking new challenges to
+              broaden my knowledge and experience, while also enhancing my
+              capacity to develop efficient and effective solutions for diverse
+              requirements.
             </Paragraph>
           </Section>
         </SimpleGrid>
@@ -384,12 +385,17 @@ const Home = () => {
                   </li>
                   <li>
                     Ability to handle, analyse and interpret large, complex data
-                    and processing to be used
+                    and processed to be used in mapping APIs
                   </li>
                   <li>Advanced problem solving and numeracy skills</li>
                   <li>
                     Developed a Web app that allows individuals to use a
                     Operating System on their browser for Individual Project
+                  </li>
+                  <li>
+                    Organised a Open Beta test of the Individual Project where
+                    are group of students voluntered to use the app with a
+                    overall positive feedback
                   </li>
                   <li>
                     Offered to do my Phd by professor after recieving a First
@@ -466,13 +472,13 @@ const Home = () => {
             <Box marginTop={3}>
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-                  <li>Got highest overall grade in recent history</li>
+                  <li>Got highest overall grade in recent history for HND</li>
                   <li>
                     Accomplished communication skills, both written and
                     verbally, developed through essays and presentations
                   </li>
                   <li>
-                    Developed a Crime Alert/Tracking Mobile App for both iOS &
+                    Developed a Crime Alert/Tracking Mobile App for iOS &
                     Android for Individual Project
                   </li>
                 </ul>
@@ -552,20 +558,14 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Proficiency in all areas of Microsoft Office, including
-                      Access, Excel, Word and Powerpoint
+                      Voluntered to help set up machines and teach students how
+                      to create RJ45/Cate5e Ethernet cables for the WorldSkills
+                      UK Wales Competition
                     </li>
                     <li>
                       Reached the semi finals of the AWS Project Competition
                     </li>
                   </ul>
-                  <Divider marginTop={3} marginBottom={3} />
-                  <div>
-                    Notable Modules - Principles of Computer Science,
-                    Fundementals of Computer Systems, IT Systems Security &
-                    Encryption, Business Applications of Social Media, Computer
-                    Games Development, Mobile Apps Development
-                  </div>
                 </Box>
               </Box>
             </Box>
