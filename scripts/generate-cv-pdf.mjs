@@ -26,17 +26,17 @@ async function generatePDF() {
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelector('.css-vqf3rg')
     const textSize = document.querySelectorAll(
-      '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-g6xq4p, .chakra-heading.css-1dilgbf, .chakra-heading.css-5cq7sr'
+      '.css-1oo097b, .chakra-heading.css-1vukcke, .chakra-badge.css-g6xq4p, .chakra-heading.css-1dilgbf, .chakra-heading.css-5cq7sr, .chakra-badge.css-ujcih5, .css-p6ed0u'
     )
     const textSize2 = document.querySelectorAll(
       '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O, .css-1dsdcac, .chakra-heading.css-1x30byp'
     )
-    const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k')
+    const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k, .chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk')
     const textSize4 = document.querySelectorAll(
       '.chakra-text.css-9c7r58, .chakra-text.css-1bgxado'
     )
     const textSize5 = document.querySelectorAll(
-      '.chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd'
+      '.chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd, .chakra-heading.css-kowkqe'
     )
     const textSize6 = document.querySelectorAll('.chakra-text.css-p23alj')
     const textColors = document.querySelectorAll(
@@ -54,7 +54,7 @@ async function generatePDF() {
       '.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .chakra-divider.css-mzlxjy'
     )
     const customGridElements3 = document.querySelectorAll(
-      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6, .chakra-divider.css-mzlxjy, .chakra-heading.css-17cjct2'
+      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6, .chakra-divider.css-mzlxjy, .chakra-heading.css-17cjct2, .chakra-divider.css-svjswr'
     )
 
     const customGridElements4 = document.querySelectorAll(
@@ -105,6 +105,9 @@ async function generatePDF() {
     }
 
     textSize.forEach(textSize => {
+      if (textSize.classList.contains('chakra-badge')) {
+        textSize.style.fontSize = '8px' // Adjust the font size as needed
+      }
       textSize.style.fontSize = '9px'
     })
 
@@ -113,7 +116,10 @@ async function generatePDF() {
     })
 
     textSize3.forEach(textSize3 => {
-      textSize3.style.fontSize = '10px'
+      if (textSize3.classList.contains('chakra-heading')) {
+        textSize3.style.fontSize = '11px' // Adjust the font size as needed
+      }
+      textSize3.style.fontSize = '12px'
     })
 
     textSize4.forEach(textSize4 => {
@@ -121,7 +127,7 @@ async function generatePDF() {
     })
 
     textSize5.forEach(textSize5 => {
-      textSize5.style.fontSize = '14px'
+      textSize5.style.fontSize = '18px'
     })
 
     textSize6.forEach(textSize5 => {

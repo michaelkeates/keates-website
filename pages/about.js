@@ -87,6 +87,9 @@ const Home = () => {
             textAlign="center"
           >
             <Box
+              borderColor="whiteAlpha.800"
+              borderWidth={2}
+              borderStyle="solid"
               w="100px"
               h="100px"
               display="inline-block"
@@ -378,10 +381,6 @@ const Home = () => {
             <Box marginTop={3}>
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-                  <li>
-                    Analytical and conceptual thinking, with a consecientious
-                    approach to managing workloads.
-                  </li>
                   <li>
                     Ability to handle, analyse and interpret large, complex data
                     and processed to be used in mapping APIs
