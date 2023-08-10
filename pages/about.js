@@ -87,7 +87,6 @@ const Home = () => {
             textAlign="center"
           >
             <Box
-              boxShadow="0px 0px 2px 2px rgba(0,0,0,0.1)"
               w="100px"
               h="100px"
               display="inline-block"
@@ -389,7 +388,7 @@ const Home = () => {
                   </li>
                   <li>Advanced problem solving and numeracy skills</li>
                   <li>
-                    Developed a Web app that allows individuals to use a
+                    Developed a Full Stack app that allows individuals to use a
                     Operating System on their browser for Individual Project
                   </li>
                   <li>
