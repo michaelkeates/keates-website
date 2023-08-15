@@ -204,25 +204,24 @@ export default function Home({ posts }) {
 //  }
 //}
 
-export async function getServerSideProps() {
-  const apolloClient = getApolloClient();
+export async function getServerSideProps({ req }) {
+  const apolloClient = getApolloClient()
 
-  const postData = await apolloClient.query({
-    query: GET_ALL_POSTS,
-  });
+  const { data } = await apolloClient.query({
+    query: GET_ALL_POSTS
+  })
 
-  const posts = postData?.data.posts.edges
+  const posts = data?.posts.edges
     .map(({ node }) => node)
-    .map((post) => {
-      return {
-        ...post,
-        path: `/posts/${post.slug}`,
-      };
-    });
+    .map(post => ({
+      ...post,
+      path: `/posts/${post.slug}`
+    }))
 
   return {
     props: {
       posts,
-    },
-  };
+      cookies: req.headers.cookie ?? ''
+    }
+  }
 }

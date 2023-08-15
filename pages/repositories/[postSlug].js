@@ -197,44 +197,80 @@ export default function Post({ params, rep }) {
   )
 }
 
-export async function getStaticProps({ params = {} } = {}) {
-  const { postSlug } = params
+//export async function getStaticProps({ params = {} } = {}) {
+//  const { postSlug } = params
 
+//  const apolloClient = getApolloClient()
+
+//  const data = await apolloClient.query({
+//    query: GET_REPOSITORY_BY_NAME,
+//    variables: {
+//      name: postSlug
+//    }
+//  })
+
+//  const rep = data?.data.repository
+
+//  return {
+//    props: {
+//      rep
+//    }
+//  }
+//}
+
+//export async function getStaticPaths() {
+//  const apolloClient = getApolloClient()
+
+//  const data = await apolloClient.query({
+//    query: GET_USER_REPOSITORIES
+//  })
+
+//  const rep = data?.data.user.repositories.edges.map(({ node }) => node)
+
+//  return {
+//    paths: rep.map(({ name }) => {
+//      return {
+//        params: {
+//          postSlug: name
+//        }
+//      }
+//    }),
+//    fallback: false
+//  }
+//}
+
+export async function getServerSideProps({ params, req }) {
   const apolloClient = getApolloClient()
 
   const data = await apolloClient.query({
-    query: GET_REPOSITORY_BY_NAME,
-    variables: {
-      name: postSlug
-    }
-  })
-
-  const rep = data?.data.repository
-
-  return {
-    props: {
-      rep
-    }
-  }
-}
-
-export async function getStaticPaths() {
-  const apolloClient = getApolloClient()
-
-  const data = await apolloClient.query({
-    query: GET_USER_REPOSITORIES
+    query: GET_USER_REPOSITORIES,
+    fetchPolicy: 'cache-first',
   })
 
   const rep = data?.data.user.repositories.edges.map(({ node }) => node)
+  const paths = rep.map(({ name }) => ({
+    params: {
+      postSlug: name
+    }
+  }))
+
+  const { postSlug } = params
+
+  const repoData = await apolloClient.query({
+    query: GET_REPOSITORY_BY_NAME,
+    variables: {
+      name: postSlug
+    },
+    fetchPolicy: 'cache-first',
+  })
+
+  const repData = repoData?.data.repository
 
   return {
-    paths: rep.map(({ name }) => {
-      return {
-        params: {
-          postSlug: name
-        }
-      }
-    }),
-    fallback: false
+    props: {
+      rep: repData,
+      paths,
+      cookies: req.headers.cookie ?? ''
+    }
   }
 }

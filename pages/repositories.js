@@ -8,6 +8,7 @@ import NextLink from 'next/link'
 import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import { Button, useColorModeValue, Container } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
+import { useQuery } from '@apollo/client'
 import Bubble from '../components/bubbleheader'
 import LoadingLink from '../components/loadinglink'
 import { useRouter } from 'next/router'; // Add this import
@@ -48,6 +49,12 @@ function dayMonth(data) {
 }
 
 export default function Home({ repository }) {
+  const apolloClient = getApolloClient(); // Get Apollo client instance
+  const { loading, error, data } = useQuery(GET_USER_REPOSITORIES, {
+    fetchPolicy: "cache-first", // Add the fetchPolicy here
+    client: apolloClient, // Provide the client instance to the hook
+  });
+
   const [currentPage, setCurrentPage] = useState(1)
   const repositoriesPerPage = 6
 
@@ -161,7 +168,30 @@ export default function Home({ repository }) {
 }
 
 // Add the getStaticProps function to fetch the specific post data
-export async function getStaticProps() {
+//export async function getStaticProps() {
+//  const apolloClient = getApolloClient()
+
+//  const { data } = await apolloClient.query({
+//    query: GET_USER_REPOSITORIES
+//  })
+
+//  const repository = data?.user.repositories.edges
+//    .map(({ node }) => node)
+//    .map(rep => {
+//      return {
+//        ...rep,
+//        path: `/repositories/${rep.name}`
+//      }
+//    })
+
+//  return {
+//    props: {
+//      repository
+//    }
+//  }
+//}
+
+export async function getServerSideProps({ req }) {
   const apolloClient = getApolloClient()
 
   const { data } = await apolloClient.query({
@@ -170,16 +200,15 @@ export async function getStaticProps() {
 
   const repository = data?.user.repositories.edges
     .map(({ node }) => node)
-    .map(rep => {
-      return {
-        ...rep,
-        path: `/repositories/${rep.name}`
-      }
-    })
+    .map(rep => ({
+      ...rep,
+      path: `/repositories/${rep.name}`
+    }))
 
   return {
     props: {
-      repository
+      repository,
+      cookies: req.headers.cookie ?? ''
     }
   }
 }

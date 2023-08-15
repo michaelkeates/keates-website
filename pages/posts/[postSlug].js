@@ -149,6 +149,7 @@ export default function Post({ post }) {
           variables: {
             slug: post.slug,
           },
+          fetchPolicy: 'cache-first',
         });
   
         const updatedPost = postData?.data?.postBy;
@@ -384,23 +385,42 @@ export default function Post({ post }) {
   )
 }
 
-// Add the getStaticProps function to fetch the specific post data
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req }) {
+  const { postSlug } = params
+
   const apolloClient = getApolloClient();
 
   const postData = await apolloClient.query({
     query: GET_POST_BY_SLUG,
     variables: {
-      slug: params.postSlug
+      slug: postSlug
     },
     fetchPolicy: 'cache-first',
   })
 
-  const post = postData?.data?.postBy
+  const post = postData?.data.postBy
+  const site = {
+    ...postData?.data.generalSettings
+  }
+
+  const postsData = await apolloClient.query({
+    query: GET_ALL_POSTS
+  })
+
+  const posts = postsData?.data.posts.edges.map(({ node }) => node)
+
+  const paths = posts.map(({ slug }) => ({
+    params: {
+      postSlug: slug
+    }
+  }))
 
   return {
     props: {
-      post
+      post,
+      site,
+      paths,
+      cookies: req.headers.cookie ?? ''
     }
   }
 }
