@@ -21,17 +21,7 @@ const LoadingLink = ({ href, path, children, ...props }) => {
   const linkColor = useColorModeValue('black.500', '#ffff');
 
   return (
-    <>
-      {loading && (
-        <Box
-          position="fixed"
-          bottom="2rem" // Adjust this value to change the distance from the bottom
-          right="2rem" // Adjust this value to change the distance from the right
-          zIndex="9999"
-        >
-          <Spinner color={linkColor} size="md" /> {/* Use the linkColor variable */}
-        </Box>
-      )}
+    <Box position="relative" display="inline-block">
       <NextLink href={href} passHref scroll={false}>
         <Link
           color={path === href ? '#a6bbce' : linkColor}
@@ -44,6 +34,16 @@ const LoadingLink = ({ href, path, children, ...props }) => {
           {children}
         </Link>
       </NextLink>
+      {loading && (
+        <Box
+          position="fixed"
+          bottom="2rem" // Adjust this value to change the distance from the bottom
+          right="2rem" // Adjust this value to change the distance from the right
+          zIndex="9999"
+        >
+          <Spinner color={linkColor} size="md" />
+        </Box>
+      )}
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -54,7 +54,7 @@ const LoadingLink = ({ href, path, children, ...props }) => {
           `,
         }}
       />
-    </>
+    </Box>
   );
 };
 

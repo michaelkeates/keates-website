@@ -21,6 +21,7 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import { getApolloClient } from '../lib/wordpress'
+import { useQuery } from "@apollo/client";
 
 import styles from '../styles/Home.module.css'
 import styles2 from '../styles/emoji.module.css'
@@ -60,6 +61,12 @@ function dayMonth(data) {
 }
 
 export default function Home({ posts }) {
+  const apolloClient = getApolloClient(); // Get Apollo client instance
+  const { loading, error, data } = useQuery(GET_ALL_POSTS, {
+    fetchPolicy: "cache-first", // Add the fetchPolicy here
+    client: apolloClient, // Provide the client instance to the hook
+  });
+  
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 6
 
@@ -173,10 +180,10 @@ export default function Home({ posts }) {
   )
 }
 
-// Change 'getStaticProps' to 'getServerSideProps'
-//export async function getServerSideProps() {
+//change getServersideProps to getStaticProps
+//export async function getStaticProps() {
 //  const apolloClient = getApolloClient()
-
+//
 //  const postData = await apolloClient.query({
 //    query: GET_ALL_POSTS
 //  })
@@ -197,26 +204,25 @@ export default function Home({ posts }) {
 //  }
 //}
 
-//change getServersideProps to getStaticProps
-export async function getStaticProps() {
-  const apolloClient = getApolloClient()
+export async function getServerSideProps() {
+  const apolloClient = getApolloClient();
 
   const postData = await apolloClient.query({
-    query: GET_ALL_POSTS
-  })
+    query: GET_ALL_POSTS,
+  });
 
   const posts = postData?.data.posts.edges
     .map(({ node }) => node)
-    .map(post => {
+    .map((post) => {
       return {
         ...post,
-        path: `/posts/${post.slug}`
-      }
-    })
+        path: `/posts/${post.slug}`,
+      };
+    });
 
   return {
     props: {
-      posts
-    }
-  }
+      posts,
+    },
+  };
 }

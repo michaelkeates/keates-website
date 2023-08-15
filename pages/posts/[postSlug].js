@@ -386,13 +386,14 @@ export default function Post({ post }) {
 
 // Add the getStaticProps function to fetch the specific post data
 export async function getServerSideProps({ params }) {
-  const apolloClient = getApolloClient()
+  const apolloClient = getApolloClient();
 
   const postData = await apolloClient.query({
     query: GET_POST_BY_SLUG,
     variables: {
       slug: params.postSlug
-    }
+    },
+    fetchPolicy: 'cache-first',
   })
 
   const post = postData?.data?.postBy
