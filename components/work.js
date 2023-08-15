@@ -1,12 +1,12 @@
-import NextLink from 'next/link'
 import { Heading, Box, Image, Link, Badge, useColorModeValue } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import LoadingLink from './loadinglink'
 
 export const Title = ({ children }) => (
   <Box>
-    <NextLink href="/about" passHref>
-      <Link>About</Link>
-    </NextLink>
+    <LoadingLink href="/about" passHref>
+      <Link fontSize={16}>About</Link>
+    </LoadingLink>
     <span>
       {' '}
       <ChevronRightIcon />{' '}
@@ -19,9 +19,9 @@ export const Title = ({ children }) => (
 
 export const Portfolio = ({ children }) => (
   <Box>
-    <NextLink href="/portfolio" passHref>
-      <Link>Portfolio</Link>
-    </NextLink>
+    <LoadingLink href="/portfolio" passHref>
+      <Link fontSize={16}>Portfolio</Link>
+    </LoadingLink>
     <span>
       {' '}
       <ChevronRightIcon />{' '}
@@ -34,9 +34,9 @@ export const Portfolio = ({ children }) => (
 
 export const Blog = ({ children }) => (
   <Box>
-    <NextLink href="/posts" passHref>
-      <Link>Blog</Link>
-    </NextLink>
+    <LoadingLink href="/posts" passHref>
+      <Link fontSize={16}>Blog</Link>
+    </LoadingLink>
     <span>
       {' '}
       <ChevronRightIcon />{' '}
@@ -49,9 +49,9 @@ export const Blog = ({ children }) => (
 
 export const Repo = ({ children }) => (
   <Box>
-    <NextLink href="/repositories" passHref>
-      <Link>Portfolio</Link>
-    </NextLink>
+    <LoadingLink href="/repositories" passHref>
+      <Link fontSize={16}>Portfolio</Link>
+    </LoadingLink>
     <span>
       {' '}
       <ChevronRightIcon />{' '}

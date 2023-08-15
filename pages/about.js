@@ -26,6 +26,7 @@ import React, { useState } from 'react'
 import styles from '../styles/emoji.module.css'
 import Bubble from '../components/bubbleheader'
 import NextLink from 'next/link'
+import LoadingLink from '../components/loadinglink'
 
 import {
   CplusplusIcon,
@@ -337,7 +338,7 @@ const Home = () => {
                 <Image src={thumbusw} width={100} />
               </Box>
               <Box marginRight={4}>
-                <NextLink
+                <LoadingLink
                   href="qualificatons/uswapplied"
                   passHref
                   scroll={false}
@@ -352,7 +353,7 @@ const Home = () => {
                   >
                     University of South Wales
                   </Heading>
-                </NextLink>
+                </LoadingLink>
                 <Heading
                   as="h2"
                   fontFamily="Roboto"
@@ -430,7 +431,7 @@ const Home = () => {
                 <Image src={thumbusw} width={100} />
               </Box>
               <Box marginRight={4}>
-                <NextLink href="qualificatons/uswhnd" passHref scroll={false}>
+                <LoadingLink href="qualificatons/uswhnd" passHref scroll={false}>
                   <Heading
                     as="h2"
                     fontFamily="Roboto"
@@ -441,7 +442,7 @@ const Home = () => {
                   >
                     University of South Wales
                   </Heading>
-                </NextLink>
+                </LoadingLink>
                 <Heading
                   as="h2"
                   fontFamily="Roboto"
@@ -510,7 +511,7 @@ const Home = () => {
                   <Image src={thumbcc} width={100} />
                 </Box>
                 <Box marginRight={4}>
-                  <NextLink
+                  <LoadingLink
                     href="qualificatons/coleggwentbtec"
                     passHref
                     scroll={false}
@@ -525,7 +526,7 @@ const Home = () => {
                     >
                       Coleg Gwent
                     </Heading>
-                  </NextLink>
+                  </LoadingLink>
                   <Heading
                     as="h2"
                     fontFamily="Roboto"
