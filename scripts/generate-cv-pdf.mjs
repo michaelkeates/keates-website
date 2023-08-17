@@ -163,7 +163,7 @@ async function generatePDF() {
     })
 
     const unwantedElements = document.querySelectorAll(
-      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .chakra-heading.css-17wi6zd, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy'
+      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .chakra-heading.css-17wi6zd, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy, .css-p77vvx'
     )
 
     customGridElements.forEach(element => {
@@ -174,7 +174,7 @@ async function generatePDF() {
     })
 
     customGridElements2.forEach(element => {
-      element.style.marginBottom = '-12px'
+      element.style.marginBottom = '-6px'
     })
 
     customGridElements3.forEach(element => {
