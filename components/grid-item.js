@@ -80,10 +80,10 @@ export const PortfolioGridItem = ({ children, id, title, thumbnail }) => (
 export const GridItemStyle = () => (
   <Global
     styles={`
-      .grid-item-thumbnail {
-        border-radius: 12px;
-        align-item: center;
-        filter: 'blur(10px)';
+    .grid-item-thumbnail {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      /* Add other styles as needed */
       }
     `}
   />

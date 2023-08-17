@@ -95,14 +95,12 @@ export default function Home({ posts }) {
             {postsToDisplay.map(post => (
               <Section delay={0.1} key={post.slug}>
                 <Box
-                  borderRadius="lg"
                   textAlign="center"
-                  mb={-1}
-                  p={4}
-                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                  css={{ backdropFilter: 'blur(10px)' }}
-                  padding="15px"
+                  bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
+                  css={{ backdropFilter: "blur(10px)" }}
                   boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                  borderRadius="10px"
+                  padding="1px"
                 >
                   <GridItem
                     thumbnail={post.featuredImage.node.sourceUrl}
@@ -113,27 +111,22 @@ export default function Home({ posts }) {
                         __html: post.excerpt
                       }}
                     />
-                    <br />
                     <Badge
                       bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
                       color=""
                       whiteSpace="normal"
+                      marginTop="10px"
+                      marginBottom="10px"
                     >
                       🗓️ {dayMonth(post.date)}
                     </Badge>
                   </GridItem>
-                  <br />
                   <LoadingLink href={post.path} passHref scroll={false}>
                     <Button
-                    
-                      width="100%"
-                      alignItems="center"
-                      rightIcon={<ChevronRightIcon />}
-                      bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                      _hover={{
-                        bg: useColorModeValue('#ffffff', '#828282')
-                      }}
                       boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                      fontSize="14px"
+                      marginTop="10px"
+                      marginBottom="10px"
                     >
                       Read More
                     </Button>
