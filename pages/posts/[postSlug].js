@@ -384,6 +384,7 @@ export default function Post({ post }) {
                 />
                 <Button
                   colorScheme="green"
+                  color="white"
                   position="flex"
                   bottom="5px"
                   right="5px"
