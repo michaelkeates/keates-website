@@ -78,11 +78,14 @@ function dayMonth(data) {
 }
 
 export default function Post({ post }) {
+  const [isNameValid, setIsNameValid] = useState(true)
+  const [isEmailValid, setIsEmailValid] = useState(true)
+  const [isCommentValid, setIsCommentValid] = useState(true)
   const toast = useToast()
   const blockquoteRefs = useRef([])
   const isMounted = useRef(false)
   const [isCopied, setIsCopied] = useState(false)
-  const [isPageReloading, setIsPageReloading] = useState(false);
+  const [isPageReloading, setIsPageReloading] = useState(false)
 
   const [newComment, setNewComment] = useState('')
   const [authorName, setAuthorName] = useState('')
@@ -91,11 +94,37 @@ export default function Post({ post }) {
     useCreateCommentMutation()
 
   const handleCommentSubmit = async () => {
-    // Check if newComment and authorName have valid values
-    //if (!newComment || !authorName || !email) {
-    //  console.error('Please enter both comment and author name.')
-    //  return
-    //}
+    if (!authorName || !email || !newComment) {
+      // Update validation status for each field
+      setIsNameValid(!!authorName)
+      setIsEmailValid(!!email)
+      setIsCommentValid(!!newComment)
+
+      // Show error toast for fields that are not valid
+      toast({
+        title: 'Please fill in all fields.',
+        status: 'error',
+        duration: 2000,
+        isClosable: true,
+        position: 'topright'
+      })
+      return
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email.match(emailRegex)) {
+      setIsEmailValid(false)
+
+      toast({
+        title: 'Invalid email format.',
+        status: 'error',
+        duration: 2000,
+        isClosable: true,
+        position: 'topright'
+      })
+      return
+    }
 
     try {
       const { data } = await createCommentMutation({
@@ -113,27 +142,21 @@ export default function Post({ post }) {
       toast({
         title: 'Comment added!',
         status: 'success',
-        duration: 9000,
+        duration: 2000,
         isClosable: true,
-        position: 'bottom',
-        render: () => (
-          <Box
-            color="white"
-            p={3}
-            bg="green.500"
-            borderRadius="md"
-            boxShadow="md"
-            zIndex="9999"
-            // Customize the bottom spacing as needed
-            css={{ marginBottom: '50px' }}
-          >
-            Comment added successfully!
-          </Box>
-        )
+        position: 'topright'
       })
+
+      // Reset validation status after successful submission
+      setIsNameValid(true)
+      setIsEmailValid(true)
+      setIsCommentValid(true)
+
+      //You can consider removing the page reload
       setIsPageReloading(true)
-      // Reload the page after successful submission
-      window.location.reload()
+      setTimeout(() => {
+        window.location.reload()
+      }, 4000) // Delayed page reload
     } catch (error) {
       console.error('Error creating comment:', error.message)
     }
@@ -143,28 +166,28 @@ export default function Post({ post }) {
     const fetchData = async () => {
       try {
         // Fetch the updated post data using the slug
-        const apolloClient = getApolloClient();
+        const apolloClient = getApolloClient()
         const postData = await apolloClient.query({
           query: GET_POST_BY_SLUG,
           variables: {
-            slug: post.slug,
+            slug: post.slug
           },
-          fetchPolicy: 'cache-first',
-        });
-  
-        const updatedPost = postData?.data?.postBy;
-  
+          fetchPolicy: 'cache-first'
+        })
+
+        const updatedPost = postData?.data?.postBy
+
         // TODO: Set the updatedPost to the component state or wherever you need it
       } catch (error) {
-        console.error('Error fetching updated post data:', error.message);
+        console.error('Error fetching updated post data:', error.message)
       }
-    };
-  
+    }
+
     const fetchUpdatedPostData = () => {
       if (isCopied) {
-        fetchData(); // Fetch the updated post data when isCopied changes (i.e., after the user submits a comment and the page reloads)
+        fetchData() // Fetch the updated post data when isCopied changes (i.e., after the user submits a comment and the page reloads)
       }
-    };
+    }
     if (!isMounted.current) {
       isMounted.current = true
       const blockquotes = Array.from(
@@ -193,8 +216,8 @@ export default function Post({ post }) {
               status: 'success',
               position: 'top-right',
               duration: 2000, // Change the duration here (in milliseconds)
-              isClosable: true,
-            });
+              isClosable: true
+            })
           }
 
           ReactDOM.render(
@@ -340,6 +363,7 @@ export default function Post({ post }) {
                   size="md"
                   value={authorName}
                   onChange={e => setAuthorName(e.target.value)}
+                  borderColor={isCommentValid ? undefined : "red"}
                   marginBottom="10px" // Add some spacing between the input and the textarea
                 />
                 <Input
@@ -347,6 +371,7 @@ export default function Post({ post }) {
                   size="md"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
+                  borderColor={isCommentValid ? undefined : "red"}
                   marginBottom="10px" // Add some spacing between the input and the textarea
                 />
                 <Textarea
@@ -354,6 +379,7 @@ export default function Post({ post }) {
                   size="md"
                   flex="1"
                   value={newComment}
+                  borderColor={isCommentValid ? undefined : "red"}
                   onChange={e => setNewComment(e.target.value)}
                 />
                 <Button
@@ -388,14 +414,14 @@ export default function Post({ post }) {
 export async function getServerSideProps({ params, req }) {
   const { postSlug } = params
 
-  const apolloClient = getApolloClient();
+  const apolloClient = getApolloClient()
 
   const postData = await apolloClient.query({
     query: GET_POST_BY_SLUG,
     variables: {
       slug: postSlug
     },
-    fetchPolicy: 'cache-first',
+    fetchPolicy: 'cache-first'
   })
 
   const post = postData?.data.postBy
