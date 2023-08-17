@@ -11,7 +11,7 @@ import { getApolloClient } from '../lib/github'
 import { useQuery } from '@apollo/client'
 import Bubble from '../components/bubbleheader'
 import LoadingLink from '../components/loadinglink'
-import { useRouter } from 'next/router'; // Add this import
+import { useRouter } from 'next/router' // Add this import
 
 import { GET_USER_REPOSITORIES } from '../lib/queries'
 
@@ -49,11 +49,11 @@ function dayMonth(data) {
 }
 
 export default function Home({ repository }) {
-  const apolloClient = getApolloClient(); // Get Apollo client instance
+  const apolloClient = getApolloClient() // Get Apollo client instance
   const { loading, error, data } = useQuery(GET_USER_REPOSITORIES, {
-    fetchPolicy: "cache-first", // Add the fetchPolicy here
-    client: apolloClient, // Provide the client instance to the hook
-  });
+    fetchPolicy: 'cache-first', // Add the fetchPolicy here
+    client: apolloClient // Provide the client instance to the hook
+  })
 
   const [currentPage, setCurrentPage] = useState(1)
   const repositoriesPerPage = 6
@@ -115,14 +115,10 @@ export default function Home({ repository }) {
                   <br></br>
                   <LoadingLink href={item.path} passHref scroll={false}>
                     <Button
-                      width="100%"
-                      alignItems="center"
-                      rightIcon={<ChevronRightIcon />}
-                      bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                      _hover={{
-                        bg: useColorModeValue('#ffffff', '#828282')
-                      }}
                       boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                      fontSize="14px"
+                      marginTop="10px"
+                      marginBottom="10px"
                     >
                       Read More
                     </Button>
