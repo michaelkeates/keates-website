@@ -421,7 +421,7 @@ export async function getServerSideProps({ params, req }) {
     variables: {
       slug: postSlug
     },
-    fetchPolicy: 'cache-first'
+    fetchPolicy: 'network-only'
   })
 
   const post = postData?.data.postBy
