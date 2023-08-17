@@ -414,8 +414,7 @@ const Home = () => {
                     exemplified through projects completed during studies
                   </li>
                   <li>
-                    Embraced the role of a computing professional in practice,
-                    developing a holistic understanding of industry expectations
+                    Developed a holistic understanding of industry expectations
                     and best practices
                   </li>
                 </ul>
