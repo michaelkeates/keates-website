@@ -266,9 +266,18 @@ const Home = () => {
                     fontWeight="600"
                     fontSize={13}
                     textAlign="left"
+                    marginBottom="2px"
                   >
-                    Heavy Lift Logistics East Africa Limited - Graphic Designer
-                    (Remote)
+                    Heavy Lift Logistics East Africa Limited
+                  </Heading>
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="400"
+                    fontSize={11}
+                    textAlign="left"
+                  >
+                    Remote Creative Strategist & Design Consultant
                   </Heading>
                 </Box>
                 <Box
@@ -290,17 +299,20 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Communicated with clients to understand requirements for
-                      new sister company
+                      Designed and developed company logo, capturing brand
+                      identity and values
                     </li>
                     <li>
-                      Produced accurate transport plans using both Adobe
-                      Photopshop & Illustrator
+                      Created compelling and engaging presentations for clients,
+                      effectively conveying complex ideas and proposal
                     </li>
-                    <li>Designed the company Logo</li>
                     <li>
-                      Increased my confidence and proud of being part of a
-                      number of heavy lift projects across East Africa
+                      Produced comprehensive and efficient transport plans,
+                      optimizing logisistics and ensuring smooth operations
+                    </li>
+                    <li>
+                      Worked remotely to manage projects, collaborating with
+                      clients to achieve project goals
                     </li>
                   </ul>
                 </Box>
@@ -383,27 +395,33 @@ const Home = () => {
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                   <li>
-                    Ability to handle, analyse and interpret large, complex data
-                    and processed to be used in mapping APIs
-                  </li>
-                  <li>Advanced problem solving and numeracy skills</li>
-                  <li>
-                    Developed a Full Stack app that allows individuals to use a
-                    Operating System on their browser for Individual Project
+                    Proficient in interpreting and analysing complex data to
+                    create informative and visually appearing maps using GIS
+                    Technologies
                   </li>
                   <li>
-                    Organised a Open Beta test of the Individual Project where
-                    are group of students voluntered to use the app with a
-                    overall positive feedback
+                    Demonstrated ability to apply advanced concepts of internet
+                    and comouting to read-world projects, ensuring efficient and
+                    innovative solutions
                   </li>
                   <li>
-                    Offered to do my Phd by professor after recieving a First
-                    across all modules
+                    Strong understanding of database modeling principles,
+                    enabling effective data organization and manipulation for
+                    various applications
+                  </li>
+                  <li>
+                    Applied computing knowledge to create practical solutions,
+                    exemplified through projects completed during studies
+                  </li>
+                  <li>
+                    Embraced the role of a computing professional in practice,
+                    developing a holistic understanding of industry expectations
+                    and best practices
                   </li>
                 </ul>
                 <Divider marginTop={3} marginBottom={3} />
                 <div>
-                  Notable Modules - Advanced Internet & Computing, Advanced
+                  Relevant Modules - Advanced Internet & Computing, Advanced
                   Databases & Modelling, GIS and the Spatial Web, The Computing
                   Professional in Practice
                 </div>
@@ -431,7 +449,11 @@ const Home = () => {
                 <Image src={thumbusw} width={100} />
               </Box>
               <Box marginRight={4}>
-                <LoadingLink href="qualificatons/uswhnd" passHref scroll={false}>
+                <LoadingLink
+                  href="qualificatons/uswhnd"
+                  passHref
+                  scroll={false}
+                >
                   <Heading
                     as="h2"
                     fontFamily="Roboto"
@@ -472,17 +494,27 @@ const Home = () => {
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                   <li>
-                    Accomplished communication skills, both written and
-                    verbally, developed through essays and presentations
+                    Proficient in multiple programming languages, with a strong
+                    ability to conceptualize, develop, and debug complex code
                   </li>
                   <li>
-                    Developed a Crime Alert/Tracking Mobile App for iOS &
-                    Android for Individual Project
+                    Created responsive and user-friendly websites through
+                    mastery of Responsive Web Development principles
+                  </li>
+                  <li>
+                    Acquired expertise in Computer Systems Security,
+                    implementing strategies to safeguard digital assets and
+                    mitigate risks
+                  </li>
+                  <li>
+                    Developed a solid foundation in Systems Architecture and
+                    Modelling, enabling effective design and optimization of
+                    software systems
                   </li>
                 </ul>
                 <Divider marginTop={3} marginBottom={3} />
                 <div>
-                  Notable Modules - Information Systems Analysis & Design,
+                  Relevant Modules - Information Systems Analysis & Design,
                   Computer Programming, Responsive Web Development, Computer
                   Systems Security, Systems Architecture and Modelling
                 </div>
@@ -556,12 +588,15 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Voluntered to help set up machines and teach students how
-                      to create RJ45/Cate5e Ethernet cables for the WorldSkills
-                      UK Wales Competition
+                      Contributed to the setup of machinery and provided
+                      guidance to students in the creation of RJ45/Cat5e
+                      Ethernet cables for the WorldSkills UK Wales Competition
                     </li>
                     <li>
-                      Reached the semi finals of the AWS Project Competition
+                      Attained the semi-finals of the AWS Project Competition,
+                      showcasing technical expertise and innovative
+                      problem-solving skills in raising awareness for knife
+                      crime
                     </li>
                   </ul>
                 </Box>
@@ -1079,6 +1114,6 @@ export async function getServerSideProps({ req }) {
   return {
     props: {
       cookies: req.headers.cookie ?? ''
-    },
-  };
+    }
+  }
 }
