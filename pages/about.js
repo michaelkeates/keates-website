@@ -400,9 +400,9 @@ const Home = () => {
                     Technologies
                   </li>
                   <li>
-                    Demonstrated ability to apply advanced concepts of internet
-                    and comouting to read-world projects, ensuring efficient and
-                    innovative solutions
+                    Demonstrated ability to apply advanced concepts to
+                    read-world projects, ensuring efficient and innovative
+                    solutions
                   </li>
                   <li>
                     Strong understanding of database modeling principles,
@@ -502,11 +502,6 @@ const Home = () => {
                     mastery of Responsive Web Development principles
                   </li>
                   <li>
-                    Acquired expertise in Computer Systems Security,
-                    implementing strategies to safeguard digital assets and
-                    mitigate risks
-                  </li>
-                  <li>
                     Developed a solid foundation in Systems Architecture and
                     Modelling, enabling effective design and optimization of
                     software systems
@@ -594,9 +589,8 @@ const Home = () => {
                     </li>
                     <li>
                       Attained the semi-finals of the AWS Project Competition,
-                      showcasing technical expertise and innovative
-                      problem-solving skills in raising awareness for knife
-                      crime
+                      showcasing innovative problem-solving skills in raising
+                      awareness for knife crime
                     </li>
                   </ul>
                 </Box>
