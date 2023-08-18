@@ -192,14 +192,15 @@ export default function Home({ repository }) {
                       ))}
                     </Flex>
                   </VStack>
-                  <Badge
-                    bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
-                    color=""
-                    whiteSpace="normal"
-                    marginTop="5px"
+                  <Box
+                    borderRadius="4px"
+                    marginTop="12px"
+                    marginBottom="2px"
+                    fontSize={12}
                   >
+                    {' '}
                     🗓️ {dayMonth(item.updatedAt)}
-                  </Badge>
+                  </Box>
                 </GridItem>
                 <LoadingLink href={item.path} passHref scroll={false}>
                   <Button
