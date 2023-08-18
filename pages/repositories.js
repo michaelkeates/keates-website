@@ -167,33 +167,12 @@ export default function Home({ repository }) {
                         ></Box>
                       ))}
                     </Flex>
-                    <Flex
-                      justifyContent={
-                        sortedLanguages.length === 1 ? 'flex-start' : 'center'
-                      }
-                      fontSize="12px"
-                      width="100%"
-                      flexWrap="wrap"
-                    >
+                    <SimpleGrid columns={[1, 2, 3]}>
                       {sortedLanguages.map((lang, index) => (
                         <Flex
                           key={index}
                           flexDirection="column"
-                          alignItems={
-                            sortedLanguages.length === 1
-                              ? 'flex-start'
-                              : 'center'
-                          }
-                          marginBottom={
-                            sortedLanguages.length === 3 ? '5px' : '0'
-                          }
-                          width={
-                            sortedLanguages.length === 1
-                              ? '100%'
-                              : sortedLanguages.length === 3
-                              ? '33.33%'
-                              : '50%'
-                          }
+                          alignItems="center"
                         >
                           <Box
                             display="inline-block"
@@ -202,6 +181,8 @@ export default function Home({ repository }) {
                             borderRadius="4px"
                             marginTop="4px"
                             marginBottom="6px"
+                            marginRight="4px"
+                            marginLeft="4px"
                             color="#ffffff"
                           >
                             {lang.name}
@@ -209,7 +190,7 @@ export default function Home({ repository }) {
                           <Box>{lang.width.toFixed(1)}%</Box>
                         </Flex>
                       ))}
-                    </Flex>
+                    </SimpleGrid>
                   </VStack>
                   <Box
                     borderRadius="4px"
