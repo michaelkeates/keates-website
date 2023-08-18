@@ -118,6 +118,10 @@ export default function Home({ repository }) {
               })
             }
 
+            const sortedLanguages = languagesAboveOnePercent
+              .slice()
+              .sort((a, b) => b.width - a.width)
+
             return (
               <Box
                 key={item.name}
@@ -146,7 +150,7 @@ export default function Home({ repository }) {
                       marginBottom: '10px'
                     }}
                   >
-                    {languagesAboveOnePercent.map((lang, index) => (
+                    {sortedLanguages.map((lang, index) => (
                       <div
                         key={index}
                         style={{
@@ -165,7 +169,7 @@ export default function Home({ repository }) {
                         left: '-4px',
                         width: '8px',
                         height: '100%',
-                        backgroundColor: languagesAboveOnePercent[0].color,
+                        backgroundColor: sortedLanguages[0].color,
                         borderTopLeftRadius: '4px',
                         borderBottomLeftRadius: '4px',
                         zIndex: '-1'
@@ -179,9 +183,7 @@ export default function Home({ repository }) {
                         width: '8px',
                         height: '100%',
                         backgroundColor:
-                          languagesAboveOnePercent[
-                            languagesAboveOnePercent.length - 1
-                          ].color,
+                          sortedLanguages[sortedLanguages.length - 1].color,
                         borderTopRightRadius: '4px',
                         borderBottomRightRadius: '4px',
                         zIndex: '-1'
@@ -195,7 +197,7 @@ export default function Home({ repository }) {
                       fontSize: '12px'
                     }}
                   >
-                    {languagesAboveOnePercent.map((lang, index) => (
+                    {sortedLanguages.map((lang, index) => (
                       <div
                         key={index}
                         style={{
