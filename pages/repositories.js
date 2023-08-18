@@ -169,7 +169,7 @@ export default function Home({ repository }) {
     </Flex>
     <Flex
       flexWrap="wrap"
-      justifyContent="center" // Center items on mobile
+      justifyContent={sortedLanguages.length === 3 ? "space-between" : "center"}
       fontSize="12px"
       width="100%"
     >
@@ -179,7 +179,11 @@ export default function Home({ repository }) {
           flexDirection="column"
           alignItems="center"
           marginBottom="5px" // Add some vertical spacing
-          width="50%" // Show two languages side by side on mobile
+          width={
+            sortedLanguages.length === 3
+              ? "30%" // Show three languages side by side
+              : "50%" // Show two languages side by side
+          }
         >
           <Box
             display="inline-block"
