@@ -199,7 +199,7 @@ export default function Home({ repository }) {
                     fontSize={12}
                   >
                     {' '}
-                    🗓️ {dayMonth(item.updatedAt)}
+                    🗓️ {dayMonth(item.createdAt)}
                   </Box>
                 </GridItem>
                 <LoadingLink href={item.path} passHref scroll={false}>
