@@ -167,13 +167,33 @@ export default function Home({ repository }) {
                         ></Box>
                       ))}
                     </Flex>
-                    <SimpleGrid columns={[2, null, 3]} >
-
+                    <Flex
+                      justifyContent={
+                        sortedLanguages.length === 1 ? 'flex-start' : 'center'
+                      }
+                      fontSize="12px"
+                      width="100%"
+                      flexWrap="wrap"
+                    >
                       {sortedLanguages.map((lang, index) => (
                         <Flex
                           key={index}
                           flexDirection="column"
-                          alignItems="center"
+                          alignItems={
+                            sortedLanguages.length === 1
+                              ? 'flex-start'
+                              : 'center'
+                          }
+                          marginBottom={
+                            sortedLanguages.length === 3 ? '5px' : '0'
+                          }
+                          width={
+                            sortedLanguages.length === 1
+                              ? '100%'
+                              : sortedLanguages.length === 3
+                              ? '33.33%'
+                              : '50%'
+                          }
                         >
                           <Box
                             display="inline-block"
@@ -182,8 +202,6 @@ export default function Home({ repository }) {
                             borderRadius="4px"
                             marginTop="4px"
                             marginBottom="6px"
-                            marginRight="4px"
-                            marginLeft="4px"
                             color="#ffffff"
                           >
                             {lang.name}
@@ -191,8 +209,7 @@ export default function Home({ repository }) {
                           <Box>{lang.width.toFixed(1)}%</Box>
                         </Flex>
                       ))}
-
-                    </SimpleGrid>
+                    </Flex>
                   </VStack>
                   <Box
                     borderRadius="4px"
@@ -204,6 +221,7 @@ export default function Home({ repository }) {
                     🗓️ {dayMonth(item.createdAt)}
                   </Box>
                 </GridItem>
+
                 <LoadingLink href={item.path} passHref scroll={false}>
                   <Button
                     boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
