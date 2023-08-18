@@ -14,6 +14,7 @@ import LoadingLink from '../components/loadinglink'
 import { useRouter } from 'next/router' // Add this import
 
 import { GET_USER_REPOSITORIES } from '../lib/queries'
+import { color } from 'framer-motion'
 
 function dayMonth(data) {
   const monthNames = [
@@ -55,6 +56,8 @@ export default function Home({ repository }) {
     client: apolloClient // Provide the client instance to the hook
   })
 
+  const repositories = data?.user?.repositories?.edges || []
+
   const [currentPage, setCurrentPage] = useState(1)
   const repositoriesPerPage = 6
 
@@ -79,56 +82,172 @@ export default function Home({ repository }) {
     <Layout>
       <Container>
         <Bubble text="Check out my current and past projects!" emoji="🚀" />
-        <SimpleGrid columns={[2, 2, 2]} gap={4}>
+        <SimpleGrid columns={[1, null, 2]} gap={4}>
           {repositoriesToDisplay.map((item, index) => {
             const thumb = item.openGraphImageUrl
             const github = item.url
 
+            const languages = item.languages.edges
+
+            const totalLanguageSize = languages.reduce(
+              (acc, lang) => acc + lang.size,
+              0
+            )
+
+            const languageLengths = languages.map(lang => ({
+              name: lang.node.name,
+              color: lang.node.color,
+              width: (lang.size / totalLanguageSize) * 100
+            }))
+
+            let cumulativePercentage = 0
+            const languagesAboveOnePercent = languageLengths.filter(lang => {
+              if (lang.width >= 1) {
+                return true
+              } else {
+                cumulativePercentage += lang.width
+                return false
+              }
+            })
+
+            if (cumulativePercentage > 0) {
+              languagesAboveOnePercent.push({
+                name: 'Other',
+                color: '#808080', // Grey color
+                width: cumulativePercentage
+              })
+            }
+
             return (
-              <Section key={item.name}>
-                <Box
-                  borderRadius="lg"
-                  mb={-1}
-                  p={4}
-                  textAlign="center"
-                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                  css={{ backdropFilter: 'blur(10px)' }}
-                  boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              <Box
+                key={item.name}
+                borderRadius="lg"
+                mb={-1}
+                p={4}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <GridItem
+                  id={github}
+                  thumbnail={thumb}
+                  title={item.name}
+                  target="_blank"
                 >
-                  <GridItem
-                    id={github}
-                    thumbnail={thumb}
-                    title={item.name}
-                    target="_blank"
+                  {item.description}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginBottom: '5px',
+                      position: 'relative',
+                      marginTop: '10px',
+                      marginBottom: '10px'
+                    }}
                   >
-                    {item.description}
-                    <br></br>
-                    <Badge
-                      bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
-                      color=""
-                      whiteSpace="normal"
-                      marginTop="10px"
-                    >
-                      🗓️ {dayMonth(item.updatedAt)}
-                    </Badge>
-                  </GridItem>
-                  <br></br>
-                  <LoadingLink href={item.path} passHref scroll={false}>
-                    <Button
-                      boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-                      fontSize="14px"
-                      marginTop="10px"
-                      marginBottom="10px"
-                    >
-                      Read More
-                    </Button>
-                  </LoadingLink>
-                </Box>
-              </Section>
+                    {languagesAboveOnePercent.map((lang, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          width: `${lang.width}%`,
+                          height: '8px',
+                          backgroundColor: lang.color,
+                          marginRight: '1px',
+                          boxShadow: '0px 0px 12px 0px rgba(0,0,0,0.05);'
+                        }}
+                      ></div>
+                    ))}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '0',
+                        left: '-4px',
+                        width: '8px',
+                        height: '100%',
+                        backgroundColor: languagesAboveOnePercent[0].color,
+                        borderTopLeftRadius: '4px',
+                        borderBottomLeftRadius: '4px',
+                        zIndex: '-1'
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '0',
+                        right: '-4px',
+                        width: '8px',
+                        height: '100%',
+                        backgroundColor:
+                          languagesAboveOnePercent[
+                            languagesAboveOnePercent.length - 1
+                          ].color,
+                        borderTopRightRadius: '4px',
+                        borderBottomRightRadius: '4px',
+                        zIndex: '-1'
+                      }}
+                    ></div>
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      fontSize: '12px'
+                    }}
+                  >
+                    {languagesAboveOnePercent.map((lang, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center'
+                        }}
+                      >
+                        <div
+                          style={{
+                            display: 'inline-block',
+                            backgroundColor: lang.color,
+                            padding: '2px 6px',
+                            borderRadius: '4px',
+                            marginBottom: '6px',
+                            color: '#ffffff'
+                          }}
+                        >
+                          {lang.name}
+                        </div>
+                        <div>{lang.width.toFixed(1)}%</div>
+                      </div>
+                    ))}
+                  </div>
+                  <Badge
+                    bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    color=""
+                    whiteSpace="normal"
+                    marginTop="20px"
+                  >
+                    🗓️ {dayMonth(item.updatedAt)}
+                  </Badge>
+                </GridItem>
+                <LoadingLink href={item.path} passHref scroll={false}>
+                  <Button
+                    boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                    fontSize="14px"
+                    marginTop="15px"
+                    marginBottom="5px"
+                    bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                    _hover={{
+                      bg: useColorModeValue('#ffffff', '#828282')
+                    }}
+                  >
+                    Read More
+                  </Button>
+                </LoadingLink>
+              </Box>
             )
           })}
         </SimpleGrid>
-        <SimpleGrid columns={[1, 1, 2]} gap={4}>
+        <SimpleGrid columns={[1, 1, 2]} gap={4} marginTop="20px">
           <Button
             onClick={goToPreviousPage}
             disabled={isBeginning}
