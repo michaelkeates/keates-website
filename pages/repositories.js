@@ -133,85 +133,88 @@ export default function Home({ repository }) {
                 css={{ backdropFilter: 'blur(10px)' }}
                 boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
               >
-<GridItem
-  id={github}
-  thumbnail={thumb}
-  title={item.name}
-  target="_blank"
->
-  {item.description}
-  <VStack spacing={1} marginBottom="10px" marginTop="10px">
-    <Flex
-      width="100%"
-      height="8px"
-      borderRadius="4px"
-      position="relative"
-      alignItems="center"
-      boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-    >
-      {sortedLanguages.map((lang, index) => (
-        <Box
-          key={index}
-          flex={`${lang.width} 0 0%`}
-          height="100%"
-          backgroundColor={lang.color}
-          borderRadius={
-            sortedLanguages.length === 1
-              ? '4px'
-              : index === 0
-              ? '4px 0 0 4px'
-              : index === sortedLanguages.length - 1
-              ? '0 4px 4px 0'
-              : '0'
-          }
-        ></Box>
-      ))}
-    </Flex>
-    <Flex
-      flexWrap="wrap"
-      justifyContent={sortedLanguages.length === 3 ? "space-between" : "center"}
-      fontSize="12px"
-      width="100%"
-    >
-      {sortedLanguages.map((lang, index) => (
-        <Flex
-          key={index}
-          flexDirection="column"
-          alignItems="center"
-          marginBottom="5px" // Add some vertical spacing
-          width={
-            sortedLanguages.length === 3
-              ? "30%" // Show three languages side by side
-              : "50%" // Show two languages side by side
-          }
-        >
-          <Box
-            display="inline-block"
-            backgroundColor={lang.color}
-            padding="2px 6px"
-            borderRadius="4px"
-            marginTop="4px"
-            marginBottom="6px"
-            color="#ffffff"
-          >
-            {lang.name}
-          </Box>
-          <Box>{lang.width.toFixed(1)}%</Box>
-        </Flex>
-      ))}
-    </Flex>
-  </VStack>
-  <Box
-    borderRadius="4px"
-    marginTop="12px"
-    marginBottom="2px"
-    fontSize={12}
-  >
-    {' '}
-    🗓️ {dayMonth(item.createdAt)}
-  </Box>
-</GridItem>
-
+                <GridItem
+                  id={github}
+                  thumbnail={thumb}
+                  title={item.name}
+                  target="_blank"
+                >
+                  {item.description}
+                  <VStack spacing={1} marginBottom="10px" marginTop="10px">
+                    <Flex
+                      width="100%"
+                      height="8px"
+                      borderRadius="4px"
+                      position="relative"
+                      alignItems="center"
+                      boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                    >
+                      {sortedLanguages.map((lang, index) => (
+                        <Box
+                          key={index}
+                          flex={`${lang.width} 0 0%`}
+                          height="100%"
+                          backgroundColor={lang.color}
+                          borderRadius={
+                            sortedLanguages.length === 1
+                              ? '4px'
+                              : index === 0
+                              ? '4px 0 0 4px'
+                              : index === sortedLanguages.length - 1
+                              ? '0 4px 4px 0'
+                              : '0'
+                          }
+                        ></Box>
+                      ))}
+                    </Flex>
+                    <Flex
+                      justifyContent={
+                        sortedLanguages.length === 1 ? 'flex-start' : 'center'
+                      }
+                      fontSize="12px"
+                      width="100%"
+                      flexWrap="wrap"
+                    >
+                      {sortedLanguages.map((lang, index) => (
+                        <Flex
+                          key={index}
+                          flexDirection="column"
+                          alignItems={
+                            sortedLanguages.length === 1
+                              ? 'flex-start'
+                              : 'center'
+                          }
+                          marginBottom={
+                            sortedLanguages.length === 3 ? '5px' : '0'
+                          }
+                          marginRight="10px"
+                        >
+                          <Box
+                            display="inline-block"
+                            backgroundColor={lang.color}
+                            padding="2px 6px"
+                            borderRadius="4px"
+                            marginTop="4px"
+                            marginBottom="6px"
+                            color="#ffffff"
+                          >
+                            {lang.name}
+                          </Box>
+                          <Box>{lang.width.toFixed(1)}%</Box>
+                        </Flex>
+                      ))}
+                    </Flex>
+                  </VStack>
+                  <Box
+                    borderRadius="4px"
+                    marginTop="12px"
+                    marginBottom="2px"
+                    fontSize={12}
+                  >
+                    {' '}
+                    🗓️ {dayMonth(item.createdAt)}
+                  </Box>
+                </GridItem>
 
                 <LoadingLink href={item.path} passHref scroll={false}>
                   <Button
