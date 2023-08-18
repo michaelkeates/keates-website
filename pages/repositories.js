@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { gql } from '@apollo/client'
-import { SimpleGrid, Box, Badge } from '@chakra-ui/react'
+import { SimpleGrid, Box, Badge, VStack, Flex } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
@@ -140,93 +140,63 @@ export default function Home({ repository }) {
                   target="_blank"
                 >
                   {item.description}
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      marginBottom: '5px',
-                      position: 'relative',
-                      marginTop: '10px',
-                      marginBottom: '10px'
-                    }}
-                  >
-                    {sortedLanguages.map((lang, index) => (
-                      <div
-                        key={index}
-                        style={{
-                          width: `${lang.width}%`,
-                          height: '8px',
-                          backgroundColor: lang.color,
-                          marginRight: '1px',
-                          boxShadow: '0px 0px 12px 0px rgba(0,0,0,0.05);'
-                        }}
-                      ></div>
-                    ))}
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: '0',
-                        left: '-4px',
-                        width: '8px',
-                        height: '100%',
-                        backgroundColor: sortedLanguages[0].color,
-                        borderTopLeftRadius: '4px',
-                        borderBottomLeftRadius: '4px',
-                        zIndex: '-1'
-                      }}
-                    ></div>
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: '0',
-                        right: '-4px',
-                        width: '8px',
-                        height: '100%',
-                        backgroundColor:
-                          sortedLanguages[sortedLanguages.length - 1].color,
-                        borderTopRightRadius: '4px',
-                        borderBottomRightRadius: '4px',
-                        zIndex: '-1'
-                      }}
-                    ></div>
-                  </div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      fontSize: '12px'
-                    }}
-                  >
-                    {sortedLanguages.map((lang, index) => (
-                      <div
-                        key={index}
-                        style={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center'
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: 'inline-block',
-                            backgroundColor: lang.color,
-                            padding: '2px 6px',
-                            borderRadius: '4px',
-                            marginBottom: '6px',
-                            color: '#ffffff'
-                          }}
+                  <VStack spacing={1} marginBottom="10px" marginTop="10px">
+                    <Flex
+                      width="100%"
+                      height="8px"
+                      borderRadius="4px"
+                      position="relative"
+                      alignItems="center"
+                      boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                    >
+                      {sortedLanguages.map((lang, index) => (
+                        <Box
+                          key={index}
+                          flex={`${lang.width} 0 0%`}
+                          height="100%"
+                          backgroundColor={lang.color}
+                          borderRadius={
+                            sortedLanguages.length === 1
+                              ? '4px'
+                              : index === 0
+                              ? '4px 0 0 4px'
+                              : index === sortedLanguages.length - 1
+                              ? '0 4px 4px 0'
+                              : '0'
+                          }
+                        ></Box>
+                      ))}
+                    </Flex>
+                    <Flex justifyContent="space-between" fontSize="12px">
+                      {sortedLanguages.map((lang, index) => (
+                        <Flex
+                          key={index}
+                          flexDirection="column"
+                          alignItems="center"
                         >
-                          {lang.name}
-                        </div>
-                        <div>{lang.width.toFixed(1)}%</div>
-                      </div>
-                    ))}
-                  </div>
+                          <Box
+                            display="inline-block"
+                            backgroundColor={lang.color}
+                            padding="2px 6px"
+                            borderRadius="4px"
+                            marginTop="4px"
+                            marginBottom="6px"
+                            marginRight="4px"
+                            marginLeft="4px"
+                            color="#ffffff"
+                          >
+                            {lang.name}
+                          </Box>
+                          <Box>{lang.width.toFixed(1)}%</Box>
+                        </Flex>
+                      ))}
+                    </Flex>
+                  </VStack>
                   <Badge
                     bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
                     color=""
                     whiteSpace="normal"
-                    marginTop="20px"
+                    marginTop="5px"
                   >
                     🗓️ {dayMonth(item.updatedAt)}
                   </Badge>
