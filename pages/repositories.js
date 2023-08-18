@@ -82,7 +82,7 @@ export default function Home({ repository }) {
     <Layout>
       <Container>
         <Bubble text="Check out my current and past projects!" emoji="🚀" />
-        <SimpleGrid columns={[1, null, 2]} gap={4}>
+        <SimpleGrid columns={[2, null, 2]} gap={4}>
           {repositoriesToDisplay.map((item, index) => {
             const thumb = item.openGraphImageUrl
             const github = item.url
@@ -167,7 +167,8 @@ export default function Home({ repository }) {
                         ></Box>
                       ))}
                     </Flex>
-                    <Flex justifyContent="space-between" fontSize="12px">
+                    <SimpleGrid columns={[2, null, 3]} >
+
                       {sortedLanguages.map((lang, index) => (
                         <Flex
                           key={index}
@@ -190,7 +191,8 @@ export default function Home({ repository }) {
                           <Box>{lang.width.toFixed(1)}%</Box>
                         </Flex>
                       ))}
-                    </Flex>
+
+                    </SimpleGrid>
                   </VStack>
                   <Box
                     borderRadius="4px"
