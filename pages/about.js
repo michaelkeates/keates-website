@@ -240,7 +240,7 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Work Experience
+            Work
           </Heading>
           <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
             <Box
