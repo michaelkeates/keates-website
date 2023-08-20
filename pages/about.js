@@ -50,7 +50,8 @@ import {
   JQueryIcon,
   GitIcon,
   PhotoshopIcon,
-  GithubIcon
+  GithubIcon,
+  DotNetIcon,
 } from '../components/devicons'
 
 const ProfileImage = chakra(Image, {
@@ -783,6 +784,19 @@ const Home = () => {
                 boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
               >
                 <NextjsIcon />
+              </Box>
+              <Box
+                borderRadius="lg"
+                mb={6}
+                p={3}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                title="Dot Net Framework"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <DotNetIcon />
               </Box>
               <Box
                 borderRadius="lg"
