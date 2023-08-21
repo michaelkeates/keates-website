@@ -21,7 +21,7 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import { getApolloClient } from '../lib/wordpress'
-import { useQuery } from "@apollo/client";
+import { useQuery } from '@apollo/client'
 
 import styles from '../styles/Home.module.css'
 import styles2 from '../styles/emoji.module.css'
@@ -61,12 +61,12 @@ function dayMonth(data) {
 }
 
 export default function Home({ posts }) {
-  const apolloClient = getApolloClient(); // Get Apollo client instance
+  const apolloClient = getApolloClient() // Get Apollo client instance
   const { loading, error, data } = useQuery(GET_ALL_POSTS, {
-    fetchPolicy: "cache-first", // Add the fetchPolicy here
-    client: apolloClient, // Provide the client instance to the hook
-  });
-  
+    fetchPolicy: 'cache-first', // Add the fetchPolicy here
+    client: apolloClient // Provide the client instance to the hook
+  })
+
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 6
 
@@ -96,8 +96,8 @@ export default function Home({ posts }) {
               <Section delay={0.1} key={post.slug}>
                 <Box
                   textAlign="center"
-                  bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
-                  css={{ backdropFilter: "blur(10px)" }}
+                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  css={{ backdropFilter: 'blur(10px)' }}
                   boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
                   borderRadius="10px"
                   padding="1px"
@@ -127,6 +127,10 @@ export default function Home({ posts }) {
                       fontSize="14px"
                       marginTop="10px"
                       marginBottom="10px"
+                      bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                      _hover={{
+                        bg: useColorModeValue('#ffffff', '#828282')
+                      }}
                     >
                       Read More
                     </Button>
@@ -138,7 +142,7 @@ export default function Home({ posts }) {
               (postsToDisplay.length === 0 && <li>Oops, no posts found!</li>)}
           </SimpleGrid>
         </Section>
-        <SimpleGrid columns={[1, 1, 2]} gap={4}>
+        <SimpleGrid columns={[2, 1, 2]} gap={4}>
           <Button
             onClick={goToPreviousPage}
             disabled={isBeginning}

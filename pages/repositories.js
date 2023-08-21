@@ -234,7 +234,7 @@ export default function Home({ repository }) {
             )
           })}
         </SimpleGrid>
-        <SimpleGrid columns={[1, 1, 2]} gap={4} marginTop="20px">
+        <SimpleGrid columns={[2, 1, 2]} gap={4} marginTop="20px">
           <Button
             onClick={goToPreviousPage}
             disabled={isBeginning}
