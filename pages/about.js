@@ -79,7 +79,7 @@ const Home = () => {
               Michael Keates
             </Heading>
             <div className="custom-grid">
-              <p>Software Developer</p>
+              <p>Recent Graduate Software Developer</p>
             </div>
           </Box>
           <Box
@@ -224,6 +224,24 @@ const Home = () => {
                 <BioSection>
                   <a href="tel:+447495137974" className={styles.emailLink}>
                     <span className={styles.emoji}>📱</span> +44 7495 137 974
+                  </a>
+                </BioSection>
+              </Box>
+            </Section>
+            <Section delay={0.3}>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a href="tel:+447495137974" className={styles.emailLink}>
+                    <span className={styles.emoji}>🏠</span> Newport, South Wales
                   </a>
                 </BioSection>
               </Box>
