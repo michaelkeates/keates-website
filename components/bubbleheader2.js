@@ -19,12 +19,23 @@ const CustomBox = ({ text, emoji }) => {
     >
       <a className={styles.emailTitleLink}>
         {text}
-        <span className={styles.emojiTitle} style={{ marginLeft: '8px' }}>
+        <motion.span
+          className={styles.emojiTitle}
+          style={{ marginLeft: '8px' }}
+          animate={{
+            rotate: [0, 14, -8, 14, -4, 10, 0, 0], // Rotate animation values
+            transition: {
+              duration: 1.5, // Duration of animation loop
+              repeat: Infinity, // Repeat the animation indefinitely
+              ease: 'easeInOut', // Easing function
+            },
+          }}
+        >
           {emoji}
-        </span>
+        </motion.span>
       </a>
     </Box>
-  )
-}
+  );
+};
 
-export default CustomBox
+export default CustomBox;

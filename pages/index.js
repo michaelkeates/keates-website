@@ -10,7 +10,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
 import styles from '../styles/emoji.module.css'
-import Bubble from '../components/bubbleheader'
+import Bubble from '../components/bubbleheader2'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -20,8 +20,8 @@ const Home = () => (
   <Layout>
     <Container>
       <Bubble
-        text="Hi! I'm a software developer based in South Wales!"
-        emoji="🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+        text="Hi! I'm a recent graduate software developer!"
+        emoji="👋"
       />
       <Box display={{ md: 'flex' }} paddingTop="25px" paddingBottom="25px">
         <Box flexGrow={1}>
@@ -33,7 +33,7 @@ const Home = () => (
           >
             Michael Keates
           </Heading>
-          <p>Software Developer</p>
+          <p>Recent Graduate Software Developer</p>
           <Heading as="h2" size="1xl" fontWeight={0} paddingTop="25px">
             "I am a dedicated and hardworking individual with a strong
             background in all things computing and technology."
