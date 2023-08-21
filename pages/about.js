@@ -240,7 +240,7 @@ const Home = () => {
                 boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
               >
                 <BioSection>
-                  <a href="tel:+447495137974" className={styles.emailLink}>
+                  <a className={styles.emailLink}>
                     <span className={styles.emoji}>🏠</span> Newport, South Wales
                   </a>
                 </BioSection>
