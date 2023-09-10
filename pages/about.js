@@ -20,6 +20,7 @@ import Image from 'next/image'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
 import thumbkenfreight from '../public/images/works/hllea.png'
+import thumbcityhospice from '../public/images/works/city_hospice.png'
 import wordicon from '../public/images/works/microsoft_word.png'
 import excelicon from '../public/images/works/microsoft_excel.png'
 import React, { useState } from 'react'
@@ -51,7 +52,7 @@ import {
   GitIcon,
   PhotoshopIcon,
   GithubIcon,
-  DotNetIcon,
+  DotNetIcon
 } from '../components/devicons'
 
 const ProfileImage = chakra(Image, {
@@ -143,8 +144,8 @@ const Home = () => {
           Contact
         </Heading>
         <div className={styles.hackymargin}>
-          <SimpleGrid columns={[2, 1, 2]} gap={2}>
-            <Section delay={0.3}>
+          <Section delay={0.1}>
+            <SimpleGrid columns={[1, 1, 2]} gap={2}>
               <Box
                 borderRadius="lg"
                 mb={1}
@@ -165,8 +166,6 @@ const Home = () => {
                   </a>
                 </BioSection>
               </Box>
-            </Section>
-            <Section delay={0.3}>
               <Box
                 borderRadius="lg"
                 mb={1}
@@ -187,8 +186,6 @@ const Home = () => {
                   </a>
                 </BioSection>
               </Box>
-            </Section>
-            <Section delay={0.3}>
               <Box
                 borderRadius="lg"
                 mb={1}
@@ -209,8 +206,6 @@ const Home = () => {
                   </a>
                 </BioSection>
               </Box>
-            </Section>
-            <Section delay={0.3}>
               <Box
                 borderRadius="lg"
                 mb={1}
@@ -227,8 +222,6 @@ const Home = () => {
                   </a>
                 </BioSection>
               </Box>
-            </Section>
-            <Section delay={0.3}>
               <Box
                 borderRadius="lg"
                 mb={1}
@@ -241,12 +234,13 @@ const Home = () => {
               >
                 <BioSection>
                   <a className={styles.emailLink}>
-                    <span className={styles.emoji}>🏠</span> Newport, South Wales
+                    <span className={styles.emoji}>🏠</span> Newport, South
+                    Wales
                   </a>
                 </BioSection>
               </Box>
-            </Section>
-          </SimpleGrid>
+            </SimpleGrid>
+          </Section>
         </div>
         <Divider />
         <Section delay={0.2}>
@@ -260,6 +254,76 @@ const Home = () => {
           >
             Work
           </Heading>
+          <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding={4}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+              paddingTop="1rem"
+              flexDirection="column"
+              alignItems="center"
+            >
+              <Box display="flex" alignItems="center">
+                <Box marginRight={4} marginTop="-2px" align="center">
+                  <Image src={thumbcityhospice} width={100} />
+                </Box>
+                <Box marginRight={4}>
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="600"
+                    fontSize={13}
+                    textAlign="left"
+                    marginBottom="2px"
+                  >
+                    City Hospice
+                  </Heading>
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="400"
+                    fontSize={11}
+                    textAlign="left"
+                  >
+                    Database Assistant
+                  </Heading>
+                </Box>
+                <Box
+                  marginTop="-5px"
+                  display="flex"
+                  justifyContent="flex-end"
+                  flex="1"
+                >
+                  <Badge
+                    bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    color=""
+                  >
+                    2023 - Present
+                  </Badge>
+                </Box>
+              </Box>
+              <Divider marginTop={3} marginBottom={1} />
+              <Box marginTop={3}>
+                <Box textAlign="left" fontSize={12} padding={2}>
+                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                    <li>
+                      Analysing data & assisting with transfering data to new
+                      server
+                    </li>
+                    <li>
+                      Developing software to assist and speed up analysis of
+                      data
+                    </li>
+                  </ul>
+                </Box>
+              </Box>
+            </Box>
+          </SimpleGrid>
           <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
             <Box
               borderRadius="lg"
@@ -318,7 +382,7 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Designed and developed company logo, capturing brand
+                      Designed and produced company logo, capturing brand
                       identity and values
                     </li>
                     <li>
@@ -419,18 +483,9 @@ const Home = () => {
                     Technologies
                   </li>
                   <li>
-                    Demonstrated ability to apply advanced concepts to
-                    read-world projects, ensuring efficient and innovative
-                    solutions
-                  </li>
-                  <li>
                     Strong understanding of database modeling principles,
                     enabling effective data organization and manipulation for
                     various applications
-                  </li>
-                  <li>
-                    Applied computing knowledge to create practical solutions,
-                    exemplified through projects completed during studies
                   </li>
                   <li>
                     Developed a holistic understanding of industry expectations
@@ -447,7 +502,6 @@ const Home = () => {
             </Box>
           </Box>
         </SimpleGrid>
-
         <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
           <Box
             borderRadius="lg"
@@ -594,23 +648,6 @@ const Home = () => {
                   >
                     2019 - 2020
                   </Badge>
-                </Box>
-              </Box>
-              <Divider marginTop={3} marginBottom={1} />
-              <Box marginTop={3}>
-                <Box textAlign="left" fontSize={12} padding={2}>
-                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-                    <li>
-                      Contributed to the setup of machinery and provided
-                      guidance to students in the creation of RJ45/Cat5e
-                      Ethernet cables for the WorldSkills UK Wales Competition
-                    </li>
-                    <li>
-                      Attained the semi-finals of the AWS Project Competition,
-                      showcasing innovative problem-solving skills in raising
-                      awareness for knife crime
-                    </li>
-                  </ul>
                 </Box>
               </Box>
             </Box>
