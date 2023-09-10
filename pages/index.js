@@ -20,7 +20,7 @@ const Home = () => (
   <Layout>
     <Container>
       <Bubble
-        text="Hi! I'm a recent graduate software developer!"
+        text="Hi! I'm a software developer based in South Wales!"
         emoji="👋"
       />
       <Box display={{ md: 'flex' }} paddingTop="25px" paddingBottom="25px">
@@ -33,7 +33,7 @@ const Home = () => (
           >
             Michael Keates
           </Heading>
-          <p>Recent Graduate Software Developer</p>
+          <p>Software Developer</p>
           <Heading as="h2" size="1xl" fontWeight={0} paddingTop="25px">
             "I am a dedicated and hardworking individual with a strong
             background in all things computing and technology."
