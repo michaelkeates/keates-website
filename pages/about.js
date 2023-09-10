@@ -80,7 +80,7 @@ const Home = () => {
               Michael Keates
             </Heading>
             <div className="custom-grid">
-              <p>Recent Graduate Software Developer</p>
+              <p>Software Developer</p>
             </div>
           </Box>
           <Box
