@@ -10,7 +10,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
 import styles from '../styles/emoji.module.css'
-import Bubble from '../components/bubbleheader2'
+import Bubble from '../components/bubbleheader'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -19,10 +19,7 @@ const ProfileImage = chakra(Image, {
 const Home = () => (
   <Layout>
     <Container>
-      <Bubble
-        text="Hi! I'm a software developer based in South Wales!"
-        emoji="👋"
-      />
+      <Bubble text="Check out my qualifications and skills!" emoji="🏴󠁧󠁢󠁷󠁬󠁳󠁿" />
       <Box display={{ md: 'flex' }} paddingTop="25px" paddingBottom="25px">
         <Box flexGrow={1}>
           <Heading
@@ -90,6 +87,6 @@ export async function getServerSideProps({ req }) {
   return {
     props: {
       cookies: req.headers.cookie ?? ''
-    },
-  };
+    }
+  }
 }

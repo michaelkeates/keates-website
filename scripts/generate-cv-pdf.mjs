@@ -248,7 +248,7 @@ async function generatePDF() {
             margin: 0 !important; /* Override existing margin with !important */
           }
           .chakra-heading.css-5cq7sr {
-            font-weight: normal !important; /* Remove bold font weight */
+            font-weight: 500 !important; /* Remove bold font weight */
           }
         }
       `

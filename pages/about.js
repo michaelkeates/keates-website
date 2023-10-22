@@ -139,7 +139,7 @@ const Home = () => {
           mb={2}
           marginTop="1rem"
         >
-          Details
+          Contact
         </Heading>
         <div className={styles.hackymargin}>
           <Section delay={0.1}>
@@ -289,7 +289,7 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Contribute significantly to the successful implementation
+                      Contributing significantly to the successful implementation
                       of a new system for a charitable organization
                     </li>
                     <li>
@@ -425,7 +425,7 @@ const Home = () => {
                     textAlign="left"
                     marginBottom="2px"
                   >
-                    University of South Wales
+                    First Class Honours - BSc (Hons) Applied Computing
                   </Heading>
                 </LoadingLink>
                 <Heading
@@ -435,7 +435,7 @@ const Home = () => {
                   fontSize={11}
                   textAlign="left"
                 >
-                  First Class Honours - BSc (Hons) Applied Computing
+                  University of South Wales
                 </Heading>
               </Box>
               <Box
@@ -514,7 +514,7 @@ const Home = () => {
                     textAlign="left"
                     marginBottom="2px"
                   >
-                    University of South Wales
+                    Distinction - Higher National Diploma (HND) Computing
                   </Heading>
                 </LoadingLink>
                 <Heading
@@ -524,7 +524,7 @@ const Home = () => {
                   fontSize={11}
                   textAlign="left"
                 >
-                  Distinction - Higher National Diploma (HND) Computing
+                  University of South Wales
                 </Heading>
               </Box>
               <Box
@@ -604,7 +604,7 @@ const Home = () => {
                       textAlign="left"
                       marginBottom="2px"
                     >
-                      Coleg Gwent
+                      Distinction - BTEC Computing
                     </Heading>
                   </LoadingLink>
                   <Heading
@@ -614,7 +614,7 @@ const Home = () => {
                     fontSize={11}
                     textAlign="left"
                   >
-                    Distinction - BTEC Computing
+                    Coleg Gwent
                   </Heading>
                 </Box>
                 <Box
