@@ -31,12 +31,12 @@ async function generatePDF() {
     const textSize2 = document.querySelectorAll(
       '.css-14rgeuu, .css-9zshpp, .emoji_emailLink__rvK9O, .css-1dsdcac, .chakra-heading.css-1x30byp'
     )
-    const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k, .chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk')
+    const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k, .chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk, .chakra-heading.css-17wi6zd')
     const textSize4 = document.querySelectorAll(
       '.chakra-text.css-9c7r58, .chakra-text.css-1bgxado, .chakra-badge.css-13fucok'
     )
     const textSize5 = document.querySelectorAll(
-      '.chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd, .chakra-heading.css-kowkqe'
+      '.chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-kowkqe'
     )
     const textSize6 = document.querySelectorAll('.chakra-text.css-p23alj')
     const textColors = document.querySelectorAll(
@@ -165,7 +165,7 @@ async function generatePDF() {
     })
 
     const unwantedElements = document.querySelectorAll(
-      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .chakra-heading.css-17wi6zd, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy, .css-p77vvx, .chakra-divider.css-mzlxjy, .chakra-divider.css-svjswr, .chakra-divider.css-evmj4r'
+      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy, .css-p77vvx, .chakra-divider.css-mzlxjy, .chakra-divider.css-svjswr, .chakra-divider.css-evmj4r'
     )
 
     customGridElements.forEach(element => {
@@ -261,6 +261,9 @@ async function generatePDF() {
           }
           .chakra-heading.css-5cq7sr {
             font-weight: 500 !important;
+          }
+          .chakra-heading.css-kowkqe {
+            margin-bottom: 2px !important;
           }
         }
       `
