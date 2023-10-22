@@ -459,6 +459,12 @@ const Home = () => {
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                   <li>
+                    Designed and developed a Full Stack solution, delivering an
+                    educational web service and seamless access to an operating
+                    system via web browsers, with a specialized emphasis on
+                    mobile and tablet compatibility
+                  </li>
+                  <li>
                     Proficient in interpreting and analysing complex data to
                     create informative and visually appearing maps using GIS
                     Technologies
@@ -541,6 +547,10 @@ const Home = () => {
             <Box marginTop={3}>
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                  <li>
+                    Designed and developed a Crime Alert App for Android/iOS,
+                    providing real-time crime data visualization on a map
+                  </li>
                   <li>
                     Proficient in multiple programming languages, with a strong
                     ability to conceptualize, develop, and debug complex code
@@ -769,7 +779,7 @@ const Home = () => {
               mb={4}
               marginTop="1rem"
             >
-              Frameworks & Databases
+              Frameworks
             </Heading>
             <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
               <Box
@@ -837,6 +847,21 @@ const Home = () => {
               >
                 <XamarinIcon />
               </Box>
+            </SimpleGrid>
+          </Section>
+          <Divider />
+          <Section delay={0.2}>
+            <Heading
+              as="h3"
+              fontFamily="Roboto"
+              fontWeight="500"
+              fontSize={20}
+              mb={4}
+              marginTop="1rem"
+            >
+              Databases
+            </Heading>
+            <SimpleGrid columns={[4, 4, 7]} gap={1} fontSize="12px;">
               <Box
                 borderRadius="lg"
                 mb={6}
@@ -905,20 +930,6 @@ const Home = () => {
                 boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
               >
                 <GitIcon />
-              </Box>
-              <Box
-                borderRadius="lg"
-                mb={6}
-                p={3}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                href="Typescript"
-                title="Github"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <GithubIcon />
               </Box>
               <Box
                 borderRadius="lg"
