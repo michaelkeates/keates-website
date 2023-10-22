@@ -305,6 +305,7 @@ const Home = () => {
               </Box>
             </Box>
           </SimpleGrid>
+          <Divider marginTop={3} marginBottom={1} hidden='true'/>
           <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
             <Box
               borderRadius="lg"
