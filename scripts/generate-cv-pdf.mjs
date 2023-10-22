@@ -87,6 +87,8 @@ async function generatePDF() {
 
     const profileimage = document.querySelectorAll('.css-s37q7k')
 
+    const capitalize = document.querySelectorAll('.chakra-badge.css-13fucok, .css-13fucok')
+
     //next section
 
     gridElement.forEach(gridElement => {
@@ -238,6 +240,16 @@ async function generatePDF() {
     padding.forEach(element => {
       element.style.padding = '0' //remove the padding
     })
+
+    capitalize.forEach(element => {
+      const words = element.textContent.split(' ');
+    
+      const capitalizedWords = words.map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      });
+    
+      element.textContent = capitalizedWords.join(' ');
+    })
   })
 
   // Add a pseudo-element to the body to create the gap on every page
@@ -248,7 +260,7 @@ async function generatePDF() {
             margin: 0 !important; /* Override existing margin with !important */
           }
           .chakra-heading.css-5cq7sr {
-            font-weight: 500 !important; /* Remove bold font weight */
+            font-weight: 500 !important;
           }
         }
       `

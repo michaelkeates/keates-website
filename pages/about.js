@@ -280,7 +280,7 @@ const Home = () => {
                     color=""
                     fontSize={9}
                   >
-                    August 2023 - Present
+                    2023 - Present
                   </Badge>
                 </Box>
               </Box>
@@ -356,7 +356,7 @@ const Home = () => {
                     color=""
                     fontSize={9}
                   >
-                    July 2018 - March 2020
+                    2018 - 2020
                   </Badge>
                 </Box>
               </Box>
@@ -449,7 +449,7 @@ const Home = () => {
                   color=""
                   fontSize={9}
                 >
-                  September 2022 - July 2023
+                  2022 - 2023
                 </Badge>
               </Box>
             </Box>
@@ -538,7 +538,7 @@ const Home = () => {
                   color=""
                   fontSize={9}
                 >
-                  September 2020 - July 2022
+                  2020 - 2022
                 </Badge>
               </Box>
             </Box>
@@ -628,7 +628,7 @@ const Home = () => {
                     color=""
                     fontSize={9}
                   >
-                    September 2019 - June 2020
+                    2019 - 2020
                   </Badge>
                 </Box>
               </Box>
