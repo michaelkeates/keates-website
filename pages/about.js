@@ -262,7 +262,7 @@ const Home = () => {
                     textAlign="left"
                     marginBottom="2px"
                   >
-                    City Hospice
+                    Database Assistant
                   </Heading>
                   <Heading
                     as="h2"
@@ -271,14 +271,10 @@ const Home = () => {
                     fontSize={11}
                     textAlign="left"
                   >
-                    Database Assistant
+                    City Hospice
                   </Heading>
                 </Box>
-                <Box
-                  display="flex"
-                  justifyContent="flex-end"
-                  flex="1"
-                >
+                <Box display="flex" justifyContent="flex-end" flex="1">
                   <Badge
                     bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
                     color=""
@@ -293,12 +289,17 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Analysing data & assisting with transfering data to new
-                      server
+                      Contribute significantly to the successful implementation
+                      of a new system for a charitable organization
                     </li>
                     <li>
-                      Developing software to assist and speed up analysis of
-                      data
+                      Conducting thorough analysis and meticulous data cleansing
+                      in preparation for seamless migration to a new server
+                    </li>
+                    <li>
+                      Engineering custom software solutions, significantly
+                      expediting the data preparation process for database
+                      integration
                     </li>
                   </ul>
                 </Box>
@@ -332,7 +333,7 @@ const Home = () => {
                     textAlign="left"
                     marginBottom="2px"
                   >
-                    Heavy Lift Logistics East Africa Limited
+                    Remote Creative Strategist & Design Consultant
                   </Heading>
                   <Heading
                     as="h2"
@@ -341,7 +342,7 @@ const Home = () => {
                     fontSize={11}
                     textAlign="left"
                   >
-                    Remote Creative Strategist & Design Consultant
+                    Heavy Lift Logistics East Africa Limited
                   </Heading>
                 </Box>
                 <Box
@@ -369,7 +370,7 @@ const Home = () => {
                     </li>
                     <li>
                       Created compelling and engaging presentations for clients,
-                      effectively conveying complex ideas and proposal
+                      effectively conveying complex ideas and proposals
                     </li>
                     <li>
                       Produced comprehensive and efficient transport plans,

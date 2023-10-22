@@ -177,7 +177,7 @@ const Work = () => (
                   <Td>Onsite Closed Book Examination 1</Td>
                   <Td>100</Td>
                   <Td isNumeric>0.4</Td>
-                  <Td isNumeric></Td>
+                  <Td isNumeric>68</Td>
                 </Tr>
                 <Tr>
                   <Td>Portfolio 1</Td>
