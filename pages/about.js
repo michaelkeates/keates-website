@@ -298,7 +298,7 @@ const Home = () => {
                     <li>
                       Contributing significantly to the successful
                       implementation of a new system for a charitable
-                      organization
+                      organisation
                     </li>
                     <li>
                       Conducting thorough analysis and meticulous data cleansing
