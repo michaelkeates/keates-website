@@ -473,12 +473,6 @@ const Home = () => {
                     and best practices
                   </li>
                 </ul>
-                <Divider marginTop={3} marginBottom={3} />
-                <div>
-                  Relevant Modules - Advanced Internet & Computing, Advanced
-                  Databases & Modelling, GIS and the Spatial Web, The Computing
-                  Professional in Practice
-                </div>
               </Box>
             </Box>
           </Box>
@@ -561,12 +555,6 @@ const Home = () => {
                     software systems
                   </li>
                 </ul>
-                <Divider marginTop={3} marginBottom={3} />
-                <div>
-                  Relevant Modules - Information Systems Analysis & Design,
-                  Computer Programming, Responsive Web Development, Computer
-                  Systems Security, Systems Architecture and Modelling
-                </div>
               </Box>
             </Box>
           </Box>
