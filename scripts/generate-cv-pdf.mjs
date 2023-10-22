@@ -33,7 +33,7 @@ async function generatePDF() {
     )
     const textSize3 = document.querySelectorAll('.chakra-text.css-5m355k, .chakra-heading.css-17cjct2, .chakra-heading.css-9n0xbk')
     const textSize4 = document.querySelectorAll(
-      '.chakra-text.css-9c7r58, .chakra-text.css-1bgxado'
+      '.chakra-text.css-9c7r58, .chakra-text.css-1bgxado, .chakra-badge.css-13fucok'
     )
     const textSize5 = document.querySelectorAll(
       '.chakra-heading.css-kx7ixn, .emoji_emoji__vYFMy, .chakra-heading.css-17wi6zd, .chakra-heading.css-kowkqe'

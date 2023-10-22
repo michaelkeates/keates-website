@@ -220,23 +220,6 @@ const Home = () => {
                   </a>
                 </BioSection>
               </Box>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a className={styles.emailLink}>
-                    <span className={styles.emoji}>🏠</span> Newport, South
-                    Wales
-                  </a>
-                </BioSection>
-              </Box>
             </SimpleGrid>
           </Section>
         </div>
