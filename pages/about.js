@@ -7,8 +7,7 @@ import {
   useColorModeValue,
   chakra,
   Divider,
-  Badge,
-  Grid
+  Badge
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -26,7 +25,6 @@ import excelicon from '../public/images/works/microsoft_excel.png'
 import React, { useState } from 'react'
 import styles from '../styles/emoji.module.css'
 import Bubble from '../components/bubbleheader'
-import NextLink from 'next/link'
 import LoadingLink from '../components/loadinglink'
 
 import {
@@ -141,7 +139,7 @@ const Home = () => {
           mb={2}
           marginTop="1rem"
         >
-          Contact
+          Details
         </Heading>
         <div className={styles.hackymargin}>
           <Section delay={0.1}>
@@ -294,7 +292,6 @@ const Home = () => {
                   </Heading>
                 </Box>
                 <Box
-                  marginTop="-5px"
                   display="flex"
                   justifyContent="flex-end"
                   flex="1"
@@ -302,8 +299,9 @@ const Home = () => {
                   <Badge
                     bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
                     color=""
+                    fontSize={9}
                   >
-                    2023 - Present
+                    August 2023 - Present
                   </Badge>
                 </Box>
               </Box>
@@ -372,8 +370,9 @@ const Home = () => {
                   <Badge
                     bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
                     color=""
+                    fontSize={9}
                   >
-                    2018 - 2020
+                    July 2018 - March 2020
                   </Badge>
                 </Box>
               </Box>
@@ -392,10 +391,6 @@ const Home = () => {
                     <li>
                       Produced comprehensive and efficient transport plans,
                       optimizing logisistics and ensuring smooth operations
-                    </li>
-                    <li>
-                      Worked remotely to manage projects, collaborating with
-                      clients to achieve project goals
                     </li>
                   </ul>
                 </Box>
@@ -468,8 +463,9 @@ const Home = () => {
                 <Badge
                   bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
                   color=""
+                  fontSize={9}
                 >
-                  2022 - 2023
+                  September 2022 - July 2023
                 </Badge>
               </Box>
             </Box>
@@ -556,8 +552,9 @@ const Home = () => {
                 <Badge
                   bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
                   color=""
+                  fontSize={9}
                 >
-                  2020 - 2022
+                  September 2020 - July 2022
                 </Badge>
               </Box>
             </Box>
@@ -645,8 +642,9 @@ const Home = () => {
                   <Badge
                     bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
                     color=""
+                    fontSize={9}
                   >
-                    2019 - 2020
+                    September 2019 - June 2020
                   </Badge>
                 </Box>
               </Box>
@@ -861,6 +859,19 @@ const Home = () => {
                 bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                 css={{ backdropFilter: 'blur(10px)' }}
                 padding="10px;"
+                title="Xamarin"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <XamarinIcon />
+              </Box>
+              <Box
+                borderRadius="lg"
+                mb={6}
+                p={3}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
                 title="mySQL"
                 boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
               >
@@ -975,19 +986,6 @@ const Home = () => {
                 boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
               >
                 <ThreejsIcon />
-              </Box>
-              <Box
-                borderRadius="lg"
-                mb={6}
-                p={3}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                title="Xamarin"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <XamarinIcon />
               </Box>
               <Box
                 borderRadius="lg"

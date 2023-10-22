@@ -17,7 +17,7 @@ async function generatePDF() {
   await page.goto(url)
 
   //or, add a delay before generating the PDF (in milliseconds)
-  await page.waitForTimeout(2000) // Adjust the delay as needed
+  await page.waitForTimeout(2000) //adjust the delay as needed
 
   //evaluate the page and remove unwanted elements
   await page.evaluate(() => {
@@ -62,7 +62,7 @@ async function generatePDF() {
     )
 
     const customGridElements5 = document.querySelectorAll(
-      '.yet-another-custom-grid'
+      '.css-1dsdcac, .css-2lzsxm, .chakra-heading.css-5cq7sr, .chakra-heading.css-1x30byp'
     )
 
     const boxElements = document.querySelectorAll(
@@ -188,9 +188,8 @@ async function generatePDF() {
     })
 
     customGridElements5.forEach(element => {
-      //inctease margin top by 50
-      //element.style.marginTop = '40px'
-      //element.style.paddingTop = '40px'
+      //move text to left
+      element.style.marginLeft = '-8px'
     })
 
     unwantedElements.forEach(element => {
