@@ -77,9 +77,8 @@ const Home = () => {
             >
               Michael Keates
             </Heading>
-            <div className="custom-grid">
-              <p>Software Developer</p>
-            </div>
+
+            <p>Software Developer</p>
           </Box>
           <Box
             flexShrink={0}
