@@ -289,8 +289,9 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Contributing significantly to the successful implementation
-                      of a new system for a charitable organization
+                      Contributing significantly to the successful
+                      implementation of a new system for a charitable
+                      organization
                     </li>
                     <li>
                       Conducting thorough analysis and meticulous data cleansing
@@ -425,7 +426,7 @@ const Home = () => {
                     textAlign="left"
                     marginBottom="2px"
                   >
-                    First Class Honours - BSc (Hons) Applied Computing
+                    BSc (Hons) Applied Computing - First Class Honours
                   </Heading>
                 </LoadingLink>
                 <Heading
@@ -514,7 +515,7 @@ const Home = () => {
                     textAlign="left"
                     marginBottom="2px"
                   >
-                    Distinction - Higher National Diploma (HND) Computing
+                    Higher National Diploma (HND) Computing - Distinction
                   </Heading>
                 </LoadingLink>
                 <Heading
@@ -604,7 +605,7 @@ const Home = () => {
                       textAlign="left"
                       marginBottom="2px"
                     >
-                      Distinction - BTEC Computing
+                      BTEC Computing - Distinction
                     </Heading>
                   </LoadingLink>
                   <Heading
