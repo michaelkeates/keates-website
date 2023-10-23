@@ -19,7 +19,7 @@ const ProfileImage = chakra(Image, {
 const Home = () => (
   <Layout>
     <Container>
-      <Bubble text="Hi! I'm a Software Engineer based in South Wales!" emoji="🏴󠁧󠁢󠁷󠁬󠁳󠁿" />
+      <Bubble text="Hi! I'm a Developer based in South Wales!" emoji="🏴󠁧󠁢󠁷󠁬󠁳󠁿" />
       <Box display={{ md: 'flex' }} paddingTop="25px" paddingBottom="25px">
         <Box flexGrow={1}>
           <Heading
