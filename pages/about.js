@@ -305,7 +305,7 @@ const Home = () => {
                       in preparation for seamless migration to a new server
                     </li>
                     <li>
-                      Engineering custom software solutions achieving 75%
+                      Engineering custom software solutions, achieving 75%
                       reduction in the data preparation process for database
                       integration
                     </li>
