@@ -1,4 +1,96 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.main {
+  padding-top: 5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style: none;
+  margin-top: 3rem;
+  padding: 0;
+}
+
+.card {
+  margin: 1rem;
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.card a {
+  display: block;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.main figcaption {
+  margin: 0.6rem;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 1rem;
+  opacity: 0.7; /* Changed from 70% to decimal */
+}
 
 .main h1 {
   font-size: 64px;
@@ -13,20 +105,10 @@
   margin-bottom: 15px;
 }
 
-.main h3 {
-  font-size: 26px;
-  padding-top: 1rem;
-  padding-bottom: 0.2rem;
-}
-
-.main h4 {
-  font-size: 24px;
-  padding-top: 1rem;
-  padding-bottom: 0.2rem;
-}
-
+.main h3,
+.main h4,
 .main h5 {
-  font-size: 20px;
+  font-size: 26px;
   padding-top: 1rem;
   padding-bottom: 0.2rem;
 }
@@ -36,103 +118,58 @@
   background-color: rgba(255, 255, 255, 0.07);
   backdrop-filter: 10px;
   padding: 25px;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin: 25px 0;
   height: 100%;
   width: 100%;
-  text-wrap: wrap;
+  white-space: pre-wrap;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.05);
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 
-.main p img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-@media (min-width: 768px) {
-  .main p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .main p img {
-    margin: 0;
-  }
-}
-
-.main img {
-  align-items: center;
-  /* border-radius: 5px; */
-  width: auto;
-  padding-bottom: 15px;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-.main .badge {
-  align-items: center;
-  /* border-radius: 5px; */
-  width: auto;
-  padding-bottom: 5px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.logo {
-  height: 1em;
-}
-
-.main iframe {
-  align-items: center;
+.main code {
   width: 100%;
 }
-
-/* Apply styles to the table */
-.main table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 16px;
-  border: 1px solid rgb(53, 53, 53);
-}
-
-/* Apply styles to table headers */
-.main th {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid rgb(53, 53, 53);
-  border-right: 1px solid rgb(53, 53, 53); /* Add border to the right of each cell */
-}
-
-/* Apply alternating background color to table rows */
-.main tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.07);
-}
-
-/* Apply styles to table cells */
-.main td {
-  padding: 8px;
-  border-bottom: 1px solid rgb(53, 53, 53);
-  border-right: 1px solid rgb(53, 53, 53) /* Add border to the right of each cell */
-}
-
 
 .main ul {
   width: 100%;
   font-size: 13px;
-  word-break: break-all; /* Apply word-break only to this element */
+  padding-left: 15px;
+  gap: 10px;
+}
+
+.main p {
+  margin: 5px 0 1px 0;
+  width: 100%;
+  gap: 10px;
+}
+
+.main img,
+.main .badge {
+  width: auto;
+  padding-bottom: 5px;
+  margin: 15px 0;
+  align-self: center; /* Center-align images */
+}
+
+.main iframe,
+.main table {
+  width: 100%;
+}
+
+.main tbody,
+.main tr,
+.main td {
+  border-width: 1px;
+  padding: 10px;
 }
 
 .main a {
   color: #3d77e5;
   text-decoration: none;
-  margin-left: 2px;
 }
-
-
 
 @media (max-width: 600px) {
   .grid {
@@ -140,19 +177,11 @@
     flex-direction: column;
   }
 
-  .pre {
+  .pre,
+  .table,
+  .iframe {
     width: 100%;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.05);
-  }
-
-  .table {
-    align-items: center;
-    width: 100%;
-  }
-
-  .iframe {
-    align-items: center;
-    width: 100%;
   }
 }
 
