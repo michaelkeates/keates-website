@@ -91,25 +91,34 @@
   width: 100%;
 }
 
+/* Apply styles to the table */
 .main table {
-  align-items: center;
+  border-collapse: collapse;
   width: 100%;
+  margin-bottom: 16px;
+  border: 1px solid rgb(53, 53, 53);
 }
 
-.main tbody {
-  border-width: 1px;
-  padding: 10px;
+/* Apply styles to table headers */
+.main th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid rgb(53, 53, 53);
+  border-right: 1px solid rgb(53, 53, 53); /* Add border to the right of each cell */
 }
 
-.main tr {
-  border-width: 1px;
-  padding: 10px;
+/* Apply alternating background color to table rows */
+.main tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.07);
 }
 
+/* Apply styles to table cells */
 .main td {
-  border-width: 1px;
-  /*padding: 10px;*/
+  padding: 8px;
+  border-bottom: 1px solid rgb(53, 53, 53);
+  border-right: 1px solid rgb(53, 53, 53) /* Add border to the right of each cell */
 }
+
 
 .main ul {
   width: 100%;
