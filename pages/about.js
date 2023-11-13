@@ -77,16 +77,6 @@ const Home = () => {
             >
               Michael Keates
             </Heading>
-
-            <Heading
-              as="h3"
-              fontFamily="Roboto"
-              fontWeight="500"
-              fontSize={20}
-              mb={2}
-            >
-              Software Developer
-            </Heading>
           </Box>
           <Box
             flexShrink={0}
