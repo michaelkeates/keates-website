@@ -296,9 +296,7 @@ export default function Post({ post }) {
               </Paragraph>
             </SimpleGrid>
             <Divider my={6} />
-            <div style={{ marginBottom: '-5rem' }}>
               <AuthorBio />
-            </div>
           </main>
           <Divider my={6} />
           <div>
