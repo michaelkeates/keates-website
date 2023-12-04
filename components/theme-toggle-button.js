@@ -10,26 +10,19 @@ const ThemeToggleButton = () => {
       <motion.div
         style={{ display: 'inline-block' }}
         key={useColorModeValue('light', 'dark')}
-        initial={{ y: -20, opacity: 0 }}
+        initial={{ y: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 20, opacity: 0 }}
+        exit={{ y: 0, opacity: 0 }}
         transition={{ duration: 0.2 }}
       >
         <IconButton
           aria-label="Toggle theme"
           //colorScheme={useColorModeValue('blue', 'yellow')}
-          bg={useColorModeValue(
-            '#1c76c7',
-            '#ffd493'
-          )}
-          color={useColorModeValue(
-            '#ffffff',
-            '#000000'
-          )}
-          _hover={{ bg: useColorModeValue(
-            '#1b60a6',
-            '#faa24c'
-          )}}
+          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+          css={{ backdropFilter: 'blur(10px)' }}
+          padding="10px"
+          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+          color={useColorModeValue('blackAlpha.900', 'whiteAlpha.600')}
           icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
           onClick={toggleColorMode}
         ></IconButton>

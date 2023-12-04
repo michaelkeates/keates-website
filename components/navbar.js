@@ -13,12 +13,13 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Button
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import SearchToggleButton from './search-toggle-button'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoGithub } from 'react-icons/io5'
+import GithubButton from './github-button'
 import LoadingLink from './loadinglink'
 
 const Navbar = props => {
@@ -69,21 +70,13 @@ const Navbar = props => {
           <LoadingLink p={2} href="/posts" path={path}>
             Blog
           </LoadingLink>
-          <LoadingLink
-            target="_blank"
-            href="https://github.com/michaelkeates"
-            path={path}
-            display="inline-flex"
-            alignItems="center"
-            style={{ gap: 4 }}
-            pl={2}
-            p={2}
-          >
-            <IoLogoGithub />
-          </LoadingLink>
         </Stack>
 
         <Box flex={1} ml={1} align="right">
+          <Box ml={2} display={{ base: 'inline-block' }}>
+            <GithubButton />
+          </Box>
+
           <Box ml={2} display={{ base: 'inline-block' }}>
             <ThemeToggleButton />
           </Box>
