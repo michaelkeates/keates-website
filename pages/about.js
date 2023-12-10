@@ -585,7 +585,7 @@ const Home = () => {
             >
               <Box display="flex" alignItems="center">
                 <Box marginRight={4} marginTop="-2px" align="center">
-                  <Image src={thumbcc} width={100} />
+                  <Image src={thumbcc} width={70} />
                 </Box>
                 <Box marginRight={4}>
                   <LoadingLink
