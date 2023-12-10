@@ -42,9 +42,10 @@ const Home = () => (
           textAlign="center"
         >
           <Box
-            borderColor="whiteAlpha.800"
+            borderColor={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
             borderWidth={2}
             borderStyle="solid"
+            boxShadow="0px 0px 12px 3px rgba(0,0,0,0.05);"
             w="100px"
             h="100px"
             display="inline-block"
