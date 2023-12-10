@@ -17,8 +17,11 @@ const ThemeToggleButton = () => {
       >
         <IconButton
           aria-label="Toggle theme"
-          //colorScheme={useColorModeValue('blue', 'yellow')}
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+          //colorScheme={useColorModeValue('blue', 'whiteAlpha.200')}
+          bg={useColorModeValue('orange.200', 'whiteAlpha.200')}
+          _hover={{
+            bg: useColorModeValue('orange.300', 'whiteAlpha.300')
+          }}
           css={{ backdropFilter: 'blur(10px)' }}
           padding="10px"
           boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
