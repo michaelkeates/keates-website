@@ -128,9 +128,6 @@ export default function Home({ posts }) {
                       marginTop="10px"
                       marginBottom="10px"
                       bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                      _hover={{
-                        bg: useColorModeValue('#ffffff', '#828282')
-                      }}
                     >
                       Read More
                     </Button>
@@ -150,9 +147,6 @@ export default function Home({ posts }) {
             style={{ pointerEvents: isBeginning ? 'none' : 'auto' }}
             leftIcon={<ChevronLeftIcon />}
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            _hover={{
-              bg: useColorModeValue('#ffffff', '#828282')
-            }}
             boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             Previous
@@ -164,9 +158,6 @@ export default function Home({ posts }) {
             style={{ pointerEvents: isEnd ? 'none' : 'auto' }}
             rightIcon={<ChevronRightIcon />}
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            _hover={{
-              bg: useColorModeValue('#ffffff', '#828282')
-            }}
             boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
           >
             Next

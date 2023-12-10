@@ -1129,9 +1129,6 @@ const Home = () => {
                     <Button
                       onClick={handleOpenInNewTab}
                       bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                      _hover={{
-                        bg: useColorModeValue('#ffffff', '#828282')
-                      }}
                       marginTop="1.2rem"
                       textAlign={'center'}
                       rightIcon={<ChevronRightIcon />}
