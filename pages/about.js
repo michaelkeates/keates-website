@@ -84,17 +84,20 @@ const Home = () => {
             ml={{ md: 6 }}
             textAlign="center"
           >
-          <Box
-            borderColor={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            borderWidth={2}
-            borderStyle="solid"
-            boxShadow="0px 0px 12px 3px rgba(0,0,0,0.05);"
-            w="100px"
-            h="100px"
-            display="inline-block"
-            borderRadius="full"
-            overflow="hidden"
-          >
+            <Box
+              borderColor={useColorModeValue(
+                'whiteAlpha.500',
+                'whiteAlpha.200'
+              )}
+              borderWidth={2}
+              borderStyle="solid"
+              boxShadow="0px 0px 12px 3px rgba(0,0,0,0.05);"
+              w="100px"
+              h="100px"
+              display="inline-block"
+              borderRadius="full"
+              overflow="hidden"
+            >
               <ProfileImage
                 src="/images/mike.jpg"
                 alt="Profile image"
@@ -287,18 +290,24 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
+                      Analysing data to derive insights and support
+                      decision-making processes.
+                    </li>
+                    <li>
                       Contributing significantly to the successful
-                      implementation of a new system for a charitable
-                      organisation
+                      implementation of a new system
                     </li>
                     <li>
                       Conducting thorough analysis and meticulous data cleansing
-                      in preparation for seamless migration to a new server
+                      in preparation for seamless migration
                     </li>
                     <li>
-                      Engineering custom software solutions, achieving 75%
-                      reduction in the data preparation process for database
-                      integration
+                      Performing data inputting tasks accurately and
+                      efficiently.
+                    </li>
+                    <li>
+                      Collaborating to enhance the database system and automate
+                      processes.
                     </li>
                   </ul>
                 </Box>
