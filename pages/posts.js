@@ -168,48 +168,24 @@ export default function Home({ posts }) {
   )
 }
 
-//change getServersideProps to getStaticProps
-//export async function getStaticProps() {
-//  const apolloClient = getApolloClient()
-//
-//  const postData = await apolloClient.query({
-//    query: GET_ALL_POSTS
-//  })
-
-//  const posts = postData?.data.posts.edges
-//    .map(({ node }) => node)
-//    .map(post => {
-//      return {
-//        ...post,
-//        path: `/posts/${post.slug}`
-//      }
-//    })
-
-//  return {
-//    props: {
-//      posts
-//    }
-//  }
-//}
-
 export async function getServerSideProps({ req }) {
-  const apolloClient = getApolloClient()
+  const apolloClient = getApolloClient();
 
   const { data } = await apolloClient.query({
     query: GET_ALL_POSTS
-  })
+  });
 
   const posts = data?.posts.edges
     .map(({ node }) => node)
     .map(post => ({
       ...post,
       path: `/posts/${post.slug}`
-    }))
+    }));
 
   return {
     props: {
       posts,
       cookies: req.headers.cookie ?? ''
     }
-  }
+  };
 }

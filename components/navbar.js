@@ -67,9 +67,9 @@ const Navbar = props => {
           <LoadingLink p={2} href="/repositories" path={path}>
             Portfolio
           </LoadingLink>
-          {/*<LoadingLink p={2} href="/posts" path={path}>
+          <LoadingLink p={2} href="/posts" path={path}>
             Blog
-          </LoadingLink>*/}
+          </LoadingLink>
         </Stack>
 
         <Box flex={1} ml={1} align="right">
@@ -126,7 +126,7 @@ const Navbar = props => {
                     Portfolio
                   </MenuItem>
                 </LoadingLink>
-                {/*<LoadingLink href="/posts" passHref>
+                <LoadingLink href="/posts" passHref>
                   <MenuItem
                     bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
@@ -141,7 +141,7 @@ const Navbar = props => {
                   >
                     Blog
                   </MenuItem>
-                  </LoadingLink>*/}
+                  </LoadingLink>
               </MenuList>
             </Menu>
           </Box>
