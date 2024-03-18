@@ -4,7 +4,7 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { IoLogoLinkedin } from 'react-icons/io5'
 import nextLink from 'next/link'
 
-const GitHubButton = () => {
+const LinkedinButton = () => {
   const toggleColorMode = () => {
     const linkedinUrl = 'https://www.linkedin.com/in/michael-k-30b074161/'
 
@@ -26,4 +26,4 @@ const GitHubButton = () => {
   )
 }
 
-export default GitHubButton
+export default LinkedinButton
