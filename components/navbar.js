@@ -21,6 +21,7 @@ import SearchToggleButton from './search-toggle-button'
 import ThemeToggleButton from './theme-toggle-button'
 import GithubButton from './github-button'
 import LoadingLink from './loadinglink'
+import LinkedinButton from './linkedin-button'
 
 const Navbar = props => {
   const { path } = props
@@ -75,6 +76,10 @@ const Navbar = props => {
         <Box flex={1} ml={1} align="right">
           <Box ml={2} display={{ base: 'inline-block' }}>
             <GithubButton />
+          </Box>
+
+          <Box ml={2} display={{ base: 'inline-block' }}>
+            <LinkedinButton />
           </Box>
 
           <Box ml={2} display={{ base: 'inline-block' }}>
@@ -141,7 +146,7 @@ const Navbar = props => {
                   >
                     Blog
                   </MenuItem>
-                  </LoadingLink>
+                </LoadingLink>
               </MenuList>
             </Menu>
           </Box>
