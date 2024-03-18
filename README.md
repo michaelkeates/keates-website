@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://repository-images.githubusercontent.com/580135325/89a2213a-42f8-40a7-ace0-f389f4a5ee16" width="512px"/>
+  <img src="https://blog.michaelkeates.co.uk/wp-content/uploads/2023/08/signature.png" width="512px"/>
 </p>
 <h1 align="center">Portfolio Website</h1>
 
