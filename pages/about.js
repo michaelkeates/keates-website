@@ -466,24 +466,16 @@ const Home = () => {
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                   <li>
-                    Designed and developed a Full Stack solution, delivering an
-                    educational web service and seamless access to an operating
-                    system via web browsers, with a specialized emphasis on
-                    mobile and tablet compatibility
+                    Designed and developed a Full Stack solution using Next.JS &
+                    Typescript, delivering an educational web service and
+                    seamless access to an operating system via web browsers,
+                    with a specialized emphasis on mobile and tablet
+                    compatibility
                   </li>
                   <li>
                     Proficient in interpreting and analysing complex data to
                     create informative and visually appearing maps using GIS
                     Technologies
-                  </li>
-                  <li>
-                    Strong understanding of database modeling principles,
-                    enabling effective data organization and manipulation for
-                    various applications
-                  </li>
-                  <li>
-                    Developed a holistic understanding of industry expectations
-                    and best practices
                   </li>
                 </ul>
               </Box>
@@ -555,21 +547,9 @@ const Home = () => {
               <Box textAlign="left" fontSize={12} padding={2}>
                 <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                   <li>
-                    Designed and developed a Crime Alert App for Android/iOS,
-                    providing real-time crime data visualization on a map
-                  </li>
-                  <li>
-                    Proficient in multiple programming languages, with a strong
-                    ability to conceptualize, develop, and debug complex code
-                  </li>
-                  <li>
-                    Created responsive and user-friendly websites through
-                    mastery of Responsive Web Development principles
-                  </li>
-                  <li>
-                    Developed a solid foundation in Systems Architecture and
-                    Modelling, enabling effective design and optimization of
-                    software systems
+                    Designed and developed a Crime Alert App for Android/iOS
+                    using Xamarin, providing real-time crime data visualization
+                    on a map
                   </li>
                 </ul>
               </Box>
