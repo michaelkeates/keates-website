@@ -281,7 +281,7 @@ const Home = () => {
                     color=""
                     fontSize={9}
                   >
-                    Aug 2023 - Present
+                    Aug 2023 - March 2024
                   </Badge>
                 </Box>
               </Box>
@@ -289,6 +289,11 @@ const Home = () => {
               <Box marginTop={3}>
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                    <li>
+                      Successfully completed a 6-month contract, demonstrating
+                      strong performance and dedication, leading to an extension
+                      to 8 months.
+                    </li>
                     <li>
                       Analysing data to derive insights and support
                       decision-making processes.
