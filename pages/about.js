@@ -121,12 +121,14 @@ const Home = () => {
             </Heading>
             <Paragraph>
               I am a dedicated, hardworking individual with a robust background
-              in all things related to computing and technology. I possess a
-              passion for learning and developing new skills, a strong attention
-              to detail, excellent verbal and written communication abilities. I
-              am constantly seeking new challenges to broaden my knowledge and
-              experience, while also enhancing my capacity to develop efficient
-              and effective solutions for diverse requirements.
+              in all things related to computing and technology. Diligent,
+              enthusiastic, and a team player, I possess a passion for learning
+              and developing new skills, a strong attention to detail, and
+              excellent verbal and written communication abilities. I am
+              reliable and constantly seeking new challenges to broaden my
+              knowledge and experience, while also enhancing my capacity to
+              develop efficient and effective solutions for diverse
+              requirements.
             </Paragraph>
           </Section>
         </SimpleGrid>
