@@ -283,7 +283,7 @@ const Home = () => {
                     color=""
                     fontSize={9}
                   >
-                    April 2024 - PRESENT
+                    APR 2024 - PRESENT
                   </Badge>
                 </Box>
               </Box>
