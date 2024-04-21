@@ -334,7 +334,7 @@ const Home = () => {
                     color=""
                     fontSize={9}
                   >
-                    Aug 2023 - March 2024
+                    Aug 2023 - MAR 2024
                   </Badge>
                 </Box>
               </Box>
