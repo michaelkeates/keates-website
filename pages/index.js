@@ -19,7 +19,7 @@ const ProfileImage = chakra(Image, {
 const Home = () => (
   <Layout>
     <Container>
-      <Bubble text="Hi! I'm a Developer based in South Wales!" emoji="🏴󠁧󠁢󠁷󠁬󠁳󠁿" />
+      <Bubble text="Hi! I'm a Business Systems Analyst based in South Wales!" emoji="🏴󠁧󠁢󠁷󠁬󠁳󠁿" />
       <Box display={{ md: 'flex' }} paddingTop="25px" paddingBottom="25px">
         <Box flexGrow={1}>
           <Heading
@@ -72,7 +72,7 @@ const Home = () => (
             textAlign="center"
             paddingTop="35px"
           >
-            Welcome to my portfolio website! Hope you like what you see and
+            Welcome to my portfolio website! I am a Business Systems Analyst by day and a programmer at night! Hope you like what you see and
             enjoy your visit!
           </Heading>
         </Section>
