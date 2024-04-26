@@ -14,20 +14,20 @@ Keates Portfolio is my personal website that I have been developing over the sum
 <h2 align="left">Description</h1>
 This portfolio website uses the following frameworks to achieve what you see currently. Next.js is a React framework with hybrid static & server rendering, and route pre-fetching, etc. Chakra.UI.js is a simple, modular and accessible component library for React. Three.js is 3D library component for JavaScript that allows models to be rendered within a browser along with animations. Framer Motion is an animation library for React that allows transitions to between loading pages. Finally Appollo is a GraphQL server to fetch data from outside sources such as WordPress posts and Github repositores. In addition Pupeteer has been implemented to allow easy generation of a CV that scrapes the About page of the website.
 
-## Features
+<h2>Features</h2>
 
-- [Next.js](https://nextjs.org/) - A React framework with hybrid static & server rendering, and route pre-fetching, etc.
-- [Chakra UI](https://chakra-ui.com/) - A simple, modular and accessible component library for React
-- [Three.js](https://threejs.org/) - 3D library for JavaScript to display 3d model with animations and shadows
-- [Framer Motion](https://www.framer.com/motion/) - An animation library for React
-- [Apollo](https://github.com/apollographql/apollo-tooling/) - GraphQL Server to fetch repositories and blog posts from Github & Wordpress
-- [Puppeteer](https://pptr.dev/) - Puppeteer to control a headless Chrome/Chromium to generate CV
+<ul>
+  <li><a href="https://nextjs.org/">Next.js</a> - A React framework with hybrid static & server rendering, and route pre-fetching, etc.</li>
+  <li><a href="https://chakra-ui.com/">Chakra UI</a> - A simple, modular and accessible component library for React</li>
+  <li><a href="https://threejs.org/">Three.js</a> - 3D library for JavaScript to display 3d model with animations and shadows</li>
+  <li><a href="https://www.framer.com/motion/">Framer Motion</a> - An animation library for React</li>
+  <li><a href="https://github.com/apollographql/apollo-tooling/">Apollo</a> - GraphQL Server to fetch repositories and blog posts from GitHub & WordPress</li>
+  <li><a href="https://pptr.dev/">Puppeteer</a> - Puppeteer to control a headless Chrome/Chromium to generate CV</li>
+</ul>
 
-<br></br>
+<h2>Project structure</h2>
 
-## Project structure
-
-```
+<pre>
 $PROJECT_ROOT
 │   # Page files
 ├── pages
@@ -37,7 +37,5 @@ $PROJECT_ROOT
 ├── lib
 │   # Static files for images and 3d model file
 └── public
-```
-
----
+</pre>
 

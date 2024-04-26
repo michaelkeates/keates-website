@@ -10,20 +10,12 @@ import { GET_ALL_POSTS } from '../lib/queries'
 import Bubble from '../components/bubbleheader'
 
 import {
-  //Link,
-  //Box,
   Button,
-  //  List,
-  //  ListItem,
   useColorModeValue
-  //chakra
 } from '@chakra-ui/react'
 import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import { getApolloClient } from '../lib/wordpress'
 import { useQuery } from '@apollo/client'
-
-import styles from '../styles/Home.module.css'
-import styles2 from '../styles/emoji.module.css'
 
 function dayMonth(data) {
   const monthNames = [
