@@ -98,7 +98,7 @@ export default function Post({ params, rep }) {
     if (!isMounted.current) {
       isMounted.current = true
       const blockquotes = Array.from(
-        blockquoteRefs.current.querySelectorAll('.gitcode')
+        blockquoteRefs.current.querySelectorAll('pre')
       )
       blockquotes.forEach(blockquote => {
         if (!blockquote.querySelector('.copy-btn')) {

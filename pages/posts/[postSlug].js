@@ -208,7 +208,7 @@ export default function Post({ post }) {
     if (!isMounted.current) {
       isMounted.current = true
       const blockquotes = Array.from(
-        blockquoteRefs.current.querySelectorAll('.wp-block-code')
+        blockquoteRefs.current.querySelectorAll('pre')
       )
       blockquotes.forEach(blockquote => {
         if (!blockquote.querySelector('.copy-btn')) {
