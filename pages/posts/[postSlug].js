@@ -37,7 +37,24 @@ import {
 import { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 
-//autowinscripts update
+// Import parseHtml function
+export function parseHtml(html) {
+  if (typeof window !== 'undefined') {
+    const doc = new DOMParser().parseFromString(html, 'text/html')
+    const images = doc.querySelectorAll('img')
+    images.forEach(img => {
+      const src = img.getAttribute('src')
+      const newImg = document.createElement('a')
+      newImg.setAttribute('href', src)
+      newImg.setAttribute('target', '_blank')
+      img.parentNode.replaceChild(newImg, img)
+      newImg.appendChild(img)
+    })
+    return doc.body.innerHTML
+  } else {
+    return html
+  }
+}
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -289,14 +306,17 @@ export default function Post({ post }) {
               <Paragraph>
                 <div className="post-content">
                   <div
-                    dangerouslySetInnerHTML={{ __html: post.content }}
+                    className="post-content"
+                    dangerouslySetInnerHTML={{
+                      __html: parseHtml(post.content)
+                    }}
                     ref={el => (blockquoteRefs.current = el)}
                   />
                 </div>
               </Paragraph>
             </SimpleGrid>
             <Divider my={6} />
-              <AuthorBio />
+            <AuthorBio />
           </main>
           <Divider my={6} />
           <div>
@@ -361,7 +381,7 @@ export default function Post({ post }) {
                   size="md"
                   value={authorName}
                   onChange={e => setAuthorName(e.target.value)}
-                  borderColor={isCommentValid ? undefined : "red"}
+                  borderColor={isCommentValid ? undefined : 'red'}
                   marginBottom="10px" // Add some spacing between the input and the textarea
                 />
                 <Input
@@ -369,7 +389,7 @@ export default function Post({ post }) {
                   size="md"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  borderColor={isCommentValid ? undefined : "red"}
+                  borderColor={isCommentValid ? undefined : 'red'}
                   marginBottom="10px" // Add some spacing between the input and the textarea
                 />
                 <Textarea
@@ -377,7 +397,7 @@ export default function Post({ post }) {
                   size="md"
                   flex="1"
                   value={newComment}
-                  borderColor={isCommentValid ? undefined : "red"}
+                  borderColor={isCommentValid ? undefined : 'red'}
                   onChange={e => setNewComment(e.target.value)}
                 />
                 <Button

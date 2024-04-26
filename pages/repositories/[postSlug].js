@@ -70,6 +70,24 @@ function dayMonth(data) {
   return formatted
 }
 
+export function parseHtml(html) {
+  if (typeof window !== 'undefined') {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const images = doc.querySelectorAll('img');
+    images.forEach(img => {
+      const src = img.getAttribute('src');
+      const newImg = document.createElement('a');
+      newImg.setAttribute('href', src);
+      newImg.setAttribute('target', '_blank');
+      img.parentNode.replaceChild(newImg, img);
+      newImg.appendChild(img);
+    });
+    return doc.body.innerHTML;
+  } else {
+    return html;
+  }
+}
+
 export default function Post({ params, rep }) {
   const toast = useToast()
   const blockquoteRefs = useRef([])
@@ -172,10 +190,10 @@ export default function Post({ params, rep }) {
             </Box>
             <SimpleGrid paddingTop="25px" paddingBottom="25px">
               <Paragraph>
-                <div
-                  dangerouslySetInnerHTML={{ __html: rep.object.text }}
-                  ref={el => (blockquoteRefs.current = el)}
-                />
+              <div
+                dangerouslySetInnerHTML={{ __html: parseHtml(rep.object.text) }} // Modify this line
+                ref={el => (blockquoteRefs.current = el)}
+              />
               </Paragraph>
               {/* Remove the "test" text, or use it for other purposes */}
               <br></br>
