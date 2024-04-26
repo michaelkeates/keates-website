@@ -42,7 +42,7 @@ const ThemeToggleButton = () => {
           color={useColorModeValue('blackAlpha.900', 'whiteAlpha.600')}
           icon={
             loading || gqlLoading ? ( //conditional rendering based on loading state
-              <Spinner size="sm" />
+              <Spinner size="sm"  />
             ) : (
               //animate the transition between SunIcon and MoonIcon
               <motion.div

@@ -1,19 +1,15 @@
 import { useState } from 'react'
-import { gql } from '@apollo/client'
 import { SimpleGrid, Box, Badge, VStack, Flex } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
-import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 import NextLink from 'next/link'
 import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
-import { Button, useColorModeValue, Container } from '@chakra-ui/react'
+import { Button, useColorModeValue, Container, Divider } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
 import { useQuery } from '@apollo/client'
 import Bubble from '../components/bubbleheader'
-import { useRouter } from 'next/router' // Add this import
 
 import { GET_USER_REPOSITORIES } from '../lib/queries'
-import { color } from 'framer-motion'
 
 function dayMonth(data) {
   const monthNames = [
@@ -131,97 +127,103 @@ export default function Home({ repository }) {
                 bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                 css={{ backdropFilter: 'blur(10px)' }}
                 boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                position="relative"
               >
-                <GridItem
-                  id={github}
-                  thumbnail={thumb}
-                  title={item.name}
-                  target="_blank"
-                >
-                  {item.description}
-                  <VStack spacing={1} marginBottom="10px" marginTop="10px">
-                    <Flex
-                      width="100%"
-                      height="8px"
-                      borderRadius="4px"
-                      position="relative"
-                      alignItems="center"
-                      boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-                    >
-                      {sortedLanguages.map((lang, index) => (
-                        <Box
-                          key={index}
-                          flex={`${lang.width} 0 0%`}
-                          height="100%"
-                          backgroundColor={lang.color}
-                          borderRadius={
-                            sortedLanguages.length === 1
-                              ? '4px'
-                              : index === 0
-                              ? '4px 0 0 4px'
-                              : index === sortedLanguages.length - 1
-                              ? '0 4px 4px 0'
-                              : '0'
-                          }
-                        ></Box>
-                      ))}
-                    </Flex>
-                    <Flex
-                      justifyContent={
-                        sortedLanguages.length === 1 ? 'flex-start' : 'center'
-                      }
-                      fontSize="12px"
-                      width="100%"
-                      flexWrap="wrap"
-                    >
-                      {sortedLanguages.map((lang, index) => (
-                        <Flex
-                          key={index}
-                          flexDirection="column"
-                          alignItems={
-                            sortedLanguages.length === 1
-                              ? 'flex-start'
-                              : 'center'
-                          }
-                          marginBottom={
-                            sortedLanguages.length === 3 ? '5px' : '0'
-                          }
-                          marginRight="10px"
-                        >
-                          <Box
-                            display="inline-block"
-                            backgroundColor={lang.color}
-                            padding="2px 6px"
-                            borderRadius="4px"
-                            marginTop="4px"
-                            marginBottom="6px"
-                            color="#ffffff"
-                          >
-                            {lang.name}
-                          </Box>
-                          <Box>{lang.width.toFixed(1)}%</Box>
-                        </Flex>
-                      ))}
-                    </Flex>
-                  </VStack>
-                  <Box
-                    borderRadius="4px"
-                    marginTop="12px"
-                    marginBottom="2px"
-                    fontSize={12}
+                <VStack spacing={1} marginBottom="10px" marginTop="10px">
+                  <GridItem
+                    id={github}
+                    thumbnail={thumb}
+                    title={item.name}
+                    target="_blank"
                   >
-                    {' '}
-                    🗓️ {dayMonth(item.createdAt)}
-                  </Box>
-                </GridItem>
-
+                    {item.description}
+                    <VStack spacing={1} marginBottom="10px" marginTop="10px">
+                      <Flex
+                        width="100%"
+                        height="8px"
+                        borderRadius="4px"
+                        position="relative"
+                        alignItems="center"
+                        boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                      >
+                        {sortedLanguages.map((lang, index) => (
+                          <Box
+                            key={index}
+                            flex={`${lang.width} 0 0%`}
+                            height="100%"
+                            backgroundColor={lang.color}
+                            borderRadius={
+                              sortedLanguages.length === 1
+                                ? '4px'
+                                : index === 0
+                                ? '4px 0 0 4px'
+                                : index === sortedLanguages.length - 1
+                                ? '0 4px 4px 0'
+                                : '0'
+                            }
+                          ></Box>
+                        ))}
+                      </Flex>
+                      <Flex
+                        justifyContent={
+                          sortedLanguages.length === 1 ? 'flex-start' : 'center'
+                        }
+                        fontSize="12px"
+                        width="100%"
+                        flexWrap="wrap"
+                      >
+                        {sortedLanguages.map((lang, index) => (
+                          <Flex
+                            key={index}
+                            flexDirection="column"
+                            alignItems={
+                              sortedLanguages.length === 1
+                                ? 'flex-start'
+                                : 'center'
+                            }
+                            marginBottom={
+                              sortedLanguages.length === 3 ? '5px' : '0'
+                            }
+                            marginRight="10px"
+                          >
+                            <Box
+                              display="inline-block"
+                              backgroundColor={lang.color}
+                              padding="2px 6px"
+                              borderRadius="4px"
+                              marginTop="4px"
+                              marginBottom="6px"
+                              color="#ffffff"
+                            >
+                              {lang.name}
+                            </Box>
+                            <Box>{lang.width.toFixed(1)}%</Box>
+                          </Flex>
+                        ))}
+                      </Flex>
+                    </VStack>
+                    <Box
+                      borderRadius="4px"
+                      marginTop="12px"
+                      marginBottom="42px"
+                      fontSize={12}
+                    >
+                      {' '}
+                      🗓️ {dayMonth(item.createdAt)}
+                    </Box>
+                  </GridItem>
+                </VStack>
                 <NextLink href={item.path} passHref scroll={false}>
                   <Button
                     boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
                     fontSize="14px"
-                    marginTop="15px"
-                    marginBottom="5px"
+                    marginTop="auto" // Adjust top margin to push button to the bottom
+                    marginBottom="15px"
                     bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                    position="absolute" // Set position absolute for the button
+                    bottom="-5px" // Push the button to the bottom
+                    left="50%" // Center horizontally
+                    transform="translateX(-50%)" // Center horizontally
                   >
                     Read More
                   </Button>
