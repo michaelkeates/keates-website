@@ -55,12 +55,13 @@ const AuthorBio = () => (
 
     <Section delay={0.1}>
       <Paragraph>
-        I am a dedicated and hardworking individual with a strong background in
-        all things computing and technology. I have a passion for learning and
-        developing new skills, a strong attention to detail, excellent verbal,
-        written and communication skills and I am always looking for new
-        challenges to expand my knowledge and experience as well as improving my
-        abilities to create efficient and effective solutions for various
+        I am a dedicated, hardworking individual with a robust background in all
+        things related to computing and technology. Diligent, enthusiastic, and
+        a team player, I possess a passion for learning and developing new
+        skills, a strong attention to detail, and excellent verbal and written
+        communication abilities. I am reliable and constantly seeking new
+        challenges to broaden my knowledge and experience, while also enhancing
+        my capacity to develop efficient and effective solutions for diverse
         requirements.
       </Paragraph>
     </Section>
