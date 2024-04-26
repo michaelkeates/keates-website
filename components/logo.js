@@ -1,8 +1,7 @@
-//import Link from 'next/link'
+import Link from 'next/link'
 import Image from 'next/image'
 import { useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import LoadingLink from './loadinglink'
 
 const LogoBox = styled.span`
   font-weight: bold;
@@ -24,14 +23,14 @@ const LogoBox = styled.span`
 
 
 const Logo = () => {
-  const sitelogo = `/images/signature${useColorModeValue('', '-dark')}.png`
+  const footPrintImg = `/images/signature${useColorModeValue('', '-dark')}.png`
 
   return (
-    <LoadingLink href="/" scroll={false}>
+    <Link href="/" scroll={false}>
         <LogoBox>
-          <Image src={sitelogo} width={28} height={28} alt="logo" />
+          <Image src={footPrintImg} width={28} height={28} alt="logo" />
         </LogoBox>
-    </LoadingLink>
+    </Link>
   )
 }
 

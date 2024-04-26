@@ -8,7 +8,6 @@ import NextLink from 'next/link'
 import Image from 'next/image'
 import { GET_ALL_POSTS } from '../lib/queries'
 import Bubble from '../components/bubbleheader'
-import LoadingLink from '../components/loadinglink'
 
 import {
   //Link,
@@ -121,7 +120,7 @@ export default function Home({ posts }) {
                       🗓️ {dayMonth(post.date)}
                     </Badge>
                   </GridItem>
-                  <LoadingLink href={post.path} passHref scroll={false}>
+                  <NextLink href={post.path} passHref scroll={false}>
                     <Button
                       boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
                       fontSize="14px"
@@ -131,7 +130,7 @@ export default function Home({ posts }) {
                     >
                       Read More
                     </Button>
-                  </LoadingLink>
+                  </NextLink>
                 </Box>
               </Section>
             ))}

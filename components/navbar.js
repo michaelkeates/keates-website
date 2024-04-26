@@ -20,8 +20,28 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import SearchToggleButton from './search-toggle-button'
 import ThemeToggleButton from './theme-toggle-button'
 import GithubButton from './github-button'
-import LoadingLink from './loadinglink'
 import LinkedinButton from './linkedin-button'
+
+const LinkItem = ({ href, path, target, children, ...props }) => {
+  const active = path === href
+  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+  return (
+    <NextLink href={href} passHref scroll={false}>
+      <Link
+        p={2}
+        //bg={active ? 'grassTeal' : undefined}
+        //bg={active ? useColorModeValue('whiteAlpha.400', 'whiteAlpha.200') : undefined}
+        color={active ? '#a6bbce' : active}
+        target={target}
+        //borderRadius="full"
+        fontSize="12"
+        {...props}
+      >
+        {children}
+      </Link>
+    </NextLink>
+  )
+}
 
 const Navbar = props => {
   const { path } = props
@@ -62,15 +82,15 @@ const Navbar = props => {
           mt={{ base: 4, md: 0 }}
           p={2}
         >
-          <LoadingLink p={2} href="/about" path={path}>
+          <LinkItem p={2} href="/about" path={path}>
             About
-          </LoadingLink>
-          <LoadingLink p={2} href="/repositories" path={path}>
+          </LinkItem>
+          <LinkItem p={2} href="/repositories" path={path}>
             Portfolio
-          </LoadingLink>
-          <LoadingLink p={2} href="/posts" path={path}>
+          </LinkItem>
+          <LinkItem p={2} href="/posts" path={path}>
             Blog
-          </LoadingLink>
+          </LinkItem>
         </Stack>
 
         <Box flex={1} ml={1} align="right">
@@ -99,7 +119,7 @@ const Navbar = props => {
                 bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                 css={{ backdropFilter: 'blur(10px)' }}
               >
-                <LoadingLink href="/about" passHref>
+                <NextLink href="/about" passHref>
                   <MenuItem
                     bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
@@ -114,8 +134,8 @@ const Navbar = props => {
                   >
                     About
                   </MenuItem>
-                </LoadingLink>
-                <LoadingLink href="/repositories" passHref>
+                </NextLink>
+                <NextLink href="/repositories" passHref>
                   <MenuItem
                     bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
@@ -130,8 +150,8 @@ const Navbar = props => {
                   >
                     Portfolio
                   </MenuItem>
-                </LoadingLink>
-                <LoadingLink href="/posts" passHref>
+                </NextLink>
+                <NextLink href="/posts" passHref>
                   <MenuItem
                     bg="{useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}"
                     px={4}
@@ -146,7 +166,7 @@ const Navbar = props => {
                   >
                     Blog
                   </MenuItem>
-                </LoadingLink>
+                </NextLink>
               </MenuList>
             </Menu>
           </Box>

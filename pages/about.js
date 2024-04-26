@@ -26,7 +26,7 @@ import excelicon from '../public/images/works/microsoft_excel.png'
 import React, { useState } from 'react'
 import styles from '../styles/emoji.module.css'
 import Bubble from '../components/bubbleheader'
-import LoadingLink from '../components/loadinglink'
+import NextLink from 'next/link'
 
 import {
   CplusplusIcon,
@@ -478,7 +478,7 @@ const Home = () => {
                 <Image src={thumbusw} width={100} />
               </Box>
               <Box marginRight={4}>
-                <LoadingLink
+                <NextLink
                   href="qualificatons/uswapplied"
                   passHref
                   scroll={false}
@@ -493,7 +493,7 @@ const Home = () => {
                   >
                     BSc (Hons) Applied Computing - First Class Honours
                   </Heading>
-                </LoadingLink>
+                </NextLink>
                 <Heading
                   as="h2"
                   fontFamily="Roboto"
@@ -559,7 +559,7 @@ const Home = () => {
                 <Image src={thumbusw} width={100} />
               </Box>
               <Box marginRight={4}>
-                <LoadingLink
+                <NextLink
                   href="qualificatons/uswhnd"
                   passHref
                   scroll={false}
@@ -574,7 +574,7 @@ const Home = () => {
                   >
                     Higher National Diploma (HND) Computing - Distinction
                   </Heading>
-                </LoadingLink>
+                </NextLink>
                 <Heading
                   as="h2"
                   fontFamily="Roboto"
@@ -635,7 +635,7 @@ const Home = () => {
                   <Image src={thumbcc} width={70} />
                 </Box>
                 <Box marginRight={4}>
-                  <LoadingLink
+                  <NextLink
                     href="qualificatons/coleggwentbtec"
                     passHref
                     scroll={false}
@@ -650,7 +650,7 @@ const Home = () => {
                     >
                       BTEC Computing - Distinction
                     </Heading>
-                  </LoadingLink>
+                  </NextLink>
                   <Heading
                     as="h2"
                     fontFamily="Roboto"

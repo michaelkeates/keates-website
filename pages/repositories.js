@@ -10,7 +10,6 @@ import { Button, useColorModeValue, Container } from '@chakra-ui/react'
 import { getApolloClient } from '../lib/github'
 import { useQuery } from '@apollo/client'
 import Bubble from '../components/bubbleheader'
-import LoadingLink from '../components/loadinglink'
 import { useRouter } from 'next/router' // Add this import
 
 import { GET_USER_REPOSITORIES } from '../lib/queries'
@@ -216,7 +215,7 @@ export default function Home({ repository }) {
                   </Box>
                 </GridItem>
 
-                <LoadingLink href={item.path} passHref scroll={false}>
+                <NextLink href={item.path} passHref scroll={false}>
                   <Button
                     boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
                     fontSize="14px"
@@ -226,7 +225,7 @@ export default function Home({ repository }) {
                   >
                     Read More
                   </Button>
-                </LoadingLink>
+                </NextLink>
               </Box>
             )
           })}
