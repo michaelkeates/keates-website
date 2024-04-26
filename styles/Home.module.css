@@ -96,7 +96,7 @@
   font-size: 64px;
   padding-top: 2rem;
   border-bottom: 1px solid rgba(184, 184, 184, 0.16);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1px;
   margin-bottom: 15px;
   width: 100%; /* Add this line */
   box-sizing: border-box; /* Add this line to include padding and border in width calculation */
