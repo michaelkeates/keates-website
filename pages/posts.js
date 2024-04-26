@@ -94,6 +94,9 @@ export default function Home({ posts }) {
             {postsToDisplay.map(post => (
               <Section delay={0.1} key={post.slug}>
                 <Box
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
                   textAlign="center"
                   bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                   css={{ backdropFilter: 'blur(10px)' }}
@@ -168,23 +171,23 @@ export default function Home({ posts }) {
 }
 
 export async function getServerSideProps({ req }) {
-  const apolloClient = getApolloClient();
+  const apolloClient = getApolloClient()
 
   const { data } = await apolloClient.query({
     query: GET_ALL_POSTS
-  });
+  })
 
   const posts = data?.posts.edges
     .map(({ node }) => node)
     .map(post => ({
       ...post,
       path: `/posts/${post.slug}`
-    }));
+    }))
 
   return {
     props: {
       posts,
       cookies: req.headers.cookie ?? ''
     }
-  };
+  }
 }
