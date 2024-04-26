@@ -8,7 +8,7 @@ Keates Portfolio is my personal website that I have been developing over the sum
 <br></br>
 <br></br>
 <p align="center">
-  <img src="https://blog.michaelkeates.co.uk/wp-content/uploads/2024/03/Screenshot-2024-03-18-at-09.10.35.jpg" width="75%"/>
+  <img src="https://github.com/michaelkeates/keates-website/assets/103878560/49b8270c-78a4-45b7-8366-0088b522a9be" width="75%"/>
 </p>
 <br></br>
 <h2 align="left">Description</h1>
