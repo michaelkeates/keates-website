@@ -5,7 +5,6 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 import NextLink from 'next/link'
-import Image from 'next/image'
 import { GET_ALL_POSTS } from '../lib/queries'
 import Bubble from '../components/bubbleheader'
 

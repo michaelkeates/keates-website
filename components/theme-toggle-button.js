@@ -28,35 +28,32 @@ const ThemeToggleButton = () => {
   }, [router]);
 
   return (
-    <div style={{ display: 'inline-block' }}>
-        <IconButton
-          aria-label="Toggle theme"
-          bg={useColorModeValue('orange.200', 'whiteAlpha.200')}
-          _hover={{
-            bg: useColorModeValue('orange.300', 'whiteAlpha.300'),
-            transform: 'none', //disable zoom effect on hover
-          }}
-          css={{ backdropFilter: 'blur(10px)' }}
-          padding="10px"
-          boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
-          color={useColorModeValue('blackAlpha.900', 'whiteAlpha.600')}
-          icon={
-            loading || gqlLoading ? ( //conditional rendering based on loading state
-              <Spinner size="sm"  />
-            ) : (
-              //animate the transition between SunIcon and MoonIcon
-              <motion.div
-                initial={{ opacity: 0 }} //initial opacity
-                animate={{ opacity: 1 }} //animate opacity
-                transition={{ duration: 0.2 }} //transition duration
-              >
-                {useColorModeValue(<MoonIcon />, <SunIcon />)}
-              </motion.div>
-            )
-          }
-          onClick={toggleColorMode}
-        />
-    </div>
+    <IconButton
+      aria-label="Toggle theme"
+      bg={useColorModeValue('orange.200', 'whiteAlpha.200')}
+      _hover={{
+        bg: useColorModeValue('orange.300', 'whiteAlpha.300'),
+        transform: 'none', //disable zoom effect on hover
+      }}
+      css={{ backdropFilter: 'blur(10px)' }}
+      padding="10px"
+      boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+      color={useColorModeValue('blackAlpha.900', 'whiteAlpha.600')}
+      onClick={toggleColorMode}
+    >
+      {loading || gqlLoading ? (
+        <Spinner size="sm" />
+      ) : (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+          style={{ marginTop: '-1.5px' }} // Adjust marginTop value as needed
+        >
+          {useColorModeValue(<MoonIcon />, <SunIcon />)}
+        </motion.div>
+      )}
+    </IconButton>
   );
 };
 
