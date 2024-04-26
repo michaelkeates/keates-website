@@ -302,7 +302,6 @@ export default function Post({ post }) {
             </Box>
             <h1 className={styles.title}>{post.title}</h1>
             <SimpleGrid paddingTop="25px" paddingBottom="25px">
-              <Divider my={1} />
               <Paragraph>
                 <div className="post-content">
                   <div
