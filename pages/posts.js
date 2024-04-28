@@ -104,15 +104,15 @@ export default function Home({ posts }) {
                         __html: post.excerpt
                       }}
                     />
-                    <Badge
-                      bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
-                      color=""
-                      whiteSpace="normal"
-                      marginTop="10px"
-                      marginBottom="10px"
+                    <Box
+                      borderRadius="4px"
+                      marginTop="12px"
+                      marginBottom="12px"
+                      fontSize={12}
                     >
+                      {' '}
                       🗓️ {dayMonth(post.date)}
-                    </Badge>
+                    </Box>
                   </GridItem>
                   <NextLink href={post.path} passHref scroll={false}>
                     <Button
