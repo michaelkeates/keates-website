@@ -265,7 +265,7 @@ const Home = () => {
                     textAlign="left"
                     marginBottom="2px"
                   >
-                    Graduate Business Systems Analyst
+                    Graduate Business Analyst
                   </Heading>
                   <Heading
                     as="h2"
