@@ -295,7 +295,7 @@ const Home = () => {
                       Proficinent at effectilvely following Agile methodologies to craft and refined Agile stories, actively contributing as a Scrum team member.
                     </li>
                     <li>Produced timely Requirements, Design, Interface, and Output Documents, ensuring adherence to deadlines.</li>
-                    <li>Collaborated with Senior BA and Lead BA to offer functional analysis and design advice to clients throughout the project.</li>
+                    <li>Collaborated with Senior BA and Lead BA to offer functional analysis and design advice to clients throughout projects.</li>
                   </ul>
                 </Box>
               </Box>
