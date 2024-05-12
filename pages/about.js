@@ -439,10 +439,6 @@ const Home = () => {
                       identity and values
                     </li>
                     <li>
-                      Created compelling and engaging presentations for clients,
-                      effectively conveying complex ideas and proposals
-                    </li>
-                    <li>
                       Produced comprehensive and efficient transport plans,
                       optimizing logisistics and ensuring smooth operations
                     </li>
