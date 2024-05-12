@@ -364,12 +364,8 @@ const Home = () => {
                       decision-making processes.
                     </li>
                     <li>
-                      Contributing significantly to the successful
+                      Contributing significantly to the thorough analysis, meticolous cleansing which lead to the successful
                       implementation of a new system
-                    </li>
-                    <li>
-                      Conducting thorough analysis and meticulous data cleansing
-                      in preparation for seamless migration
                     </li>
                   </ul>
                 </Box>
