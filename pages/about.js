@@ -274,7 +274,7 @@ const Home = () => {
                     fontSize={11}
                     textAlign="left"
                   >
-                    Sapiens
+                    Sapiens | Full-Time
                   </Heading>
                 </Box>
                 <Box display="flex" justifyContent="flex-end" flex="1">
@@ -285,6 +285,18 @@ const Home = () => {
                   >
                     APR 2024 - PRESENT
                   </Badge>
+                </Box>
+              </Box>
+              <Divider marginTop={3} marginBottom={1} />
+              <Box marginTop={3}>
+                <Box textAlign="left" fontSize={12} padding={2}>
+                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                    <li>
+                      Proficinent at effectilvely following Agile methodologies to craft and refined Agile stories, actively contributing as a Scrum team member.
+                    </li>
+                    <li>Produced timely Requirements, Design, Interface, and Output Documents, ensuring adherence to deadlines.</li>
+                    <li>Collaborated with Senior BA and Lead BA to offer functional analysis and design advice to clients throughout the project.</li>
+                  </ul>
                 </Box>
               </Box>
             </Box>
@@ -325,7 +337,7 @@ const Home = () => {
                     fontSize={11}
                     textAlign="left"
                   >
-                    City Hospice
+                    City Hospice | Contract
                   </Heading>
                 </Box>
                 <Box display="flex" justifyContent="flex-end" flex="1">
@@ -358,14 +370,6 @@ const Home = () => {
                     <li>
                       Conducting thorough analysis and meticulous data cleansing
                       in preparation for seamless migration
-                    </li>
-                    <li>
-                      Performing data inputting tasks accurately and
-                      efficiently.
-                    </li>
-                    <li>
-                      Collaborating to enhance the database system and automate
-                      processes.
                     </li>
                   </ul>
                 </Box>
@@ -408,7 +412,7 @@ const Home = () => {
                     fontSize={11}
                     textAlign="left"
                   >
-                    Heavy Lift Logistics East Africa Limited
+                    Heavy Lift Logistics East Africa Limited | Freelance
                   </Heading>
                 </Box>
                 <Box
