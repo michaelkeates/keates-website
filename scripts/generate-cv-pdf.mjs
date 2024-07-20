@@ -12,17 +12,17 @@ async function generatePDF() {
   const page = await browser.newPage()
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 })
 
-  const url = 'http://www.michaelkeates.co.uk/about' // Replace with the URL of the about page
+  const url = 'http://www.michaelkeates.co.uk/about'
 
   await page.goto(url)
 
   //or, add a delay before generating the PDF (in milliseconds)
-  await page.waitForTimeout(2000) //adjust the delay as needed
+  await page.waitForTimeout(2000)
 
   //evaluate the page and remove unwanted elements
   await page.evaluate(() => {
     document.body.style.backgroundColor = '#ffffff'
-    const gridElement = document.querySelectorAll('.css-85h89v, .css-481av6')
+    //const gridElement = document.querySelectorAll('.css-85h89v, .css-481av6')
     const gridElement2 = document.querySelectorAll('.css-1id2kv5')
     const gridElement3 = document.querySelectorAll('.css-vqf3rg, .css-1fj31y')
     const textSize = document.querySelectorAll(
@@ -48,17 +48,17 @@ async function generatePDF() {
     const imageSize = document.querySelectorAll('.grid-item-thumbnail')
 
     const customGridElements = document.querySelectorAll(
-      '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-gzapkn, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu, .css-jt83u2, .chakra-divider.css-mzlxjy'
+      '.css-9t4bud, .css-o75elv, .css-1id2kv5, .css-1oo097b, .css-13hhjt6, .css-1a0pxu, .css-1a0pxu, .css-jt83u2'
     )
     const customGridElements2 = document.querySelectorAll(
-      '.css-kowkqe, .css-98n5v3, .chakra-heading.css-9n0xbk, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .chakra-divider.css-mzlxjy, .css-p77vvx'
+      '.css-kowkqe, .css-161046s, .css-gzapkn, .css-1vo7tkn, .css-9t4bud, .css-h47psn, .css-p77vvx'
     )
     const customGridElements3 = document.querySelectorAll(
-      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6, .chakra-divider.css-mzlxjy, .chakra-heading.css-17cjct2, .chakra-divider.css-svjswr, .css-1art13b, .css-1dsdcac'
+      '.css-1k7klv9, .css-1oo097b, .css-13hhjt6, .chakra-heading.css-17cjct2, .chakra-divider.css-svjswr, .css-1dsdcac, .chakra-heading.css-9n0xbk, .css-1jzpmk'
     )
 
     const customGridElements4 = document.querySelectorAll(
-      '.another-custom-grid'
+      '.another-custom-grid, .css-1art13b'
     )
 
     const customGridElements5 = document.querySelectorAll(
@@ -81,7 +81,7 @@ async function generatePDF() {
       '.chakra-linkbox.css-16kwgao, .css-19v23ry'
     )
 
-    const fontweight = document.querySelectorAll('.chakra-heading.css-1dilgbf')
+    const fontweight = document.querySelectorAll('.chakra-heading.css-1dilgbf, .chakra-heading.css-5cq7sr')
 
     const padding = document.querySelectorAll('.css-o7muvo')
 
@@ -91,10 +91,10 @@ async function generatePDF() {
 
     //next section
 
-    gridElement.forEach(gridElement => {
-      //modify the grid template columns property to have 7 columns
-      gridElement.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))'
-    })
+    //gridElement.forEach(gridElement => {
+    //  //modify the grid template columns property to have 7 columns
+    //  gridElement.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))'
+    //})
 
     gridElement2.forEach(gridElement2 => {
       //modify the grid template columns property to have 7 columns
@@ -143,7 +143,7 @@ async function generatePDF() {
     })
 
     borderColor.forEach(borderColor => {
-      borderColor.style.borderColor = 'rgba(0, 0, 0, 0.1)'
+      borderColor.style.borderColor = 'rgba(0, 0, 0, 0.9)'
     })
 
     imageSize.forEach(imageSize => {
@@ -165,33 +165,36 @@ async function generatePDF() {
     })
 
     const unwantedElements = document.querySelectorAll(
-      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy, .css-p77vvx, .chakra-divider.css-mzlxjy, .chakra-divider.css-svjswr, .chakra-divider.css-evmj4r'
+      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy, .css-p77vvx, .chakra-divider.css-mzlxjy, .chakra-divider.css-evmj4r'
     )
 
     customGridElements.forEach(element => {
-      element.style.marginBottom = '0'
-      element.style.paddingBottom = '-10px'
+      element.style.marginBottom = '2px'
+      element.style.paddingBottom = '0px'
       element.style.background = 'transparent'
       element.style.boxShadow = 'none'
     })
 
     customGridElements2.forEach(element => {
-      element.style.marginBottom = '-6px'
+      element.style.marginBottom = '0px'
+      element.style.marginTop = '2px'
     })
 
     customGridElements3.forEach(element => {
-      element.style.marginTop = '4px'
-      element.style.marginBottom = '4px'
+      element.style.marginTop = '6px'
+      element.style.marginBottom = '5px'
       element.style.paddingBottom = '0px'
     })
 
     customGridElements4.forEach(element => {
-      element.style.marginBottom = '0px'
+      element.style.marginBottom = '2px'
+      element.style.marginTop = '2px'
     })
 
     customGridElements5.forEach(element => {
       //move text to left
       element.style.marginLeft = '-8px'
+      element.style.marginTop = '2px'
     })
 
     unwantedElements.forEach(element => {
@@ -215,6 +218,7 @@ async function generatePDF() {
     boxElement.forEach(element => {
       element.style.background = 'transparent'
       element.style.boxShadow = 'none'
+      element.style.marginBottom = '0px'
     })
 
     if (badgeElement) {
@@ -260,7 +264,16 @@ async function generatePDF() {
             margin: 0 !important; /* Override existing margin with !important */
           }
           .chakra-heading.css-5cq7sr {
-            font-weight: 500 !important;
+            font-weight: 600 !important;
+          }
+          .chakra-heading.css-17cjct2 {
+            font-weight: 600 !important;
+          }
+          .chakra-heading.css-17wi6zd {
+            font-weight: 600 !important;
+          }
+          .chakra-heading.css-9n0xbk {
+            font-weight: 600 !important;
           }
           .chakra-heading.css-kowkqe {
             margin-bottom: 2px !important;

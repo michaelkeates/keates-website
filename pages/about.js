@@ -236,7 +236,7 @@ const Home = () => {
             mb={4}
             marginTop="1rem"
           >
-            Work
+            Experience
           </Heading>
           <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
             <Box
@@ -294,8 +294,8 @@ const Home = () => {
                     <li>
                       Proficinent at effectilvely following Agile methodologies to craft and refined Agile stories, actively contributing as a Scrum team member.
                     </li>
-                    <li>Produced timely Requirements, Design, Interface, and Output Documents, ensuring adherence to deadlines.</li>
-                    <li>Collaborated with Senior BA and Lead BA to offer functional analysis and design advice to clients throughout projects.</li>
+                    <li>Produced timely Expert Testing, Analysis & Documentation ensuring adherence to sprint deadlines.</li>
+                    <li>Collaborated with Senior & Lead BAs to offer functional analysis and design advice to clients throughout projects.</li>
                   </ul>
                 </Box>
               </Box>
