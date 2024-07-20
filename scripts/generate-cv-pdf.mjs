@@ -166,7 +166,7 @@ async function generatePDF() {
     })
 
     const unwantedElements = document.querySelectorAll(
-      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy, .css-p77vvx, .chakra-divider.css-mzlxjy, .chakra-divider.css-evmj4r'
+      '.model.css-14imgav, .css-fx26l1, .css-nkmf85, .css-owexls, .chakra-button.css-r7xd4a, .custom-grid, .css-3isgxm, .css-kjxakp, .emoji_emoji__vYFMy, .css-p77vvx, .chakra-divider.css-mzlxjy, .chakra-divider.css-evmj4r, .emoji_emoji__5Xz14'
     )
 
     customGridElements.forEach(element => {
