@@ -644,7 +644,7 @@ const Home = () => {
                       textAlign="left"
                       marginBottom="2px"
                     >
-                      BTEC Computing - Distinction
+                      Business & Technology Education Council (BTEC) Computing - Distinction
                     </Heading>
                   </NextLink>
                   <Heading
