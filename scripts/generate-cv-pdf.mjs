@@ -63,7 +63,7 @@ async function generatePDF() {
     )
 
     const customGridElements5 = document.querySelectorAll(
-      '.css-1dsdcac, .css-2lzsxm, .chakra-heading.css-5cq7sr, .chakra-heading.css-1x30byp'
+      '.css-1dsdcac, .css-2lzsxm, .chakra-heading.css-5cq7sr, .chakra-heading.css-1x30byp, .chakra-heading.kowkqe'
     )
 
     const boxElements = document.querySelectorAll(
@@ -182,8 +182,8 @@ async function generatePDF() {
     })
 
     customGridElements3.forEach(element => {
-      element.style.marginTop = '5px'
-      element.style.marginBottom = '4px'
+      element.style.marginTop = '6px'
+      element.style.marginBottom = '6px'
       element.style.paddingBottom = '0px'
     })
 
