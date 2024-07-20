@@ -17,7 +17,8 @@ async function generatePDF() {
   await page.goto(url)
 
   //or, add a delay before generating the PDF (in milliseconds)
-  await page.waitForTimeout(2000)
+  //await page.waitForTimeout(2000)
+  await page.waitForNetworkIdle(2000)
 
   //evaluate the page and remove unwanted elements
   await page.evaluate(() => {
@@ -181,8 +182,8 @@ async function generatePDF() {
     })
 
     customGridElements3.forEach(element => {
-      element.style.marginTop = '6px'
-      element.style.marginBottom = '5px'
+      element.style.marginTop = '5px'
+      element.style.marginBottom = '4px'
       element.style.paddingBottom = '0px'
     })
 
