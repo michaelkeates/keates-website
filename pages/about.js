@@ -292,7 +292,7 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Proficinent at effectilvely following Agile methodologies to craft and refined Agile stories, actively contributing as a Scrum team member.
+                      Proficient at effectilvely following Agile methodologies to craft and refined Agile stories, actively contributing as a Scrum team member.
                     </li>
                     <li>Produced timely Expert Testing, Analysis & Documentation ensuring adherence to sprint deadlines.</li>
                     <li>Collaborated with Senior & Lead BAs to offer functional analysis and design advice to clients throughout projects.</li>
