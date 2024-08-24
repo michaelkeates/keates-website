@@ -248,10 +248,6 @@
   margin-bottom: 10px;
 }
 
-.main cust1 {
-  margin-bottom: 90%;
-}
-
 /* Adjust for left-side and right-side bubbles */
 .main cust2.left {
   justify-content: flex-start;
@@ -266,7 +262,7 @@
 .main test {
   align-items: center;
   /* Set size for avatar container */
-  width: 70px; /* Adjust as needed */
+  /*width: 70px; /* Adjust as needed */
   height: 70px; /* Adjust as needed */
   margin-bottom: 10px;
 }
