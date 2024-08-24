@@ -269,8 +269,8 @@
 
 /* Ensure avatar fits within container */
 .main .avatar {
-  width: 100%; /* Make image fill the container */
-  height: 100%; /* Make image fill the container */
+  width: 100px; /* Make image fill the container */
+  height: 100px; /* Make image fill the container */
   border-radius: 50%;
   object-fit: cover; /* Ensure image covers container without distortion */
 }
@@ -278,7 +278,7 @@
 /* Style for message bubbles */
 .main pre2 {
   border-radius: 10px;
-  background-color: rgba(0, 193, 6, 0.426); /* Custom green color with transparency */
+  background-color: rgba(60, 167, 229, 0.75); /* Different color for replies */
   backdrop-filter: blur(10px); /* Adds a blur effect */
   padding: 15px;
   height: auto; /* Adjust to fit content height */
@@ -296,7 +296,7 @@
 /* Style for reply message bubbles */
 .main pre3 {
   border-radius: 10px;
-  background-color: rgba(60, 167, 229, 0.75); /* Different color for replies */
+  background-color: rgba(0, 193, 6, 0.426); /* Custom green color with transparency */
   backdrop-filter: blur(10px); /* Adds a blur effect */
   padding: 15px;
   height: auto; /* Adjust to fit content height */
