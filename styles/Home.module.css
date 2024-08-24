@@ -278,7 +278,7 @@
 /* Style for message bubbles */
 .main pre2 {
   border-radius: 10px;
-  background-color: rgba(30, 213, 37, 0.426); /* Custom green color with transparency */
+  background-color: rgba(58, 255, 64, 0.426); /* Custom green color with transparency */
   backdrop-filter: blur(10px); /* Adds a blur effect */
   padding: 15px;
   height: auto; /* Adjust to fit content height */
@@ -295,7 +295,7 @@
 /* Style for reply message bubbles */
 .main pre3 {
   border-radius: 10px;
-  background-color: rgba(47, 58, 179, 0.75); /* Different color for replies */
+  background-color: rgba(67, 186, 255, 0.75); /* Different color for replies */
   backdrop-filter: blur(10px); /* Adds a blur effect */
   padding: 15px;
   height: auto; /* Adjust to fit content height */
