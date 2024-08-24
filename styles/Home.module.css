@@ -240,16 +240,19 @@
   display: flex;
 }
 
-/* Style for chat bubbles */
 .main cust2,
 .main cust3 {
   display: flex;
   align-items: center;
+  margin-top: 10px;
   margin-bottom: 10px;
-  max-width: 80%; /* Adjust to fit within container */
 }
 
-/* Style for chat bubbles on the left and right */
+.main cust1 {
+  margin-bottom: 90%;
+}
+
+/* Adjust for left-side and right-side bubbles */
 .main cust2.left {
   justify-content: flex-start;
 }
@@ -260,17 +263,20 @@
 }
 
 /* Style for avatar containers */
-.main .avatar-container {
-  display: flex;
+.main test {
   align-items: center;
+  /* Set size for avatar container */
+  width: 70px; /* Adjust as needed */
+  height: 70px; /* Adjust as needed */
+  margin-bottom: 10px;
 }
 
-/* Style for avatars */
+/* Ensure avatar fits within container */
 .main .avatar {
-  width: 40px; /* Set desired width */
-  height: 40px; /* Set desired height */
+  width: 100%; /* Make image fill the container */
+  height: 100%; /* Make image fill the container */
   border-radius: 50%;
-  object-fit: cover; /* Ensure image covers the element without distortion */
+  object-fit: cover; /* Ensure image covers container without distortion */
 }
 
 /* Style for message bubbles */
@@ -305,16 +311,4 @@
   -moz-hyphens: auto;
   hyphens: auto;
   margin-right: 10px; /* Space between message and avatar */
-}
-
-/* Ensure no global styles affect the images */
-.main img {
-  width: auto; /* Prevent stretching */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Ensure chat bubble sizes do not interfere */
-.main cust2,
-.main cust3 {
-  max-width: 100%; /* Ensure chat bubbles don't exceed container width */
 }
