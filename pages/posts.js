@@ -113,6 +113,33 @@ export default function Home({ posts }) {
                       {' '}
                       🗓️ {dayMonth(post.date)}
                     </Box>
+                    <Box
+                      marginTop="10px"
+                      marginBottom="10px"
+                      display="flex"
+                      flexWrap="wrap"
+                      justifyContent="center"  // Center the tags horizontally
+                      alignItems="center"  // Center the tags vertically
+                    >
+                      {post.tags && post.tags.nodes && post.tags.nodes.length > 0 ? (
+                        post.tags.nodes.map(tag => (
+                          <Box
+                            key={tag.name}
+                            boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+                            fontSize="12px"  // Make the text smaller
+                            marginRight="5px"
+                            marginBottom="5px"
+                            borderRadius="10px"
+                            padding="3px 6px"  // Adjust padding to match smaller text
+                            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                            cursor="pointer"
+                            onClick={() => window.location.href = tag.link}
+                          >
+                            {tag.name}
+                          </Box>
+                        ))
+                      ) : null}
+                    </Box>
                   </GridItem>
                   <NextLink href={post.path} passHref scroll={false}>
                     <Button

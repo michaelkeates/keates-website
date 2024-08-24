@@ -9,10 +9,8 @@
 
 .main {
   padding-top: 5rem;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
@@ -240,4 +238,83 @@
 
 .main .badgesWrapper {
   display: flex;
+}
+
+/* Style for chat bubbles */
+.main cust2,
+.main cust3 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  max-width: 80%; /* Adjust to fit within container */
+}
+
+/* Style for chat bubbles on the left and right */
+.main cust2.left {
+  justify-content: flex-start;
+}
+
+.main cust3.right {
+  justify-content: flex-end;
+  flex-direction: row-reverse; /* Move avatar to the right side */
+}
+
+/* Style for avatar containers */
+.main .avatar-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for avatars */
+.main .avatar {
+  width: 40px; /* Set desired width */
+  height: 40px; /* Set desired height */
+  border-radius: 50%;
+  object-fit: cover; /* Ensure image covers the element without distortion */
+}
+
+/* Style for message bubbles */
+.main pre2 {
+  border-radius: 10px;
+  background-color: rgba(30, 213, 37, 0.426); /* Custom green color with transparency */
+  backdrop-filter: blur(10px); /* Adds a blur effect */
+  padding: 15px;
+  height: auto; /* Adjust to fit content height */
+  width: auto; /* Adjust to fit content width */
+  white-space: pre-wrap; /* Preserve whitespace */
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.05); /* Shadow effect */
+  word-break: break-word; /* Break long words */
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  margin-left: 10px; /* Space between message and avatar */
+}
+
+/* Style for reply message bubbles */
+.main pre3 {
+  border-radius: 10px;
+  background-color: rgba(47, 58, 179, 0.75); /* Different color for replies */
+  backdrop-filter: blur(10px); /* Adds a blur effect */
+  padding: 15px;
+  height: auto; /* Adjust to fit content height */
+  width: auto; /* Adjust to fit content width */
+  white-space: pre-wrap; /* Preserve whitespace */
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.05); /* Shadow effect */
+  word-break: break-word; /* Break long words */
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  margin-right: 10px; /* Space between message and avatar */
+}
+
+/* Ensure no global styles affect the images */
+.main img {
+  width: auto; /* Prevent stretching */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Ensure chat bubble sizes do not interfere */
+.main cust2,
+.main cust3 {
+  max-width: 100%; /* Ensure chat bubbles don't exceed container width */
 }
