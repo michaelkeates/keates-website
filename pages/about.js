@@ -261,7 +261,7 @@ const Home = () => {
                     as="h2"
                     fontFamily="Roboto"
                     fontWeight="600"
-                    fontSize={11}
+                    fontSize={13}
                     textAlign="left"
                     marginBottom="2px"
                   >
@@ -271,7 +271,7 @@ const Home = () => {
                     as="h2"
                     fontFamily="Roboto"
                     fontWeight="400"
-                    fontSize={10}
+                    fontSize={11}
                     textAlign="left"
                   >
                     Sapiens | Full-Time
@@ -316,7 +316,7 @@ const Home = () => {
                     as="h2"
                     fontFamily="Roboto"
                     fontWeight="600"
-                    fontSize={11}
+                    fontSize={13}
                     textAlign="left"
                     marginBottom="2px"
                   >
@@ -326,7 +326,7 @@ const Home = () => {
                     as="h2"
                     fontFamily="Roboto"
                     fontWeight="400"
-                    fontSize={10}
+                    fontSize={11}
                     textAlign="left"
                   >
                     Sapiens | Full-Time
@@ -379,7 +379,7 @@ const Home = () => {
                     as="h2"
                     fontFamily="Roboto"
                     fontWeight="600"
-                    fontSize={11}
+                    fontSize={13}
                     textAlign="left"
                     marginBottom="2px"
                   >
@@ -389,7 +389,7 @@ const Home = () => {
                     as="h2"
                     fontFamily="Roboto"
                     fontWeight="400"
-                    fontSize={10}
+                    fontSize={11}
                     textAlign="left"
                   >
                     City Hospice | Contract
@@ -445,7 +445,7 @@ const Home = () => {
                     as="h2"
                     fontFamily="Roboto"
                     fontWeight="600"
-                    fontSize={11}
+                    fontSize={13}
                     textAlign="left"
                     marginBottom="2px"
                   >
@@ -455,7 +455,7 @@ const Home = () => {
                     as="h2"
                     fontFamily="Roboto"
                     fontWeight="400"
-                    fontSize={10}
+                    fontSize={11}
                     textAlign="left"
                   >
                     Heavy Lift Logistics East Africa Limited | Freelance
