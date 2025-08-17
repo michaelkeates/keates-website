@@ -420,7 +420,7 @@ const Home = () => {
                     </li>
                     <li>
                       Contributing significantly to the thorough analysis, meticolous cleansing which lead to the successful
-                      implementation of a new system.
+                      implementation of a new system2.
                     </li>
                   </ul>
                 </Box>

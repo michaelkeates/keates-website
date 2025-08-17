@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
-    "postbuild": "if [ \"$NODE_ENV\" != \"production\" ]; then node ./scripts/generate-cv-pdf.mjs; fi",
-    "_postbuild_unix": "if not \"%NODE_ENV%\"==\"production\" node ./scripts/generate-cv-pdf.mjs",
+    "postbuild": "cross-env-shell 'if [ \"$NODE_ENV\" != \"production\" ]; then node ./scripts/generate-cv-pdf.mjs; fi'",
     "start": "next start",
     "prettier": "prettier --write .",
     "lint": "next lint"
@@ -31,6 +30,7 @@
     "three": "^0.154.0"
   },
   "devDependencies": {
+    "cross-env": "^10.0.0",
     "eslint": "^8.44.0",
     "eslint-config-next": "^13.4.7",
     "prettier": "^2.8.0"
