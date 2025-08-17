@@ -66,10 +66,6 @@ async function generatePDF() {
       '.css-1dsdcac, .css-2lzsxm, .chakra-heading.css-5cq7sr, .chakra-heading.css-1x30byp, .chakra-heading.kowkqe'
     )
 
-    const customGridElements6 = document.querySelectorAll(
-      '.chakra-divider.css-svjswr, .css-9zshpp'
-    )
-
     const boxElements = document.querySelectorAll(
       '.css-1jzpmk, .css-o75elv, .css-1a0pxu, .css-n1k3mh'
     )
@@ -200,10 +196,6 @@ async function generatePDF() {
       //move text to left
       element.style.marginLeft = '-8px'
       element.style.marginTop = '2px'
-    })
-
-    customGridElements6.forEach(element => {
-      element.style.marginTop = '-2px'
     })
 
     unwantedElements.forEach(element => {

@@ -481,10 +481,7 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Designed and produced company logo.
-                    </li>
-                    <li>
-                      Produced comprehensive and efficient transport plans.
+                      Designed and produced company logo and produced comprehensive and efficient transport plans.
                     </li>
                   </ul>
                 </Box>
