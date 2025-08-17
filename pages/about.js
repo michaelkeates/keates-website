@@ -252,7 +252,6 @@ const Home = () => {
               flexDirection="column"
               alignItems="center"
             >
-              {/* Junior Business Analyst */}
               <Box display="flex" alignItems="center">
                 <Box marginRight={4} marginTop="-2px" align="center">
                   <Image src={thumbsapiens} width={100} />
@@ -281,6 +280,7 @@ const Home = () => {
                 <Box display="flex" justifyContent="flex-end" flex="1">
                   <Badge
                     bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    color=""
                     fontSize={9}
                   >
                     AUG 2025 - PRESENT
@@ -291,15 +291,26 @@ const Home = () => {
               <Box marginTop={3}>
 
               </Box>
-
-              {/* Divider between roles */}
-              <Divider marginTop={4} marginBottom={4} />
-
-              {/* Graduate Business Analyst */}
+            </Box>
+          </SimpleGrid>
+          <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding={4}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+              paddingTop="1rem"
+              flexDirection="column"
+              alignItems="center"
+            >
               <Box display="flex" alignItems="center">
-                {/*<Box marginRight={4} marginTop="-2px" align="center">
+                <Box marginRight={4} marginTop="-2px" align="center">
                   <Image src={thumbsapiens} width={100} />
-                </Box> */}
+                </Box>
                 <Box marginRight={4}>
                   <Heading
                     as="h2"
@@ -324,6 +335,7 @@ const Home = () => {
                 <Box display="flex" justifyContent="flex-end" flex="1">
                   <Badge
                     bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    color=""
                     fontSize={9}
                   >
                     APR 2024 - AUG 2025
@@ -337,12 +349,8 @@ const Home = () => {
                     <li>
                       Optimized and implemented complex SQL solutions, including advanced Premium Calculations, to efficiently retrieve accurate values.
                     </li>
-                    <li>
-                      Played a key role in the successful go-live of the PPS New Zealand project, configuring product and supporting digital team.
-                    </li>
-                    <li>
-                      Awarded a Certificate of Recognition for supporting new joiners and consistently delivering high-quality deliverables under tight deadlines.
-                    </li>
+                    <li>Played a key role in the successful go-live of the PPS New Zealand project, configuring product and supporting digital team.</li>
+                    <li>Awarded a Certificate of Recognition for supporting new joiners and consistently delivering high-quality deliverables under tight deadlines.</li>
                   </ul>
                 </Box>
               </Box>
