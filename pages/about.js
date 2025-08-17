@@ -416,7 +416,7 @@ const Home = () => {
                     </li>
                     <li>
                       Analysing data to derive insights and support
-                      decision-making processes.
+                      decision-making processes2.
                     </li>
                     <li>
                       Contributing significantly to the thorough analysis, meticolous cleansing which lead to the successful
