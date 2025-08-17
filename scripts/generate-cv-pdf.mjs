@@ -178,7 +178,7 @@ async function generatePDF() {
 
     customGridElements2.forEach(element => {
       element.style.marginBottom = '0px'
-      element.style.marginTop = '2px'
+      element.style.marginTop = '0px'
     })
 
     customGridElements3.forEach(element => {
