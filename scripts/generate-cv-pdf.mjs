@@ -290,7 +290,7 @@ async function generatePDF() {
     preferCSSPageSize: true,
     quality: 100,
     margin: {
-      top: '5mm',    // space at the top of each page
+      top: '7mm',    // space at the top of each page
       bottom: '10mm', // space at the bottom of each page
       //left: '10mm',   // optional: left margin
       //right: '10mm'   // optional: right margin
