@@ -179,11 +179,11 @@ const Home = () => {
               >
                 <BioSection>
                   <a
-                    href="https://github.com/michaelkeates"
+                    href="mailto:mail@michaelkeates.co.uk"
                     className={styles.emailLink}
                   >
-                    <span className={styles.emoji}>🚀</span>{' '}
-                    github.com/michaelkeates
+                    <span className={styles.emoji}>✉️</span>{' '}
+                    mail@michaelkeates.co.uk
                   </a>
                 </BioSection>
               </Box>
@@ -199,11 +199,11 @@ const Home = () => {
               >
                 <BioSection>
                   <a
-                    href="mailto:mail@michaelkeates.co.uk"
+                    href="https://github.com/michaelkeates"
                     className={styles.emailLink}
                   >
-                    <span className={styles.emoji}>✉️</span>{' '}
-                    mail@michaelkeates.co.uk
+                    <span className={styles.emoji}>🚀</span>{' '}
+                    github.com/michaelkeates
                   </a>
                 </BioSection>
               </Box>
@@ -570,11 +570,6 @@ const Home = () => {
                     seamless access to an operating system via web browsers,
                     with a specialized emphasis on mobile and tablet
                     compatibility
-                  </li>
-                  <li>
-                    Proficient in interpreting and analysing complex data to
-                    create informative and visually appearing maps using GIS
-                    Technologies
                   </li>
                 </ul>
               </Box>

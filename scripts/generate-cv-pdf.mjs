@@ -18,7 +18,7 @@ async function generatePDF() {
 
   //or, add a delay before generating the PDF (in milliseconds)
   //await page.waitForTimeout(2000)
-  await page.waitForNetworkIdle(2000)
+  await page.waitForNetworkIdle(2500)
 
   //evaluate the page and remove unwanted elements
   await page.evaluate(() => {
