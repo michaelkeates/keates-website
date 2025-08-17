@@ -415,12 +415,7 @@ const Home = () => {
                       to 8 months.
                     </li>
                     <li>
-                      Analysing data to derive insights and support
-                      decision-making processes2.
-                    </li>
-                    <li>
-                      Contributing significantly to the thorough analysis, meticolous cleansing which lead to the successful
-                      implementation of a new system2.
+                      Analysing data to derive insights and support decision-making processes, while contributing significantly to thorough analysis and meticulous data cleansing, leading to the successful implementation of a new system.
                     </li>
                   </ul>
                 </Box>
@@ -487,11 +482,11 @@ const Home = () => {
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
                       Designed and produced company logo, capturing brand
-                      identity and values
+                      identity and values.
                     </li>
                     <li>
                       Produced comprehensive and efficient transport plans,
-                      optimizing logisistics and ensuring smooth operations
+                      optimizing logisistics and ensuring smooth operations.
                     </li>
                   </ul>
                 </Box>
