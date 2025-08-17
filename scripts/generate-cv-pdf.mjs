@@ -18,7 +18,7 @@ async function generatePDF() {
 
   //or, add a delay before generating the PDF (in milliseconds)
   //await page.waitForTimeout(2000)
-  await page.waitForNetworkIdle(2500)
+  await page.waitForNetworkIdle(3000)
 
   //evaluate the page and remove unwanted elements
   await page.evaluate(() => {
@@ -292,8 +292,8 @@ async function generatePDF() {
     margin: {
       top: '5mm',    // space at the top of each page
       bottom: '10mm', // space at the bottom of each page
-      left: '10mm',   // optional: left margin
-      right: '10mm'   // optional: right margin
+      //left: '10mm',   // optional: left margin
+      //right: '10mm'   // optional: right margin
     }
   })
 
