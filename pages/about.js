@@ -349,7 +349,7 @@ const Home = () => {
                     <li>
                       Optimized and implemented complex SQL solutions, including advanced Premium Calculations, to efficiently retrieve accurate values.
                     </li>
-                    <li>Played a key role in the successful go-live of the PPS New Zealand project, configuring product and supporting digital team.</li>
+                    <li>Played a key role in the successful go-live of the PPS Mutual New Zealand project, configuring product and supporting digital team.</li>
                     <li>Awarded a Certificate of Recognition for supporting new joiners and consistently delivering high-quality deliverables under tight deadlines.</li>
                   </ul>
                 </Box>
