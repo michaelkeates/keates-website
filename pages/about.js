@@ -252,10 +252,54 @@ const Home = () => {
               flexDirection="column"
               alignItems="center"
             >
+              {/* Junior Business Analyst */}
               <Box display="flex" alignItems="center">
                 <Box marginRight={4} marginTop="-2px" align="center">
                   <Image src={thumbsapiens} width={100} />
                 </Box>
+                <Box marginRight={4}>
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="600"
+                    fontSize={13}
+                    textAlign="left"
+                    marginBottom="2px"
+                  >
+                    Junior Business Analyst
+                  </Heading>
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="400"
+                    fontSize={11}
+                    textAlign="left"
+                  >
+                    Sapiens | Full-Time
+                  </Heading>
+                </Box>
+                <Box display="flex" justifyContent="flex-end" flex="1">
+                  <Badge
+                    bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    fontSize={9}
+                  >
+                    AUG 2025 - PRESENT
+                  </Badge>
+                </Box>
+              </Box>
+              <Divider marginTop={3} marginBottom={1} />
+              <Box marginTop={3}>
+
+              </Box>
+
+              {/* Divider between roles */}
+              <Divider marginTop={4} marginBottom={4} />
+
+              {/* Graduate Business Analyst */}
+              <Box display="flex" alignItems="center">
+                {/*<Box marginRight={4} marginTop="-2px" align="center">
+                  <Image src={thumbsapiens} width={100} />
+                </Box> */}
                 <Box marginRight={4}>
                   <Heading
                     as="h2"
@@ -280,10 +324,9 @@ const Home = () => {
                 <Box display="flex" justifyContent="flex-end" flex="1">
                   <Badge
                     bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
-                    color=""
                     fontSize={9}
                   >
-                    APR 2024 - PRESENT
+                    APR 2024 - AUG 2025
                   </Badge>
                 </Box>
               </Box>
@@ -292,10 +335,14 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Proficient at effectilvely following Agile methodologies to craft and refined Agile stories, actively contributing as a Scrum team member.
+                      Optimized and implemented complex SQL solutions, including advanced Premium Calculations, to efficiently retrieve accurate values.
                     </li>
-                    <li>Produced timely Expert Testing, Analysis & Documentation ensuring adherence to sprint deadlines.</li>
-                    <li>Collaborated with Senior & Lead BAs to offer functional analysis and design advice to clients throughout projects.</li>
+                    <li>
+                      Played a key role in the successful go-live of the PPS New Zealand project, configuring product and supporting digital team.
+                    </li>
+                    <li>
+                      Awarded a Certificate of Recognition for supporting new joiners and consistently delivering high-quality deliverables under tight deadlines.
+                    </li>
                   </ul>
                 </Box>
               </Box>
