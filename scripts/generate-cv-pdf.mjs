@@ -284,12 +284,17 @@ async function generatePDF() {
     document.head.appendChild(style)
   })
 
-  // Generate PDF with modified print settings
   const pdfBuffer = await page.pdf({
     format: 'A4',
     printBackground: true,
     preferCSSPageSize: true,
-    quality: 100
+    quality: 100,
+    margin: {
+      top: '5mm',    // space at the top of each page
+      bottom: '10mm', // space at the bottom of each page
+      left: '10mm',   // optional: left margin
+      right: '10mm'   // optional: right margin
+    }
   })
 
   await browser.close()
