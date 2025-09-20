@@ -568,7 +568,7 @@ const Home = () => {
                     Typescript, delivering an educational web service and
                     seamless access to an operating system via web browsers,
                     with a specialized emphasis on mobile and tablet
-                    compatibility
+                    compatibility.
                   </li>
                 </ul>
               </Box>
@@ -642,7 +642,7 @@ const Home = () => {
                   <li>
                     Designed and developed a Crime Alert App for Android/iOS
                     using Xamarin, providing real-time crime data visualization
-                    on a map
+                    on a map.
                   </li>
                 </ul>
               </Box>
