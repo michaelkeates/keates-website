@@ -159,6 +159,42 @@ const Home = () => {
               >
                 <BioSection>
                   <a
+                    href="mailto:mail@michaelkeates.co.uk"
+                    className={styles.emailLink}
+                  >
+                    <span className={styles.emoji}>✉️</span>{' '}
+                    mail@michaelkeates.co.uk
+                  </a>
+                </BioSection>
+              </Box>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a href="tel:+447495137974" className={styles.emailLink}>
+                    <span className={styles.emoji}>📱</span> +44 7495 137 974
+                  </a>
+                </BioSection>
+              </Box>
+              <Box
+                borderRadius="lg"
+                mb={1}
+                p={1}
+                textAlign="center"
+                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+                padding="10px;"
+                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
+              >
+                <BioSection>
+                  <a
                     href="https://www.michaelkeates.co.uk"
                     className={styles.emailLink}
                   >
@@ -179,47 +215,11 @@ const Home = () => {
               >
                 <BioSection>
                   <a
-                    href="mailto:mail@michaelkeates.co.uk"
-                    className={styles.emailLink}
-                  >
-                    <span className={styles.emoji}>✉️</span>{' '}
-                    mail@michaelkeates.co.uk
-                  </a>
-                </BioSection>
-              </Box>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a
                     href="https://github.com/michaelkeates"
                     className={styles.emailLink}
                   >
                     <span className={styles.emoji}>🚀</span>{' '}
                     github.com/michaelkeates
-                  </a>
-                </BioSection>
-              </Box>
-              <Box
-                borderRadius="lg"
-                mb={1}
-                p={1}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-                padding="10px;"
-                boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05);"
-              >
-                <BioSection>
-                  <a href="tel:+447495137974" className={styles.emailLink}>
-                    <span className={styles.emoji}>📱</span> +44 7495 137 974
                   </a>
                 </BioSection>
               </Box>
