@@ -283,7 +283,7 @@ const Home = () => {
                     color=""
                     fontSize={9}
                   >
-                    AUG 2025 - PRESENT
+                    SEP 2025 - PRESENT
                   </Badge>
                 </Box>
               </Box>
@@ -347,9 +347,8 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Optimized and implemented complex SQL solutions, including advanced Premium Calculations, to efficiently retrieve accurate values.
+                      Played a role in the successful go-live of the PPS Mutual New Zealand project, configuring product, supporting digital team & implementing the baseline for complex Premium Calculations using SQL.
                     </li>
-                    <li>Played a key role in the successful go-live of the PPS Mutual New Zealand project, configuring product and supporting digital team.</li>
                     <li>Awarded a Certificate of Recognition for supporting new joiners and consistently delivering high-quality deliverables under tight deadlines.</li>
                   </ul>
                 </Box>

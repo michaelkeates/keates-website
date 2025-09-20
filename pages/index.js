@@ -72,7 +72,7 @@ const Home = () => (
             textAlign="center"
             paddingTop="35px"
           >
-            Welcome to my portfolio website! I am a Business Analyst by day and a programmer at night! Hope you like what you see and
+            Welcome to my portfolio website! I am a Junior Business Analyst by day and a programmer at night! Hope you like what you see and
             enjoy your visit!
           </Heading>
         </Section>
