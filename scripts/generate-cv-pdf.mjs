@@ -284,18 +284,33 @@ async function generatePDF() {
     document.head.appendChild(style)
   })
 
+  // ✅ Add this right before page.pdf
+  await page.addStyleTag({
+    content: `
+      @page {
+        margin-top: 50mm;  /* space at the top of each page */
+        margin-bottom: 50mm; /* space at the bottom of each page */
+      }
+
+      body {
+        margin: 0 !important; /* prevent double spacing */
+        padding-bottom: 40mm !important; /* add visual gap above page break */
+      }
+    `
+  });
+
   const pdfBuffer = await page.pdf({
     format: 'A4',
     printBackground: true,
-    preferCSSPageSize: true,
+    // preferCSSPageSize: true, // optional, remove for consistent @page control
     quality: 100,
     margin: {
-      top: '7mm',    // space at the top of each page
-      bottom: '10mm', // space at the bottom of each page
-      //left: '10mm',   // optional: left margin
-      //right: '10mm'   // optional: right margin
+      // You can remove these if @page works fine,
+      // or leave small values as a fallback
+      top: '55mm',
+      bottom: '85mm'
     }
-  })
+  });
 
   await browser.close()
 
