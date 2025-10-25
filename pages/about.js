@@ -479,10 +479,13 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Designed and produced company logo
+                      Designed and produced company logo, capturing brand identity and values.
                     </li>
                     <li>
-                      Produced comprehensive and efficient transport plans
+                      Created compelling and engaging presentations for clients, effectively conveying complex ideas and proposals.
+                    </li>
+                    <li>
+                      Produced comprehensive and efficient transport plans, optimizing logisistics and ensuring smooth operations.
                     </li>
                   </ul>
                 </Box>
@@ -572,7 +575,8 @@ const Home = () => {
                     with a specialized emphasis on mobile and tablet
                     compatibility.
                   </li>
-                  <li>Designed and produced a 'Airports of the World' mapping app.</li>
+                  <li>Produced comprehensive and efficient transport plans, optimizing logistics and ensuring smooth operations.
+                    </li>
                 </ul>
               </Box>
             </Box>
