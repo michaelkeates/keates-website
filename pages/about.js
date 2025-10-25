@@ -22,6 +22,7 @@ import thumbcityhospice from '../public/images/works/city_hospice.png'
 import thumbsapiens from '../public/images/works/sapiens.png'
 import wordicon from '../public/images/works/microsoft_word.png'
 import excelicon from '../public/images/works/microsoft_excel.png'
+import firstaidcymru from '../public/images/works/first_aid_cymru_logo.png'
 import styles from '../styles/emoji.module.css'
 import Bubble from '../components/bubbleheader'
 import NextLink from 'next/link'
@@ -1088,6 +1089,79 @@ const Home = () => {
               </Box>
             </SimpleGrid>
           </Section>
+          
+                  <Divider />
+        <Heading
+          as="h3"
+          fontFamily="Roboto"
+          fontWeight="500"
+          fontSize={20}
+          mb={4}
+          marginTop="1rem"
+        >
+          Certificates
+        </Heading>
+        <div className="another-custom-grid">
+          <SimpleGrid columns={[1, 1, 1]} gap={2} justifyContent="center">
+            <Box
+              borderRadius="lg"
+              mb={6}
+              p={3}
+              textAlign="center"
+              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              css={{ backdropFilter: 'blur(10px)' }}
+              padding={4}
+              boxShadow="0px 0px 12px 0px rgba(0,0,0,0.05)"
+              paddingTop="1rem"
+              flexDirection="column"
+              alignItems="center"
+            >
+              <Box display="flex" alignItems="center">
+                <Box marginRight={4} marginTop="-2px" align="center">
+                  <Image src={firstaidcymru} width={70} />
+                </Box>
+                <Box marginRight={4}>
+                    <Heading
+                      as="h2"
+                      fontFamily="Roboto"
+                      fontWeight="600"
+                      fontSize={13}
+                      textAlign="left"
+                      marginBottom="2px"
+                    >
+                      Emergency First Aid At Work
+                    </Heading>
+                  <Heading
+                    as="h2"
+                    fontFamily="Roboto"
+                    fontWeight="400"
+                    fontSize={11}
+                    textAlign="left"
+                  >
+                    First Aid Cymru
+                  </Heading>
+                </Box>
+                <Box
+                  marginTop="-5px"
+                  display="flex"
+                  justifyContent="flex-end"
+                  flex="1"
+                >
+                  <Badge
+                    bg={useColorModeValue('whiteAlpha.100', 'whiteAlpha.000')}
+                    color=""
+                    fontSize={9}
+                  >
+                    Jul 2025 - Jul 2028
+                  </Badge>
+                </Box>
+              </Box>
+            </Box>
+          </SimpleGrid>
+          <Divider />
+        </div>
+
+
           <Divider />
           <div className="custom-grid">
             <Section delay={0.2}>
