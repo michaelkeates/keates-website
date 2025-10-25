@@ -1263,8 +1263,8 @@ const Home = () => {
               <Section delay={0.1}>
                 <Paragraph>References are available on request.</Paragraph>
               </Section>
-            </SimpleGrid>
-            <Divider />*/}
+            </SimpleGrid>*/}
+            <Divider />
             <div className="custom-grid">
               <SimpleGrid colums={[1, 1, 1]} gap={2} marginTop="1rem">
                 <Section delay={0.1}>
