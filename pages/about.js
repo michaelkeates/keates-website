@@ -11,10 +11,9 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
+import { BioSection } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { WorkGridItem } from '../components/grid-item'
 import Image from 'next/image'
 import thumbusw from '../public/images/works/usw_logo.png'
 import thumbcc from '../public/images/works/cc_logo.png'
@@ -23,7 +22,6 @@ import thumbcityhospice from '../public/images/works/city_hospice.png'
 import thumbsapiens from '../public/images/works/sapiens.png'
 import wordicon from '../public/images/works/microsoft_word.png'
 import excelicon from '../public/images/works/microsoft_excel.png'
-import React, { useState } from 'react'
 import styles from '../styles/emoji.module.css'
 import Bubble from '../components/bubbleheader'
 import NextLink from 'next/link'
@@ -36,7 +34,6 @@ import {
   Html5Icon,
   JavascriptIcon,
   GraphQlIcon,
-  KotlinIcon,
   MySQLIcon,
   PhpIcon,
   NextjsIcon,
@@ -50,7 +47,6 @@ import {
   JQueryIcon,
   GitIcon,
   PhotoshopIcon,
-  GithubIcon,
   DotNetIcon
 } from '../components/devicons'
 
@@ -414,7 +410,10 @@ const Home = () => {
                       to 8 months.
                     </li>
                     <li>
-                      Analysing data to derive insights and support decision-making processes, while contributing significantly to thorough analysis and meticulous data cleansing, leading to the successful implementation of a new system.
+                      Analysing data to derive insights and support decision-making processes.
+                    </li>
+                    <li>
+                      Contributed ignificantly to thorough analysis and meticulous data cleansing, leading to the successful implementation of a new system.
                     </li>
                   </ul>
                 </Box>
@@ -480,7 +479,10 @@ const Home = () => {
                 <Box textAlign="left" fontSize={12} padding={2}>
                   <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
                     <li>
-                      Designed and produced company logo and produced comprehensive and efficient transport plans.
+                      Designed and produced company logo
+                    </li>
+                    <li>
+                      Produced comprehensive and efficient transport plans
                     </li>
                   </ul>
                 </Box>
@@ -570,6 +572,7 @@ const Home = () => {
                     with a specialized emphasis on mobile and tablet
                     compatibility.
                   </li>
+                  <li>Designed and produced a 'Airports of the World' mapping app.</li>
                 </ul>
               </Box>
             </Box>
@@ -1171,8 +1174,8 @@ const Home = () => {
               <Divider />
             </Section>
           </div>
-          {/*<Section delay={0.2}>
-            <Heading
+          <Section delay={0.2}>
+            {/*<Heading
               as="h3"
               fontFamily="Roboto"
               fontWeight="500"
@@ -1187,7 +1190,7 @@ const Home = () => {
                 <Paragraph>References are available on request.</Paragraph>
               </Section>
             </SimpleGrid>
-            <Divider />
+            <Divider />*/}
             <div className="custom-grid">
               <SimpleGrid colums={[1, 1, 1]} gap={2} marginTop="1rem">
                 <Section delay={0.1}>
@@ -1208,7 +1211,7 @@ const Home = () => {
                 </Section>
               </SimpleGrid>
             </div>
-          </Section> */}
+          </Section> 
         </div>
       </Container>
     </Layout>
