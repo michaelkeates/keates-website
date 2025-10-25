@@ -346,7 +346,12 @@ const Home = () => {
                     <li>
                       Played a role in the successful go-live of the PPS Mutual New Zealand project, configuring product, supporting digital team & implementing the baseline for complex Premium Calculations using SQL.
                     </li>
-                    <li>Awarded a Certificate of Recognition for supporting new joiners and consistently delivering high-quality deliverables under tight deadlines.</li>
+                    <li>
+                      Created advanced spreadsheets for calculating premiums, tax reinsurance, commissions among others.
+                    </li>
+                    <li>
+                      Awarded a Certificate of Recognition for supporting new joiners and consistently delivering high-quality deliverables under tight deadlines.
+                    </li>
                   </ul>
                 </Box>
               </Box>
@@ -414,7 +419,7 @@ const Home = () => {
                       Analysing data to derive insights and support decision-making processes.
                     </li>
                     <li>
-                      Contributed ignificantly to thorough analysis and meticulous data cleansing, leading to the successful implementation of a new system.
+                      Contributed significantly to thorough analysis and meticulous data cleansing, leading to the successful implementation of a new system.
                     </li>
                   </ul>
                 </Box>
@@ -576,8 +581,9 @@ const Home = () => {
                     with a specialized emphasis on mobile and tablet
                     compatibility.
                   </li>
-                  <li>Produced comprehensive and efficient transport plans, optimizing logistics and ensuring smooth operations.
-                    </li>
+                  <li>
+                    Proficient in interpreting and analysing complex data to create informative and visually appearing maps using GIS Technologies including cleaning and preparation of a 'Airports of the World' dataset linked using Wikipedia API to show picture and details of the airport.
+                  </li>
                 </ul>
               </Box>
             </Box>
