@@ -1158,10 +1158,7 @@ const Home = () => {
               </Box>
             </Box>
           </SimpleGrid>
-          <Divider />
         </div>
-
-
           <Divider />
           <div className="custom-grid">
             <Section delay={0.2}>
@@ -1249,7 +1246,6 @@ const Home = () => {
                   </Box>
                 </Section>
               </SimpleGrid>
-              <Divider />
             </Section>
           </div>
           <Section delay={0.2}>
