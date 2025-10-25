@@ -1159,7 +1159,7 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </div>
-          {/*<Divider />*/}
+          <Divider />
           <div className="custom-grid">
             <Section delay={0.2}>
               <Heading
@@ -1264,8 +1264,8 @@ const Home = () => {
                 <Paragraph>References are available on request.</Paragraph>
               </Section>
             </SimpleGrid>*/}
-            <Divider />
             <div className="custom-grid">
+              <Divider />
               <SimpleGrid colums={[1, 1, 1]} gap={2} marginTop="1rem">
                 <Section delay={0.1}>
                   <Box textAlign="center" fontSize={12}>
