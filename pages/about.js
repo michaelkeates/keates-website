@@ -1090,7 +1090,7 @@ const Home = () => {
             </SimpleGrid>
           </Section>
           
-                  <Divider />
+        <Divider />
         <Heading
           as="h3"
           fontFamily="Roboto"
@@ -1159,7 +1159,7 @@ const Home = () => {
             </Box>
           </SimpleGrid>
         </div>
-          <Divider />
+          {/*<Divider />*/}
           <div className="custom-grid">
             <Section delay={0.2}>
               <Heading
