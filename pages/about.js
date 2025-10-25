@@ -1171,7 +1171,7 @@ const Home = () => {
               <Divider />
             </Section>
           </div>
-          <Section delay={0.2}>
+          {/*<Section delay={0.2}>
             <Heading
               as="h3"
               fontFamily="Roboto"
@@ -1208,7 +1208,7 @@ const Home = () => {
                 </Section>
               </SimpleGrid>
             </div>
-          </Section>
+          </Section> */}
         </div>
       </Container>
     </Layout>
